@@ -1,0 +1,42 @@
+[
+  {
+    "label": "context",
+    "command": [
+      "D:\\ECU\\grade_project\\\u0628\u0627\u0630\u0646 \u0627\u0644\u0644\u0647 \u064a\u0634\u062a\u063a\u0644\\mini_hivo-main (1)\\mini_hivo-main\\.venv\\Scripts\\python.exe",
+      "-B",
+      "-X",
+      "utf8",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-p",
+      "test_context_sufficiency_gate.py",
+      "-v"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.64,
+    "log": "audit_runs\\20261019-phase2\\context.log"
+  },
+  {
+    "label": "experiments",
+    "command": [
+      "D:\\ECU\\grade_project\\\u0628\u0627\u0630\u0646 \u0627\u0644\u0644\u0647 \u064a\u0634\u062a\u063a\u0644\\mini_hivo-main (1)\\mini_hivo-main\\.venv\\Scripts\\python.exe",
+      "-B",
+      "-X",
+      "utf8",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-p",
+      "test_experiment*.py",
+      "-v"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 1.7,
+    "log": "audit_runs\\20261019-phase2\\experiments.log"
+  }
+]

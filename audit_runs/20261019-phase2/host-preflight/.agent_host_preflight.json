@@ -1,0 +1,78 @@
+{
+  "canary_calls_completed": 1,
+  "canary_calls_requested": 3,
+  "canary_prompt": "Reply with exactly: HIVO_PREFLIGHT_OK",
+  "duration_seconds": 57.217,
+  "failure_reason": "CANARY_PROVIDER_FAILURE",
+  "failure_stage": "canary",
+  "failure_summary": "timed out",
+  "finished_at": "2026-10-19T02:45:18.522+00:00",
+  "inventory": {
+    "available_system_ram_bytes": 3822489600,
+    "cpu_logical_count": 12,
+    "free_workspace_disk_bytes": 130522009600,
+    "gpu": {
+      "reason": "unavailable",
+      "source": "nvidia-smi",
+      "status": "UNKNOWN"
+    },
+    "model_availability": "PASS",
+    "ollama_availability": "PASS",
+    "os_version": "Windows 11",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python_version": "3.14.8",
+    "selected_model": "gemma4:e4b",
+    "total_system_ram_bytes": 16849293312
+  },
+  "model": "gemma4:e4b",
+  "pid": 15564,
+  "preflight_id": "7b8ea1be23d5464f8f0521f3bac646a5",
+  "provider_evidence": [
+    {
+      "call": 2,
+      "category": "CANARY_PROVIDER_FAILURE",
+      "summary": "timed out"
+    }
+  ],
+  "resource_snapshots": [
+    {
+      "available_system_ram_bytes": 3822489600,
+      "gpu": {
+        "reason": "unavailable",
+        "source": "nvidia-smi",
+        "status": "UNKNOWN"
+      },
+      "phase": "before_canary",
+      "sampled_at": "2026-10-19T02:44:21.334+00:00",
+      "total_system_ram_bytes": 16849293312
+    },
+    {
+      "available_system_ram_bytes": 979296256,
+      "gpu": {
+        "reason": "unavailable",
+        "source": "nvidia-smi",
+        "status": "UNKNOWN"
+      },
+      "phase": "after_call_1",
+      "sampled_at": "2026-10-19T02:44:46.481+00:00",
+      "total_system_ram_bytes": 16849293312
+    },
+    {
+      "available_system_ram_bytes": 973180928,
+      "gpu": {
+        "reason": "unavailable",
+        "source": "nvidia-smi",
+        "status": "UNKNOWN"
+      },
+      "phase": "after_call_2",
+      "sampled_at": "2026-10-19T02:45:18.522+00:00",
+      "total_system_ram_bytes": 16849293312
+    }
+  ],
+  "started_at": "2026-10-19T02:44:21.304+00:00",
+  "status": "FAIL",
+  "terminal_state": "HOST_PREFLIGHT_FAILED",
+  "warnings": [
+    "gpu_telemetry_unavailable"
+  ]
+}

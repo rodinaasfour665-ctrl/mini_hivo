@@ -1,0 +1,59 @@
+[
+  {
+    "label": "greenfield",
+    "command": [
+      "D:\\ECU\\grade_project\\\u0628\u0627\u0630\u0646 \u0627\u0644\u0644\u0647 \u064a\u0634\u062a\u063a\u0644\\mini_hivo-main (1)\\mini_hivo-main\\.venv\\Scripts\\python.exe",
+      "-B",
+      "-X",
+      "utf8",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-p",
+      "test_greenfield_impact_lifecycle.py",
+      "-v"
+    ],
+    "exit_code": 0,
+    "seconds": 1.32
+  },
+  {
+    "label": "impact",
+    "command": [
+      "D:\\ECU\\grade_project\\\u0628\u0627\u0630\u0646 \u0627\u0644\u0644\u0647 \u064a\u0634\u062a\u063a\u0644\\mini_hivo-main (1)\\mini_hivo-main\\.venv\\Scripts\\python.exe",
+      "-B",
+      "-X",
+      "utf8",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-p",
+      "test_pre_mutation_impact.py",
+      "-v"
+    ],
+    "exit_code": 0,
+    "seconds": 0.83
+  },
+  {
+    "label": "context",
+    "command": [
+      "D:\\ECU\\grade_project\\\u0628\u0627\u0630\u0646 \u0627\u0644\u0644\u0647 \u064a\u0634\u062a\u063a\u0644\\mini_hivo-main (1)\\mini_hivo-main\\.venv\\Scripts\\python.exe",
+      "-B",
+      "-X",
+      "utf8",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-p",
+      "test_context_sufficiency_gate.py",
+      "-v"
+    ],
+    "exit_code": 1,
+    "seconds": 0.87
+  }
+]

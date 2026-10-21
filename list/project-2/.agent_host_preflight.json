@@ -1,0 +1,61 @@
+{
+  "canary_calls_completed": 1,
+  "canary_calls_requested": 3,
+  "canary_prompt": "Reply with exactly: HIVO_PREFLIGHT_OK",
+  "duration_seconds": 24.682,
+  "failure_reason": "CRITICAL_MEMORY_HEADROOM",
+  "failure_stage": "resource_monitoring",
+  "failure_summary": "available system memory is 307896320 bytes",
+  "finished_at": "2026-10-14T14:10:47.335+00:00",
+  "inventory": {
+    "available_system_ram_bytes": 5948444672,
+    "cpu_logical_count": 12,
+    "free_workspace_disk_bytes": 130878017536,
+    "gpu": {
+      "reason": "unavailable",
+      "source": "nvidia-smi",
+      "status": "UNKNOWN"
+    },
+    "model_availability": "PASS",
+    "ollama_availability": "PASS",
+    "os_version": "Windows 11",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python_version": "3.14.8",
+    "selected_model": "gemma4:e4b",
+    "total_system_ram_bytes": 16849293312
+  },
+  "model": "gemma4:e4b",
+  "pid": 21400,
+  "preflight_id": "bcaf0a1bcdc8469ea12937c333975492",
+  "provider_evidence": [],
+  "resource_snapshots": [
+    {
+      "available_system_ram_bytes": 5948444672,
+      "gpu": {
+        "reason": "unavailable",
+        "source": "nvidia-smi",
+        "status": "UNKNOWN"
+      },
+      "phase": "before_canary",
+      "sampled_at": "2026-10-14T14:10:22.656+00:00",
+      "total_system_ram_bytes": 16849293312
+    },
+    {
+      "available_system_ram_bytes": 307896320,
+      "gpu": {
+        "reason": "unavailable",
+        "source": "nvidia-smi",
+        "status": "UNKNOWN"
+      },
+      "phase": "after_call_1",
+      "sampled_at": "2026-10-14T14:10:47.335+00:00",
+      "total_system_ram_bytes": 16849293312
+    }
+  ],
+  "started_at": "2026-10-14T14:10:22.653+00:00",
+  "status": "FAIL",
+  "terminal_state": "HOST_PREFLIGHT_FAILED",
+  "warnings": [
+    "gpu_telemetry_unavailable"
+  ]
+}

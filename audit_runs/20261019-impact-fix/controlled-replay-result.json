@@ -1,0 +1,150 @@
+{
+  "execution_kind": "PROVIDER_FREE_SCRIPTED_RESPONSES_REAL_CONTROLLER_AND_FILESYSTEM",
+  "scripted_provider_responses": 7,
+  "status": "done",
+  "failure_type": null,
+  "file_exists": true,
+  "exact_bytes": true,
+  "run_id": "20261019T070259-88ba0efc",
+  "source_sha256": "9e3c008541aec3ce64a031609fce0bf1452252cf88699b3395ad31b3c4875e7f",
+  "metrics": {
+    "impact_contracts_created": 1,
+    "impact_contracts_validated": 1,
+    "impact_contract_authorizations": 1,
+    "tool_calls": 4,
+    "model_calls": 0,
+    "root_verified": true,
+    "source_requirements_extracted": 3,
+    "source_requirements_retained": 3
+  },
+  "source_requirement_ids": [
+    "REQ-001",
+    "REQ-002",
+    "REQ-003"
+  ],
+  "impact_comparison": {
+    "status": "IMPACT_CONTRACT_PASSED",
+    "passed": true,
+    "failure_type": null,
+    "comparisons": [
+      {
+        "kind": "target",
+        "target": "welcone.txt",
+        "status": "EXPECTED_AND_OBSERVED",
+        "actual": [
+          {
+            "target": "welcone.txt",
+            "kind": "path",
+            "path": "welcone.txt"
+          },
+          {
+            "target": "welcone.txt",
+            "path": "welcone.txt",
+            "kind": "path"
+          }
+        ]
+      },
+      {
+        "kind": "literal_file_post_state",
+        "target": "welcone.txt",
+        "status": "EXPECTED_AND_OBSERVED",
+        "reason": "exact file bytes match"
+      },
+      {
+        "kind": "verification_obligation",
+        "id": "REQ-001",
+        "status": "SATISFIED"
+      },
+      {
+        "kind": "verification_obligation",
+        "id": "REQ-002",
+        "status": "SATISFIED"
+      },
+      {
+        "kind": "verification_obligation",
+        "id": "REQ-003",
+        "status": "SATISFIED"
+      }
+    ],
+    "missing": [],
+    "unexpected_related": [],
+    "out_of_scope": [],
+    "preservation_violations": [],
+    "obligations": [
+      {
+        "id": "REQ-001",
+        "category": "POST_STATE",
+        "meaning": "Create a text file.",
+        "target": "welcone.txt",
+        "required": true,
+        "mode": "controller",
+        "verification_kind": "existing_gate",
+        "provenance": [
+          {
+            "source_identity": "REQ-001",
+            "path": "REQ-001",
+            "location": "",
+            "evidence_kind": "USER_STATED",
+            "evidence_id": "",
+            "authority_tier": "MEDIUM",
+            "authority_score": 60,
+            "excerpt": "Create a text file."
+          }
+        ],
+        "status": "SATISFIED"
+      },
+      {
+        "id": "REQ-002",
+        "category": "POST_STATE",
+        "meaning": "The file name must be 'welcone'.",
+        "target": "welcone.txt",
+        "required": true,
+        "mode": "controller",
+        "verification_kind": "existing_gate",
+        "provenance": [
+          {
+            "source_identity": "REQ-002",
+            "path": "REQ-002",
+            "location": "",
+            "evidence_kind": "USER_STATED",
+            "evidence_id": "",
+            "authority_tier": "MEDIUM",
+            "authority_score": 60,
+            "excerpt": "The file name must be 'welcone'."
+          }
+        ],
+        "status": "SATISFIED"
+      },
+      {
+        "id": "REQ-003",
+        "category": "POST_STATE",
+        "meaning": "The content of the file must be exactly 'welcome'.",
+        "target": "welcone.txt",
+        "required": true,
+        "mode": "controller",
+        "verification_kind": "existing_gate",
+        "provenance": [
+          {
+            "source_identity": "REQ-003",
+            "path": "REQ-003",
+            "location": "",
+            "evidence_kind": "USER_STATED",
+            "evidence_id": "",
+            "authority_tier": "MEDIUM",
+            "authority_score": 60,
+            "excerpt": "The content of the file must be exactly 'welcome'."
+          }
+        ],
+        "status": "SATISFIED"
+      }
+    ],
+    "unresolved_obligations": [],
+    "conflicts": [],
+    "actual_changed_paths": [
+      "welcone.txt"
+    ],
+    "contract_hash": "00abdd2280e7ac39966f7e640c0c38277e5825f9246b5719ea42cc58c947e3af",
+    "revision": 0,
+    "bounded": true
+  }
+}

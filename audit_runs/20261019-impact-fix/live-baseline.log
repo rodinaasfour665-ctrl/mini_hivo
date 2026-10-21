@@ -1,0 +1,13 @@
+workspace set to: D:\ECU\grade_project\باذن الله يشتغل\mini_hivo-main (1)\mini_hivo-main\audit_runs\20261019-impact-fix\live-baseline
+
+HIVO HOST PREFLIGHT: FAIL
+
+Selected model: gemma4:e4b
+Failure: CRITICAL_MEMORY_HEADROOM
+Failure stage: static_resources
+Completed canary calls: 0/3
+System RAM: total 15.7 GB; available before 465.4 MB
+GPU: UNKNOWN | VRAM free UNKNOWN | temperature UNKNOWN C
+Warnings: gpu_telemetry_unavailable
+Recommended action: inspect host/model stability before retrying.
+terminal: HOST_PREFLIGHT_FAILED

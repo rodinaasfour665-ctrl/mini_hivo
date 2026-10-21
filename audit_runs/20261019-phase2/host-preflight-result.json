@@ -1,0 +1,85 @@
+{
+  "passed": false,
+  "status": "FAIL",
+  "preflight_id": "7b8ea1be23d5464f8f0521f3bac646a5",
+  "report": {
+    "status": "FAIL",
+    "terminal_state": "HOST_PREFLIGHT_FAILED",
+    "preflight_id": "7b8ea1be23d5464f8f0521f3bac646a5",
+    "started_at": "2026-10-19T02:44:21.304+00:00",
+    "model": "gemma4:e4b",
+    "pid": 15564,
+    "canary_calls_requested": 3,
+    "canary_calls_completed": 1,
+    "canary_prompt": "Reply with exactly: HIVO_PREFLIGHT_OK",
+    "resource_snapshots": [
+      {
+        "phase": "before_canary",
+        "sampled_at": "2026-10-19T02:44:21.334+00:00",
+        "total_system_ram_bytes": 16849293312,
+        "available_system_ram_bytes": 3822489600,
+        "gpu": {
+          "status": "UNKNOWN",
+          "source": "nvidia-smi",
+          "reason": "unavailable"
+        }
+      },
+      {
+        "phase": "after_call_1",
+        "sampled_at": "2026-10-19T02:44:46.481+00:00",
+        "total_system_ram_bytes": 16849293312,
+        "available_system_ram_bytes": 979296256,
+        "gpu": {
+          "status": "UNKNOWN",
+          "source": "nvidia-smi",
+          "reason": "unavailable"
+        }
+      },
+      {
+        "phase": "after_call_2",
+        "sampled_at": "2026-10-19T02:45:18.522+00:00",
+        "total_system_ram_bytes": 16849293312,
+        "available_system_ram_bytes": 973180928,
+        "gpu": {
+          "status": "UNKNOWN",
+          "source": "nvidia-smi",
+          "reason": "unavailable"
+        }
+      }
+    ],
+    "inventory": {
+      "platform": "Windows-11-10.0.26200-SP0",
+      "os_version": "Windows 11",
+      "python_version": "3.14.8",
+      "cpu_logical_count": 12,
+      "total_system_ram_bytes": 16849293312,
+      "available_system_ram_bytes": 3822489600,
+      "selected_model": "gemma4:e4b",
+      "ollama_availability": "PASS",
+      "model_availability": "PASS",
+      "free_workspace_disk_bytes": 130522009600,
+      "gpu": {
+        "status": "UNKNOWN",
+        "source": "nvidia-smi",
+        "reason": "unavailable"
+      }
+    },
+    "warnings": [
+      "gpu_telemetry_unavailable"
+    ],
+    "provider_evidence": [
+      {
+        "call": 2,
+        "category": "CANARY_PROVIDER_FAILURE",
+        "summary": "timed out"
+      }
+    ],
+    "failure_stage": "canary",
+    "failure_reason": "CANARY_PROVIDER_FAILURE",
+    "failure_summary": "timed out",
+    "finished_at": "2026-10-19T02:45:18.522+00:00",
+    "duration_seconds": 57.217
+  },
+  "marker_path": "D:\\ECU\\grade_project\\\u0628\u0627\u0630\u0646 \u0627\u0644\u0644\u0647 \u064a\u0634\u062a\u063a\u0644\\mini_hivo-main (1)\\mini_hivo-main\\audit_runs\\20261019-phase2\\host-preflight\\.agent_host_preflight.json",
+  "persisted": true
+}

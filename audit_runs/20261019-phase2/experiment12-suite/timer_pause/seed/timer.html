@@ -1,0 +1,17 @@
+<!doctype html>
+<html><head><title>Desk Countdown</title><style>#clock {font-size:48px}</style></head>
+<body><h1>Desk Countdown</h1><p id="clock" aria-live="polite">02:00</p>
+<button id="start">Start</button><button id="pause">Pause</button><button id="reset">Reset</button>
+<script>
+const duration=120;
+let remaining=duration;
+let interval=null;
+function render() { document.getElementById('clock').textContent=String(Math.floor(remaining/60)).padStart(2,'0')+':'+String(remaining%60).padStart(2,'0'); }
+function start() { if(interval!==null) return; interval=setInterval(()=>{remaining=Math.max(0,remaining-1);render();},1000); }
+function pause() { /* Pause is not connected to the running interval yet. */ }
+function reset() { clearInterval(interval); interval=null; remaining=duration; render(); }
+document.getElementById('start').addEventListener('click',start);
+document.getElementById('pause').addEventListener('click',pause);
+document.getElementById('reset').addEventListener('click',reset);
+render();
+</script></body></html>

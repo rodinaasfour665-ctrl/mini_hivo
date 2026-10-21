@@ -1,0 +1,91 @@
+{
+  "canary_calls_completed": 3,
+  "canary_calls_requested": 3,
+  "canary_prompt": "Reply with exactly: HIVO_PREFLIGHT_OK",
+  "duration_seconds": 24.825,
+  "finished_at": "2026-10-19T03:17:49.338+00:00",
+  "inventory": {
+    "available_system_ram_bytes": 7806857216,
+    "cpu_logical_count": 12,
+    "free_workspace_disk_bytes": 130521133056,
+    "gpu": {
+      "reason": "unavailable",
+      "source": "nvidia-smi",
+      "status": "UNKNOWN"
+    },
+    "model_availability": "PASS",
+    "ollama_availability": "PASS",
+    "os_version": "Windows 11",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python_version": "3.14.8",
+    "selected_model": "gemma4:e4b",
+    "total_system_ram_bytes": 16849293312
+  },
+  "model": "gemma4:e4b",
+  "pid": 15812,
+  "preflight_id": "5e5a1a01b3b34b72af34831be7dfbecd",
+  "provider_evidence": [],
+  "resource_snapshots": [
+    {
+      "available_system_ram_bytes": 7806857216,
+      "gpu": {
+        "reason": "unavailable",
+        "source": "nvidia-smi",
+        "status": "UNKNOWN"
+      },
+      "phase": "before_canary",
+      "sampled_at": "2026-10-19T03:17:24.522+00:00",
+      "total_system_ram_bytes": 16849293312
+    },
+    {
+      "available_system_ram_bytes": 780787712,
+      "gpu": {
+        "reason": "unavailable",
+        "source": "nvidia-smi",
+        "status": "UNKNOWN"
+      },
+      "phase": "after_call_1",
+      "sampled_at": "2026-10-19T03:17:41.696+00:00",
+      "total_system_ram_bytes": 16849293312
+    },
+    {
+      "available_system_ram_bytes": 781893632,
+      "gpu": {
+        "reason": "unavailable",
+        "source": "nvidia-smi",
+        "status": "UNKNOWN"
+      },
+      "phase": "after_call_2",
+      "sampled_at": "2026-10-19T03:17:44.516+00:00",
+      "total_system_ram_bytes": 16849293312
+    },
+    {
+      "available_system_ram_bytes": 788779008,
+      "gpu": {
+        "reason": "unavailable",
+        "source": "nvidia-smi",
+        "status": "UNKNOWN"
+      },
+      "phase": "after_call_3",
+      "sampled_at": "2026-10-19T03:17:47.322+00:00",
+      "total_system_ram_bytes": 16849293312
+    },
+    {
+      "available_system_ram_bytes": 797925376,
+      "gpu": {
+        "reason": "unavailable",
+        "source": "nvidia-smi",
+        "status": "UNKNOWN"
+      },
+      "phase": "after_final_cooldown",
+      "sampled_at": "2026-10-19T03:17:49.338+00:00",
+      "total_system_ram_bytes": 16849293312
+    }
+  ],
+  "started_at": "2026-10-19T03:17:24.513+00:00",
+  "status": "PASS",
+  "terminal_state": "HOST_PREFLIGHT_PASSED",
+  "warnings": [
+    "gpu_telemetry_unavailable"
+  ]
+}

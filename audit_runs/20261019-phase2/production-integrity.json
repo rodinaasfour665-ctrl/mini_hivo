@@ -1,0 +1,15 @@
+{
+  "production_matches_preregistration": {
+    "mini.py": true,
+    "hivo/evidence_compatibility.py": true,
+    "hivo/atomic_child_receipt.py": true,
+    "hivo/verification_routing.py": true,
+    "hivo/verification.py": true,
+    "hivo/verification_surfaces.py": true,
+    "hivo/worker_progress.py": true,
+    "hivo/mutation_grounding.py": true,
+    "hivo/integration_targets.py": true
+  },
+  "all_match": true,
+  "live_trials_started": false
+}

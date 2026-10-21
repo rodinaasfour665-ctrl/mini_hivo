@@ -1,0 +1,8 @@
+HIVO HOST PREFLIGHT: PASS
+
+Selected model: gemma4:e4b
+Completed canary calls: 3/3
+System RAM: total 15.7 GB; available before 8.2 GB
+GPU: UNKNOWN | VRAM free UNKNOWN | temperature UNKNOWN C
+Warnings: gpu_telemetry_unavailable
+Starting HIVO...

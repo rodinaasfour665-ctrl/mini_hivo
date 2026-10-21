@@ -1,0 +1,73 @@
+[
+  {
+    "label": "model-policy",
+    "command": ".\\.venv\\Scripts\\python.exe -B -X utf8 -m unittest discover -s tests -p 'test_model_policy.py' -v",
+    "test_exit_code": 0,
+    "summary": [
+      "Ran 4 tests in 0.143s",
+      "OK"
+    ],
+    "sandboxed": true
+  },
+  {
+    "label": "authority",
+    "command": ".\\.venv\\Scripts\\python.exe -B -X utf8 -m unittest discover -s tests -p 'test_authority*.py' -v",
+    "test_exit_code": 1,
+    "summary": [
+      "Ran 23 tests in 0.125s",
+      "FAILED (errors=23)"
+    ],
+    "sandboxed": true
+  },
+  {
+    "label": "authority-unsandboxed",
+    "command": ".\\.venv\\Scripts\\python.exe -B -X utf8 -m unittest discover -s tests -p 'test_authority*.py' -v",
+    "test_exit_code": 0,
+    "summary": [
+      "Ran 23 tests in 0.549s",
+      "OK"
+    ],
+    "sandboxed": false
+  },
+  {
+    "label": "context",
+    "command": ".\\.venv\\Scripts\\python.exe -B -X utf8 -m unittest discover -s tests -p 'test_context_sufficiency_gate.py' -v",
+    "test_exit_code": 0,
+    "summary": [
+      "Ran 9 tests in 0.208s",
+      "OK"
+    ],
+    "sandboxed": false
+  },
+  {
+    "label": "experiments",
+    "command": ".\\.venv\\Scripts\\python.exe -B -X utf8 -m unittest discover -s tests -p 'test_experiment*.py' -v",
+    "test_exit_code": 0,
+    "summary": [
+      "Ran 122 tests in 1.246s",
+      "OK"
+    ],
+    "sandboxed": false
+  },
+  {
+    "label": "full-suite",
+    "command": ".\\.venv\\Scripts\\python.exe -B -X utf8 -m unittest discover -s tests -p test*.py -v",
+    "status": "INTERRUPTED",
+    "session_exit_code": 1,
+    "reason": "Long-input requirement compaction test invoked live model; no completion claimed"
+  },
+  {
+    "label": "regression-excluding-live-test",
+    "test_exit_code": 1,
+    "discovered": 1703,
+    "excluded": [
+      "test_requirement_clarification.RequirementClarificationTests.test_root_brain_prompt_compacts_large_source_side_channel_without_dropping_ids"
+    ],
+    "tests_run": 1361,
+    "failures": 24,
+    "errors": 18,
+    "skipped": 10,
+    "successful": false,
+    "elapsed_seconds": 35.85
+  }
+]
