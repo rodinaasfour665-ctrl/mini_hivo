@@ -393,7 +393,31 @@ def literal_file_request(text):
         rf"(?:the\s+text\s+)?(?P<content>{token})\s*\.?\s*", str(text or ""), re.IGNORECASE,
     )
     if not match:
-        return None
+        # A colon explicitly delimits a single-line literal payload, including
+        # spaces. Keep this separate from arbitrary unquoted prose requests.
+        match = re.fullmatch(
+            rf"\s*(?:create|make|write)\s+(?:a\s+)?(?P<kind>text|txt)\s+file\s+"
+            rf"(?:named|called)\s+(?P<name>{token})\s+containing\s+exactly\s*:\s*"
+            rf"(?P<content>[^\r\n]+)", str(text or ""), re.IGNORECASE,
+        )
+        if not match:
+            return None
+        content = match['content'].strip()
+        if not content or re.search(
+                r"(?:[.!?;]\s+|\s+)(?:also|then|and\s+(?:create|make|write|change|delete|run))\b",
+                content, re.IGNORECASE):
+            return None
+        if content[0] in {"'", '"', '`'}:
+            quote = content[0]
+            quoted = re.fullmatch(rf"{re.escape(quote)}([^\r\n{re.escape(quote)}]*){re.escape(quote)}\.?", content)
+            if not quoted:
+                return None
+            content = quoted[1]
+        elif any(quote in content for quote in ("'", '"', '`')):
+            return None
+        name = match['name']
+        name = name[1:-1] if name[:1] in {"'", '"', '`'} else name.rstrip('.')
+        return {"name": name, "content": content, "kind": "text"} if name else None
     def literal(value):
         return value[1:-1] if value[:1] in {"'", '"', '`'} else value.rstrip('.')
     name, content = literal(match['name']), literal(match['content'])

@@ -13697,8 +13697,26 @@ def build_node_context(task, root_contract, memory_store, repo_snapshot, parent_
 # ONE REUSABLE MODEL/TOOL LOOP FOR BUILDER, REPAIRER, FALSIFIER
 # ---------------------------------------------------------------------------
 
+def _literal_artifact_verification_paths():
+    """Offer native readback only from accepted, source-bound literal authority."""
+    active = ACTIVE_IMPACT_CONTRACT
+    if (not isinstance(active, dict) or not active.get("scope_required")
+            or stage10_impact.impact_mutation_block_reason(active)):
+        return []
+    return [item["path"] for item in active.get("expected_targets", [])
+            if item.get("path") in active.get("authorized_mutation_paths", [])
+            and item.get("post_state_sha256")]
+
+
 def tool_recovery_hint(tool_name, result, repeated_failures):
     lower = str(result).casefold()
+    if tool_name == "run_command" and result_is_tool_rejection(result):
+        paths = _literal_artifact_verification_paths()
+        if paths:
+            return ("The shell command was refused and did not verify the artifact. "
+                    "Do not retry cat, echo, ls, type or another shell command. "
+                    "Call run_file with the exact path to verify the source-bound UTF-8 bytes: "
+                    + json.dumps([{"path": path} for path in paths], ensure_ascii=False))
     if tool_name == "edit_file" and repeated_failures >= 2 and ("exact replacement" in lower or "found 0" in lower):
         return "Stop repeating the exact edit. Read numbered lines, then use one small edit_file_range."
     if "incomplete or truncated" in lower and repeated_failures >= 2:
@@ -14449,6 +14467,7 @@ def execute_agent_task(task_text, memory, messages=None, role="Builder", task_id
     # until a fresh source check or valid source mutation clears it.
     verification_cycle = {"syntax_failures": {}}
     repeated_failures = {}
+    literal_command_rejections = 0
     mutation_failure_counts = {}
     mutation_failure_records = []
     last_verification_signature = ()
@@ -15582,6 +15601,26 @@ def execute_agent_task(task_text, memory, messages=None, role="Builder", task_id
             )
             if hint:
                 messages.append({"role": "user", "content": hint})
+
+            if (name == "run_command" and result_is_tool_rejection(result)
+                    and _literal_artifact_verification_paths()):
+                # Keep the refusal as failed evidence; never translate shell
+                # input into execution or manufacture a passing native proof.
+                literal_command_rejections += 1
+                unlocked_offered_tools = [item for item in unlocked_offered_tools
+                                          if item["function"]["name"] != "run_command"]
+                offered_tools = [item for item in offered_tools
+                                 if item["function"]["name"] != "run_command"]
+                offered_names = {item["function"]["name"] for item in offered_tools}
+                record_run_event("literal_verification_command_rejected", role=role,
+                                 task_id=task_id, count=literal_command_rejections,
+                                 native_paths=_literal_artifact_verification_paths())
+                if literal_command_rejections >= 3:
+                    status = "failed"
+                    summary = ("LITERAL_VERIFICATION_RETRY_EXHAUSTED: rejected shell commands "
+                               "were repeated despite native run_file guidance; no verification claimed")
+                    stop = True
+                    break
 
             if role == "Builder" and name in {"write_file", "edit_file", "edit_file_range"} and tool_result_failed(result) and not context_mutation_blocked:
                 mutation_failure_counts[str(target)] = mutation_failure_counts.get(str(target), 0) + 1

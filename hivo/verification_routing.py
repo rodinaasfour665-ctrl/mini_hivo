@@ -789,6 +789,20 @@ def _test_target(
 def _is_focused_test_evidence(item: dict) -> bool:
     if not isinstance(item, dict) or item.get("tool") not in {"run_file", "run_command"}:
         return False
+    from .evidence import result_is_tool_rejection
+    if result_is_tool_rejection(item.get("result", "")):
+        return False
+    payload = item.get("result")
+    if isinstance(payload, str):
+        try:
+            payload = json.loads(payload)
+        except (TypeError, ValueError):
+            payload = None
+    if (item.get("tool") == "run_file" and isinstance(payload, dict)
+            and payload.get("verification_kind") == LITERAL_ARTIFACT):
+        # A literal filename such as test_level_1.txt is not an executable
+        # test. Its typed proof is checked by its own required route.
+        return False
     text = " ".join((str(item.get("target", "")), str(item.get("result", ""))))
     return not (
         item.get("tool") == "run_command" and _SYNTAX_EVIDENCE_MARKERS.search(text)

@@ -21,3 +21,9 @@ output/
 /list/project-4/.agent_host_preflight.json
 /list/project-5/.agent_experiment.jsonl
 /list/project-5/.agent_host_preflight.json
+
+# Private generated Level 1 testing workspaces; curated evidence is published separately.
+/list/project-6/
+/list/project-7/
+/list/project-8/
+/list/project-9/
