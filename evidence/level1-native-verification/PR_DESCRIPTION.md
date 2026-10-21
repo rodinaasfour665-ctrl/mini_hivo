@@ -2,7 +2,15 @@
 
 ## Dependency and review scope
 
-This is a NEW complete update after [team PR #5](https://github.com/kareem232003/mini_hivo/pull/5), which remains open and unmerged. It depends on #5's final head `cca388d`; the previous PR is unchanged. The incremental implementation/workflow/evidence scope is `cca388d...HEAD`. Publication base selection is recorded before submission; dependency commits must never be presented as newly authored Level 1 fixes.
+This new cumulative PR targets **`kareem232003/mini_hivo:main`** from **`rodinaasfour665-ctrl:codex/level1-native-verification`**, as explicitly selected by the author. Team [PR #5](https://github.com/kareem232003/mini_hivo/pull/5) remains open, unmerged and unchanged. Its commits are intentionally included so this PR contains the complete relevant project snapshot, rather than requiring a separate merge first.
+
+The upstream review boundary is `f842fb8...HEAD` (69 changed files). The new Level 1 delta is `cca388d...HEAD` (44 changed files); earlier dependency work is not attributed to Level 1.
+
+| Already submitted in PR #5 | New in this Level 1 update |
+|---|---|
+| Initial literal greenfield impact authorization, source requirement propagation and native exact-byte proof route; lifecycle/context tests; sanitized impact evidence and publication rules. | Colon-delimited literal recognition; accepted-authority native guidance and bounded refusal recovery; literal-proof routing correction; ten new regression tests and replay harness; completed real Ollama evidence; full R_UPDATE_002 and permanent workflow/template. |
+
+Review overlap with #5 is deliberate. Neither PR is merged or modified automatically; maintainers can choose their merge strategy after reviewing this cumulative PR.
 
 ## Why this update was needed
 

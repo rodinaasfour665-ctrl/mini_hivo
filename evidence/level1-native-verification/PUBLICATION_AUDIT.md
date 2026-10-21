@@ -4,7 +4,7 @@ Audit date: 22 October 2026 (Africa/Cairo). Previous update head: `cca388daa3537
 
 ## Dependency and diff boundary
 
-Team PR #5 is open and unmerged at preflight. It provides the initial literal lifecycle/native route and remains unchanged. The Level 1 update delta is measured against its final head `cca388d`, not attributed to upstream main. The new PR description records the explicitly selected destination/base. No merge, rebase, reset, cherry-pick or history rewrite is used.
+Team PR #5 is open and unmerged at preflight. It provides the initial literal lifecycle/native route and remains unchanged. The Level 1 update delta is measured against its final head `cca388d`, not attributed to upstream main. The author explicitly selected a cumulative PR to team upstream `main`, including all inherited #5 work and the complete new Level 1 delta. The new PR description distinguishes those scopes. No merge, rebase, reset, cherry-pick or history rewrite is used.
 
 ## Initial complete working-tree inventory
 
@@ -118,3 +118,79 @@ Raw state is not silently counted as uploaded evidence. For the original failed 
 - Before commit: verify exact stage membership, originals, source/derivative hashes against staged blobs, source identity, JSON/links, privacy patterns and `git diff --cached --check`.
 - Publish only to the personal fork; new PR dependency/base is explicit. Do not modify/merge #5 or start Level 2.
 - Excluding raw files now does not erase previously public Git history.
+
+## Complete cumulative upstream-main comparison
+
+All 69 paths below are included in the upstream-main PR. The 44-path new-update audit above remains the incremental boundary; shared files contain both earlier and new changes. This is a complete relevant snapshot, with raw/private runtime state excluded as documented above.
+
+| Repository path | Scope |
+|---|---|
+| `.gitattributes` | PR #5 plus new Level 1 changes |
+| `.gitignore` | PR #5 plus new Level 1 changes |
+| `AGENTS.md` | New Level 1 update |
+| `evidence/impact-lifecycle-publication/PR_DESCRIPTION.md` | Inherited unchanged from PR #5 |
+| `evidence/impact-lifecycle-publication/README.md` | Inherited unchanged from PR #5 |
+| `evidence/impact-lifecycle-publication/fresh/lifecycle.log` | Inherited unchanged from PR #5 |
+| `evidence/impact-lifecycle-publication/fresh/test_adaptive_architecture.log` | Inherited unchanged from PR #5 |
+| `evidence/impact-lifecycle-publication/fresh/test_authorityall.log` | Inherited unchanged from PR #5 |
+| `evidence/impact-lifecycle-publication/fresh/test_context_sufficiency_gate.log` | Inherited unchanged from PR #5 |
+| `evidence/impact-lifecycle-publication/fresh/test_experimentall.log` | Inherited unchanged from PR #5 |
+| `evidence/impact-lifecycle-publication/fresh/test_pre_mutation_impact.log` | Inherited unchanged from PR #5 |
+| `evidence/impact-lifecycle-publication/fresh/test_project_understanding.log` | Inherited unchanged from PR #5 |
+| `evidence/impact-lifecycle-publication/historical/before-reproduction.json` | Inherited unchanged from PR #5 |
+| `evidence/impact-lifecycle-publication/historical/controlled-final-result.json` | Inherited unchanged from PR #5 |
+| `evidence/impact-lifecycle-publication/historical/full-regression-result.json` | Inherited unchanged from PR #5 |
+| `evidence/impact-lifecycle-publication/historical/greenfield-routing-complete.log` | Inherited unchanged from PR #5 |
+| `evidence/impact-lifecycle-publication/historical/live-results-summary.json` | Inherited unchanged from PR #5 |
+| `evidence/impact-lifecycle-publication/historical/native-proof-recheck.json` | Inherited unchanged from PR #5 |
+| `evidence/impact-lifecycle-publication/historical/phase2-pilot-audit.json` | Inherited unchanged from PR #5 |
+| `evidence/impact-lifecycle-publication/historical/phase2-regression-result.json` | Inherited unchanged from PR #5 |
+| `evidence/impact-lifecycle-publication/historical/raw-source-check.json` | Inherited unchanged from PR #5 |
+| `evidence/impact-lifecycle-publication/historical/regression-comparison.json` | Inherited unchanged from PR #5 |
+| `evidence/impact-lifecycle-publication/historical/test-results-final.json` | Inherited unchanged from PR #5 |
+| `evidence/impact-lifecycle-publication/manifest.json` | Inherited unchanged from PR #5 |
+| `evidence/impact-lifecycle-publication/verification-summary.json` | Inherited unchanged from PR #5 |
+| `evidence/level1-native-verification/PR_DESCRIPTION.md` | New Level 1 update |
+| `evidence/level1-native-verification/PUBLICATION_AUDIT.md` | New Level 1 update |
+| `evidence/level1-native-verification/README.md` | New Level 1 update |
+| `evidence/level1-native-verification/artifacts/test_level_1.txt` | New Level 1 update |
+| `evidence/level1-native-verification/controlled-replay.log` | New Level 1 update |
+| `evidence/level1-native-verification/controlled-replay/result.json` | New Level 1 update |
+| `evidence/level1-native-verification/live-completed-result.json` | New Level 1 update |
+| `evidence/level1-native-verification/live-result.json` | New Level 1 update |
+| `evidence/level1-native-verification/manifest.json` | New Level 1 update |
+| `evidence/level1-native-verification/original-run-summary.json` | New Level 1 update |
+| `evidence/level1-native-verification/publication-checks/controlled-replay.log` | New Level 1 update |
+| `evidence/level1-native-verification/publication-checks/controlled-result.json` | New Level 1 update |
+| `evidence/level1-native-verification/publication-checks/results.json` | New Level 1 update |
+| `evidence/level1-native-verification/publication-checks/test_adaptive_architecture.log` | New Level 1 update |
+| `evidence/level1-native-verification/publication-checks/test_authorityall.log` | New Level 1 update |
+| `evidence/level1-native-verification/publication-checks/test_context_sufficiency_gate.log` | New Level 1 update |
+| `evidence/level1-native-verification/publication-checks/test_experimentall.log` | New Level 1 update |
+| `evidence/level1-native-verification/publication-checks/test_greenfield_impact_lifecycle.log` | New Level 1 update |
+| `evidence/level1-native-verification/publication-checks/test_level1_native_verification.log` | New Level 1 update |
+| `evidence/level1-native-verification/publication-checks/test_model_policy.log` | New Level 1 update |
+| `evidence/level1-native-verification/publication-checks/test_pre_mutation_impact.log` | New Level 1 update |
+| `evidence/level1-native-verification/publication-checks/test_project_understanding.log` | New Level 1 update |
+| `evidence/level1-native-verification/publication-checks/test_verification_applicability.log` | New Level 1 update |
+| `evidence/level1-native-verification/publication-checks/test_verification_policy.log` | New Level 1 update |
+| `evidence/level1-native-verification/test-results.json` | New Level 1 update |
+| `evidence/level1-native-verification/test_adaptive_architecture.log` | New Level 1 update |
+| `evidence/level1-native-verification/test_authorityall.log` | New Level 1 update |
+| `evidence/level1-native-verification/test_context_sufficiency_gate.log` | New Level 1 update |
+| `evidence/level1-native-verification/test_experimentall.log` | New Level 1 update |
+| `evidence/level1-native-verification/test_greenfield_impact_lifecycle.log` | New Level 1 update |
+| `evidence/level1-native-verification/test_level1_native_verification-final.log` | New Level 1 update |
+| `evidence/level1-native-verification/test_pre_mutation_impact.log` | New Level 1 update |
+| `evidence/level1-native-verification/test_verification_applicability.log` | New Level 1 update |
+| `evidence/level1-native-verification/test_verification_policy.log` | New Level 1 update |
+| `hivo/pre_mutation_impact.py` | Inherited unchanged from PR #5 |
+| `hivo/requirements.py` | PR #5 plus new Level 1 changes |
+| `hivo/verification_routing.py` | PR #5 plus new Level 1 changes |
+| `mini.py` | PR #5 plus new Level 1 changes |
+| `scripts/level1_native_verification_replay.py` | New Level 1 update |
+| `tests/test_context_sufficiency_gate.py` | Inherited unchanged from PR #5 |
+| `tests/test_greenfield_impact_lifecycle.py` | Inherited unchanged from PR #5 |
+| `tests/test_level1_native_verification.py` | New Level 1 update |
+| `updates/R_UPDATE_002.md` | New Level 1 update |
+| `updates/UPDATE_TEMPLATE.md` | New Level 1 update |

@@ -39,7 +39,7 @@ These findings are supported by the original records, source diff and fresh cont
 
 ### Changes since the previous PR
 
-The preceding [team PR #5](https://github.com/kareem232003/mini_hivo/pull/5) introduced the initial literal greenfield contract, source requirement propagation and native proof route, followed by publication cleanup. At publication preflight it is **open and unmerged**. This update depends on its final head `cca388d`; it does not attribute that earlier functionality to the new patch. The new PR must state this dependency and its selected base. No merge/rebase or change to PR #5 is part of the work.
+The preceding [team PR #5](https://github.com/kareem232003/mini_hivo/pull/5) introduced the initial literal greenfield contract, source requirement propagation and native proof route, followed by publication cleanup. At publication preflight it is **open and unmerged**. This update depends on its final head `cca388d`; it does not attribute that earlier functionality to the new patch. The author selected a cumulative new PR to team upstream `main`: inherited PR #5 commits are intentionally included, with the Level 1 delta separately identified. No merge/rebase or change to PR #5 is part of the work.
 
 The additional defects were observed in the real Level 1 progression: colon-delimited multiword source did not acquire literal scope; refused shell verification lacked native guidance and a local retry bound; and typed proofs/refusals with a `test_` filename were misclassified as executable-test evidence. The new PR includes the **entire** three-file implementation delta, all ten new regressions, the replay harness, completed real-model evidence and permanent development/documentation workflow. No relevant source/test file is omitted because it began as untracked.
 
@@ -157,7 +157,7 @@ The separately inspected manual run now also establishes **one completed real-mo
 - Unsupported/ambiguous source syntax remains outside the bounded literal compiler. Additional duties must not be silently converted into literal-only authority.
 - The local refusal bound controls one tool loop; it does not replace existing higher-level failure handling or authorize an alternative operation.
 - Historical fixture errors and final-source broad discovery remain unresolved/unexecuted. No browser installation, model change or expensive historical experiment batch was performed.
-- Publication derivatives and this candidate document are uncommitted. A later authorized publication must verify staged blob hashes and privacy again. The previously public raw evidence is not erased by this work.
+- At the original investigation checkpoint these derivatives and this document were uncommitted. The authorized publication subsequently committed the complete Level 1 update as `117342c` after staged-blob integrity and privacy checks. The previously public raw evidence is not erased by this work.
 
 ## L. Evidence and Reproduction
 
@@ -167,7 +167,7 @@ The separately inspected manual run now also establishes **one completed real-mo
 - [Bounded real Ollama outcome](../evidence/level1-native-verification/live-result.json): exact file creation and native PASS, followed by repeated work and wall-limit interruption; no live Root success.
 - [Completed manual real Ollama outcome](../evidence/level1-native-verification/live-completed-result.json): independently observed exact bytes, Builder proofs, actual Falsifier `read_file`, final aggregation, post-state PASS, commit and completed metrics. **Level 1 passed in this run.**
 - [Fresh suite commands and results](../evidence/level1-native-verification/test-results.json): individual outcomes, including the failed verification-policy suite.
-- [Original/derivative manifest](../evidence/level1-native-verification/manifest.json): preservation and LF sanitization provenance. Original hashes identify untouched raw bytes; publication hashes identify sanitized LF copies. No staged-blob validation is claimed because nothing was staged.
+- [Original/derivative manifest](../evidence/level1-native-verification/manifest.json): preservation and LF sanitization provenance. Original hashes identify untouched raw bytes; publication hashes identify sanitized LF copies. At the original investigation checkpoint nothing was staged; the later publication validated all 27 derivative hashes against staged Git blobs.
 - [Regression source](../tests/test_level1_native_verification.py) and [persistent replay harness](../scripts/level1_native_verification_replay.py).
 
 Original run files and private intermediate logs remain in their original/local audit locations with byte hashes and a snapshot backup. New trial outputs use fresh directories. Public copies replace personal absolute paths and omit host inventories. No original logs or `R_UPDATE_001.md` were modified.
@@ -190,7 +190,7 @@ Original run files and private intermediate logs remain in their original/local 
 
 The earlier bounded live trial remains interrupted before Falsifier/Root completion; the later manual run completed successfully. Remaining inefficiencies are one refused shell command, repeated writing/native verification, 13 model calls and 375.51 saved run seconds. Repeatability and more complex scenarios remain unverified. No Level 2 work was started.
 
-**Publication scope:** The complete update is prepared on a separate dependent branch for the newly authorized commit/push/PR. The preceding branch/PR remains unchanged and private raw workspaces remain local. Actual publication identifiers are recorded in Git/PR metadata.
+**Publication scope:** The complete update was committed on `codex/level1-native-verification`. The selected new PR targets team upstream `main` and intentionally includes inherited PR #5 changes alongside the complete Level 1 delta. The preceding branch/PR remains unchanged and private raw workspaces remain local. Actual publication identifiers are recorded in Git/PR metadata.
 
 ### Complete-update publication checks — 22 October 2026
 
