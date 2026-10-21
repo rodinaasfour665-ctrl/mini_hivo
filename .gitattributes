@@ -1,2 +1,5 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# Curated publication artifacts have canonical LF bytes across platforms.
+evidence/impact-lifecycle-publication/** text eol=lf
