@@ -426,6 +426,12 @@ def literal_file_request(text):
 
 def deterministic_requirement_candidates(segment_text, source_segment):
     """Extract obvious explicit statements without pretending to understand everything."""
+    from .artifact_progress import literal_requests
+    artifacts = literal_requests(segment_text)
+    if len(artifacts) > 1:
+        return [{"text": str(segment_text)[item["source_start"]:item["source_end"]],
+                 "category": "functional", "source_segment": source_segment}
+                for item in artifacts]
     artifact = literal_file_request(segment_text)
     if artifact:
         return [{"text": text, "category": "functional", "source_segment": source_segment}

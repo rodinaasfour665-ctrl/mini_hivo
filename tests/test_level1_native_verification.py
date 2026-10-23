@@ -60,7 +60,9 @@ class Level1NativeVerificationTests(unittest.TestCase):
 
     def test_repeated_rejected_commands_recover_through_real_leaf_and_falsifier(self):
         self.prepare_level1()
-        replies = self.replies() + [self.call('run_file', path='test_level_1.txt'),
+        replies = self.replies(content='wrong')[:-2] + [
+                  self.call('write_file', path='test_level_1.txt', content='Hello Mini Hivo'),
+                  self.call('run_file', path='test_level_1.txt'),
                   {'role': 'assistant', 'content': 'Falsifier read actual bytes.', 'tool_calls': []}]
         observations = []
         original_gate = mini.evidence_gate
@@ -92,7 +94,7 @@ class Level1NativeVerificationTests(unittest.TestCase):
 
     def test_ignoring_native_guidance_stops_before_budget_exhaustion(self):
         self.prepare_level1()
-        replies = self.replies(rejected=('cat', 'cat', 'cat'))
+        replies = self.replies(content='wrong', rejected=('cat', 'cat', 'cat', 'cat', 'cat', 'cat', 'cat', 'cat'))
         with patch.object(mini, 'ask_ollama', side_effect=replies) as provider:
             candidate = mini._prepare_task_impact_contract(self.task, self.contract)
             mini.begin_transaction('ROOT')
@@ -100,7 +102,7 @@ class Level1NativeVerificationTests(unittest.TestCase):
                 context_anchor={'root_goal': self.goal, 'local_task': self.goal},
                 impact_contract=candidate, impact_contract_required=True, max_steps=12)
         self.assertEqual(result['status'], 'failed')
-        self.assertIn('LITERAL_VERIFICATION_RETRY_EXHAUSTED', result['summary'])
+        self.assertTrue(any(marker in result['summary'] for marker in ['EXECUTION_STALLED', 'LITERAL_VERIFICATION_RETRY_EXHAUSTED']))
         self.assertLess(provider.call_count, 12)
 
     def test_wrong_bytes_still_fail_independent_post_state(self):

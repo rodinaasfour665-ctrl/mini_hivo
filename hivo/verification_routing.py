@@ -1226,7 +1226,8 @@ def analyze_verification_applicability(
                         expected_sha256=target["post_state_sha256"],
                         impact_contract_hash=literal["contract_hash"],
                     ))
-            routes = routes[:_MAX_ROUTES]
+            # Literal targets are independently required; never truncate to the three generic routes.
+            # The accepted impact contract already enforces its artifact bound.
     artifact = {
         "schema_version": "V20.5A",
         "child_id": child_id,
@@ -2218,6 +2219,12 @@ def _aggregate_verification_routes(
             item for item in evidence
             if _evidence_is_related(route, item)
         ]
+        if kind == LITERAL_ARTIFACT and matched:
+            # A later independent readback under the same source/contract identity
+            # supersedes the prior file state, while retaining its failure in evidence.
+            # Final impact comparison still checks current filesystem bytes.
+            route["superseded_readbacks"] = len(matched) - 1
+            matched = matched[-1:]
         states = [
             _parse_result(item.get("result"))[0]
             for item in matched

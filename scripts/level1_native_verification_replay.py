@@ -41,9 +41,7 @@ def main():
     replies = [call('context_sufficiency_check', context_status='sufficient',
                     reason='The source defines the complete single literal text artifact.'),
                call('write_file', path='test_level_1.txt', content='Hello Mini Hivo'),
-               call('run_command', command='cat test_level_1.txt'),
-               call('run_command', command='echo test_level_1.txt'),
-               call('run_file', path='test_level_1.txt'), done,
+               # Builder now hands off immediately after controller readback.
                call('run_file', path='test_level_1.txt'), done]
     with patch.object(mini, 'ask_ollama', side_effect=replies):
         result, _ = mini.run_baseline_request(goal, {}, contract_override=contract,
@@ -63,7 +61,7 @@ def main():
         'falsifier_native_readbacks': sum(e.get('tool') == 'run_file'
                                          for e in result.get('falsifier', {}).get('tool_evidence', [])),
         'production_source_sha256': {p: hashlib.sha256((ROOT / p).read_bytes()).hexdigest()
-                                     for p in ['mini.py', 'hivo/requirements.py', 'hivo/verification_routing.py']},
+                                     for p in ['mini.py', 'hivo/requirements.py', 'hivo/verification_routing.py', 'hivo/pre_mutation_impact.py', 'hivo/artifact_progress.py', 'hivo/literal_source.py', 'hivo/literal_clarification.py']},
     }
     (output / 'result.json').write_text(json.dumps(summary, indent=2) + '\n', encoding='utf-8')
     print(json.dumps({k: summary[k] for k in ['status', 'root_verified', 'file_exists', 'exact_bytes',

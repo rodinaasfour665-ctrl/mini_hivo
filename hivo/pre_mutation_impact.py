@@ -489,6 +489,14 @@ def build_pre_mutation_impact_contract(
     task_value = _mapping(task)
     execution = _mapping(execution_contract or task_value.get("execution_contract"))
     task_id = task_id or task_value.get("id") or task_value.get("task_id") or execution.get("task_id") or "ROOT"
+    raw_anchors = {
+        "root_goal": root_goal or task_value.get("root_goal") or "",
+        "parent_goal": parent_goal or task_value.get("parent_goal") or "",
+        "local_task": local_task or task_value.get("goal") or execution.get("goal") or change_intent or "",
+        "group_goal": group_goal or task_value.get("semantic_group_goal") or "",
+    }
+    anchor_hashes = {key: hashlib.sha256(" ".join(str(value).split()).encode("utf-8")).hexdigest()
+                     for key, value in raw_anchors.items()}
     local = _text(local_task or task_value.get("goal") or execution.get("goal") or change_intent or "", 800)
     intent_text = _text(change_intent or task_value.get("change_intent") or local, 800)
     kind = _kind_for_goal(intent_text)
@@ -696,6 +704,7 @@ def build_pre_mutation_impact_contract(
             "required": bool(mutation_required),
             "provenance": [anchor_source],
         },
+        "goal_anchor_hashes": anchor_hashes,
         "root_goal": _text(root_goal or task_value.get("root_goal") or "", 700),
         "parent_goal": _text(parent_goal or task_value.get("parent_goal") or "", 700),
         "local_task": local,
@@ -938,7 +947,12 @@ def validate_pre_mutation_impact_contract(
         ).strip():
             errors.append({"code": IMPACT_INCOMPLETE, "reason": "expected relationship change is not concrete"})
     for field, expected in (("root_goal", root_goal), ("parent_goal", parent_goal), ("local_task", local_task), ("group_goal", group_goal)):
-        if expected not in (None, "") and _text(value.get(field), 900) != _text(expected, 900):
+        expected_hash = hashlib.sha256(" ".join(str(expected).split()).encode("utf-8")).hexdigest()
+        stored_hash = (value.get("goal_anchor_hashes") or {}).get(field)
+        visible_differs = (_text(value.get(field), 800 if field == "local_task" else 700)
+                           != _text(expected, 800 if field == "local_task" else 700))
+        differs = visible_differs or (bool(stored_hash) and stored_hash != expected_hash)
+        if expected not in (None, "") and differs:
             errors.append({"code": "GOAL_ANCHOR_DRIFT", "field": field, "reason": "impact contract changed a stable goal anchor"})
 
     effective_allowed = list(allowed_mutation_paths or value.get("authorized_mutation_paths", []) or [])
