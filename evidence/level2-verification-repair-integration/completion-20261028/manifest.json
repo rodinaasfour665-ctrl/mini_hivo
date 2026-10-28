@@ -1,0 +1,21 @@
+{
+  "scope": "Local UTF-8 LF publication candidates; actual staged-Git-blob validation not performed. Earlier packet manifests retain their historical checkpoints.",
+  "report": {
+    "path": "updates/R_UPDATE_004.md",
+    "working_tree_sha256": "bdd273e2fb43c2d1dd5d639d39170f844d092d1c46b5ae5e196d0dc968e41109",
+    "canonical_lf_sha256": "bdd273e2fb43c2d1dd5d639d39170f844d092d1c46b5ae5e196d0dc968e41109"
+  },
+  "files": {
+    "artifact-oracles.json": "eeba89837a9371bc25389a2c14b1f2f0582b272d12ab91cc0b9784d7447cc831",
+    "frozen-source.json": "279101c6731a5614cbd6c2ec38302fc3aaa3f8c87b71059ecac24aca9d2a4d7b",
+    "host-readiness.json": "fa5672d8c496f459bcf02426909929af3867b28289734bd8720214b8179d79eb",
+    "independent-inspection.json": "6f9fef7e45c01fbc52130a76834ae84d7bd74a627420ec28a604a16af71be1d4",
+    "live-summary.json": "6090ee0842246dfa0ee39fd79818f80f9c57eeb56c628cee48969396bf50f07a",
+    "power-events.json": "61f030a372a431a3561c466fdc84be3a9510a45482b36e23afcf4b8d728f79a0",
+    "preservation.json": "508235bbf12eab09b8a3930179d92d454f1f54be5b0550b7054b25b3233c6ecc",
+    "provenance.json": "9325607b525c6b65005b463e6ff347e0b9a9b845d587680e50c2b0cc2f584f42",
+    "README.md": "e7ab7f03a0305c0cd604de42665e67c172d55ededb6d33f71f86e6a5f31f6bad",
+    "run-registry.json": "b3a5b00da873486c1aec15add2b5631598d1faf5a0d48663733f4c4f025b68af",
+    "supervision.json": "fd83193ddfb9be566284c610dfe8ce53303c4e9a6397ee75d6a4748de653dc05"
+  }
+}

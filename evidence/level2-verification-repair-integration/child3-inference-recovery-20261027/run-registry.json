@@ -1,0 +1,30 @@
+{
+  "scope": "Current phase run registry; earlier phase registries remain immutable. Links are candidate evidence, not runtime authorization.",
+  "runs": [
+    {
+      "run_id": "20261027T210935-14cea8e4",
+      "status": "INCOMPLETE_OUTER_LIMIT",
+      "source": "earlier pinned source",
+      "evidence": "previous-recursive-timeline.json"
+    },
+    {
+      "run_id": "20261027T214528-8dfdcb28",
+      "status": "HISTORICAL_GENUINE_HTML_PASS",
+      "evidence": "../post-repair-live-20261027/README.md"
+    },
+    {
+      "run_id": "20261027T223818-f8bbcf6e",
+      "status": "INTERRUPTED_WITHOUT_FINAL_RESULT",
+      "source": "frozen-source.json",
+      "evidence": "live-independent-acceptance.json",
+      "completed_children": 3,
+      "root_completion_established": false
+    }
+  ],
+  "controlled": [
+    "controlled-child3.json",
+    "controlled-html.json"
+  ],
+  "regressions": "regression-results.json",
+  "publication": "BLOCKED"
+}

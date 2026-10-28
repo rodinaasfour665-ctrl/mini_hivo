@@ -1,0 +1,21 @@
+{
+  "time_utc": "2026-10-27T23:02:46.670796+00:00",
+  "memory": {
+    "total_system_ram_bytes": 16849293312,
+    "available_system_ram_bytes": 7491461120
+  },
+  "ac_power": true,
+  "configured_ac_sleep_seconds": 7200,
+  "configured_dc_sleep_seconds": 3600,
+  "idle_seconds": 93.578,
+  "no_python_replay_observed": true,
+  "provider_reachable": true,
+  "loaded_models_before": [],
+  "model_installed": "gemma4:e4b",
+  "source_pins_match": true,
+  "passing_hardening_tests": 34,
+  "passing_inference_tests": 8,
+  "passing_parent_deadline_tests": 12,
+  "normal_preflight_required": true,
+  "power_policy_changed": false
+}

@@ -1,0 +1,13 @@
+test_partial_write_stream_cannot_mutate_or_commit (test_child_inference_recovery.ChildTransportTests.test_partial_write_stream_cannot_mutate_or_commit) ... ok
+test_role_policy_is_scoped_and_cancellation_has_no_retry (test_child_inference_recovery.ChildTransportTests.test_role_policy_is_scoped_and_cancellation_has_no_retry) ... ok
+test_sibling_scope_guard_remains_effective_with_worker_streaming (test_child_inference_recovery.ChildTransportTests.test_sibling_scope_guard_remains_effective_with_worker_streaming) ... ok
+test_third_child_cold_inference_reaches_exact_receipt_without_sibling_changes (test_child_inference_recovery.ChildTransportTests.test_third_child_cold_inference_reaches_exact_receipt_without_sibling_changes) ... ok
+test_cancelled_cold_request_is_not_admitted (test_child_inference_recovery.FirstOutputTests.test_cancelled_cold_request_is_not_admitted) ... ok
+test_cold_first_output_can_exceed_old_deadline (test_child_inference_recovery.FirstOutputTests.test_cold_first_output_can_exceed_old_deadline) ... ok
+test_complete_tools_accumulate_but_partial_calls_never_return (test_child_inference_recovery.FirstOutputTests.test_complete_tools_accumulate_but_partial_calls_never_return) ... ok
+test_first_output_heartbeat_and_generation_limits_remain_bounded (test_child_inference_recovery.FirstOutputTests.test_first_output_heartbeat_and_generation_limits_remain_bounded) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.970s
+
+OK

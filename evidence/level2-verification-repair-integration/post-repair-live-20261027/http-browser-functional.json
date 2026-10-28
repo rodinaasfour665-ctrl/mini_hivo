@@ -1,0 +1,146 @@
+{
+  "positive": {
+    "passed": true,
+    "environment_error": false,
+    "title": "Employee Profile",
+    "url": "<LOCAL_VERIFIER_ORIGIN>/index.html",
+    "text": "Sara\n\nEngineering Department\n\nStatus: Active",
+    "console_errors": [],
+    "page_errors": [],
+    "network_errors": [],
+    "console_observations": [
+      {
+        "text": "Failed to load resource: the server responded with a status of 404 (File not found)",
+        "url": "<LOCAL_VERIFIER_ORIGIN>/favicon.ico"
+      }
+    ],
+    "optional_resource_errors": [
+      {
+        "text": "Failed to load resource: the server responded with a status of 404 (File not found)",
+        "url": "<LOCAL_VERIFIER_ORIGIN>/favicon.ico",
+        "reason": "unrequested_default_favicon_404"
+      }
+    ],
+    "runtime_state": {
+      "canvasCount": 0,
+      "gameBridge": null,
+      "debugState": null
+    },
+    "interaction_checks": [],
+    "screenshot": ".agent_evidence\\task_ROOT.png",
+    "failures": [],
+    "verification_profile": {
+      "kind": "web",
+      "require_title": true,
+      "require_canvas": false,
+      "require_game_bridge": false,
+      "required_interactions": []
+    },
+    "entry_path": "index.html"
+  },
+  "negative_cases": [
+    {
+      "case": "explicit-icon",
+      "result": {
+        "passed": false,
+        "environment_error": false,
+        "title": "Negative oracle",
+        "url": "<LOCAL_VERIFIER_ORIGIN>/index.html",
+        "text": "Visible page",
+        "console_errors": [
+          "Failed to load resource: the server responded with a status of 404 (File not found)"
+        ],
+        "page_errors": [],
+        "network_errors": [],
+        "console_observations": [
+          {
+            "text": "Failed to load resource: the server responded with a status of 404 (File not found)",
+            "url": "<LOCAL_VERIFIER_ORIGIN>/favicon.ico"
+          }
+        ],
+        "optional_resource_errors": [],
+        "runtime_state": {
+          "canvasCount": 0,
+          "gameBridge": null,
+          "debugState": null
+        },
+        "interaction_checks": [],
+        "screenshot": ".agent_evidence\\task_ROOT.png",
+        "failures": [
+          {
+            "code": "console_errors",
+            "evidence": "[\"Failed to load resource: the server responded with a status of 404 (File not found)\"]"
+          }
+        ],
+        "verification_profile": {
+          "kind": "web",
+          "require_title": true,
+          "require_canvas": false,
+          "require_game_bridge": false,
+          "required_interactions": []
+        },
+        "entry_path": "index.html"
+      }
+    },
+    {
+      "case": "required-script",
+      "result": {
+        "passed": false,
+        "environment_error": false,
+        "title": "Negative oracle",
+        "url": "<LOCAL_VERIFIER_ORIGIN>/index.html",
+        "text": "Visible page",
+        "console_errors": [
+          "Failed to load resource: the server responded with a status of 404 (File not found)"
+        ],
+        "page_errors": [],
+        "network_errors": [
+          "404 <LOCAL_VERIFIER_ORIGIN>/missing.js"
+        ],
+        "console_observations": [
+          {
+            "text": "Failed to load resource: the server responded with a status of 404 (File not found)",
+            "url": "<LOCAL_VERIFIER_ORIGIN>/missing.js"
+          },
+          {
+            "text": "Failed to load resource: the server responded with a status of 404 (File not found)",
+            "url": "<LOCAL_VERIFIER_ORIGIN>/favicon.ico"
+          }
+        ],
+        "optional_resource_errors": [
+          {
+            "text": "Failed to load resource: the server responded with a status of 404 (File not found)",
+            "url": "<LOCAL_VERIFIER_ORIGIN>/favicon.ico",
+            "reason": "unrequested_default_favicon_404"
+          }
+        ],
+        "runtime_state": {
+          "canvasCount": 0,
+          "gameBridge": null,
+          "debugState": null
+        },
+        "interaction_checks": [],
+        "screenshot": ".agent_evidence\\task_ROOT.png",
+        "failures": [
+          {
+            "code": "console_errors",
+            "evidence": "[\"Failed to load resource: the server responded with a status of 404 (File not found)\"]"
+          },
+          {
+            "code": "network_errors",
+            "evidence": "[\"404 <LOCAL_VERIFIER_ORIGIN>/missing.js\"]"
+          }
+        ],
+        "verification_profile": {
+          "kind": "web",
+          "require_title": true,
+          "require_canvas": false,
+          "require_game_bridge": false,
+          "required_interactions": []
+        },
+        "entry_path": "index.html"
+      }
+    }
+  ],
+  "scope": "Real installed browser, real loopback HTTP server, unchanged copied artifact; negative required assets must fail."
+}

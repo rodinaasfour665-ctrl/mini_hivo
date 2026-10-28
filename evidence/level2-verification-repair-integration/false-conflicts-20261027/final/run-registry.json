@@ -1,0 +1,465 @@
+{
+  "historical_manual_failure": "20261027T151126-fabceeb5",
+  "controlled": [
+    {
+      "source_sha256": {
+        "hivo/artifact_progress.py": "2eca277fcb33e9030e60446b624b59f75fe21181035466f1efcf572181930b7e",
+        "hivo/context_sufficiency.py": "5256861508525786fd6848d8476bc8ac8d2a20d04be35bbd99034dc2314a2d8b",
+        "hivo/literal_clarification.py": "5a63638fff54e3afc45e816b2b3403597efd9516710a2a4167259205e5274c18",
+        "hivo/literal_source.py": "9e0f202ba0c24a60cf89e87f266ca85c1e8fe480ecf37bb5913cbc8bd8d11303",
+        "hivo/pre_mutation_impact.py": "99d041fd17ab4c7497a6f8055c52aa2757498b980ef84f093e4ac5093a210217",
+        "hivo/project_understanding.py": "1d09738c10b75f51f9dde9220ba5eb1a78b41a060ddf7fc0cd47b9eebc832bff",
+        "hivo/requirement_consistency.py": "7566e19c14f433d6b9b3c1da0efaf9989315831b47eb881087c228a1b68134eb",
+        "hivo/requirement_decisions.py": "b4002b4dc244d7d9f46d8f03dc0d17155299dbd7bb182ecafcb333ba53f8c5e2",
+        "hivo/requirements.py": "108f165ae54705413cd91a71ad2229ff3424fe345db759b0722287cc31dfe12e",
+        "hivo/verification_routing.py": "750f196806baa198b772972fc708420feb74945533fafd0320b2e199c4983e82",
+        "mini.py": "f3f5a47461087a4ae9bbb9fe95b78a75dd35cb87b5533bbee874a425aa477428",
+        "tests/test_adaptive_architecture.py": "98cdc4fc6f726b3deb9dc049b0d93fa4a9bfad853d21c4b70eb636bb88c53862",
+        "tests/test_authority_drift.py": "a9876c415fb8387e8e1fc6d5ddf5d10b5df69625f2f653b5b71fbd45549c827b",
+        "tests/test_authority_fail_closed.py": "161242ad55319673753e1bcd8c4c72d55895f6fa0962320aaeeb2780ae843f10",
+        "tests/test_context_completed_progress.py": "6c6187bdceb35cb6d2c045aa037bf637a47178b5432f8c5de77a18533d60d34a",
+        "tests/test_context_recovery_functional.py": "f20730152ec7051fedb341d8724dac8bf5c827dd8bb97a22ae54ac60d8b30b12",
+        "tests/test_context_sufficiency_gate.py": "ecdc62603c397d072c1e8f8f80fe212cc93912108a97afc2144a324df0444d54",
+        "tests/test_dependency_aware_scheduler.py": "b628ba7a4e364091adae81e2a4837910d47efca476fc50bc3b7f3a2e8fe798b8",
+        "tests/test_experiment10_child_handoff.py": "87cac2fb87bf729dec106b5d95dbff86a58b94b096d0f94a23b282d87247c862",
+        "tests/test_experiment11_evidence_compatibility.py": "ecdc07b833afddc7f9504b9ddd1ea1ea0e39d1ec5ff8a7b92e721f55f22431ef",
+        "tests/test_experiment12_harness.py": "040e42fc7abb0c8434f2ab453332e10a9f435a193d31f859e08d1a21278f00fe",
+        "tests/test_experiment12_metrics.py": "92fd0704b3f959eedab1f9004d842b79dbc99d5dcd33d67b4a2bdaed76c92458",
+        "tests/test_experiment13_monotonic.py": "86968a8f52f3c1c17cdbc0969f3fd8de6c05455f2f0244d1bf17f5767f323d94",
+        "tests/test_experiment14_strict.py": "79219fd6437231310eceff456b4716224a5bfa13aef89ba2ad9dc037321564fc",
+        "tests/test_experiment15_evidence_edit.py": "86e01f4c597d57a44228ba6fcfc124ae14dbe5c3e4803ce96444001a9265f4cd",
+        "tests/test_experiment17_field_scoped_profile.py": "7772ba108563abc2e72e84c78e7de48c775a552690ed4b9ed876518c8697c5a3",
+        "tests/test_experiment1_report.py": "9d6fd4425ee7321d66ca13429701872233a81cc1cfef981f262c65285f9ce800",
+        "tests/test_experiment2_report.py": "012ca74792d6463567d41c44e35b89515697f9e281099bdcf4c10b19b8b5d7d5",
+        "tests/test_experiment3_report.py": "ec37312ae450caaa8c24aa8bb06cf4a0edd928b3006aebf8975629afa980db40",
+        "tests/test_experiment3_worker_progress.py": "966d566145adc99098ec48ca8c46cc755e251df0ac96d2bf12ca36894fcd2278",
+        "tests/test_experiment4_mutation_grounding.py": "13948a5969ec3ff092c9065fca8abeb90cbcc20c3fcea7d88653a2e50cd1a128",
+        "tests/test_experiment4_report.py": "d6ace3b754b5f6a62e9fa006cefc080e3dfbf81b4194ac3dc96d4471fedb3957",
+        "tests/test_experiment5_report.py": "bcdf6a3a1802b7e5ad03b5897d55dcf6159b2022995ad2514308342ee81b6d82",
+        "tests/test_experiment5_target_locator.py": "409e68ce2988c6b07448da591fe7653a0c7d8247aff0151fc81636ca69f36869",
+        "tests/test_experiment6_verification_environment.py": "6e03434d3049842bc27b4ba0a89e819c663197a6a733c1acc0dadf1ab8d60ab8",
+        "tests/test_experiment7_verification_surfaces.py": "27ae3a64637c0d08fa6ffa58899f512b07eb25cc5a435fdb86752a92484b0c0f",
+        "tests/test_experiment8_atomic_child_receipt.py": "7daa0f96f3066d42d14566b1c141f8c966b6e7998f8e66afa657815f4f96537c",
+        "tests/test_experiment9_integration_targets.py": "f3046a95a4bf48c19e6949c6fc5edca8fe97c56171e7dc26770f28bc88de7396",
+        "tests/test_greenfield_impact_lifecycle.py": "3344e113febe8b12116ca45e1bb447da080807aa22dc82c1d72a128930018704",
+        "tests/test_level1_native_verification.py": "da5b9ce7fb2bd617a00cf03b2feadb0f59b1db407272fce61dff87ef30e77b34",
+        "tests/test_level2_generalized_recovery.py": "75bf393fcf81bf9e5e4321fe6ceb12ac9cae8e798bbb9a50632ae2222c840543",
+        "tests/test_literal_clarification_lifecycle.py": "3f387bef6654bf156670ff25e6a3a15be735427ad77a81d52dcee3d03467c38a",
+        "tests/test_model_policy.py": "fd3ee227b294f8ae15624d62b53b2234c6163985e93918e5855c23bebccdf6a2",
+        "tests/test_pre_mutation_impact.py": "db1577efe19d0faead4468d589379945c836d17075d3e53e27171a7049c48cf5",
+        "tests/test_project12_clarification.py": "bbc0e7c2f9bb21e2d0f2cc1a1486651091a92afcd14e0028e60e8dcbec33d203",
+        "tests/test_project_understanding.py": "e9be59b2654954a3909ac595191e9a2ba58ca13fd9e79de33f26d50092c5da2a",
+        "tests/test_requirement_clarification.py": "fe58b0e546d851b5402383d1189797da48bb90e797e4b47d6ec9d64253adc74a",
+        "tests/test_requirement_consistency_flow.py": "22ee9158b9601df43a913672599fa3cec74d4147e75899b8aca113729d49a109",
+        "tests/test_update004_verification_integration.py": "770a392bca7824e9e66e1f60fbc081ebcd579e8bc806b20d7e3b7f6d838ee5f5",
+        "tests/test_v26_3_recovery_strategy.py": "a2a2bf2f371ee30d71960ee9b83e65668bd00259b58e97a117b1663bdd813cf5",
+        "tests/test_v26_4_tool_contract_recovery.py": "2f23bc623b5a3dd23c9527c1d9a8b61af69898db8be802f66044d28b82939875",
+        "tests/test_v26_5_preverification_recovery.py": "bb547ff23f5d464c87a7627650d23f451e6c599fcec70b63d80887a0cb896c4c",
+        "tests/test_v26_6_2_active_schema_mutation_intent_reset.py": "7eb565efef54f32c1c5ae8615878f2c2058dc75686b6ebd651a0b0645fd4f3e0",
+        "tests/test_v26_6_no_mutation_recovery_search.py": "ed2265f5eefdcc62cc2ba7e9325713e970913bf688ea43412faee3fc46dbe941",
+        "tests/test_v26_7_progress_aware_completion_recovery.py": "7825c7ff74b5f4b857c7d658a381de08654e2dc35c9bbdaa80ddb403e0207ea0",
+        "tests/test_v26_recovery_foundation.py": "69f3aef3db6c231bcdf1df365bd3419d3c3d39fff85b600441e05f61ab978d57",
+        "tests/test_verification_applicability.py": "7af754f7430a5382479a5d879542c4702512b76ff18287041186800b637f13aa",
+        "tests/test_verification_policy.py": "4b3f23f83d3c8d9831151e50479c6e3b8341c149b7da336b2920469152118da9"
+      },
+      "verification_class": "CONTROLLED_FUNCTIONAL",
+      "case": "content-decision",
+      "test_method": "test_cli_exact_content_conflict_resumes_without_case_folding_or_deletion",
+      "run_id": "20261027T155815-4ab3ac07",
+      "status": "done",
+      "root_verified": true,
+      "artifacts": {
+        "choice.txt": {
+          "expected_hex": "41",
+          "actual_sha256": "559aead08264d5795d3909718cdd05abd49572e84fe55590eef31a88a08fdffd",
+          "exact_bytes": true
+        }
+      },
+      "root_completion_claim": true,
+      "scope": "real CLI baseline, source gates, Builder and Falsifier; scripted model/environment; HTML explicitly stops before required browser verification, no HTML final-gate PASS",
+      "artifact_provenance": "Exact copy of actual test workspace before cleanup; original temporary path differs",
+      "independent_inspection": {
+        "current_bytes_exact": true,
+        "native_proof_paths": [
+          "choice.txt"
+        ],
+        "falsifier_readback_paths": [
+          "choice.txt"
+        ],
+        "falsifier_note": "Actual readbacks inspected",
+        "impact_statuses": [
+          "IMPACT_CONTRACT_PASSED"
+        ],
+        "transaction_commits": [
+          {
+            "task_id": "ROOT",
+            "targets": [
+              "choice.txt"
+            ]
+          }
+        ],
+        "first_turn_audit_fields_preserved": true
+      }
+    },
+    {
+      "source_sha256": {
+        "hivo/artifact_progress.py": "2eca277fcb33e9030e60446b624b59f75fe21181035466f1efcf572181930b7e",
+        "hivo/context_sufficiency.py": "5256861508525786fd6848d8476bc8ac8d2a20d04be35bbd99034dc2314a2d8b",
+        "hivo/literal_clarification.py": "5a63638fff54e3afc45e816b2b3403597efd9516710a2a4167259205e5274c18",
+        "hivo/literal_source.py": "9e0f202ba0c24a60cf89e87f266ca85c1e8fe480ecf37bb5913cbc8bd8d11303",
+        "hivo/pre_mutation_impact.py": "99d041fd17ab4c7497a6f8055c52aa2757498b980ef84f093e4ac5093a210217",
+        "hivo/project_understanding.py": "1d09738c10b75f51f9dde9220ba5eb1a78b41a060ddf7fc0cd47b9eebc832bff",
+        "hivo/requirement_consistency.py": "7566e19c14f433d6b9b3c1da0efaf9989315831b47eb881087c228a1b68134eb",
+        "hivo/requirement_decisions.py": "b4002b4dc244d7d9f46d8f03dc0d17155299dbd7bb182ecafcb333ba53f8c5e2",
+        "hivo/requirements.py": "108f165ae54705413cd91a71ad2229ff3424fe345db759b0722287cc31dfe12e",
+        "hivo/verification_routing.py": "750f196806baa198b772972fc708420feb74945533fafd0320b2e199c4983e82",
+        "mini.py": "f3f5a47461087a4ae9bbb9fe95b78a75dd35cb87b5533bbee874a425aa477428",
+        "tests/test_adaptive_architecture.py": "98cdc4fc6f726b3deb9dc049b0d93fa4a9bfad853d21c4b70eb636bb88c53862",
+        "tests/test_authority_drift.py": "a9876c415fb8387e8e1fc6d5ddf5d10b5df69625f2f653b5b71fbd45549c827b",
+        "tests/test_authority_fail_closed.py": "161242ad55319673753e1bcd8c4c72d55895f6fa0962320aaeeb2780ae843f10",
+        "tests/test_context_completed_progress.py": "6c6187bdceb35cb6d2c045aa037bf637a47178b5432f8c5de77a18533d60d34a",
+        "tests/test_context_recovery_functional.py": "f20730152ec7051fedb341d8724dac8bf5c827dd8bb97a22ae54ac60d8b30b12",
+        "tests/test_context_sufficiency_gate.py": "ecdc62603c397d072c1e8f8f80fe212cc93912108a97afc2144a324df0444d54",
+        "tests/test_dependency_aware_scheduler.py": "b628ba7a4e364091adae81e2a4837910d47efca476fc50bc3b7f3a2e8fe798b8",
+        "tests/test_experiment10_child_handoff.py": "87cac2fb87bf729dec106b5d95dbff86a58b94b096d0f94a23b282d87247c862",
+        "tests/test_experiment11_evidence_compatibility.py": "ecdc07b833afddc7f9504b9ddd1ea1ea0e39d1ec5ff8a7b92e721f55f22431ef",
+        "tests/test_experiment12_harness.py": "040e42fc7abb0c8434f2ab453332e10a9f435a193d31f859e08d1a21278f00fe",
+        "tests/test_experiment12_metrics.py": "92fd0704b3f959eedab1f9004d842b79dbc99d5dcd33d67b4a2bdaed76c92458",
+        "tests/test_experiment13_monotonic.py": "86968a8f52f3c1c17cdbc0969f3fd8de6c05455f2f0244d1bf17f5767f323d94",
+        "tests/test_experiment14_strict.py": "79219fd6437231310eceff456b4716224a5bfa13aef89ba2ad9dc037321564fc",
+        "tests/test_experiment15_evidence_edit.py": "86e01f4c597d57a44228ba6fcfc124ae14dbe5c3e4803ce96444001a9265f4cd",
+        "tests/test_experiment17_field_scoped_profile.py": "7772ba108563abc2e72e84c78e7de48c775a552690ed4b9ed876518c8697c5a3",
+        "tests/test_experiment1_report.py": "9d6fd4425ee7321d66ca13429701872233a81cc1cfef981f262c65285f9ce800",
+        "tests/test_experiment2_report.py": "012ca74792d6463567d41c44e35b89515697f9e281099bdcf4c10b19b8b5d7d5",
+        "tests/test_experiment3_report.py": "ec37312ae450caaa8c24aa8bb06cf4a0edd928b3006aebf8975629afa980db40",
+        "tests/test_experiment3_worker_progress.py": "966d566145adc99098ec48ca8c46cc755e251df0ac96d2bf12ca36894fcd2278",
+        "tests/test_experiment4_mutation_grounding.py": "13948a5969ec3ff092c9065fca8abeb90cbcc20c3fcea7d88653a2e50cd1a128",
+        "tests/test_experiment4_report.py": "d6ace3b754b5f6a62e9fa006cefc080e3dfbf81b4194ac3dc96d4471fedb3957",
+        "tests/test_experiment5_report.py": "bcdf6a3a1802b7e5ad03b5897d55dcf6159b2022995ad2514308342ee81b6d82",
+        "tests/test_experiment5_target_locator.py": "409e68ce2988c6b07448da591fe7653a0c7d8247aff0151fc81636ca69f36869",
+        "tests/test_experiment6_verification_environment.py": "6e03434d3049842bc27b4ba0a89e819c663197a6a733c1acc0dadf1ab8d60ab8",
+        "tests/test_experiment7_verification_surfaces.py": "27ae3a64637c0d08fa6ffa58899f512b07eb25cc5a435fdb86752a92484b0c0f",
+        "tests/test_experiment8_atomic_child_receipt.py": "7daa0f96f3066d42d14566b1c141f8c966b6e7998f8e66afa657815f4f96537c",
+        "tests/test_experiment9_integration_targets.py": "f3046a95a4bf48c19e6949c6fc5edca8fe97c56171e7dc26770f28bc88de7396",
+        "tests/test_greenfield_impact_lifecycle.py": "3344e113febe8b12116ca45e1bb447da080807aa22dc82c1d72a128930018704",
+        "tests/test_level1_native_verification.py": "da5b9ce7fb2bd617a00cf03b2feadb0f59b1db407272fce61dff87ef30e77b34",
+        "tests/test_level2_generalized_recovery.py": "75bf393fcf81bf9e5e4321fe6ceb12ac9cae8e798bbb9a50632ae2222c840543",
+        "tests/test_literal_clarification_lifecycle.py": "3f387bef6654bf156670ff25e6a3a15be735427ad77a81d52dcee3d03467c38a",
+        "tests/test_model_policy.py": "fd3ee227b294f8ae15624d62b53b2234c6163985e93918e5855c23bebccdf6a2",
+        "tests/test_pre_mutation_impact.py": "db1577efe19d0faead4468d589379945c836d17075d3e53e27171a7049c48cf5",
+        "tests/test_project12_clarification.py": "bbc0e7c2f9bb21e2d0f2cc1a1486651091a92afcd14e0028e60e8dcbec33d203",
+        "tests/test_project_understanding.py": "e9be59b2654954a3909ac595191e9a2ba58ca13fd9e79de33f26d50092c5da2a",
+        "tests/test_requirement_clarification.py": "fe58b0e546d851b5402383d1189797da48bb90e797e4b47d6ec9d64253adc74a",
+        "tests/test_requirement_consistency_flow.py": "22ee9158b9601df43a913672599fa3cec74d4147e75899b8aca113729d49a109",
+        "tests/test_update004_verification_integration.py": "770a392bca7824e9e66e1f60fbc081ebcd579e8bc806b20d7e3b7f6d838ee5f5",
+        "tests/test_v26_3_recovery_strategy.py": "a2a2bf2f371ee30d71960ee9b83e65668bd00259b58e97a117b1663bdd813cf5",
+        "tests/test_v26_4_tool_contract_recovery.py": "2f23bc623b5a3dd23c9527c1d9a8b61af69898db8be802f66044d28b82939875",
+        "tests/test_v26_5_preverification_recovery.py": "bb547ff23f5d464c87a7627650d23f451e6c599fcec70b63d80887a0cb896c4c",
+        "tests/test_v26_6_2_active_schema_mutation_intent_reset.py": "7eb565efef54f32c1c5ae8615878f2c2058dc75686b6ebd651a0b0645fd4f3e0",
+        "tests/test_v26_6_no_mutation_recovery_search.py": "ed2265f5eefdcc62cc2ba7e9325713e970913bf688ea43412faee3fc46dbe941",
+        "tests/test_v26_7_progress_aware_completion_recovery.py": "7825c7ff74b5f4b857c7d658a381de08654e2dc35c9bbdaa80ddb403e0207ea0",
+        "tests/test_v26_recovery_foundation.py": "69f3aef3db6c231bcdf1df365bd3419d3c3d39fff85b600441e05f61ab978d57",
+        "tests/test_verification_applicability.py": "7af754f7430a5382479a5d879542c4702512b76ff18287041186800b637f13aa",
+        "tests/test_verification_policy.py": "4b3f23f83d3c8d9831151e50479c6e3b8341c149b7da336b2920469152118da9"
+      },
+      "verification_class": "CONTROLLED_FUNCTIONAL",
+      "case": "employee",
+      "test_method": "test_cli_employee_reaches_real_verification_and_exact_bytes",
+      "run_id": "20261027T155815-d6bf8902",
+      "status": "done",
+      "root_verified": true,
+      "artifacts": {
+        "employee.txt": {
+          "expected_hex": "4e616d653a20536172610a4465706172746d656e743a20456e67696e656572696e670a5374617475733a20416374697665",
+          "actual_sha256": "91023bf45a8f10c835b228cf136b58612c69f618b0d563ca56a3995206761d9e",
+          "exact_bytes": true
+        }
+      },
+      "root_completion_claim": true,
+      "scope": "real CLI baseline, source gates, Builder and Falsifier; scripted model/environment; HTML explicitly stops before required browser verification, no HTML final-gate PASS",
+      "artifact_provenance": "Exact copy of actual test workspace before cleanup; original temporary path differs",
+      "independent_inspection": {
+        "current_bytes_exact": true,
+        "native_proof_paths": [
+          "employee.txt"
+        ],
+        "falsifier_readback_paths": [
+          "employee.txt"
+        ],
+        "falsifier_note": "Actual readbacks inspected",
+        "impact_statuses": [
+          "IMPACT_CONTRACT_PASSED"
+        ],
+        "transaction_commits": [
+          {
+            "task_id": "ROOT",
+            "targets": [
+              "employee.txt"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "source_sha256": {
+        "hivo/artifact_progress.py": "2eca277fcb33e9030e60446b624b59f75fe21181035466f1efcf572181930b7e",
+        "hivo/context_sufficiency.py": "5256861508525786fd6848d8476bc8ac8d2a20d04be35bbd99034dc2314a2d8b",
+        "hivo/literal_clarification.py": "5a63638fff54e3afc45e816b2b3403597efd9516710a2a4167259205e5274c18",
+        "hivo/literal_source.py": "9e0f202ba0c24a60cf89e87f266ca85c1e8fe480ecf37bb5913cbc8bd8d11303",
+        "hivo/pre_mutation_impact.py": "99d041fd17ab4c7497a6f8055c52aa2757498b980ef84f093e4ac5093a210217",
+        "hivo/project_understanding.py": "1d09738c10b75f51f9dde9220ba5eb1a78b41a060ddf7fc0cd47b9eebc832bff",
+        "hivo/requirement_consistency.py": "7566e19c14f433d6b9b3c1da0efaf9989315831b47eb881087c228a1b68134eb",
+        "hivo/requirement_decisions.py": "b4002b4dc244d7d9f46d8f03dc0d17155299dbd7bb182ecafcb333ba53f8c5e2",
+        "hivo/requirements.py": "108f165ae54705413cd91a71ad2229ff3424fe345db759b0722287cc31dfe12e",
+        "hivo/verification_routing.py": "750f196806baa198b772972fc708420feb74945533fafd0320b2e199c4983e82",
+        "mini.py": "f3f5a47461087a4ae9bbb9fe95b78a75dd35cb87b5533bbee874a425aa477428",
+        "tests/test_adaptive_architecture.py": "98cdc4fc6f726b3deb9dc049b0d93fa4a9bfad853d21c4b70eb636bb88c53862",
+        "tests/test_authority_drift.py": "a9876c415fb8387e8e1fc6d5ddf5d10b5df69625f2f653b5b71fbd45549c827b",
+        "tests/test_authority_fail_closed.py": "161242ad55319673753e1bcd8c4c72d55895f6fa0962320aaeeb2780ae843f10",
+        "tests/test_context_completed_progress.py": "6c6187bdceb35cb6d2c045aa037bf637a47178b5432f8c5de77a18533d60d34a",
+        "tests/test_context_recovery_functional.py": "f20730152ec7051fedb341d8724dac8bf5c827dd8bb97a22ae54ac60d8b30b12",
+        "tests/test_context_sufficiency_gate.py": "ecdc62603c397d072c1e8f8f80fe212cc93912108a97afc2144a324df0444d54",
+        "tests/test_dependency_aware_scheduler.py": "b628ba7a4e364091adae81e2a4837910d47efca476fc50bc3b7f3a2e8fe798b8",
+        "tests/test_experiment10_child_handoff.py": "87cac2fb87bf729dec106b5d95dbff86a58b94b096d0f94a23b282d87247c862",
+        "tests/test_experiment11_evidence_compatibility.py": "ecdc07b833afddc7f9504b9ddd1ea1ea0e39d1ec5ff8a7b92e721f55f22431ef",
+        "tests/test_experiment12_harness.py": "040e42fc7abb0c8434f2ab453332e10a9f435a193d31f859e08d1a21278f00fe",
+        "tests/test_experiment12_metrics.py": "92fd0704b3f959eedab1f9004d842b79dbc99d5dcd33d67b4a2bdaed76c92458",
+        "tests/test_experiment13_monotonic.py": "86968a8f52f3c1c17cdbc0969f3fd8de6c05455f2f0244d1bf17f5767f323d94",
+        "tests/test_experiment14_strict.py": "79219fd6437231310eceff456b4716224a5bfa13aef89ba2ad9dc037321564fc",
+        "tests/test_experiment15_evidence_edit.py": "86e01f4c597d57a44228ba6fcfc124ae14dbe5c3e4803ce96444001a9265f4cd",
+        "tests/test_experiment17_field_scoped_profile.py": "7772ba108563abc2e72e84c78e7de48c775a552690ed4b9ed876518c8697c5a3",
+        "tests/test_experiment1_report.py": "9d6fd4425ee7321d66ca13429701872233a81cc1cfef981f262c65285f9ce800",
+        "tests/test_experiment2_report.py": "012ca74792d6463567d41c44e35b89515697f9e281099bdcf4c10b19b8b5d7d5",
+        "tests/test_experiment3_report.py": "ec37312ae450caaa8c24aa8bb06cf4a0edd928b3006aebf8975629afa980db40",
+        "tests/test_experiment3_worker_progress.py": "966d566145adc99098ec48ca8c46cc755e251df0ac96d2bf12ca36894fcd2278",
+        "tests/test_experiment4_mutation_grounding.py": "13948a5969ec3ff092c9065fca8abeb90cbcc20c3fcea7d88653a2e50cd1a128",
+        "tests/test_experiment4_report.py": "d6ace3b754b5f6a62e9fa006cefc080e3dfbf81b4194ac3dc96d4471fedb3957",
+        "tests/test_experiment5_report.py": "bcdf6a3a1802b7e5ad03b5897d55dcf6159b2022995ad2514308342ee81b6d82",
+        "tests/test_experiment5_target_locator.py": "409e68ce2988c6b07448da591fe7653a0c7d8247aff0151fc81636ca69f36869",
+        "tests/test_experiment6_verification_environment.py": "6e03434d3049842bc27b4ba0a89e819c663197a6a733c1acc0dadf1ab8d60ab8",
+        "tests/test_experiment7_verification_surfaces.py": "27ae3a64637c0d08fa6ffa58899f512b07eb25cc5a435fdb86752a92484b0c0f",
+        "tests/test_experiment8_atomic_child_receipt.py": "7daa0f96f3066d42d14566b1c141f8c966b6e7998f8e66afa657815f4f96537c",
+        "tests/test_experiment9_integration_targets.py": "f3046a95a4bf48c19e6949c6fc5edca8fe97c56171e7dc26770f28bc88de7396",
+        "tests/test_greenfield_impact_lifecycle.py": "3344e113febe8b12116ca45e1bb447da080807aa22dc82c1d72a128930018704",
+        "tests/test_level1_native_verification.py": "da5b9ce7fb2bd617a00cf03b2feadb0f59b1db407272fce61dff87ef30e77b34",
+        "tests/test_level2_generalized_recovery.py": "75bf393fcf81bf9e5e4321fe6ceb12ac9cae8e798bbb9a50632ae2222c840543",
+        "tests/test_literal_clarification_lifecycle.py": "3f387bef6654bf156670ff25e6a3a15be735427ad77a81d52dcee3d03467c38a",
+        "tests/test_model_policy.py": "fd3ee227b294f8ae15624d62b53b2234c6163985e93918e5855c23bebccdf6a2",
+        "tests/test_pre_mutation_impact.py": "db1577efe19d0faead4468d589379945c836d17075d3e53e27171a7049c48cf5",
+        "tests/test_project12_clarification.py": "bbc0e7c2f9bb21e2d0f2cc1a1486651091a92afcd14e0028e60e8dcbec33d203",
+        "tests/test_project_understanding.py": "e9be59b2654954a3909ac595191e9a2ba58ca13fd9e79de33f26d50092c5da2a",
+        "tests/test_requirement_clarification.py": "fe58b0e546d851b5402383d1189797da48bb90e797e4b47d6ec9d64253adc74a",
+        "tests/test_requirement_consistency_flow.py": "22ee9158b9601df43a913672599fa3cec74d4147e75899b8aca113729d49a109",
+        "tests/test_update004_verification_integration.py": "770a392bca7824e9e66e1f60fbc081ebcd579e8bc806b20d7e3b7f6d838ee5f5",
+        "tests/test_v26_3_recovery_strategy.py": "a2a2bf2f371ee30d71960ee9b83e65668bd00259b58e97a117b1663bdd813cf5",
+        "tests/test_v26_4_tool_contract_recovery.py": "2f23bc623b5a3dd23c9527c1d9a8b61af69898db8be802f66044d28b82939875",
+        "tests/test_v26_5_preverification_recovery.py": "bb547ff23f5d464c87a7627650d23f451e6c599fcec70b63d80887a0cb896c4c",
+        "tests/test_v26_6_2_active_schema_mutation_intent_reset.py": "7eb565efef54f32c1c5ae8615878f2c2058dc75686b6ebd651a0b0645fd4f3e0",
+        "tests/test_v26_6_no_mutation_recovery_search.py": "ed2265f5eefdcc62cc2ba7e9325713e970913bf688ea43412faee3fc46dbe941",
+        "tests/test_v26_7_progress_aware_completion_recovery.py": "7825c7ff74b5f4b857c7d658a381de08654e2dc35c9bbdaa80ddb403e0207ea0",
+        "tests/test_v26_recovery_foundation.py": "69f3aef3db6c231bcdf1df365bd3419d3c3d39fff85b600441e05f61ab978d57",
+        "tests/test_verification_applicability.py": "7af754f7430a5382479a5d879542c4702512b76ff18287041186800b637f13aa",
+        "tests/test_verification_policy.py": "4b3f23f83d3c8d9831151e50479c6e3b8341c149b7da336b2920469152118da9"
+      },
+      "verification_class": "CONTROLLED_FUNCTIONAL",
+      "case": "html-boundary",
+      "test_method": "test_cli_html_reaches_browser_boundary_without_false_clarification",
+      "run_id": "20261027T155815-dc7db756",
+      "status": "unknown",
+      "root_verified": false,
+      "artifacts": {
+        "index.html": {
+          "expected_hex": "3c21646f63747970652068746d6c3e0a3c68746d6c3e3c686561643e3c7469746c653e5265706f72743c2f7469746c653e3c2f686561643e3c626f6479207374796c653d22636f6c6f723a206e617679223e52656164793c2f626f64793e3c2f68746d6c3e",
+          "actual_sha256": "b92c5ebf81904b7478af7c9ddb22f7ec62a1cae0fd977bae780648b1215149e7",
+          "exact_bytes": true
+        }
+      },
+      "root_completion_claim": false,
+      "scope": "real CLI baseline, source gates, Builder and Falsifier; scripted model/environment; HTML explicitly stops before required browser verification, no HTML final-gate PASS",
+      "artifact_provenance": "Exact copy of actual test workspace before cleanup; original temporary path differs",
+      "independent_inspection": {
+        "current_bytes_exact": true,
+        "native_proof_paths": [
+          "index.html"
+        ],
+        "falsifier_readback_paths": [
+          "index.html"
+        ],
+        "falsifier_note": "Actual readbacks inspected",
+        "impact_statuses": [],
+        "transaction_commits": []
+      }
+    },
+    {
+      "source_sha256": {
+        "hivo/artifact_progress.py": "2eca277fcb33e9030e60446b624b59f75fe21181035466f1efcf572181930b7e",
+        "hivo/context_sufficiency.py": "5256861508525786fd6848d8476bc8ac8d2a20d04be35bbd99034dc2314a2d8b",
+        "hivo/literal_clarification.py": "5a63638fff54e3afc45e816b2b3403597efd9516710a2a4167259205e5274c18",
+        "hivo/literal_source.py": "9e0f202ba0c24a60cf89e87f266ca85c1e8fe480ecf37bb5913cbc8bd8d11303",
+        "hivo/pre_mutation_impact.py": "99d041fd17ab4c7497a6f8055c52aa2757498b980ef84f093e4ac5093a210217",
+        "hivo/project_understanding.py": "1d09738c10b75f51f9dde9220ba5eb1a78b41a060ddf7fc0cd47b9eebc832bff",
+        "hivo/requirement_consistency.py": "7566e19c14f433d6b9b3c1da0efaf9989315831b47eb881087c228a1b68134eb",
+        "hivo/requirement_decisions.py": "b4002b4dc244d7d9f46d8f03dc0d17155299dbd7bb182ecafcb333ba53f8c5e2",
+        "hivo/requirements.py": "108f165ae54705413cd91a71ad2229ff3424fe345db759b0722287cc31dfe12e",
+        "hivo/verification_routing.py": "750f196806baa198b772972fc708420feb74945533fafd0320b2e199c4983e82",
+        "mini.py": "f3f5a47461087a4ae9bbb9fe95b78a75dd35cb87b5533bbee874a425aa477428",
+        "tests/test_adaptive_architecture.py": "98cdc4fc6f726b3deb9dc049b0d93fa4a9bfad853d21c4b70eb636bb88c53862",
+        "tests/test_authority_drift.py": "a9876c415fb8387e8e1fc6d5ddf5d10b5df69625f2f653b5b71fbd45549c827b",
+        "tests/test_authority_fail_closed.py": "161242ad55319673753e1bcd8c4c72d55895f6fa0962320aaeeb2780ae843f10",
+        "tests/test_context_completed_progress.py": "6c6187bdceb35cb6d2c045aa037bf637a47178b5432f8c5de77a18533d60d34a",
+        "tests/test_context_recovery_functional.py": "f20730152ec7051fedb341d8724dac8bf5c827dd8bb97a22ae54ac60d8b30b12",
+        "tests/test_context_sufficiency_gate.py": "ecdc62603c397d072c1e8f8f80fe212cc93912108a97afc2144a324df0444d54",
+        "tests/test_dependency_aware_scheduler.py": "b628ba7a4e364091adae81e2a4837910d47efca476fc50bc3b7f3a2e8fe798b8",
+        "tests/test_experiment10_child_handoff.py": "87cac2fb87bf729dec106b5d95dbff86a58b94b096d0f94a23b282d87247c862",
+        "tests/test_experiment11_evidence_compatibility.py": "ecdc07b833afddc7f9504b9ddd1ea1ea0e39d1ec5ff8a7b92e721f55f22431ef",
+        "tests/test_experiment12_harness.py": "040e42fc7abb0c8434f2ab453332e10a9f435a193d31f859e08d1a21278f00fe",
+        "tests/test_experiment12_metrics.py": "92fd0704b3f959eedab1f9004d842b79dbc99d5dcd33d67b4a2bdaed76c92458",
+        "tests/test_experiment13_monotonic.py": "86968a8f52f3c1c17cdbc0969f3fd8de6c05455f2f0244d1bf17f5767f323d94",
+        "tests/test_experiment14_strict.py": "79219fd6437231310eceff456b4716224a5bfa13aef89ba2ad9dc037321564fc",
+        "tests/test_experiment15_evidence_edit.py": "86e01f4c597d57a44228ba6fcfc124ae14dbe5c3e4803ce96444001a9265f4cd",
+        "tests/test_experiment17_field_scoped_profile.py": "7772ba108563abc2e72e84c78e7de48c775a552690ed4b9ed876518c8697c5a3",
+        "tests/test_experiment1_report.py": "9d6fd4425ee7321d66ca13429701872233a81cc1cfef981f262c65285f9ce800",
+        "tests/test_experiment2_report.py": "012ca74792d6463567d41c44e35b89515697f9e281099bdcf4c10b19b8b5d7d5",
+        "tests/test_experiment3_report.py": "ec37312ae450caaa8c24aa8bb06cf4a0edd928b3006aebf8975629afa980db40",
+        "tests/test_experiment3_worker_progress.py": "966d566145adc99098ec48ca8c46cc755e251df0ac96d2bf12ca36894fcd2278",
+        "tests/test_experiment4_mutation_grounding.py": "13948a5969ec3ff092c9065fca8abeb90cbcc20c3fcea7d88653a2e50cd1a128",
+        "tests/test_experiment4_report.py": "d6ace3b754b5f6a62e9fa006cefc080e3dfbf81b4194ac3dc96d4471fedb3957",
+        "tests/test_experiment5_report.py": "bcdf6a3a1802b7e5ad03b5897d55dcf6159b2022995ad2514308342ee81b6d82",
+        "tests/test_experiment5_target_locator.py": "409e68ce2988c6b07448da591fe7653a0c7d8247aff0151fc81636ca69f36869",
+        "tests/test_experiment6_verification_environment.py": "6e03434d3049842bc27b4ba0a89e819c663197a6a733c1acc0dadf1ab8d60ab8",
+        "tests/test_experiment7_verification_surfaces.py": "27ae3a64637c0d08fa6ffa58899f512b07eb25cc5a435fdb86752a92484b0c0f",
+        "tests/test_experiment8_atomic_child_receipt.py": "7daa0f96f3066d42d14566b1c141f8c966b6e7998f8e66afa657815f4f96537c",
+        "tests/test_experiment9_integration_targets.py": "f3046a95a4bf48c19e6949c6fc5edca8fe97c56171e7dc26770f28bc88de7396",
+        "tests/test_greenfield_impact_lifecycle.py": "3344e113febe8b12116ca45e1bb447da080807aa22dc82c1d72a128930018704",
+        "tests/test_level1_native_verification.py": "da5b9ce7fb2bd617a00cf03b2feadb0f59b1db407272fce61dff87ef30e77b34",
+        "tests/test_level2_generalized_recovery.py": "75bf393fcf81bf9e5e4321fe6ceb12ac9cae8e798bbb9a50632ae2222c840543",
+        "tests/test_literal_clarification_lifecycle.py": "3f387bef6654bf156670ff25e6a3a15be735427ad77a81d52dcee3d03467c38a",
+        "tests/test_model_policy.py": "fd3ee227b294f8ae15624d62b53b2234c6163985e93918e5855c23bebccdf6a2",
+        "tests/test_pre_mutation_impact.py": "db1577efe19d0faead4468d589379945c836d17075d3e53e27171a7049c48cf5",
+        "tests/test_project12_clarification.py": "bbc0e7c2f9bb21e2d0f2cc1a1486651091a92afcd14e0028e60e8dcbec33d203",
+        "tests/test_project_understanding.py": "e9be59b2654954a3909ac595191e9a2ba58ca13fd9e79de33f26d50092c5da2a",
+        "tests/test_requirement_clarification.py": "fe58b0e546d851b5402383d1189797da48bb90e797e4b47d6ec9d64253adc74a",
+        "tests/test_requirement_consistency_flow.py": "22ee9158b9601df43a913672599fa3cec74d4147e75899b8aca113729d49a109",
+        "tests/test_update004_verification_integration.py": "770a392bca7824e9e66e1f60fbc081ebcd579e8bc806b20d7e3b7f6d838ee5f5",
+        "tests/test_v26_3_recovery_strategy.py": "a2a2bf2f371ee30d71960ee9b83e65668bd00259b58e97a117b1663bdd813cf5",
+        "tests/test_v26_4_tool_contract_recovery.py": "2f23bc623b5a3dd23c9527c1d9a8b61af69898db8be802f66044d28b82939875",
+        "tests/test_v26_5_preverification_recovery.py": "bb547ff23f5d464c87a7627650d23f451e6c599fcec70b63d80887a0cb896c4c",
+        "tests/test_v26_6_2_active_schema_mutation_intent_reset.py": "7eb565efef54f32c1c5ae8615878f2c2058dc75686b6ebd651a0b0645fd4f3e0",
+        "tests/test_v26_6_no_mutation_recovery_search.py": "ed2265f5eefdcc62cc2ba7e9325713e970913bf688ea43412faee3fc46dbe941",
+        "tests/test_v26_7_progress_aware_completion_recovery.py": "7825c7ff74b5f4b857c7d658a381de08654e2dc35c9bbdaa80ddb403e0207ea0",
+        "tests/test_v26_recovery_foundation.py": "69f3aef3db6c231bcdf1df365bd3419d3c3d39fff85b600441e05f61ab978d57",
+        "tests/test_verification_applicability.py": "7af754f7430a5382479a5d879542c4702512b76ff18287041186800b637f13aa",
+        "tests/test_verification_policy.py": "4b3f23f83d3c8d9831151e50479c6e3b8341c149b7da336b2920469152118da9"
+      },
+      "verification_class": "CONTROLLED_FUNCTIONAL",
+      "case": "multiple",
+      "test_method": "test_cli_multiple_artifacts_retain_independent_contents",
+      "run_id": "20261027T155815-08406a4a",
+      "status": "done",
+      "root_verified": true,
+      "artifacts": {
+        "config.json": {
+          "expected_hex": "7b227265616479223a20747275657d",
+          "actual_sha256": "6d160fff74b6c0c19b7d52a992b4d2d277977f90b48f3f546e0a9d36f973008b",
+          "exact_bytes": true
+        },
+        "readme.md": {
+          "expected_hex": "23205265616479",
+          "actual_sha256": "68a454cdf661d9815e7c6cca1f87ba89ba08e2e6dcdd4a52d16c6edb25c98b66",
+          "exact_bytes": true
+        }
+      },
+      "root_completion_claim": true,
+      "scope": "real CLI baseline, source gates, Builder and Falsifier; scripted model/environment; HTML explicitly stops before required browser verification, no HTML final-gate PASS",
+      "artifact_provenance": "Exact copy of actual test workspace before cleanup; original temporary path differs",
+      "independent_inspection": {
+        "current_bytes_exact": true,
+        "native_proof_paths": [
+          "config.json",
+          "readme.md"
+        ],
+        "falsifier_readback_paths": [],
+        "falsifier_note": "Existing low-risk skip; no invented proof",
+        "impact_statuses": [
+          "IMPACT_CONTRACT_PASSED"
+        ],
+        "transaction_commits": [
+          {
+            "task_id": "ROOT",
+            "targets": [
+              "config.json",
+              "readme.md"
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "live_attempt": {
+    "verification_class": "LIVE_MODEL_ATTEMPT",
+    "case": "employee",
+    "model": "gemma4:e4b",
+    "request": "Create exactly one UTF-8 text file named employee.txt in the workspace.\n\nThe exact content must be:\nName: Sara\nDepartment: Engineering\nStatus: Active\n\nThe file must contain exactly three lines in the specified order.\n\nUse LF line separators and no trailing newline at the end of the file.\n\nDo not create any additional task files.\n\nVerify that the file exists and that its content exactly matches the requested text before reporting completion.",
+    "source_sha256": {
+      "mini.py": "c9ae706ecec4e6a698798525c14739e18e1434acfbad566cb0914f2764521fa4",
+      "hivo/requirements.py": "9f9d546262f0c7700e96aadf2ca18b283c987709d078ab45f4c93acc400da681",
+      "hivo/requirement_consistency.py": "831787a62706e75bc54fbeaf924465beee4a6220b981b47e183039e01c836abf",
+      "hivo/requirement_decisions.py": "b4002b4dc244d7d9f46d8f03dc0d17155299dbd7bb182ecafcb333ba53f8c5e2",
+      "hivo/literal_source.py": "2a66695e96096704313c43be2ec48bb799cea6e8fa73cd64fdabe915df0222b7",
+      "hivo/literal_clarification.py": "5a63638fff54e3afc45e816b2b3403597efd9516710a2a4167259205e5274c18",
+      "hivo/project_understanding.py": "1d09738c10b75f51f9dde9220ba5eb1a78b41a060ddf7fc0cd47b9eebc832bff",
+      "hivo/verification_routing.py": "750f196806baa198b772972fc708420feb74945533fafd0320b2e199c4983e82",
+      "hivo/pre_mutation_impact.py": "99d041fd17ab4c7497a6f8055c52aa2757498b980ef84f093e4ac5093a210217",
+      "hivo/context_sufficiency.py": "5256861508525786fd6848d8476bc8ac8d2a20d04be35bbd99034dc2314a2d8b",
+      "hivo/artifact_progress.py": "2eca277fcb33e9030e60446b624b59f75fe21181035466f1efcf572181930b7e",
+      "tests/test_requirement_consistency_flow.py": "26c14af1edeaf5bb892e34e1164a58ee81625bffe60a9ece39f4d1e189195a27"
+    },
+    "source_unchanged": true,
+    "process_exit": 2,
+    "outer_timeout": false,
+    "wall_limit_seconds": 360,
+    "wall_seconds": 18.83,
+    "run_ids": [],
+    "metrics": {
+      "run_id": null,
+      "status": null,
+      "root_verified": null,
+      "model_calls": null,
+      "builder_calls": null,
+      "tool_calls": null,
+      "falsifier_calls": null,
+      "repairer_calls": null,
+      "impact_contract_authorizations": null,
+      "impact_contract_comparisons": null,
+      "elapsed_seconds": null,
+      "control_flow": null,
+      "project_mode": null
+    },
+    "artifacts": {
+      "employee.txt": {
+        "expected_hex": "4e616d653a20536172610a4465706172746d656e743a20456e67696e656572696e670a5374617475733a20416374697665",
+        "expected_sha256": "91023bf45a8f10c835b228cf136b58612c69f618b0d563ca56a3995206761d9e",
+        "exists": false,
+        "actual_sha256": null,
+        "exact_bytes": false
+      }
+    },
+    "no_false_source_conflict": null,
+    "source_compiled": false,
+    "terminal_record_available": false,
+    "note": "Inspect trace, actual tool results and every final gate before any end-to-end PASS claim; process exit alone is insufficient.",
+    "interpretation": "HOST_PREFLIGHT_FAILED before task ingestion; no task run ID or application outcome. Original absent-event Boolean was vacuous and is not accepted as proof. Attempt predates final cancellation/audit hardening.",
+    "qualification": {
+      "passed": false,
+      "failure": "CRITICAL_MEMORY_HEADROOM",
+      "stage": "resource_monitoring",
+      "canaries_completed": 1,
+      "canaries_requested": 3
+    },
+    "final_source_live_status": "UNVERIFIED",
+    "html_replay": "DEFERRED after critical headroom qualification failure; no second expensive attempt"
+  },
+  "final_source_live_status": "UNVERIFIED; host preflight blocked attempted-source run; no task ID; no rerun under critical headroom",
+  "html_live": "DEFERRED",
+  "level2_status": "INCOMPLETE"
+}

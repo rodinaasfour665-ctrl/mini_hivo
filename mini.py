@@ -32,6 +32,7 @@ from hivo.evidence import result_is_tool_rejection
 from hivo.evidence import unresolved_tool_failures
 from hivo.host_preflight import failed_host_preflight_result, format_host_preflight_report, run_host_preflight
 from hivo.http_client import HttpTransportError, get_json as http_get_json, post_json as http_post_json
+from hivo.inference_transport import stream_chat, InferenceFailure
 from hivo.memory import MemoryStore
 from hivo.model_policy import GEMMA_MODEL, SingleModelPolicy
 from hivo.mutation_grounding import MutationGrounding, MUTATION_TARGET_UNRESOLVED
@@ -1764,7 +1765,8 @@ def run_file(path):
         return f"error: file does not exist: {target}"
     ext = target.suffix.lower()
     try:
-        active = ACTIVE_IMPACT_CONTRACT or (ACTIVE_TOOL_CONTRACT or {}).get("impact_contract")
+        active = (ACTIVE_IMPACT_CONTRACT or (ACTIVE_TOOL_CONTRACT or {}).get("impact_contract")
+                  or (ACTIVE_TOOL_CONTRACT or {}).get("literal_verification_contract"))
         if isinstance(active, dict) and not stage10_impact.impact_mutation_block_reason(active):
             relative = target.relative_to(Path(WORKSPACE).resolve()).as_posix()
             expected = next((item.get("post_state_sha256") for item in active.get("expected_targets", [])
@@ -1837,9 +1839,17 @@ def _validated_command_parts(command):
     if executable == "npm" and any(word in parts[1:] for word in ("install", "uninstall", "publish", "link")):
         return None, "package mutation is not allowed from run_command"
     if executable == "npx":
-        requested = next((Path(part).stem.lower() for part in parts[1:] if not part.startswith("-")), "")
+        # Never let verification implicitly fetch packages or install browsers.
+        arguments = parts[1:]
+        if any(part.startswith(("--package", "--yes", "-p=")) or part in {"-p", "-y"} for part in arguments):
+            return None, "npx package acquisition is not allowed from run_command"
+        requested = next((Path(part).stem.lower() for part in arguments if not part.startswith("-")), "")
         if requested not in {"eslint", "tsc", "vitest", "jest", "playwright", "vite"}:
             return None, f"npx tool '{requested}' is not in the verification allowlist"
+        if any(part.lower() in {"install", "install-deps", "uninstall"} for part in arguments):
+            return None, "package or browser installation is not allowed from run_command"
+        if "--no-install" not in arguments:
+            parts.insert(1, "--no-install")
     for part in parts[1:]:
         if part.startswith("-") or "://" in part:
             continue
@@ -1902,9 +1912,19 @@ def tools_for_role(role, tool_policy=None, recovery_strategy=None):
     """
     if role == "Falsifier":
         allowed = {"read_file", "read_file_range", "list_files", "run_file", "run_command", "verify_web_app"}
+        literal_paths=_literal_artifact_verification_paths((ACTIVE_TOOL_CONTRACT or {}).get("literal_verification_contract"))
+        if literal_paths:
+            allowed = {"read_file", "read_file_range", "list_files", "run_file"}
         base = [tool for tool in TOOLS if tool["function"]["name"] in allowed]
+        if literal_paths:
+            base=copy.deepcopy(base)
+            for item in base:
+                prop=item['function'].get('parameters',{}).get('properties',{}).get('path')
+                if isinstance(prop,dict):prop['enum']=list(literal_paths)
     elif role == "Repairer":
         allowed = {"edit_file", "edit_file_range", "read_file", "read_file_range", "list_files", "run_file", "run_command", "verify_web_app"}
+        if _literal_artifact_verification_paths((ACTIVE_TOOL_CONTRACT or {}).get("literal_verification_contract")):
+            allowed = {"edit_file", "edit_file_range", "read_file", "read_file_range", "list_files", "run_file"}
         base = [tool for tool in TOOLS if tool["function"]["name"] in allowed]
     elif tool_policy == "coherent_rewrite":
         allowed = {"write_file", "read_file", "read_file_range", "list_files", "run_file", "run_command", "verify_web_app"}
@@ -2183,6 +2203,8 @@ def _impact_gate_mutation_guard(name, role="System", target=None):
     """Fail closed unless a validated controller contract is active."""
     if name not in _CONTEXT_MUTATION_TOOLS or role not in {"Builder", "Repairer"}:
         return None
+    if name in _CONTEXT_MUTATION_TOOLS and (ACTIVE_IMPACT_CONTRACT or {}).get("literal_verification_only"):
+        return "error: READ_ONLY_PARENT_INTEGRATION; child verification grants no parent mutation authority"
     required = bool(ACTIVE_IMPACT_REQUIRED or RUN.get("impact_contract_required"))
     if not required:
         return None
@@ -2265,6 +2287,9 @@ def _impact_result_requires_artifact(result):
 
 
 def _impact_tool_projection(tools, *, required=False):
+    if (ACTIVE_IMPACT_CONTRACT or {}).get("literal_verification_only"):
+        return [item for item in tools or [] if item.get('function', {}).get('name') in
+                {'read_file', 'read_file_range', 'list_files', 'run_file', _CONTEXT_COMPLETION_TOOL}]
     if not required:
         return list(tools or [])
     if stage10_impact.impact_mutation_block_reason(
@@ -2323,6 +2348,19 @@ def _impact_post_mutation_check(contract, *, verification_result=None,
         changed_paths=changed_paths,
         verification_evidence=verification_evidence,
     )
+    if contract.get('literal_verification_only'):
+        # Read-only composition observes current post-state, not a fictitious
+        # mutation delta. Every required target is still checked independently.
+        for target in contract.get('expected_targets', []):
+            file = safe_path(target.get('path'))
+            exists = file is not None and file.is_file()
+            after = {'existed': exists, 'sha256': hashlib.sha256(file.read_bytes()).hexdigest() if exists else None}
+            actual.setdefault('files', []).append({'path': target.get('path'), 'after': after, 'changed': False})
+            if exists:
+                actual.setdefault('observed_targets', []).append({'target': target['path'], 'path': target['path'], 'kind': 'path'})
+        baseline = (transaction or {}).get('readonly_snapshot')
+        if actual.get('changed_paths') or baseline is None or baseline != _literal_parent_snapshot():
+            actual.setdefault('preservation_violations', []).append({'meaning': 'Read-only parent integration changed task files or lost its initial snapshot.'})
     comparison = stage10_impact.compare_pre_mutation_impact(
         contract, actual,
         world_model=model,
@@ -2375,7 +2413,52 @@ def _impact_post_mutation_check(contract, *, verification_result=None,
     return comparison
 
 
-def _prepare_task_impact_contract(task, contract=None):
+def _source_goal_anchor(task=None):
+    source = RUN.get('source_contract') if isinstance(RUN.get('source_contract'), dict) else {}
+    goal = source.get('goal')
+    if not goal and RUN.get('project_mode') == NEW_PROJECT:
+        goal = source.get('root_goal')
+    if isinstance(goal, dict):
+        goal = goal.get('text')
+    task = task if isinstance(task, dict) else {}
+    return goal or task.get('root_goal') or task.get('goal')
+
+
+def _source_literal_child_paths(task, literals):
+    """Bind legacy child ownership to real source values, not optional prose hints."""
+    def path(item):
+        name = item['name']
+        return Path(name if Path(name).suffix else name + '.txt').as_posix()
+    source = {path(item).casefold(): item for item in literals}
+    local = literal_requests(task.get('goal'))
+    if not local and re.search(r'containing\s+exactly|exact\s+contents?', str(task.get('goal')), re.I):
+        return set(), 'child literal goal is incomplete or malformed'
+    local_paths = set()
+    for item in local:
+        key = path(item).casefold()
+        if key not in source or item['content'] != source[key]['content']:
+            return set(), 'child literal target/value is not grounded in the authoritative source'
+        local_paths.add(path(source[key]))
+    hints = task.get('scope_hint') or []
+    hints = [hints] if isinstance(hints, str) else hints
+    hinted = set()
+    for hint in hints:
+        normalized = Path(str(hint)).as_posix()
+        key = normalized.casefold()
+        if key in source:
+            hinted.add(path(source[key]))
+        elif Path(normalized).suffix or '/' in normalized or '\\' in normalized:
+            return set(), 'child scope contains a path outside its source artifact set'
+    if local_paths:
+        if hinted and hinted != local_paths:
+            return set(), 'child path hints conflict with its source-grounded literal goal'
+        return local_paths, None
+    if hinted:
+        return hinted, None
+    return set(), 'no source-grounded child artifact ownership could be established'
+
+
+def _prepare_task_impact_contract(task, contract=None, *, verification_only=False):
     """Build the bounded candidate before the Worker context is compiled."""
     if not isinstance(task, dict):
         return None
@@ -2385,9 +2468,12 @@ def _prepare_task_impact_contract(task, contract=None):
     if child_execution:
         effective = _impact_effective_contract(child_execution)
     explicit = task.get("impact_contract_candidate")
+    if verification_only:
+        explicit = None  # Compile a new read-only contract, not an old write grant.
     # A named literal artifact has source-defined scope even in an empty repo.
     # This is local contract compilation, not existing-repository impact planning.
     literal = None
+    literal_scope_error = None
     if (RUN.get("project_mode") == NEW_PROJECT and not isinstance(explicit, dict)):
         source = contract if isinstance(contract, dict) else {}
         # An abbreviated model goal must not erase additional source duties.
@@ -2395,7 +2481,13 @@ def _prepare_task_impact_contract(task, contract=None):
         if child_execution or scoped_child:
             # Bind source postconditions only within the already accepted child
             # scope. A parent artifact must never enlarge a child capability.
-            allowed = set(effective.get("allowed_mutation_paths", []) if child_execution else task.get("scope_hint", []))
+            if child_execution:
+                allowed = set(effective.get("allowed_mutation_paths", []))
+            else:
+                allowed, literal_scope_error = _source_literal_child_paths(task, literals) if literals else (set(), None)
+                if allowed:
+                    record_run_event('source_literal_child_scope_resolved', task_id=task.get('id'),
+                                     paths=sorted(allowed), basis='source_value_and_local_goal_or_explicit_path')
             literals = [item for item in literals
                         if (item["name"] if Path(item["name"]).suffix else item["name"] + ".txt") in allowed]
         literal = literals[0] if literals else None
@@ -2407,7 +2499,7 @@ def _prepare_task_impact_contract(task, contract=None):
                 relative = name if Path(name).suffix else name + ".txt"
                 target = safe_path(relative)
                 identity = str(target).casefold() if target is not None else ""
-                if (target is None or target.exists() or identity in resolved_targets
+                if (target is None or (target.exists() and not verification_only) or identity in resolved_targets
                         or any(part.startswith('.') for part in Path(relative).parts)):
                     targets = []
                     break  # Never partially authorize an invalid artifact set.
@@ -2419,16 +2511,52 @@ def _prepare_task_impact_contract(task, contract=None):
             effective["allowed_mutation_paths"] = [row["path"] for row in targets]
             effective["expected_targets"] = targets
             task["scope_hint"] = list(effective["allowed_mutation_paths"])
-    mutation_required = not bool(task.get("verification_only"))
+    mutation_required = not bool(task.get("verification_only") or verification_only)
     if isinstance(effective, dict) and "worker_required" in effective:
-        mutation_required = bool(effective.get("worker_required"))
+        mutation_required = bool(effective.get("worker_required")) and not verification_only
+    declared_artifacts = []
+    if (RUN.get('project_mode') == NEW_PROJECT and not literal
+            and not isinstance(explicit, dict) and not scoped_child and not child_execution
+            and not effective.get('allowed_mutation_paths')):
+        # A physical output declaration must not become ten required English
+        # word/symbol mutations. Semantic duties remain verification obligations.
+        from hivo.requirements import named_artifact_declarations
+        source_text = (contract or {}).get('original_goal', (contract or {}).get('goal', ''))
+        declared_artifacts = named_artifact_declarations(source_text)
+        if declared_artifacts:
+            paths = []
+            declarations_by_path = {}
+            for item in declared_artifacts:
+                file = safe_path(item['path'])
+                if file is not None and not any(part.startswith('.') for part in Path(item['path']).parts):
+                    relative = file.relative_to(Path(WORKSPACE).resolve()).as_posix()
+                    if any(path.casefold() == relative.casefold() and path != relative for path in paths):
+                        paths = []
+                        break
+                    if relative not in paths:
+                        paths.append(relative)
+                        declarations_by_path[relative] = item
+                else:
+                    paths = []
+                    break  # Invalid sets never grant authority to a safe subset.
+            if len(paths) > stage10_impact.MAX_IMPACT_TARGETS:
+                paths = []  # Do not truncate required outputs into partial authority.
+            effective = dict(effective, allowed_mutation_paths=paths, expected_targets=[
+                {'target': path, 'path': path, 'kind': 'path', 'required': True,
+                 'provenance': [{'source_identity': 'source-artifact-declaration',
+                                 'evidence_kind': USER_STATED,
+                                 'excerpt': declarations_by_path[path]['source_clause']}]}
+                for path in paths])
+    task['impact_context_anchor']={
+        'root_goal':_source_goal_anchor(task),
+        'parent_goal':task.get('parent_goal') or RUN.get('parent_goal'),
+        'local_task':task.get('goal'),'group_goal':task.get('semantic_group_goal'),
+    }
     candidate = _impact_candidate_for_worker(
         task.get("goal", ""), task.get("id", "ROOT"),
         candidate=explicit,
         context_anchor={
-            "root_goal": ((RUN.get("source_contract") or {}).get("goal")
-                          if isinstance(RUN.get("source_contract"), dict) else None)
-            or task.get("root_goal") or task.get("goal"),
+            "root_goal": _source_goal_anchor(task),
             "parent_goal": task.get("parent_goal") or RUN.get("parent_goal"),
             "local_task": task.get("goal"),
             "group_goal": task.get("semantic_group_goal"),
@@ -2439,17 +2567,49 @@ def _prepare_task_impact_contract(task, contract=None):
         execution_contract=effective,
         mutation_required=mutation_required,
     )
+    if declared_artifacts:
+        candidate['scope_required'] = True
+        candidate['source_artifact_declarations'] = copy.deepcopy(declared_artifacts)
+        candidate = stage10_impact.PreMutationImpactContract(stage10_impact._refresh_contract_hash(candidate))
+    if literal_scope_error:
+        candidate['authorized_mutation_paths'] = []
+        candidate['expected_targets'] = []
+        candidate['verification_obligations'] = []
+        candidate['scope_required'] = True
+        candidate['source_scope_error'] = literal_scope_error
+        candidate = stage10_impact.PreMutationImpactContract(stage10_impact._refresh_contract_hash(candidate))
+        record_run_event('source_literal_child_scope_blocked', task_id=task.get('id'), reason=literal_scope_error)
     if literal:
         # Bind every retained requirement to a concrete implementation and
         # verification obligation, without claiming a missing Specifier mapping.
         records = ledger_requirements(_source_ledger_for_contract(contract))
         if child_execution or scoped_child:
             names = {item["name"] for item in literals}
-            records = [record for record in records
-                       if literal_requests(record["text"])
-                       and {item["name"] for item in literal_requests(record["text"])} <= names]
+            source_names = {item['name'] for item in literal_requests(source.get('original_goal', source.get('goal')))}
+            if names != source_names:
+                records = [record for record in records
+                           if literal_requests(record["text"])
+                           and {item["name"] for item in literal_requests(record["text"])} <= names]
+                if not records:
+                    # Headered requests carry literal bodies separately from
+                    # global policy records. Project those actual source facts;
+                    # do not mark the parent's file-count obligation complete.
+                    records = [{
+                        'requirement_id': 'SOURCE-LITERAL-' + hashlib.sha256(
+                            (item['name'] + '\0' + item['content']).encode('utf-8')).hexdigest()[:16],
+                        'text': 'Create the source-named artifact ' + item['name']
+                                + ' with exact UTF-8 SHA-256 ' + hashlib.sha256(item['content'].encode('utf-8')).hexdigest(),
+                        'provenance': DERIVED, 'projection_kind': 'authoritative_literal_obligation',
+                        'source_start': item['source_start'], 'source_end': item['source_end'],
+                    } for item in literals]
         candidate["source_requirements"] = copy.deepcopy(records)
         candidate["scope_required"] = True
+        if verification_only:
+            candidate["scope_required"] = False
+            candidate["literal_verification_only"] = True
+            candidate["literal_inspection_paths"] = list(task["scope_hint"])
+            candidate["authorized_mutation_paths"] = []
+            candidate["mutation_required"] = False
         candidate["path_resolution"] = {
             "source_name": literal["name"], "path": task["scope_hint"][0] if task["scope_hint"] else "",
             "provenance": "DERIVED" if not Path(literal["name"]).suffix else USER_STATED,
@@ -2478,7 +2638,7 @@ def _prepare_task_impact_contract(task, contract=None):
     task["impact_contract_status"] = stage10_impact.IMPACT_INCOMPLETE
     task["impact_contract_hash"] = candidate.get("contract_hash")
     task["impact_contract_revision"] = candidate.get("revision", 0)
-    task["impact_contract_required"] = mutation_required
+    task["impact_contract_required"] = mutation_required or verification_only
     _impact_record_metrics(created=True)
     record_run_event(
         "impact_contract_created",
@@ -2500,7 +2660,7 @@ def _context_anchor_for_worker(task_text, task_id, context_anchor=None, executio
     nested = contract.get("execution_contract") if isinstance(contract.get("execution_contract"), dict) else {}
     effective = nested or contract
     source = RUN.get("source_contract") if isinstance(RUN.get("source_contract"), dict) else {}
-    supplied.setdefault("root_goal", source.get("goal") or supplied.get("goal") or effective.get("goal"))
+    supplied.setdefault("root_goal", _source_goal_anchor() or supplied.get("goal") or effective.get("goal"))
     supplied.setdefault("parent_goal", active.get("parent_goal") or RUN.get("parent_goal"))
     supplied.setdefault("local_task", task_text)
     supplied.setdefault(
@@ -3157,6 +3317,24 @@ def _stage4_inspection_guard(name, args):
 
 
 def run_tool(name, args, role="System"):
+    readonly = ACTIVE_IMPACT_CONTRACT or {}
+    if readonly.get('literal_verification_only'):
+        if name not in {'read_file', 'read_file_range', 'list_files', 'run_file', _CONTEXT_COMPLETION_TOOL}:
+            return 'error: READ_ONLY_PARENT_INTEGRATION; only independent inspection is authorized'
+        if name == 'run_file' and (args or {}).get('path') not in readonly.get('literal_inspection_paths', []):
+            return 'error: READ_ONLY_PARENT_INTEGRATION; unrelated executable is outside inspection scope'
+    verification_scope = (ACTIVE_TOOL_CONTRACT or {}).get("literal_verification_contract")
+    if verification_scope and role in {"Falsifier", "Repairer"}:
+        allowed = {'read_file', 'read_file_range', 'list_files', 'run_file'}
+        if role == 'Repairer':
+            allowed |= {'edit_file', 'edit_file_range', _CONTEXT_COMPLETION_TOOL}
+        if name not in allowed:
+            return 'error: LITERAL_ROLE_SCOPE; this role may only inspect or make independently authorized focused repairs'
+    if role in {"Falsifier", "Repairer"} and verification_scope and name in {'run_file','read_file','read_file_range'}:
+        target = safe_path((args or {}).get('path', ''))
+        relative = target.relative_to(Path(WORKSPACE).resolve()).as_posix() if target is not None else None
+        if relative not in _literal_artifact_verification_paths(verification_scope):
+            return "error: literal verification is restricted to source-bound artifact paths; no unrelated executable or metadata may be inspected"
     if role == "Falsifier" and name in {"write_file", "edit_file", "edit_file_range", "backup_file"}:
         return "error: Falsifier is read-only and may not modify files"
     if role == "Repairer" and name in {"write_file", "backup_file"}:
@@ -3240,7 +3418,7 @@ def run_tool(name, args, role="System"):
             return json.dumps(unresolved, ensure_ascii=False)
         profile = infer_web_profile(
             str(active.get("goal") or "web"), active,
-            classification_policy=RUN.get("verification_classification_policy", "current"),
+            classification_policy=RUN.get("verification_classification_policy", "field_scoped"),
         )
         target_evidence = {
             "requested_from_node": args["path"],
@@ -4599,7 +4777,7 @@ def _emit_provider_capture(callback, event, **payload):
 
 def ask_ollama(messages, tools=TOOLS, response_format=None, temperature=None, think=False,
                provider_retries=None, model_override=None, role="Builder",
-               provider_capture=None, capture_context=None):
+               provider_capture=None, capture_context=None, cancelled=None):
     global FORCE_CPU_FOR_RUN
     requested_model = model_override or MODEL
     try:
@@ -4659,6 +4837,7 @@ def ask_ollama(messages, tools=TOOLS, response_format=None, temperature=None, th
         },
         "think": bool(think),
     }
+    payload['stream'] = role in {'Specifier', 'Builder', 'Falsifier'}
     if tools is not None:
         payload["tools"] = tools
     if response_format is not None:
@@ -4679,14 +4858,36 @@ def ask_ollama(messages, tools=TOOLS, response_format=None, temperature=None, th
             role=role,
             request_payload=copy.deepcopy(payload),
         )
+        stream_request = role in {'Specifier', 'Builder', 'Falsifier'}
+        first_output_limit = 240 if role in {'Builder', 'Falsifier'} else 120
         record_run_event("model_request", role=role, attempt=attempt + 1,
                          structured=bool(response_format), context_tokens=estimate,
-                         num_ctx=context_window, stream=False, think=bool(think))
+                         num_ctx=context_window, stream=stream_request, think=bool(think),
+                         request_deadline_seconds=360 if stream_request else OLLAMA_TIMEOUT_SECONDS,
+                         first_output_deadline_seconds=first_output_limit if stream_request else None,
+                         generation_idle_seconds=120 if stream_request else None,
+                         tool_schema_chars=len(json.dumps(tools or [], ensure_ascii=False)),
+                         num_predict=payload['options']['num_predict'])
+        request_started=time.monotonic()
         try:
-            response = http_post_json(OLLAMA_URL, timeout=OLLAMA_TIMEOUT_SECONDS, payload=payload)
+            if stream_request:
+                response=stream_chat(OLLAMA_URL,payload=payload,total_seconds=360,idle_seconds=120,
+                    first_output_timeout_seconds=first_output_limit if role in {'Builder', 'Falsifier'} else None,
+                    cancelled=cancelled,
+                    on_wait=lambda meta:record_run_event('inference_wait',role=role,attempt=attempt+1,**meta),
+                    on_progress=lambda meta:record_run_event('inference_progress',role=role,attempt=attempt+1,**meta))
+            else:
+                response = http_post_json(OLLAMA_URL, timeout=OLLAMA_TIMEOUT_SECONDS, payload=payload)
         except HttpTransportError as exc:
             response = None
-            last_error = f"could not reach Ollama at {OLLAMA_URL}: {exc}"
+            kind=getattr(exc,'kind',None) or ('INFERENCE_TIMEOUT' if 'timed out' in str(exc).lower() else 'PROVIDER_UNAVAILABLE')
+            last_error = (f"Ollama inference request timed out ({kind}): {exc}"
+                          if kind in {'INFERENCE_TIMEOUT','INFERENCE_IDLE_TIMEOUT','INFERENCE_FIRST_OUTPUT_TIMEOUT','INFERENCE_DEADLINE'}
+                          else f"Ollama {kind}: {exc}")
+            record_run_event('provider_request_failed',role=role,attempt=attempt+1,category=kind,
+                elapsed_seconds=time.monotonic()-request_started,
+                phase=getattr(exc,'phase',None),cleanup_pending=getattr(exc,'cleanup_pending',False))
+            if kind=='INFERENCE_CANCELLED':raise ProviderError(last_error) from exc
             RUN["ollama_transport_failures"] = RUN.get("ollama_transport_failures", 0) + 1
             signals = record_ollama_failure(last_error)
             _emit_provider_capture(
@@ -4698,6 +4899,8 @@ def ask_ollama(messages, tools=TOOLS, response_format=None, temperature=None, th
                 role=role,
                 error=last_error,
             )
+            if not getattr(exc,'retry_safe',True):
+                raise ProviderError(last_error+'; request cleanup pending, concurrent retry refused') from exc
         if response is not None and response.status_code == 200:
             _emit_provider_capture(
                 provider_capture,
@@ -4715,6 +4918,9 @@ def ask_ollama(messages, tools=TOOLS, response_format=None, temperature=None, th
                 RUN["ollama_malformed_responses"] = RUN.get("ollama_malformed_responses", 0) + 1
                 last_error = f"invalid response from model: {exc}"
             else:
+                record_run_event('provider_request_completed',role=role,attempt=attempt+1,
+                    wall_seconds=time.monotonic()-request_started,
+                    timing={k:body.get(k) for k in ['total_duration','load_duration','prompt_eval_count','prompt_eval_duration','eval_count','eval_duration','client_timing']} if isinstance(body,dict) else {})
                 RUN["ollama_http_200"] = RUN.get("ollama_http_200", 0) + 1
                 clean, diagnostics = normalize_ollama_response(body, response.status_code, response.text)
                 record_run_event("model_response_shape", role=role, attempt=attempt + 1,
@@ -4771,7 +4977,7 @@ def ask_ollama(messages, tools=TOOLS, response_format=None, temperature=None, th
                 status_code=int(response.status_code),
                 response_text=str(getattr(response, "text", "")),
             )
-            last_error = f"Ollama error {response.status_code}: {response.text[:1200]}"
+            last_error = f"Ollama server returned HTTP {response.status_code}: {response.text[:1200]}"
             signals = record_ollama_failure(last_error)
         if attempt < retry_limit:
             signals = ollama_failure_signals(last_error)
@@ -5022,7 +5228,9 @@ def extract_source_requirement_ledger(raw_goal, structured_call=None, max_segmen
                                       use_model=None, existing_ledger=None):
     """Extract a stable, bounded source ledger before any spec expansion."""
     raw_text = str(raw_goal or "").strip()
-    segments = bounded_source_segments(raw_text, max_segments=max_segments)
+    from hivo.literal_source import parse_literal_input, policy_text
+    literal_input = parse_literal_input(raw_text)
+    segments = bounded_source_segments(policy_text(raw_text,literal_input), max_segments=max_segments)
     candidates = []
     extraction_failures = []
     for segment in segments:
@@ -5080,6 +5288,12 @@ def extract_source_requirement_ledger(raw_goal, structured_call=None, max_segmen
             "provenance": USER_STATED,
         }])
     ledger_data = thaw(ledger)
+    from hivo.literal_source import parse_literal_input
+    literal_input = parse_literal_input(raw_text)
+    if literal_input.complete:
+        ledger_data['literal_obligations'] = [dict(span, content=literal_input.artifacts[span['path']],
+            utf8_sha256=hashlib.sha256(literal_input.artifacts[span['path']].encode('utf-8')).hexdigest())
+            for span in literal_input.spans]
     ledger_data["extraction"] = {
         "mode": "model_plus_deterministic" if use_model else "deterministic",
         "status": "complete" if not extraction_failures else "partial_fallback",
@@ -5384,6 +5598,12 @@ def select_clarification_option(question, key_sequence=None, output_fn=print, te
     question = question if isinstance(question, dict) else {}
     labels = clarification_option_labels(question)
     if key_sequence is not None:
+        if question.get('blocking') and not question.get('recommended_option'):
+            # Enter alone must not silently select the first incompatible
+            # source statement. An explicit navigation action is required.
+            keys=list(key_sequence)
+            if not any(str(k).lower() in {'up','down','arrowup','arrowdown','j','k'} for k in keys):return None
+            return navigate_clarification_options(labels, keys)
         return navigate_clarification_options(labels, key_sequence)
     if terminal_available is None:
         terminal_available = bool(sys.stdin.isatty() and sys.stdout.isatty())
@@ -5395,10 +5615,11 @@ def select_clarification_option(question, key_sequence=None, output_fn=print, te
     if PROMPT_TOOLKIT_AVAILABLE:
         try:
             from prompt_toolkit.shortcuts import radiolist_dialog
-            values = [(index, label) for index, label in enumerate(labels)]
+            values = [(None, 'Leave unresolved — keep all requirements')] if question.get('blocking') else []
+            values += [(index, label) for index, label in enumerate(labels)]
             selected = radiolist_dialog(
-                title="HIVO clarification", text="Use Up/Down and Enter to select.",
-                values=values, ok_text="Select", cancel_text="Skip / use default",
+                title="HIVO clarification", text=question.get('question','Choose an option.')+'\n'+question.get('reason','')+'\nUse Up/Down and Enter; unresolved decisions keep the task blocked.',
+                values=values, ok_text="Select", cancel_text="Leave unresolved" if question.get('blocking') else 'Skip optional',
             ).run()
             return int(selected) if selected is not None else None
         except (ImportError, EOFError, KeyboardInterrupt, TypeError, ValueError):
@@ -5408,17 +5629,17 @@ def select_clarification_option(question, key_sequence=None, output_fn=print, te
     if os.name == "nt":
         try:
             import msvcrt
-            index = 0
+            index = -1 if question.get('blocking') else 0
             while True:
                 key = msvcrt.getwch()
                 if key in {"\r", "\n"}:
-                    return index
+                    return index if index >= 0 else None
                 if key == "\x1b":
                     return None
                 if key in {"\x00", "\xe0"}:
                     arrow = msvcrt.getwch()
                     if arrow == "H":
-                        index = max(0, index - 1)
+                        index = max(-1 if question.get('blocking') else 0, index - 1)
                     elif arrow == "P":
                         index = min(len(labels) - 1, index + 1)
         except (ImportError, EOFError, KeyboardInterrupt):
@@ -5481,7 +5702,13 @@ def resolve_clarification_questions(clarification, interactive=True, terminal_av
             RUN["optional_clarifications_skipped"] = RUN.get("optional_clarifications_skipped", 0) + 1
             continue
         labels = clarification_option_labels(question)
-        selected = min(max(int(selected), 0), len(labels) - 1)
+        try:
+            selected=int(selected)
+        except (TypeError,ValueError):
+            selected=-1
+        if not 0<=selected<len(labels):
+            if blocking:unanswered.append(question)
+            continue
         raw_options = [
             str(item) for item in list(question.get("options", []) or [])[:REQUIREMENT_MAX_CLARIFICATION_OPTIONS]
         ]
@@ -5498,6 +5725,8 @@ def resolve_clarification_questions(clarification, interactive=True, terminal_av
                 answer = reader("Other> ")
             except TypeError:
                 answer = reader()
+            except (EOFError,KeyboardInterrupt):
+                answer = ''
             if not str(answer or "").strip():
                 if blocking:
                     unanswered.append(question)
@@ -5572,6 +5801,82 @@ def _ledger_with_confirmed_answers(ledger, answers):
 
 
 def get_goal_contract(raw_goal, interactive=True, structured_call=None, clarifier_call=None,
+                      terminal_available=None, selector=None, answer_reader=None, _literal_resolution=False):
+    """Resolve source conflicts before literal canonicalization; persist decisions."""
+    if not _literal_resolution:
+        from hivo.requirement_decisions import RequirementDecisions
+        from hivo.requirements import extract_source_requirements as pure_source_ledger
+        store=RequirementDecisions(WORKSPACE);state=store.load()
+        if state and store.is_new_task(str(raw_goal),state):state=None
+        if state:
+            RUN['raw_user_request']=str(raw_goal)
+            RUN['raw_user_request_sha256']=hashlib.sha256(str(raw_goal).encode('utf-8')).hexdigest()
+            RUN.setdefault('control_flow',[]).extend(['SOURCE_REQUIREMENT_INGESTION','REQUEST_CLARIFICATION'])
+            RUN['source_requirement_ledger']=freeze(state['ledger'])
+            if str(raw_goal).strip().casefold() in {'cancel','cancel task'}:
+                state['status']='cancelled';store.save(state)
+                return _clarification_required_contract(state['original_request'],state['ledger'],
+                    {'questions':state['questions']},{'answers':[],'unanswered':state['questions']})
+            store.accept(state,store.parse_answer(str(raw_goal),state))
+        else:
+            ledger=pure_source_ledger(raw_goal)
+            conflicts=detect_explicit_conflicts(ledger)
+            if conflicts:
+                state={'status':'pending','original_request':str(raw_goal),'ledger':thaw(ledger),
+                       'questions':conflict_questions(ledger,conflicts),'answers':{}}
+        if state:
+            # New pending decisions stop before the old ingestion body too;
+            # retain the same audit boundary on first turn and continuation.
+            RUN['raw_user_request']=str(raw_goal)
+            RUN['raw_user_request_sha256']=hashlib.sha256(str(raw_goal).encode('utf-8')).hexdigest()
+            _record_source_ledger_metrics(freeze(state['ledger']))
+            flow=RUN.setdefault('control_flow',[])
+            if not flow:flow.extend(['SOURCE_REQUIREMENT_INGESTION','REQUEST_CLARIFICATION'])
+            unanswered=[q for q in state['questions'] if q['question_id'] not in state['answers']]
+            if unanswered:
+                RUN['user_clarification_rounds']=RUN.get('user_clarification_rounds',0)+1
+                RUN['user_clarification_questions']=RUN.get('user_clarification_questions',0)+len(unanswered)
+                RUN['clarification_questions']=RUN.get('clarification_questions',0)+len(unanswered)
+            record_run_event('clarification_gate_evaluated',interaction_style='PRECISION_SENSITIVE',
+                question_ids=[q['question_id'] for q in unanswered],conflict_count=len(unanswered))
+            resolution=resolve_clarification_questions({'questions':unanswered},interactive=interactive,
+                terminal_available=terminal_available,selector=selector,answer_reader=answer_reader)
+            store.accept(state,resolution['answers'])
+            effective=store.effective_input(state)
+            store.save(state)
+            answers=list(state['answers'].values())
+            RUN['user_confirmed_requirements']=len(answers)
+            if effective is None:
+                unanswered=[q for q in state['questions'] if q['question_id'] not in state['answers']] or state['questions']
+                RUN['pending_clarification_questions']=unanswered
+                RUN['clarification_answers']=answers
+                RUN['user_clarification_answers']=len(answers)
+                RUN['clarification_terminal_state']='CLARIFICATION_REQUIRED'
+                return _clarification_required_contract(state['original_request'],state['ledger'],
+                    {'questions':unanswered},{'answers':answers,'unanswered':unanswered})
+            result=_get_goal_contract_body(effective,interactive=interactive,structured_call=structured_call,
+                clarifier_call=clarifier_call,terminal_available=terminal_available,selector=selector,
+                answer_reader=answer_reader,_literal_resolution=False)
+            # Preserve original source records and explicit decisions, separately
+            # from the effective execution ledger compiled after user selection.
+            original=_ledger_with_confirmed_answers(freeze(state['ledger']),answers)
+            provenance={'original_request':state['original_request'],'original_source_requirement_ledger':state['ledger'],
+                'answers':answers,'superseded_requirement_ids':state.get('superseded_requirement_ids',[]),
+                'effective_request':effective}
+            result['execution_source_requirement_ledger']=result.get('source_requirement_ledger')
+            result['source_requirement_ledger']=original
+            result['user_confirmed_requirements']=answers;result['clarification_answers']=answers
+            result['requirement_decisions']=provenance
+            result.setdefault('source_contract',{})['requirement_decisions']=provenance
+            RUN['clarification_answers']=answers;RUN['user_clarification_answers']=len(answers)
+            RUN['raw_user_request']=str(raw_goal)
+            RUN['raw_user_request_sha256']=hashlib.sha256(str(raw_goal).encode('utf-8')).hexdigest()
+            return result
+    return _get_goal_contract_body(raw_goal,interactive,structured_call,clarifier_call,
+        terminal_available,selector,answer_reader,_literal_resolution)
+
+
+def _get_goal_contract_body(raw_goal, interactive=True, structured_call=None, clarifier_call=None,
                       terminal_available=None, selector=None, answer_reader=None, _literal_resolution=False):
     """Build the source contract, run one critical round, then return ready."""
     RUN.setdefault("control_flow", []).append("SOURCE_REQUIREMENT_INGESTION")
@@ -6137,7 +6442,8 @@ def _initial_verified_project_state(repo_snapshot, repository_evidence=None):
 def _source_ledger_for_contract(contract):
     """Return a frozen ledger, adapting old v15 contracts without changing them."""
     contract = contract if isinstance(contract, dict) else {}
-    supplied = contract.get("source_requirement_ledger")
+    supplied = (contract.get('execution_source_requirement_ledger') if contract.get('requirement_decisions')
+                else None) or contract.get("source_requirement_ledger")
     if isinstance(supplied, dict) and ledger_requirements(supplied):
         return freeze(thaw(supplied))
     candidates = []
@@ -13813,13 +14119,14 @@ def build_node_context(task, root_contract, memory_store, repo_snapshot, parent_
 
 def _literal_artifact_verification_paths(accepted_contract=None):
     """Offer native readback only from accepted, source-bound literal authority."""
-    active = accepted_contract if accepted_contract is not None else ACTIVE_IMPACT_CONTRACT
-    if (not isinstance(active, dict) or not active.get("scope_required")
+    active = accepted_contract if accepted_contract is not None else (
+        ACTIVE_IMPACT_CONTRACT or (ACTIVE_TOOL_CONTRACT or {}).get("literal_verification_contract"))
+    if (not isinstance(active, dict) or not (active.get("scope_required") or active.get("literal_verification_only"))
             or stage10_impact.impact_mutation_block_reason(active)):
         return []
     required = [item for item in active.get("expected_targets", []) if item.get("required", True)]
-    if not required or any(not item.get("post_state_sha256") or
-                           item.get("path") not in active.get("authorized_mutation_paths", [])
+    allowed = active.get("literal_inspection_paths", []) if active.get("literal_verification_only") else active.get("authorized_mutation_paths", [])
+    if not required or any(not item.get("post_state_sha256") or item.get("path") not in allowed
                            for item in required):
         return []  # Partial literal coverage cannot authorize automatic handoff.
     return [item["path"] for item in required]
@@ -15800,6 +16107,24 @@ def execute_agent_task(task_text, memory, messages=None, role="Builder", task_id
                     stop = True
                     break
 
+            if (role=='Falsifier' and str(result).startswith('error: literal verification is restricted')):
+                # A refused sibling probe is not evidence that local bytes are
+                # wrong. Complete independent native coverage through guards,
+                # retain the refusal, then hand off to all remaining gates.
+                paths=_literal_artifact_verification_paths()
+                passed=bool(paths)
+                for path in paths:
+                    proof=run_tool('run_file',{'path':path},role='Falsifier')
+                    RUN['tool_calls']+=1
+                    memory=update_memory(memory,'run_file',{'path':path},proof,role='Falsifier',task_id=task_id)
+                    evidence.append({'tool':'run_file','target':path,'result':str(proof)})
+                    try:passed=passed and json.loads(proof).get('passed') is True
+                    except (ValueError,TypeError):passed=False
+                if paths:
+                    status='done' if passed else 'failed'
+                    summary='Scoped native verification completed; policy refusal retained separately from artifact observations.'
+                    record_run_event('falsifier_scope_recovery',task_id=task_id,paths=paths,passed=passed)
+                    stop=True;break
             if role == "Builder" and (context_gate is None or context_gate.mutation_allowed):
                 native_paths = _literal_artifact_verification_paths()
                 rejected = name == "run_command" and result_is_tool_rejection(result)
@@ -16108,12 +16433,44 @@ def execute_agent_task(task_text, memory, messages=None, role="Builder", task_id
 # BROWSER VERIFICATION
 # ---------------------------------------------------------------------------
 
-def browser_launch_kwargs():
+def browser_launch_kwargs(browser_type=None):
+    # Prefer the managed browser when present. Branded channels use an isolated
+    # Playwright session, never the user's existing browser profile.
+    if browser_type is not None and Path(browser_type.executable_path).is_file():
+        return {"headless": True}
     for name in ("chromium", "chromium-browser", "google-chrome", "google-chrome-stable"):
         path = shutil.which(name)
         if path:
             return {"headless": True, "executable_path": path}
+    if os.name == "nt":
+        for channel, relative in (("msedge", "Microsoft/Edge/Application/msedge.exe"),
+                                  ("chrome", "Google/Chrome/Application/chrome.exe")):
+            for root in (os.environ.get("PROGRAMFILES"), os.environ.get("PROGRAMFILES(X86)"),
+                         os.environ.get("LOCALAPPDATA")):
+                if root and (Path(root) / relative).is_file():
+                    return {"headless": True, "channel": channel}
     return {"headless": True}
+
+
+def launch_verification_browser(browser_type):
+    """Try installed supported engines only; a discovered binary may not launch."""
+    candidates = [browser_launch_kwargs(browser_type)]
+    if os.name == "nt":
+        for channel, relative in (("msedge", "Microsoft/Edge/Application/msedge.exe"),
+                                  ("chrome", "Google/Chrome/Application/chrome.exe")):
+            if any(root and (Path(root) / relative).is_file() for root in (
+                    os.environ.get("PROGRAMFILES"), os.environ.get("PROGRAMFILES(X86)"),
+                    os.environ.get("LOCALAPPDATA"))):
+                candidate = {"headless": True, "channel": channel}
+                if candidate not in candidates:
+                    candidates.append(candidate)
+    errors = []
+    for candidate in candidates:
+        try:
+            return browser_type.launch(**candidate, timeout=15000)
+        except Exception as exc:
+            errors.append(f"{candidate.get('channel', 'chromium')}: {exc}")
+    raise RuntimeError("No installed verification browser could launch: " + " | ".join(errors))
 
 
 def ensure_browser(install_if_missing=False):
@@ -16121,7 +16478,7 @@ def ensure_browser(install_if_missing=False):
         return False, "Playwright Python package is unavailable"
     try:
         with sync_playwright() as p:
-            browser = p.chromium.launch(**browser_launch_kwargs())
+            browser = launch_verification_browser(p.chromium)
             browser.close()
         return True, "Chromium available"
     except Exception as exc:
@@ -16129,6 +16486,29 @@ def ensure_browser(install_if_missing=False):
             return False, str(exc)
         result = subprocess.run([sys.executable, "-m", "playwright", "install", "chromium"], text=True)
         return (result.returncode == 0, "Chromium installed" if result.returncode == 0 else "Chromium install failed")
+
+
+def _classify_browser_console_errors(observations, page_url, explicit_urls=(), requirement=""):
+    """Retain failures except the local browser's unrequested default icon 404."""
+    from urllib.parse import urlparse
+    origin = urlparse(page_url)
+    errors, optional = [], []
+    for item in observations:
+        source = urlparse(str(item.get("url", "")))
+        text = str(item.get("text", ""))
+        implicit = (
+            origin.hostname in {"127.0.0.1", "localhost", "::1"}
+            and (source.scheme, source.netloc) == (origin.scheme, origin.netloc)
+            and source.path == "/favicon.ico" and not source.query
+            and "Failed to load resource" in text and "404" in text
+            and item.get("url") not in explicit_urls
+            and "favicon" not in str(requirement).lower()
+        )
+        if implicit:
+            optional.append(dict(item, reason="unrequested_default_favicon_404"))
+        else:
+            errors.append(text)
+    return errors, optional
 
 
 def browser_snapshot(url, task_id="ROOT", profile=None, verification_requirement=""):
@@ -16140,16 +16520,17 @@ def browser_snapshot(url, task_id="ROOT", profile=None, verification_requirement
     evidence_dir.mkdir(parents=True, exist_ok=True)
     screenshot = evidence_dir / f"task_{re.sub(r'[^A-Za-z0-9_.-]+', '_', task_id)}.png"
     console_errors, page_errors, network_errors = [], [], []
+    console_observations, network_observations = [], []
     try:
         with sync_playwright() as p:
-            browser = p.chromium.launch(**browser_launch_kwargs())
+            browser = launch_verification_browser(p.chromium)
             page = browser.new_page(viewport={"width": 1440, "height": 900})
             if profile and profile.kind == "timer":
                 page.clock.install()
-            page.on("console", lambda msg: console_errors.append(msg.text) if msg.type == "error" else None)
+            page.on("console", lambda msg: console_observations.append({"text": msg.text, "url": msg.location.get("url", "")}) if msg.type == "error" else None)
             page.on("pageerror", lambda exc: page_errors.append(str(exc)))
-            page.on("response", lambda response: network_errors.append(f"{response.status} {response.url}")
-                    if response.status >= 400 and not response.url.endswith("/favicon.ico") else None)
+            page.on("response", lambda response: network_observations.append({"status": response.status, "url": response.url})
+                    if response.status >= 400 else None)
             page.goto(url, wait_until="domcontentloaded", timeout=15000)
             page.wait_for_timeout(500)
             title = page.title()
@@ -16287,9 +16668,19 @@ def browser_snapshot(url, task_id="ROOT", profile=None, verification_requirement
                 interaction_checks.extend(run_profile_interactions(page, profile))
             page.set_viewport_size({"width": 1440, "height": 900})
             page.screenshot(path=str(screenshot), full_page=True)
+            explicit_urls = page.locator("[src], [href]").evaluate_all(
+                "elements => elements.map(e => e.src || e.href).filter(Boolean)")
+            console_errors, optional_resource_errors = _classify_browser_console_errors(
+                console_observations, url, explicit_urls,
+                verification_requirement + json.dumps(ACTIVE_TOOL_CONTRACT or {}, ensure_ascii=False))
+            optional_urls = {item["url"] for item in optional_resource_errors}
+            network_errors = [f"{item['status']} {item['url']}" for item in network_observations
+                              if not (item['status'] == 404 and item['url'] in optional_urls)]
             browser.close()
         snapshot = {"passed": False, "environment_error": False, "title": title, "url": url, "text": text,
                     "console_errors": console_errors, "page_errors": page_errors, "network_errors": network_errors,
+                    "console_observations": console_observations,
+                    "optional_resource_errors": optional_resource_errors,
                     "runtime_state": runtime_state, "interaction_checks": interaction_checks,
                     "screenshot": str(screenshot.relative_to(WORKSPACE))}
         effective = profile or infer_web_profile("web", {})
@@ -17121,7 +17512,7 @@ def optional_browser_check(task, contract=None, syntax_failures=None, execution_
 
     profile = infer_web_profile(
         task.get("goal", ""), contract or {},
-        classification_policy=RUN.get("verification_classification_policy", "current"),
+        classification_policy=RUN.get("verification_classification_policy", "field_scoped"),
     )
     semantic_before = (_semantic_subject(task.get("id"), route.get("target"))["hash"]
                        if RUN.get("semantic_evidence_policy") in {"compatible", "monotonic", "strict"} else None)
@@ -17190,10 +17581,25 @@ def task_risk(task_text):
 
 
 def falsify_task(task, contract, memory, builder_result, repo_snapshot, node_context=""):
+    """Carry accepted source evidence into a read-only role, never mutation permission."""
+    global ACTIVE_TOOL_CONTRACT
+    accepted = (builder_result or {}).get("impact_contract")
+    saved = ACTIVE_TOOL_CONTRACT
+    if (isinstance(accepted, dict) and str(accepted.get("task_id")) == str(task.get("id"))
+            and _literal_artifact_verification_paths(accepted)):
+        ACTIVE_TOOL_CONTRACT = dict(saved or {}, literal_verification_contract=copy.deepcopy(accepted))
+    try:
+        return _falsify_task_body(task, contract, memory, builder_result, repo_snapshot, node_context)
+    finally:
+        ACTIVE_TOOL_CONTRACT = saved
+
+
+def _falsify_task_body(task, contract, memory, builder_result, repo_snapshot, node_context=""):
     if task_risk(task.get("goal", "")) == "low" or builder_result.get("status") != "done":
         return {"status": "skipped", "summary": "low-risk leaf", "tool_evidence": [], "memory": memory}
     RUN["falsifier_calls"] += 1
-    literal_contract = copy.deepcopy(ACTIVE_IMPACT_CONTRACT or (contract or {}).get("impact_contract"))
+    literal_contract = copy.deepcopy((ACTIVE_TOOL_CONTRACT or {}).get("literal_verification_contract")
+                                    or ACTIVE_IMPACT_CONTRACT or (contract or {}).get("impact_contract"))
     event(f"[FALSIFY {task['id']}]", role="Falsifier", task=task["id"], action="adversarial verification")
     instruction = (
         f"BUILDER SUMMARY: {compact_text(builder_result.get('summary', ''), 700)}\n"
@@ -17201,6 +17607,8 @@ def falsify_task(task, contract, memory, builder_result, repo_snapshot, node_con
         "For normal/high risk, attempt at most 1-2 cheap edge-case probes (boundary/invalid/reload/repeated action/alternate viewport) when useful. "
         "Do not modify application files. Concrete executable failures matter; narrative suspicion is advisory."
     )
+    if _literal_artifact_verification_paths(literal_contract):
+        instruction += '\nLOCAL VERIFICATION SCOPE: '+json.dumps(_literal_artifact_verification_paths(literal_contract))+'. Verify these exact current artifacts only. Siblings may not exist yet; ROOT independently checks their union. run_file here is native exact-byte inspection, not script execution.'
     result = execute_agent_task(
         instruction, memory, role="Falsifier", task_id=task["id"], extra_context=node_context,
     )
@@ -17215,7 +17623,9 @@ def falsify_task(task, contract, memory, builder_result, repo_snapshot, node_con
             target = safe_path(path) if path in paths else None
             if target is None or not target.is_file():
                 continue
-            if item.get("tool") == "read_file" and str(item.get("result", "")).encode("utf-8") == target.read_bytes():
+            expected=next((x.get('post_state_sha256') for x in literal_contract['expected_targets'] if x.get('path')==path),None)
+            if (item.get("tool") == "read_file" and str(item.get("result", "")).encode("utf-8") == target.read_bytes()
+                    and hashlib.sha256(target.read_bytes()).hexdigest()==expected):
                 observed.add(path)
             if item.get("tool") == "run_file":
                 try:
@@ -17234,7 +17644,10 @@ def falsify_task(task, contract, memory, builder_result, repo_snapshot, node_con
             memory = update_memory(memory, "run_file", {"path": path}, proof, role="Falsifier", task_id=task["id"])
             record_run_event("falsifier_literal_coverage", task_id=task["id"], path=path)
         result["memory"] = memory
-    if unresolved_tool_failures(result.get("tool_evidence", [])):
+    refusals=_safe_literal_policy_refusals(builder_result,result)
+    result['policy_refusals']=refusals
+    if refusals:record_run_event('verification_policy_refusals',task_id=task['id'],count=len(refusals),artifact_failure=False)
+    if [f for f in unresolved_tool_failures(result.get("tool_evidence", [])) if f not in refusals]:
         RUN["falsifier_detected_failures"] += 1
     return result
 
@@ -17256,11 +17669,39 @@ def _legacy_quality_projection(value):
     return isinstance(value, dict) and "checks" in value and "tool_evidence" not in value and "status" not in value
 
 
+def _safe_literal_policy_refusals(builder_result, falsifier_result):
+    """Separate non-executed out-of-scope reads only with fresh full local proof."""
+    accepted=(builder_result or {}).get('impact_contract')
+    paths=_literal_artifact_verification_paths(accepted)
+    if not paths:return []
+    evidence=(falsifier_result or {}).get('tool_evidence',[])
+    for path in paths:
+        file=safe_path(path)
+        if file is None or not file.is_file():return []
+        digest=hashlib.sha256(file.read_bytes()).hexdigest()
+        expected=next(x['post_state_sha256'] for x in accepted['expected_targets'] if x['path']==path)
+        if digest!=expected:return []
+        observed=False
+        for item in evidence:
+            if item.get('target')!=path:continue
+            if item.get('tool')=='read_file' and str(item.get('result','')).encode('utf-8')==file.read_bytes():observed=True
+            if item.get('tool')=='run_file':
+                try:
+                    proof=json.loads(item.get('result',''))
+                    observed=observed or (proof.get('passed') is True and proof.get('actual_sha256')==digest and proof.get('impact_contract_hash')==accepted['contract_hash'])
+                except (ValueError,TypeError):pass
+        if not observed:return []
+    return [e for e in evidence if e.get('tool') in {'read_file','read_file_range','run_file'}
+            and e.get('target') not in paths and str(e.get('result','')).startswith('error: literal verification is restricted')]
+
+
 def _current_verification_failures(builder_result, falsifier_result=None, browser_result=None):
     builder_evidence = list(builder_result.get("tool_evidence", []))
     falsifier_evidence = list((falsifier_result or {}).get("tool_evidence", []))
     merged = builder_evidence + falsifier_evidence
     failures = unresolved_tool_failures(merged)
+    policy_refusals=_safe_literal_policy_refusals(builder_result,falsifier_result)
+    failures=[item for item in failures if item not in policy_refusals]
     optional_browser = (
         isinstance(browser_result, dict)
         and browser_result.get("verification_status") == SKIPPED_NOT_APPLICABLE
@@ -17786,7 +18227,7 @@ def _execute_resolved_parent_verification(task, contract, readiness, resolution)
             before = _integration_subject_fingerprint(WORKSPACE, dependencies + [execution["target"]])
             profile = infer_web_profile(task.get("goal", ""), {
                 "requirements": [requirement["text"]], "constraints": contract.get("constraints", [])},
-                classification_policy=RUN.get("verification_classification_policy", "current"))
+                classification_policy=RUN.get("verification_classification_policy", "field_scoped"))
             if execution["tool"] == "verify_web_app":
                 payload = verify_browser_application(
                     execution["target"], f"{task.get('id')}-integration-{requirement['requirement_id']}",
@@ -20050,6 +20491,19 @@ def print_node_diagnosis():
 
 
 def repair_task(task, contract, failure_evidence, memory, node_context, parent_goal=None):
+    global ACTIVE_TOOL_CONTRACT
+    accepted = task.get("impact_contract")
+    saved = ACTIVE_TOOL_CONTRACT
+    if (isinstance(accepted, dict) and str(accepted.get("task_id")) == str(task.get("id"))
+            and _literal_artifact_verification_paths(accepted)):
+        ACTIVE_TOOL_CONTRACT = dict(saved or {}, literal_verification_contract=copy.deepcopy(accepted))
+    try:
+        return _repair_task_body(task, contract, failure_evidence, memory, node_context, parent_goal)
+    finally:
+        ACTIVE_TOOL_CONTRACT = saved
+
+
+def _repair_task_body(task, contract, failure_evidence, memory, node_context, parent_goal=None):
     RUN["repairer_calls"] += 1
     event(f"[REPAIR {task['id']}]", role="Repairer", task=task["id"], action="focused repair")
     context = (
@@ -20064,10 +20518,9 @@ def repair_task(task, contract, failure_evidence, memory, node_context, parent_g
         execution_contract=worker_execution_contract,
         context_sufficiency_enabled=True,
         context_anchor={
-            "root_goal": ((RUN.get("source_contract") or {}).get("goal")
-                          if isinstance(RUN.get("source_contract"), dict) else None)
-            or task.get("goal"),
-            "parent_goal": task.get("parent_goal") or RUN.get("parent_goal") or parent_goal,
+            "root_goal": _source_goal_anchor()
+            or task.get("impact_context_anchor",{}).get('root_goal') or task.get("goal"),
+            "parent_goal": task.get('impact_context_anchor',{}).get('parent_goal',task.get("parent_goal") or RUN.get("parent_goal")),
             "local_task": task.get("goal"),
             "requirements": task.get("done_when", []),
             "constraints": (contract or {}).get("constraints", []) if isinstance(contract, dict) else [],
@@ -20208,6 +20661,31 @@ def prepare_worker_mission_context(task, contract, repo_snapshot, parent_summary
     return projection, mission
 
 
+def _record_verified_literal_receipt(task, result):
+    """Register evidence only at a real successful gate/impact/commit boundary."""
+    accepted = result.get('impact_contract')
+    if (not task.get('parent') or result.get('status') != 'done'
+            or not (result.get('gate') or {}).get('passed')
+            or not (result.get('impact_comparison') or {}).get('passed')
+            or not _literal_artifact_verification_paths(accepted)):
+        return
+    artifacts = {}
+    for target in accepted['expected_targets']:
+        file = safe_path(target.get('path'))
+        if file is None or not file.is_file():return
+        observed = hashlib.sha256(file.read_bytes()).hexdigest()
+        if observed != target.get('post_state_sha256'):return
+        artifacts[target['path']] = observed
+    receipt = {'run_id': RUN_ID, 'task_id': str(task['id']), 'parent_id': str(task['parent']),
+               'impact_contract_hash': accepted['contract_hash'], 'artifacts': artifacts}
+    receipt['receipt_hash'] = stage10_impact.canonical_hash(receipt)
+    if RUN.get('_verified_literal_receipts',{}).get(str(task['id']))!=receipt:
+        RUN['literal_child_receipts_committed']=RUN.get('literal_child_receipts_committed',0)+1
+    RUN.setdefault('_verified_literal_receipts', {})[str(task['id'])] = copy.deepcopy(receipt)
+    result['literal_child_receipt'] = copy.deepcopy(receipt)
+    record_run_event('literal_child_receipt_committed', task_id=task['id'], receipt_hash=receipt['receipt_hash'])
+
+
 def _commit_verified_leaf(task, contract, builder, falsifier, browser, gate, memory):
     """Existing post-verification impact and commit boundary, also resumable."""
     if gate.get("passed") is not True:
@@ -20240,7 +20718,25 @@ def _commit_verified_leaf(task, contract, builder, falsifier, browser, gate, mem
               "impact_contract": task.get("impact_contract") or impact_contract,
               "impact_comparison": task.get("impact_contract_comparison")}
     attach_verified_manifest(task, result)
+    _record_verified_literal_receipt(task, result)
     return result
+
+
+def _literal_worker_mission_projection(task, mission, candidate):
+    """Model advice cannot broaden a controller-owned literal node's targets."""
+    if (not isinstance(mission, dict) or _current_execution_contract(task)
+            or not isinstance(candidate, dict) or not candidate.get('scope_required')
+            or not candidate.get('expected_targets')
+            or not all(t.get('post_state_sha256') for t in candidate['expected_targets'])):
+        return mission
+    projected = copy.deepcopy(mission)
+    paths = list(candidate.get('authorized_mutation_paths', []))
+    projected['targets'] = paths
+    projected['do_not'] = [
+        'Do not create or modify sibling artifacts; this node owns only ' + json.dumps(paths)
+    ] + list(projected.get('do_not', []))[:5]
+    record_run_event('literal_worker_mission_scope_projected', task_id=task.get('id'), paths=paths)
+    return projected
 
 
 def execute_leaf(task, contract, memory, repo_snapshot, parent_summary="", dependency_summaries=None,
@@ -20274,6 +20770,7 @@ def execute_leaf(task, contract, memory, repo_snapshot, parent_summary="", depen
             }],
         }
     impact_candidate = _prepare_task_impact_contract(task, contract)
+    worker_mission = _literal_worker_mission_projection(task, worker_mission, impact_candidate)
     node_context = build_node_context(task, contract, get_memory_store(), repo_snapshot,
                                       parent_summary, dependency_summaries, task.get("failure_evidence"),
                                       strategy_context=strategy_context,
@@ -20299,9 +20796,7 @@ def execute_leaf(task, contract, memory, repo_snapshot, parent_summary="", depen
         execution_contract=worker_execution_contract,
         context_sufficiency_enabled=True,
         context_anchor={
-            "root_goal": ((RUN.get("source_contract") or {}).get("goal")
-                          if isinstance(RUN.get("source_contract"), dict) else None)
-            or task.get("goal"),
+            "root_goal": _source_goal_anchor(task),
             "parent_goal": task.get("parent_goal") or RUN.get("parent_goal"),
             "local_task": task.get("goal"),
             "group_goal": task.get("semantic_group_goal"),
@@ -20653,9 +21148,7 @@ def execute_integration_leaf(task, contract, memory, repo_snapshot, parent_summa
         execution_contract=worker_execution_contract,
         context_sufficiency_enabled=True,
         context_anchor={
-            "root_goal": ((RUN.get("source_contract") or {}).get("goal")
-                          if isinstance(RUN.get("source_contract"), dict) else None)
-            or task.get("goal"),
+            "root_goal": _source_goal_anchor(task),
             "parent_goal": task.get("parent_goal") or RUN.get("parent_goal") or parent_summary,
             "local_task": task.get("goal"),
             "group_goal": task.get("semantic_group_goal"),
@@ -21976,9 +22469,7 @@ def run_integration_milestones(task, contract, child_info, memory, repo_snapshot
             execution_contract=milestone_execution_contract,
             context_sufficiency_enabled=True,
             context_anchor={
-                "root_goal": ((RUN.get("source_contract") or {}).get("goal")
-                              if isinstance(RUN.get("source_contract"), dict) else None)
-                or task.get("goal"),
+                "root_goal": _source_goal_anchor(task),
                 "parent_goal": task.get("goal"),
                 "local_task": goal,
                 "requirements": task.get("done_when", []),
@@ -22220,6 +22711,56 @@ def compact_evidence_summary(result):
     return "(no deterministic evidence projection supplied)"
 
 
+def _literal_parent_snapshot():
+    return {p.relative_to(WORKSPACE).as_posix(): hashlib.sha256(p.read_bytes()).hexdigest()
+            for p in Path(WORKSPACE).rglob('*') if p.is_file()
+            and not any(part.startswith('.') for part in p.relative_to(WORKSPACE).parts)
+            and safe_path(p.relative_to(WORKSPACE).as_posix()) is not None}
+
+
+def _current_literal_child_coverage(task, contract, child_results):
+    """Recognize read-only composition of current, verified source obligations.
+
+    Status text or a manifest alone is insufficient. No new write authority is
+    derived here; the parent will independently reread every source artifact.
+    """
+    literals = literal_requests((contract or {}).get('original_goal', (contract or {}).get('goal')))
+    expected = {(x['name'] if Path(x['name']).suffix else x['name']+'.txt'):
+                hashlib.sha256(x['content'].encode('utf-8')).hexdigest() for x in literals}
+    if task.get('id') != 'ROOT':
+        expected = {p:d for p,d in expected.items() if p in task.get('scope_hint', [])}
+    if not expected or not child_results:
+        return False
+    covered = set()
+    for entry in child_results:
+        child, result = entry.get('task', {}), entry.get('result', {})
+        if (TASKS.get(str(child.get('id'))) is not child or child.get('parent') != task.get('id')
+                or result.get('status') != 'done' or not (result.get('gate') or {}).get('passed')
+                or not (result.get('impact_comparison') or {}).get('passed')):
+            return False
+        accepted = result.get('impact_contract')
+        receipt = result.get('literal_child_receipt')
+        registered = RUN.get('_verified_literal_receipts', {}).get(str(child.get('id')))
+        if (not receipt or receipt != registered or receipt.get('run_id') != RUN_ID
+                or receipt.get('parent_id') != str(task.get('id'))
+                or receipt.get('impact_contract_hash') != (accepted or {}).get('contract_hash')):
+            return False
+        paths = _literal_artifact_verification_paths(accepted)
+        if not paths or accepted.get('task_id') != child.get('id'):
+            return False
+        for target in accepted['expected_targets']:
+            path, digest = target.get('path'), target.get('post_state_sha256')
+            file = safe_path(path)
+            if path not in expected or expected[path] != digest or file is None or not file.is_file():
+                return False
+            if hashlib.sha256(file.read_bytes()).hexdigest() != digest:
+                return False
+            if receipt.get('artifacts', {}).get(path) != digest:
+                return False
+            covered.add(path)
+    return covered == set(expected) and {str(e['task']['id']) for e in child_results} == set(map(str, task.get('children', [])))
+
+
 def aggregate_task(task, contract, child_results, memory, repo_snapshot=None, root=False):
     label = "ROOT" if root else task["id"]
     event(f"[AGGREGATE {label}]", role="Builder", task=label, action="hierarchical integration")
@@ -22359,8 +22900,13 @@ def aggregate_task(task, contract, child_results, memory, repo_snapshot=None, ro
     # There is no second integration orchestrator: after bounded integration
     # children, the existing parent Builder/evidence path verifies the result.
     parent_execution_contract = _current_execution_contract(task)
+    literal_composition = (not integration_recovery_needed and
+                           _current_literal_child_coverage(task, contract, child_results))
+    if literal_composition:
+        ACTIVE_TRANSACTION['readonly_snapshot'] = _literal_parent_snapshot()
+        context += '\nREAD-ONLY PARENT INTEGRATION: children have committed their source-bound artifacts. Independently inspect every required target; do not repeat writes. No parent mutation is authorized by child completion.'
     parent_impact_candidate = _prepare_task_impact_contract(
-        task, parent_execution_contract or contract,
+        task, parent_execution_contract or contract, verification_only=literal_composition,
     )
     builder = execute_agent_task(
         task["goal"], memory, role="Builder", task_id=label, extra_context=context,
@@ -22368,9 +22914,7 @@ def aggregate_task(task, contract, child_results, memory, repo_snapshot=None, ro
         execution_contract=parent_execution_contract,
         context_sufficiency_enabled=True,
         context_anchor={
-            "root_goal": ((RUN.get("source_contract") or {}).get("goal")
-                          if isinstance(RUN.get("source_contract"), dict) else None)
-            or task.get("goal"),
+            "root_goal": _source_goal_anchor(task),
             "parent_goal": task.get("parent_goal") or RUN.get("parent_goal"),
             "local_task": task.get("goal"),
             "requirements": task.get("done_when", []),
@@ -22614,13 +23158,17 @@ def aggregate_task(task, contract, child_results, memory, repo_snapshot=None, ro
     _finish_parent_integration(
         task, passed=True, recovered=integration_recovery_needed, preflight=preflight_after,
     )
-    return {"status": "done", "summary": builder["summary"], "memory": memory, "changed_files": changed,
+    if (task.get('impact_contract') or {}).get('literal_verification_only'):
+        RUN['literal_parent_integrations_verified']=RUN.get('literal_parent_integrations_verified',0)+1
+    result = {"status": "done", "summary": builder["summary"], "memory": memory, "changed_files": changed,
             "gate": gate, "falsifier": falsifier, "browser": browser, "children": child_info,
             "integration_preflight": task["integration_preflight"],
             "integration_milestones": builder.get("integration_milestones", []),
             "integration_outcome": task.get("integration_outcome"),
             "impact_contract": task.get("impact_contract") or builder.get("impact_contract"),
             "impact_comparison": task.get("impact_contract_comparison")}
+    _record_verified_literal_receipt(task, result)
+    return result
 
 
 def aggregate_execution_contract_children(task, contract, child_results, memory,
@@ -27419,11 +27967,15 @@ run_stage6c_b_approved_verification_exact_routing_self_test = run_stage6c_b_v25_
 
 
 def run_baseline_request(user_text, memory, contract_override=None, repo_snapshot=None, reset=True, finish=True,
-                         leaf_executor=None, interactive=True):
+                         leaf_executor=None, interactive=True, verification_classification_policy=None):
     if reset:
         reset_run("baseline")
     elif RUN.get("mode") != "auto":
         RUN["mode"] = "baseline"
+    classification_policy = verification_classification_policy or RUN.get('verification_classification_policy', 'field_scoped')
+    if classification_policy not in {'current', 'field_scoped'}:
+        raise ValueError('unknown verification classification policy')
+    RUN['verification_classification_policy'] = classification_policy
     authority_failure = _authority_terminal_failure()
     if authority_failure:
         result = _authority_fail_closed_result(
@@ -27499,7 +28051,7 @@ def run_recursive_request(user_text, memory, interactive=True, contract_override
                           verification_surface_policy="current",
                           child_receipt_policy="current",
                           integration_target_policy="current", semantic_evidence_policy="current",
-                          verification_classification_policy="current"):
+                          verification_classification_policy="field_scoped"):
     if planning_route not in {"current_recursive", "decomposition_first_recursive"}:
         raise ValueError("unknown recursive planning route")
     if mission_advice_policy not in {"strict", "contract_fallback"}:
@@ -30137,7 +30689,7 @@ def parse_args():
     parser.add_argument("--verification-surface-policy", choices=("current", "discovery"),
                         default="current")
     parser.add_argument("--verification-classification-policy", choices=("current", "field_scoped"),
-                        default="current")
+                        default="field_scoped")
     parser.add_argument("--child-receipt-policy", choices=("current", "atomic_verified"),
                         default="current")
     parser.add_argument("--integration-target-policy", choices=("current", "resolved"),
@@ -30230,11 +30782,10 @@ def main():
         semantic_evidence_policy = getattr(args, "semantic_evidence_policy", "current")
         semantic_kwargs = ({"semantic_evidence_policy": semantic_evidence_policy}
                            if semantic_evidence_policy != "current" else {})
-        classification_policy = getattr(args, "verification_classification_policy", "current")
-        classification_kwargs = ({"verification_classification_policy": classification_policy}
-                                 if classification_policy != "current" else {})
+        classification_policy = getattr(args, "verification_classification_policy", "field_scoped")
+        classification_kwargs = {"verification_classification_policy": classification_policy}
         if args.mode == "baseline":
-            result, memory = run_baseline_request(user_text, memory)
+            result, memory = run_baseline_request(user_text, memory, **classification_kwargs)
         elif args.mode == "recursive":
             result, memory = run_recursive_request(
                 user_text, memory, interactive=interactive,

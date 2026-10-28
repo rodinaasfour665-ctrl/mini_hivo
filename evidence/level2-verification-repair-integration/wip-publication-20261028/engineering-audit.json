@@ -1,0 +1,699 @@
+{
+  "scope": "R_UPDATE_004 only, complete implementation/test/harness delta against 6f0047c. No runtime executed during this audit.",
+  "base_commit": "6f0047ca27e979db10e338357f0fa6a22fe0bf93",
+  "files": [
+    {
+      "path": ".gitattributes",
+      "change": "modified",
+      "baseline_git_blob_sha256": "b8985ec0ffa476897bc57a01a874c50dcf5805d5955eabaebe5dbd0e8af95f15",
+      "tested_working_tree_sha256": "7fefd03ab5cd681f73a7191b712f68a9adb6eac177b55c6b14d7f5a4798532a3",
+      "bytes": 1084
+    },
+    {
+      "path": ".gitignore",
+      "change": "modified",
+      "baseline_git_blob_sha256": "1e6f3cd759fdaac9cda3b66f764e4aa998fa04be84101ac996d372abfa8f1b8c",
+      "tested_working_tree_sha256": "3ae53f21d7aedd42d51197342b4ddec443871bf08aed630c2d4db773b40763d4",
+      "bytes": 1318
+    },
+    {
+      "path": "hivo/host_preflight.py",
+      "change": "modified",
+      "baseline_git_blob_sha256": "60cce7fe6d149c25c582d9224ca1ebf8068192472c05363b2549229765d1c265",
+      "tested_working_tree_sha256": "f43e2b156d4193e95b9d7f693daab8fef6f33436a46f8613dd8f39692574033e",
+      "bytes": 27478,
+      "changed_top_level_symbols": [
+        {
+          "name": "format_host_preflight_report",
+          "line": 632,
+          "change": "modified"
+        }
+      ]
+    },
+    {
+      "path": "hivo/inference_transport.py",
+      "change": "new",
+      "baseline_git_blob_sha256": null,
+      "tested_working_tree_sha256": "0017b2760c49a3868e556d328cd1b19a2258c300900a84e66fbf78516a8ed78c",
+      "bytes": 8416,
+      "changed_top_level_symbols": [
+        {
+          "name": "InferenceFailure",
+          "line": 12,
+          "change": "added"
+        },
+        {
+          "name": "_RequestIO",
+          "line": 18,
+          "change": "added"
+        },
+        {
+          "name": "stream_chat",
+          "line": 66,
+          "change": "added"
+        }
+      ]
+    },
+    {
+      "path": "hivo/literal_source.py",
+      "change": "modified",
+      "baseline_git_blob_sha256": "c7b1700ea7208ef80aac95ee3fdd0476ab2364f5c3c450a1754a64ac18db4c84",
+      "tested_working_tree_sha256": "9e0f202ba0c24a60cf89e87f266ca85c1e8fe480ecf37bb5913cbc8bd8d11303",
+      "bytes": 8872,
+      "changed_top_level_symbols": [
+        {
+          "name": "policies",
+          "line": 26,
+          "change": "modified"
+        },
+        {
+          "name": "policy_text",
+          "line": 62,
+          "change": "added"
+        },
+        {
+          "name": "parse_literal_input",
+          "line": 80,
+          "change": "modified"
+        }
+      ]
+    },
+    {
+      "path": "hivo/process_supervision.py",
+      "change": "new",
+      "baseline_git_blob_sha256": null,
+      "tested_working_tree_sha256": "a1d3b7cd2a6aea5c05541a4125fa66841f88bf3b8f1bc55fcff2108038dd89aa",
+      "bytes": 2245,
+      "changed_top_level_symbols": [
+        {
+          "name": "supervise_process",
+          "line": 11,
+          "change": "added"
+        }
+      ]
+    },
+    {
+      "path": "hivo/project_understanding.py",
+      "change": "modified",
+      "baseline_git_blob_sha256": "1dffb1f654c68d88b8d5a94660f9287f644ebae6508d8077419423757c23b092",
+      "tested_working_tree_sha256": "c1711d5886f4d120b9ffbde54587406df8d680d6b419d1e24bb03300ab6b3f46",
+      "bytes": 115921,
+      "changed_top_level_symbols": [
+        {
+          "name": "inventory_repository",
+          "line": 275,
+          "change": "modified"
+        },
+        {
+          "name": "classify_project_mode",
+          "line": 359,
+          "change": "modified"
+        }
+      ]
+    },
+    {
+      "path": "hivo/requirement_consistency.py",
+      "change": "new",
+      "baseline_git_blob_sha256": null,
+      "tested_working_tree_sha256": "7566e19c14f433d6b9b3c1da0efaf9989315831b47eb881087c228a1b68134eb",
+      "bytes": 5307,
+      "changed_top_level_symbols": [
+        {
+          "name": "_number",
+          "line": 16,
+          "change": "added"
+        },
+        {
+          "name": "targets",
+          "line": 20,
+          "change": "added"
+        },
+        {
+          "name": "condition",
+          "line": 24,
+          "change": "added"
+        },
+        {
+          "name": "_literal_values",
+          "line": 29,
+          "change": "added"
+        },
+        {
+          "name": "instruction_text",
+          "line": 42,
+          "change": "added"
+        },
+        {
+          "name": "facts",
+          "line": 46,
+          "change": "added"
+        },
+        {
+          "name": "contradiction",
+          "line": 84,
+          "change": "added"
+        }
+      ]
+    },
+    {
+      "path": "hivo/requirement_decisions.py",
+      "change": "new",
+      "baseline_git_blob_sha256": null,
+      "tested_working_tree_sha256": "b4002b4dc244d7d9f46d8f03dc0d17155299dbd7bb182ecafcb333ba53f8c5e2",
+      "bytes": 4295,
+      "changed_top_level_symbols": [
+        {
+          "name": "RequirementDecisions",
+          "line": 12,
+          "change": "added"
+        }
+      ]
+    },
+    {
+      "path": "hivo/requirements.py",
+      "change": "modified",
+      "baseline_git_blob_sha256": "ad8779fd6e672b92c8086e0699198af6003deee93ee60ca03a033b9c8bf65d52",
+      "tested_working_tree_sha256": "53e27084410bc4253c2bd09a07430e7c01708d671345dd9371caae0bd9a94b2b",
+      "bytes": 54808,
+      "changed_top_level_symbols": [
+        {
+          "name": "_can_merge",
+          "line": 128,
+          "change": "modified"
+        },
+        {
+          "name": "named_artifact_declarations",
+          "line": 389,
+          "change": "added"
+        },
+        {
+          "name": "deterministic_requirement_candidates",
+          "line": 461,
+          "change": "modified"
+        },
+        {
+          "name": "build_source_requirement_ledger",
+          "line": 588,
+          "change": "modified"
+        },
+        {
+          "name": "_conflict_evidence",
+          "line": 838,
+          "change": "modified"
+        },
+        {
+          "name": "detect_explicit_conflicts",
+          "line": 901,
+          "change": "modified"
+        },
+        {
+          "name": "extract_source_requirements",
+          "line": 1149,
+          "change": "modified"
+        }
+      ]
+    },
+    {
+      "path": "hivo/verification_routing.py",
+      "change": "modified",
+      "baseline_git_blob_sha256": "397a3e85c2f24654830db11514ed266446a3f7f79d10a95ac96f5a40988edbc2",
+      "tested_working_tree_sha256": "750f196806baa198b772972fc708420feb74945533fafd0320b2e199c4983e82",
+      "bytes": 113245,
+      "changed_top_level_symbols": [
+        {
+          "name": "analyze_verification_applicability",
+          "line": 983,
+          "change": "modified"
+        }
+      ]
+    },
+    {
+      "path": "mini.py",
+      "change": "modified",
+      "baseline_git_blob_sha256": "d6f7e391b55e0f57d20252d2c1e6ff3b7c73076a48072dd3f53801c93f90ad7c",
+      "tested_working_tree_sha256": "c372c9197e1c3d2f923b0e63623f176d71d799add844c8a7be0f8d309022a4d6",
+      "bytes": 1621287,
+      "changed_top_level_symbols": [
+        {
+          "name": "run_file",
+          "line": 1760,
+          "change": "modified"
+        },
+        {
+          "name": "_validated_command_parts",
+          "line": 1816,
+          "change": "modified"
+        },
+        {
+          "name": "tools_for_role",
+          "line": 1906,
+          "change": "modified"
+        },
+        {
+          "name": "_impact_gate_mutation_guard",
+          "line": 2202,
+          "change": "modified"
+        },
+        {
+          "name": "_impact_tool_projection",
+          "line": 2289,
+          "change": "modified"
+        },
+        {
+          "name": "_impact_post_mutation_check",
+          "line": 2322,
+          "change": "modified"
+        },
+        {
+          "name": "_source_goal_anchor",
+          "line": 2416,
+          "change": "added"
+        },
+        {
+          "name": "_source_literal_child_paths",
+          "line": 2427,
+          "change": "added"
+        },
+        {
+          "name": "_prepare_task_impact_contract",
+          "line": 2461,
+          "change": "modified"
+        },
+        {
+          "name": "_context_anchor_for_worker",
+          "line": 2655,
+          "change": "modified"
+        },
+        {
+          "name": "run_tool",
+          "line": 3319,
+          "change": "modified"
+        },
+        {
+          "name": "ask_ollama",
+          "line": 4778,
+          "change": "modified"
+        },
+        {
+          "name": "extract_source_requirement_ledger",
+          "line": 5227,
+          "change": "modified"
+        },
+        {
+          "name": "select_clarification_option",
+          "line": 5596,
+          "change": "modified"
+        },
+        {
+          "name": "resolve_clarification_questions",
+          "line": 5672,
+          "change": "modified"
+        },
+        {
+          "name": "get_goal_contract",
+          "line": 5803,
+          "change": "modified"
+        },
+        {
+          "name": "_get_goal_contract_body",
+          "line": 5879,
+          "change": "added"
+        },
+        {
+          "name": "_source_ledger_for_contract",
+          "line": 6442,
+          "change": "modified"
+        },
+        {
+          "name": "_literal_artifact_verification_paths",
+          "line": 14120,
+          "change": "modified"
+        },
+        {
+          "name": "execute_agent_task",
+          "line": 14440,
+          "change": "modified"
+        },
+        {
+          "name": "browser_launch_kwargs",
+          "line": 16436,
+          "change": "modified"
+        },
+        {
+          "name": "launch_verification_browser",
+          "line": 16455,
+          "change": "added"
+        },
+        {
+          "name": "ensure_browser",
+          "line": 16476,
+          "change": "modified"
+        },
+        {
+          "name": "_classify_browser_console_errors",
+          "line": 16491,
+          "change": "added"
+        },
+        {
+          "name": "browser_snapshot",
+          "line": 16514,
+          "change": "modified"
+        },
+        {
+          "name": "optional_browser_check",
+          "line": 17487,
+          "change": "modified"
+        },
+        {
+          "name": "falsify_task",
+          "line": 17583,
+          "change": "modified"
+        },
+        {
+          "name": "_falsify_task_body",
+          "line": 17597,
+          "change": "added"
+        },
+        {
+          "name": "_safe_literal_policy_refusals",
+          "line": 17672,
+          "change": "added"
+        },
+        {
+          "name": "_current_verification_failures",
+          "line": 17698,
+          "change": "modified"
+        },
+        {
+          "name": "_execute_resolved_parent_verification",
+          "line": 18211,
+          "change": "modified"
+        },
+        {
+          "name": "repair_task",
+          "line": 20493,
+          "change": "modified"
+        },
+        {
+          "name": "_repair_task_body",
+          "line": 20506,
+          "change": "added"
+        },
+        {
+          "name": "_record_verified_literal_receipt",
+          "line": 20664,
+          "change": "added"
+        },
+        {
+          "name": "_commit_verified_leaf",
+          "line": 20689,
+          "change": "modified"
+        },
+        {
+          "name": "_literal_worker_mission_projection",
+          "line": 20725,
+          "change": "added"
+        },
+        {
+          "name": "execute_leaf",
+          "line": 20742,
+          "change": "modified"
+        },
+        {
+          "name": "execute_integration_leaf",
+          "line": 21101,
+          "change": "modified"
+        },
+        {
+          "name": "run_integration_milestones",
+          "line": 22441,
+          "change": "modified"
+        },
+        {
+          "name": "_literal_parent_snapshot",
+          "line": 22714,
+          "change": "added"
+        },
+        {
+          "name": "_current_literal_child_coverage",
+          "line": 22721,
+          "change": "added"
+        },
+        {
+          "name": "aggregate_task",
+          "line": 22764,
+          "change": "modified"
+        },
+        {
+          "name": "run_baseline_request",
+          "line": 27969,
+          "change": "modified"
+        },
+        {
+          "name": "run_recursive_request",
+          "line": 28034,
+          "change": "modified"
+        },
+        {
+          "name": "parse_args",
+          "line": 30669,
+          "change": "modified"
+        },
+        {
+          "name": "main",
+          "line": 30713,
+          "change": "modified"
+        }
+      ]
+    },
+    {
+      "path": "scripts/level2_clarification_replay.py",
+      "change": "modified",
+      "baseline_git_blob_sha256": "5442d78c88414d466f5461abd0e24c9d774845f2198b74479ebba49e05fb52e8",
+      "tested_working_tree_sha256": "5f631ca6efbff18c64213b474b582a9af5401765d4a6d2b6c30e159cc51d2eac",
+      "bytes": 7906,
+      "changed_top_level_symbols": []
+    },
+    {
+      "path": "scripts/replay_post_repair.py",
+      "change": "new",
+      "baseline_git_blob_sha256": null,
+      "tested_working_tree_sha256": "1f0e0fbec9c46344812ad98d049795b45c7b72a8f98be4fefc1849da4e049392",
+      "bytes": 5041,
+      "changed_top_level_symbols": [
+        {
+          "name": "main",
+          "line": 16,
+          "change": "added"
+        }
+      ]
+    },
+    {
+      "path": "scripts/replay_provider_recovery.py",
+      "change": "new",
+      "baseline_git_blob_sha256": null,
+      "tested_working_tree_sha256": "3e5c682cd6a4c0756906d8a3e22bb2b83556f3af4ba582dcc1de3c2fc76a0f47",
+      "bytes": 5680,
+      "changed_top_level_symbols": [
+        {
+          "name": "child",
+          "line": 19,
+          "change": "added"
+        },
+        {
+          "name": "main",
+          "line": 53,
+          "change": "added"
+        }
+      ]
+    },
+    {
+      "path": "scripts/replay_requirement_consistency.py",
+      "change": "new",
+      "baseline_git_blob_sha256": null,
+      "tested_working_tree_sha256": "4f6c0179605160b7d71107b360557590b91fcf2a93b325e571a3ea36446451b9",
+      "bytes": 4452,
+      "changed_top_level_symbols": [
+        {
+          "name": "sha",
+          "line": 18,
+          "change": "added"
+        },
+        {
+          "name": "main",
+          "line": 20,
+          "change": "added"
+        }
+      ]
+    },
+    {
+      "path": "scripts/update004_controlled_replay.py",
+      "change": "new",
+      "baseline_git_blob_sha256": null,
+      "tested_working_tree_sha256": "87ac45f0fe55003f21692ea046f9fec21d6f318c3d513700f888e1f0ba76ea0c",
+      "bytes": 5672,
+      "changed_top_level_symbols": [
+        {
+          "name": "sha",
+          "line": 22,
+          "change": "added"
+        },
+        {
+          "name": "main",
+          "line": 24,
+          "change": "added"
+        }
+      ]
+    },
+    {
+      "path": "scripts/verify_level2_offline.py",
+      "change": "modified",
+      "baseline_git_blob_sha256": "a7901801d82396f8d9d877f4b9baf80fc05332c08c9a5f53babf73901a31b7bf",
+      "tested_working_tree_sha256": "1b6be2aee7eb2639f7dda3bee9686c105898fbb26ba067a15bf0dd35cfe8dea4",
+      "bytes": 4518,
+      "changed_top_level_symbols": [
+        {
+          "name": "main",
+          "line": 33,
+          "change": "modified"
+        }
+      ]
+    },
+    {
+      "path": "tests/fixtures/post_repair_requests.json",
+      "change": "new",
+      "baseline_git_blob_sha256": null,
+      "tested_working_tree_sha256": "02a858affd1fa3aaf494fe56af25947b27e39bad8ea56ff0bb4dcff3d44ed5cb",
+      "bytes": 2053
+    },
+    {
+      "path": "tests/test_child_inference_recovery.py",
+      "change": "new",
+      "baseline_git_blob_sha256": null,
+      "tested_working_tree_sha256": "be76ab5059eb43ec9d40039430e32b8a97aa452658164231ebe3ce3adbe52e13",
+      "bytes": 9632,
+      "changed_top_level_symbols": [
+        {
+          "name": "wire",
+          "line": 16,
+          "change": "added"
+        },
+        {
+          "name": "fake_stream",
+          "line": 20,
+          "change": "added"
+        },
+        {
+          "name": "FirstOutputTests",
+          "line": 31,
+          "change": "added"
+        },
+        {
+          "name": "ChildTransportTests",
+          "line": 67,
+          "change": "added"
+        }
+      ]
+    },
+    {
+      "path": "tests/test_host_preflight.py",
+      "change": "modified",
+      "baseline_git_blob_sha256": "9a993d0866a1d3ca7b8898ed76060f27e1a4924b7188eb15b87a59c5f0a0d5d4",
+      "tested_working_tree_sha256": "cef7a49af8e6e08d054e423717174609dad57af4eafe288d9a063e278853d592",
+      "bytes": 16158,
+      "changed_top_level_symbols": [
+        {
+          "name": "HostPreflightTests",
+          "line": 13,
+          "change": "modified"
+        }
+      ]
+    },
+    {
+      "path": "tests/test_parent_deadline_recovery.py",
+      "change": "new",
+      "baseline_git_blob_sha256": null,
+      "tested_working_tree_sha256": "506911e3267f28bf8b00430d00e74729da54a0e92c9364737c76a565d2d61964",
+      "bytes": 10916,
+      "changed_top_level_symbols": [
+        {
+          "name": "Response",
+          "line": 20,
+          "change": "added"
+        },
+        {
+          "name": "BlockedIOTests",
+          "line": 27,
+          "change": "added"
+        },
+        {
+          "name": "ProcessDeadlineTests",
+          "line": 101,
+          "change": "added"
+        },
+        {
+          "name": "ParentRecoveryTests",
+          "line": 143,
+          "change": "added"
+        }
+      ]
+    },
+    {
+      "path": "tests/test_post_repair_hardening.py",
+      "change": "new",
+      "baseline_git_blob_sha256": null,
+      "tested_working_tree_sha256": "ad1d0cb6446f72b79516b8a724b9c960046c0c2bf894d077d0c6a2fdac499653",
+      "bytes": 26593,
+      "changed_top_level_symbols": [
+        {
+          "name": "VerificationEnvironmentTests",
+          "line": 18,
+          "change": "added"
+        },
+        {
+          "name": "chunk",
+          "line": 90,
+          "change": "added"
+        },
+        {
+          "name": "StreamTests",
+          "line": 94,
+          "change": "added"
+        },
+        {
+          "name": "WorkerHardeningTests",
+          "line": 150,
+          "change": "added"
+        }
+      ]
+    },
+    {
+      "path": "tests/test_requirement_consistency_flow.py",
+      "change": "new",
+      "baseline_git_blob_sha256": null,
+      "tested_working_tree_sha256": "22ee9158b9601df43a913672599fa3cec74d4147e75899b8aca113729d49a109",
+      "bytes": 14888,
+      "changed_top_level_symbols": [
+        {
+          "name": "RequirementConsistencyFlowTests",
+          "line": 38,
+          "change": "added"
+        }
+      ]
+    },
+    {
+      "path": "tests/test_update004_verification_integration.py",
+      "change": "new",
+      "baseline_git_blob_sha256": null,
+      "tested_working_tree_sha256": "c54473fc77089c532b90e6b93ecdea0dc71761ad42cbd37fd1553cc0cf82f984",
+      "bytes": 12040,
+      "changed_top_level_symbols": [
+        {
+          "name": "Update004VerificationTests",
+          "line": 14,
+          "change": "added"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "verification_class": "DOCUMENTATION_INTEGRITY_AND_LOCAL_CANDIDATE_PRIVACY_REVIEW",
+  "reviewed_existing_candidate_files": 125,
+  "planned_staged_manifest_absent": true,
+  "missing_unexpected_paths": [],
+  "privacy_findings": [],
+  "git_diff_check_exit": 0,
+  "index_empty": true,
+  "publication_permitted": false,
+  "blocker": "Full genuine parent and ROOT verification absent; deadline enforcement unestablished.",
+  "synthetic_path_exceptions": [
+    "mini.py existing classifier fixtures C:/project/file.py and /home/user/file.ts, unchanged from HEAD",
+    "tests/test_post_repair_hardening.py synthetic C:/Apps fixture"
+  ],
+  "scope_limitations": "Heuristic reviewed-candidate scan, not a guarantee against every possible secret. No staged Git blob review or publication performed."
+}

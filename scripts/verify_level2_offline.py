@@ -14,8 +14,11 @@ import mini
 PATTERNS=['test_level1_native_verification.py','test_level2_generalized_recovery.py',
           'test_literal_clarification_lifecycle.py',
           'test_project12_clarification.py',
+          'test_requirement_consistency_flow.py',
+          'test_post_repair_hardening.py','test_child_inference_recovery.py','test_parent_deadline_recovery.py','test_host_preflight.py',
           'test_context_completed_progress.py',
           'test_context_recovery_functional.py',
+          'test_update004_verification_integration.py',
           'test_dependency_aware_scheduler.py',
           'test_greenfield_impact_lifecycle.py','test_pre_mutation_impact.py','test_context_sufficiency_gate.py',
           'test_verification_applicability.py','test_authority*.py','test_experiment*.py',
@@ -48,7 +51,11 @@ def main():
                  'failure_ids':[t.id() for t,_ in result.failures],'error_ids':[t.id() for t,_ in result.errors]}
             results.append(row);print(json.dumps({k:v for k,v in row.items() if k not in {'failure_ids','error_ids'}}),flush=True)
     finally:tempfile.tempdir=old_temp
-    for p in ['mini.py','hivo/context_sufficiency.py','hivo/artifact_progress.py','hivo/literal_source.py','hivo/literal_clarification.py','hivo/requirements.py','hivo/pre_mutation_impact.py','hivo/verification_routing.py']:
+    for p in ['mini.py','hivo/project_understanding.py','hivo/context_sufficiency.py','hivo/artifact_progress.py','hivo/literal_source.py','hivo/literal_clarification.py','hivo/requirements.py','hivo/pre_mutation_impact.py','hivo/verification_routing.py']:
+        source_files.add(ROOT/p)
+    for p in ['hivo/requirement_consistency.py','hivo/requirement_decisions.py']:
+        source_files.add(ROOT/p)
+    for p in ['hivo/inference_transport.py','hivo/process_supervision.py','hivo/http_client.py','hivo/host_preflight.py']:
         source_files.add(ROOT/p)
     record={'verification_class':'REGRESSION_WITH_CONTROLLED_FUNCTIONAL_CASES_SEPARATELY_IDENTIFIED',
             'command':'.\\.venv\\Scripts\\python.exe -B -X utf8 scripts/verify_level2_offline.py --output-dir <fresh-output-dir>',

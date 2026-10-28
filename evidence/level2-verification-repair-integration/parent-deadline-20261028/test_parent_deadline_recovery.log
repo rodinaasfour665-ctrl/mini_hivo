@@ -1,0 +1,17 @@
+test_deadline_during_blocked_headers_and_read_has_no_late_admission (test_parent_deadline_recovery.BlockedIOTests.test_deadline_during_blocked_headers_and_read_has_no_late_admission) ... ok
+test_headers_and_read_are_cancelled_while_blocked (test_parent_deadline_recovery.BlockedIOTests.test_headers_and_read_are_cancelled_while_blocked) ... ok
+test_suspend_jump_rejects_late_header_and_stream_result (test_parent_deadline_recovery.BlockedIOTests.test_suspend_jump_rejects_late_header_and_stream_result) ... ok
+test_uninterruptible_open_prevents_concurrent_provider_retry (test_parent_deadline_recovery.BlockedIOTests.test_uninterruptible_open_prevents_concurrent_provider_retry) ... ok
+test_cancelled_parent_cannot_dispatch_a_proposal_or_retry (test_parent_deadline_recovery.ParentRecoveryTests.test_cancelled_parent_cannot_dispatch_a_proposal_or_retry) ... ok
+test_parent_deadline_retry_can_complete_without_rewriting_children (test_parent_deadline_recovery.ParentRecoveryTests.test_parent_deadline_retry_can_complete_without_rewriting_children) ... ok
+test_parent_timeout_keeps_children_and_cannot_claim_root_success (test_parent_deadline_recovery.ParentRecoveryTests.test_parent_timeout_keeps_children_and_cannot_claim_root_success) ... ok
+test_three_committed_children_reach_parent_falsifier_impact_and_commit (test_parent_deadline_recovery.ParentRecoveryTests.test_three_committed_children_reach_parent_falsifier_impact_and_commit) ... ok
+test_cancel_and_keyboard_interrupt_reap_owned_process (test_parent_deadline_recovery.ProcessDeadlineTests.test_cancel_and_keyboard_interrupt_reap_owned_process) ... ok
+test_real_process_can_complete_before_deadline (test_parent_deadline_recovery.ProcessDeadlineTests.test_real_process_can_complete_before_deadline) ... ok
+test_real_sleeping_process_is_killed_at_short_outer_deadline (test_parent_deadline_recovery.ProcessDeadlineTests.test_real_sleeping_process_is_killed_at_short_outer_deadline) ... ok
+test_resume_jump_kills_before_accepting_late_exit (test_parent_deadline_recovery.ProcessDeadlineTests.test_resume_jump_kills_before_accepting_late_exit) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 5.214s
+
+OK

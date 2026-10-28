@@ -1,0 +1,72 @@
+test_cancelled_partial_or_late_response_is_not_returned (test_post_repair_hardening.StreamTests.test_cancelled_partial_or_late_response_is_not_returned) ... ok
+test_fast_and_utf8_fragmented_response (test_post_repair_hardening.StreamTests.test_fast_and_utf8_fragmented_response) ... ok
+test_http_500_is_not_unreachable (test_post_repair_hardening.StreamTests.test_http_500_is_not_unreachable) ... ok
+test_pre_cancel_never_opens_connection (test_post_repair_hardening.StreamTests.test_pre_cancel_never_opens_connection) ... ok
+test_progress_does_not_extend_total_deadline (test_post_repair_hardening.StreamTests.test_progress_does_not_extend_total_deadline) ... ok
+test_prompt_and_generation_idle_are_bounded (test_post_repair_hardening.StreamTests.test_prompt_and_generation_idle_are_bounded) ... ok
+test_protocol_eof_and_server_error_do_not_admit_partial (test_post_repair_hardening.StreamTests.test_protocol_eof_and_server_error_do_not_admit_partial) ... ok
+test_slow_prefill_and_progressing_generation_beyond_old_deadline (test_post_repair_hardening.StreamTests.test_slow_prefill_and_progressing_generation_beyond_old_deadline) ... ok
+test_unavailable_has_distinct_category (test_post_repair_hardening.StreamTests.test_unavailable_has_distinct_category) ... ok
+test_discovered_browser_failure_tries_another_installed_channel (test_post_repair_hardening.VerificationEnvironmentTests.test_discovered_browser_failure_tries_another_installed_channel) ... ok
+test_installed_channel_fallback_and_missing_browser (test_post_repair_hardening.VerificationEnvironmentTests.test_installed_channel_fallback_and_missing_browser) ... ok
+test_installer_commands_are_refused_before_process_launch (test_post_repair_hardening.VerificationEnvironmentTests.test_installer_commands_are_refused_before_process_launch) ... ok
+test_managed_browser_precedes_system_discovery (test_post_repair_hardening.VerificationEnvironmentTests.test_managed_browser_precedes_system_discovery) ... ok
+test_normal_cli_selects_semantic_profile_and_legacy_remains_explicit (test_post_repair_hardening.VerificationEnvironmentTests.test_normal_cli_selects_semantic_profile_and_legacy_remains_explicit) ... ok
+test_npx_verification_disables_implicit_package_acquisition (test_post_repair_hardening.VerificationEnvironmentTests.test_npx_verification_disables_implicit_package_acquisition) ... ok
+test_only_unrequested_loopback_favicon_404_is_optional (test_post_repair_hardening.VerificationEnvironmentTests.test_only_unrequested_loopback_favicon_404_is_optional) ... ok
+test_source_artifact_declarations_exclude_negative_and_literal_data (test_post_repair_hardening.VerificationEnvironmentTests.test_source_artifact_declarations_exclude_negative_and_literal_data) ... ok
+test_complete_stream_and_typed_deadline_keep_provider_metrics_accurate (test_post_repair_hardening.WorkerHardeningTests.test_complete_stream_and_typed_deadline_keep_provider_metrics_accurate) ... ok
+test_frozen_brain_root_goal_remains_the_actual_root_anchor (test_post_repair_hardening.WorkerHardeningTests.test_frozen_brain_root_goal_remains_the_actual_root_anchor) ... ok
+test_genuine_anchor_change_is_still_rejected (test_post_repair_hardening.WorkerHardeningTests.test_genuine_anchor_change_is_still_rejected) ... [BUILDER] ROOT executing
+[TOOL] context_sufficiency_check -
+[TOOL] write_file welcone.txt
+[REPAIR ROOT]
+[REPAIRER] ROOT executing
+[TOOL] context_sufficiency_check -
+[TOOL] edit_file welcone.txt
+ok
+test_inference_retry_success_exhaustion_and_no_tool_side_effects (test_post_repair_hardening.WorkerHardeningTests.test_inference_retry_success_exhaustion_and_no_tool_side_effects) ... ok
+test_literal_child_scope_is_source_bound_when_planner_hints_are_absent (test_post_repair_hardening.WorkerHardeningTests.test_literal_child_scope_is_source_bound_when_planner_hints_are_absent) ... ok
+test_named_nonliteral_invalid_or_overflow_sets_never_gain_partial_authority (test_post_repair_hardening.WorkerHardeningTests.test_named_nonliteral_invalid_or_overflow_sets_never_gain_partial_authority) ... ok
+test_nonliteral_falsifier_can_still_verify_an_authorized_script (test_post_repair_hardening.WorkerHardeningTests.test_nonliteral_falsifier_can_still_verify_an_authorized_script) ... ok
+test_nonliteral_named_output_has_physical_targets_and_preserves_obligations (test_post_repair_hardening.WorkerHardeningTests.test_nonliteral_named_output_has_physical_targets_and_preserves_obligations) ... [BUILDER] ROOT executing
+[TOOL] context_sufficiency_check -
+[TOOL] write_file profile.html
+[TOOL] write_file unrelated.txt
+ok
+test_physical_files_and_implementation_evidence_are_distinct (test_post_repair_hardening.WorkerHardeningTests.test_physical_files_and_implementation_evidence_are_distinct) ... ok
+test_real_recursive_orchestration_with_brain_mission_compiler_and_empty_hints (test_post_repair_hardening.WorkerHardeningTests.test_real_recursive_orchestration_with_brain_mission_compiler_and_empty_hints) ... ok
+test_real_recursive_receipt_counters_do_not_relabel_optional_stage5_metrics (test_post_repair_hardening.WorkerHardeningTests.test_real_recursive_receipt_counters_do_not_relabel_optional_stage5_metrics) ... ok
+test_refused_sibling_probe_recovers_without_repair_or_rewrite (test_post_repair_hardening.WorkerHardeningTests.test_refused_sibling_probe_recovers_without_repair_or_rewrite) ... [BUILDER] ROOT executing
+[TOOL] context_sufficiency_check -
+[TOOL] write_file welcone.txt
+[FALSIFY ROOT]
+[FALSIFIER] ROOT executing
+[TOOL] run_file sibling.txt
+ok
+test_repair_anchor_uses_stable_parent_not_narrative_summary (test_post_repair_hardening.WorkerHardeningTests.test_repair_anchor_uses_stable_parent_not_narrative_summary) ... [BUILDER] ROOT executing
+[TOOL] context_sufficiency_check -
+[TOOL] write_file welcone.txt
+[REPAIR ROOT]
+[REPAIRER] ROOT executing
+[TOOL] context_sufficiency_check -
+[TOOL] run_file welcone.txt
+ok
+test_scope_recovery_reaches_root_commit_without_repair_or_duplicate_write (test_post_repair_hardening.WorkerHardeningTests.test_scope_recovery_reaches_root_commit_without_repair_or_duplicate_write) ... ok
+test_specifier_streams_but_cancel_is_not_retried (test_post_repair_hardening.WorkerHardeningTests.test_specifier_streams_but_cancel_is_not_retried) ... ok
+test_stale_or_forged_native_proof_cannot_excuse_a_refusal (test_post_repair_hardening.WorkerHardeningTests.test_stale_or_forged_native_proof_cannot_excuse_a_refusal) ... [BUILDER] ROOT executing
+[TOOL] context_sufficiency_check -
+[TOOL] write_file welcone.txt
+ok
+test_wrong_bytes_are_not_dismissed_as_a_policy_failure (test_post_repair_hardening.WorkerHardeningTests.test_wrong_bytes_are_not_dismissed_as_a_policy_failure) ... [BUILDER] ROOT executing
+[TOOL] context_sufficiency_check -
+[TOOL] write_file welcone.txt
+[FALSIFY ROOT]
+[FALSIFIER] ROOT executing
+[TOOL] run_file sibling.txt
+ok
+
+----------------------------------------------------------------------
+Ran 34 tests in 4.065s
+
+OK

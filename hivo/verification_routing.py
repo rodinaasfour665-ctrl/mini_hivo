@@ -1215,7 +1215,7 @@ def analyze_verification_applicability(
 
     routes = [route for route in (test_route, syntax_route, browser_route) if route is not None][:_MAX_ROUTES]
     literal = task.get("impact_contract") or contract.get("impact_contract")
-    if isinstance(literal, dict) and literal.get("scope_required"):
+    if isinstance(literal, dict) and (literal.get("scope_required") or literal.get("literal_verification_only")):
         from .pre_mutation_impact import impact_mutation_block_reason
         if not impact_mutation_block_reason(literal):
             for target in literal.get("expected_targets", []):

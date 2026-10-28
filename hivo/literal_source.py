@@ -26,7 +26,7 @@ class LiteralInput:
 def policies(text):
     result={}
     n=r'(one|two|three|four|five|six|seven|eight|nine|ten|\d+)'
-    count=re.search(r'(?i)exactly\s+'+n+r'\s+(?:(?:UTF-?8|text)\s+)*files',text)
+    count=re.search(r'(?i)exactly\s+'+n+r'\s+(?:(?:UTF-?8|text)\s+)*files?\b',text)
     lines=re.search(r'(?i)(?:exactly|specified)\s+'+n+r'\s+lines',text)
     if count:result['required_count']=number(count[1])
     if lines:result['required_lines']=number(lines[1])
@@ -58,6 +58,25 @@ def _validate(out):
     if out.policies.get('required_count') and len(out.artifacts)>out.policies['required_count']:out.errors.append('Too many files for the original count.')
     return out
 
+
+def policy_text(raw, parsed=None):
+    """Mask proven literal payload spans before interpreting policy prose.
+
+    Offsets and line structure are retained; the original bytes stay in the
+    literal obligations. Do not infer boundaries for incomplete parses.
+    """
+    text=str(raw);parsed=parsed or parse_literal_input(text)
+    if not parsed.complete:return text
+    ranges=[]
+    for span in parsed.spans:
+        start,end=span['source_start'],span['source_end']
+        if parsed.representation=='json_map':ranges.append((start,end));continue
+        heading=re.search(r'(?im)^[ \t]*(?:(?:the\s+)?exact\s+contents?(?:\s+must\s+be)?|المحتوى(?:\s+الدقيق)?)\s*:[ \t]*\r?\n',text[start:end])
+        if heading:ranges.append((start+heading.end(),end))
+    for start,end in sorted(set(ranges),reverse=True):
+        text=text[:start]+re.sub(r'[^\r\n]',' ',text[start:end])+text[end:]
+    return text
+
 def parse_literal_input(raw,inherited=None):
     text=str(raw);out=LiteralInput(policies=dict(inherited or {}))
     def pairs(items):
@@ -70,6 +89,11 @@ def parse_literal_input(raw,inherited=None):
     header=re.compile(r'(?im)^[ \t]*(?:(?:please\s+)?(?:create|creat|make|write)\s+)?(?:file(?:\s+\d+)?|ملف(?:\s+\d+)?)\s*:\s*([^\r\n]+)\r?\n'
                       r'[ \t]*(?:(?:the\s+)?exact\s+contents?(?:\s+must\s+be)?|المحتوى(?:\s+الدقيق)?)\s*:[ \t]*\r?\n')
     matches=list(header.finditer(text))
+    # A named artifact declaration followed by an explicit literal block is
+    # equivalent to File: ... / Exact content:. Keep original offsets/bytes.
+    if not matches:
+        header=re.compile(r'(?im)^[ \t]*(?:create|make|write)\s+[^\r\n]*?\b(?:file|page|script|document)\s+(?:named|called)\s+(?P<name>[^\s]+)(?:\s+[^\r\n]*)?\r?\n(?:[ \t]*\r?\n)*[ \t]*(?:the\s+)?exact\s+contents?(?:\s+must\s+be)?\s*:[ \t]*\r?\n')
+        matches=list(header.finditer(text))
     objects=[]
     for match in re.finditer(r'\{',text):
         start=match.start()

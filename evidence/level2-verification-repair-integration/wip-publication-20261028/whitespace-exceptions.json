@@ -1,0 +1,24 @@
+{
+  "scope": "Exactly these two historical log paths. Their hashes remain fixed; source-code rules are unchanged.",
+  "exceptions": [
+    {
+      "path": "evidence/level2-verification-repair-integration/child3-inference-recovery-20261027/test_v26_all.log",
+      "unchanged_sha256": "fff68a0cd7d206f8806e0a3c16492fcee709f398481333b76d8d6bab7bb8c991",
+      "trailing_space_lines": [
+        192
+      ],
+      "attribute": "whitespace=-blank-at-eol",
+      "reason": "Faithful captured unittest progress output before failing subtests; no source-code formatting exception."
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/post-repair-live-20261027/regression-v26.log",
+      "unchanged_sha256": "25f48165ba3f7e00688ac46233d25ba0d76fa9549d04b08627b91e06be9a6bf0",
+      "trailing_space_lines": [
+        192
+      ],
+      "attribute": "whitespace=-blank-at-eol",
+      "reason": "Faithful captured unittest progress output before failing subtests; no source-code formatting exception."
+    }
+  ],
+  "primary_reference": "https://git-scm.com/docs/gitattributes#_checking_whitespace_errors"
+}

@@ -1,0 +1,114 @@
+[
+  {
+    "original_source": "audit_runs/20261021-workspace-audit/r-update-004/parent-deadline-20261028/investigation.json",
+    "original_source_sha256": "6bd5be6268215465af25e481825e63c48ec651e9d27979084af08a981bc98a65",
+    "derivative": "investigation.json",
+    "derivative_sha256": "6bd5be6268215465af25e481825e63c48ec651e9d27979084af08a981bc98a65",
+    "transformation": "Selected analysis, canonical UTF-8 LF; private prefixes removed where present."
+  },
+  {
+    "original_source": "audit_runs/20261021-workspace-audit/r-update-004/parent-deadline-20261028/regression-comparison.json",
+    "original_source_sha256": "c39e2c6c04e2227d7c66be88256a431ed2fb9e3b649941f652cb61215a3cea6e",
+    "derivative": "regression-comparison.json",
+    "derivative_sha256": "c39e2c6c04e2227d7c66be88256a431ed2fb9e3b649941f652cb61215a3cea6e",
+    "transformation": "Selected analysis, canonical UTF-8 LF; private prefixes removed where present."
+  },
+  {
+    "original_source": "audit_runs/20261021-workspace-audit/r-update-004/parent-deadline-20261028/frozen-source.json",
+    "original_source_sha256": "e223e60fb81bad54cf8151f6ae98985078255cd6f1f5aefc8b2d34171d8c4ec3",
+    "derivative": "frozen-source.json",
+    "derivative_sha256": "e223e60fb81bad54cf8151f6ae98985078255cd6f1f5aefc8b2d34171d8c4ec3",
+    "transformation": "Selected analysis, canonical UTF-8 LF; private prefixes removed where present."
+  },
+  {
+    "original_source": "audit_runs/20261021-workspace-audit/r-update-004/parent-deadline-20261028/controlled-independent-checks.json",
+    "original_source_sha256": "e0bc64ae7eadecbc0afcc694020d679bd0d3f49e366dab436f08a5755e2c41b0",
+    "derivative": "controlled-independent-checks.json",
+    "derivative_sha256": "e0bc64ae7eadecbc0afcc694020d679bd0d3f49e366dab436f08a5755e2c41b0",
+    "transformation": "Selected analysis, canonical UTF-8 LF; private prefixes removed where present."
+  },
+  {
+    "original_source": "audit_runs/20261021-workspace-audit/r-update-004/parent-deadline-20261028/offline-final/test_parent_deadline_recovery.log",
+    "original_source_sha256": "632ed9500c0daa1d8ad17d46382b3f953817aa57e297ee9608356b032141523f",
+    "derivative": "test_parent_deadline_recovery.log",
+    "derivative_sha256": "632ed9500c0daa1d8ad17d46382b3f953817aa57e297ee9608356b032141523f",
+    "transformation": "Preserve outcomes; replace private workspace/runtime prefixes, canonical LF."
+  },
+  {
+    "original_source": "audit_runs/20261021-workspace-audit/r-update-004/parent-deadline-20261028/offline-final/test_post_repair_hardening.log",
+    "original_source_sha256": "b5c9d468ed9f399d745a47450803fdea1aaf5af2c8b84b608c3d18f591ef1c2e",
+    "derivative": "test_post_repair_hardening.log",
+    "derivative_sha256": "b5c9d468ed9f399d745a47450803fdea1aaf5af2c8b84b608c3d18f591ef1c2e",
+    "transformation": "Preserve outcomes; replace private workspace/runtime prefixes, canonical LF."
+  },
+  {
+    "original_source": "audit_runs/20261021-workspace-audit/r-update-004/parent-deadline-20261028/offline-final/test_child_inference_recovery.log",
+    "original_source_sha256": "f2f15fb3bc0b58603cd6b42c86408cda671d1b66d62fca04cf66ca62d2028478",
+    "derivative": "test_child_inference_recovery.log",
+    "derivative_sha256": "f2f15fb3bc0b58603cd6b42c86408cda671d1b66d62fca04cf66ca62d2028478",
+    "transformation": "Preserve outcomes; replace private workspace/runtime prefixes, canonical LF."
+  },
+  {
+    "original_source": "audit_runs/20261021-workspace-audit/r-update-004/parent-deadline-20261028/offline-final/test_update004_verification_integration.log",
+    "original_source_sha256": "cecadcf6000b09e88d608b1061c1e66fc59624464cc41d20cf95a67e8c59f25b",
+    "derivative": "test_update004_verification_integration.log",
+    "derivative_sha256": "cecadcf6000b09e88d608b1061c1e66fc59624464cc41d20cf95a67e8c59f25b",
+    "transformation": "Preserve outcomes; replace private workspace/runtime prefixes, canonical LF."
+  },
+  {
+    "original_source": "audit_runs/20261021-workspace-audit/r-update-004/parent-deadline-20261028/controlled-parent/success/inspection.json",
+    "original_source_sha256": "48d74ff622d249c88adda0b07ad6fef4a32abd3ce8cdf5a842f8ef33f4d1ae0b",
+    "derivative": "controlled/success.json",
+    "derivative_sha256": "48d74ff622d249c88adda0b07ad6fef4a32abd3ce8cdf5a842f8ef33f4d1ae0b",
+    "transformation": "Selected actual gate/tool/artifact observations; not a runtime authorization grant."
+  },
+  {
+    "original_source": "audit_runs/20261021-workspace-audit/r-update-004/parent-deadline-20261028/controlled-parent/retry/inspection.json",
+    "original_source_sha256": "ed48bfe931a953463cb5f69d18e34e94df2a0df5467e8b8b126c9c6c8d684326",
+    "derivative": "controlled/retry.json",
+    "derivative_sha256": "ed48bfe931a953463cb5f69d18e34e94df2a0df5467e8b8b126c9c6c8d684326",
+    "transformation": "Selected actual gate/tool/artifact observations; not a runtime authorization grant."
+  },
+  {
+    "original_source": "audit_runs/20261021-workspace-audit/r-update-004/parent-deadline-20261028/controlled-parent/permanent/inspection.json",
+    "original_source_sha256": "76fe61b3b6cfe67957277964b93c83ce2a25b6feb03978cd812b0db4d2a33bad",
+    "derivative": "controlled/permanent.json",
+    "derivative_sha256": "76fe61b3b6cfe67957277964b93c83ce2a25b6feb03978cd812b0db4d2a33bad",
+    "transformation": "Selected actual gate/tool/artifact observations; not a runtime authorization grant."
+  },
+  {
+    "original_source": "audit_runs/20261021-workspace-audit/r-update-004/parent-deadline-20261028/controlled-parent/cancel/inspection.json",
+    "original_source_sha256": "83861f56b735a90222a97ccce2dc69c465d00dde6b7ef68c68afb5c374a71387",
+    "derivative": "controlled/cancel.json",
+    "derivative_sha256": "83861f56b735a90222a97ccce2dc69c465d00dde6b7ef68c68afb5c374a71387",
+    "transformation": "Selected actual gate/tool/artifact observations; not a runtime authorization grant."
+  },
+  {
+    "original_source": "audit_runs/20261021-workspace-audit/r-update-004/parent-deadline-20261028/provider-server-snapshot.log",
+    "original_source_sha256": "ed6b9a5173eb84dec69d1431a74a2eada9ef3202287e8f12076583c6000177aa",
+    "derivative": "provider-excerpt.log",
+    "derivative_sha256": "dc397f5ebedb11a281e3ba65be96a6fcd1218a23422cfa43da882550c67ee7e0",
+    "transformation": "Selected parent prefill and cancellation lines only; omit private model/runtime paths and unrelated host details."
+  },
+  {
+    "original_source": "audit_runs/20261021-workspace-audit/r-update-004/parent-deadline-20261028/power-events.json",
+    "original_source_sha256": "f4470a2a1a50dff1c74c1fee7cff8d2746089e00c454c6d67b9773f443f2fa14",
+    "derivative": "power-events.json",
+    "derivative_sha256": "3e0bbbf085f9a99c0d0f7cf4d68904e3ec612cc8e9861dd9118ba36d03ca0665",
+    "transformation": "Only relevant event timestamps/provider/id/first-line descriptions; no host identifiers."
+  },
+  {
+    "original_source": "audit_runs/20261021-workspace-audit/r-update-004/parent-deadline-20261028/live-inventory-final/result.json",
+    "original_source_sha256": "f525d3277eb95507e1b383b57a8415144f2f1b532719a211d9e355f388d1dcfa",
+    "derivative": "live-replay.json",
+    "derivative_sha256": "67136fd9fe1e6de26e9105937b8e7d195e96a8bf9bf8bafa817e228d28ad0cd2",
+    "transformation": "Retain result/null application metrics; add selected preflight boundary and source reconciliation. No task run ID exists."
+  },
+  {
+    "original_source": "audit_runs/20261021-workspace-audit/r-update-004/parent-deadline-20261028/live-inventory-final/supervision.jsonl",
+    "original_source_sha256": "c95d4ea89e5ce4f19c44d6756c8f84c337d050b177d001e5649e0bd2ce5280f6",
+    "derivative": "supervision.json",
+    "derivative_sha256": "148771b9e40828160e3ec58328e6490ac358e11ef2143723056d504ec08456b4",
+    "transformation": "Omit local PID; retain timestamps, elapsed times and terminal process reason."
+  }
+]

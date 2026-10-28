@@ -1,0 +1,26 @@
+[
+  {
+    "time": "2026-10-27T23:29:32.9204929+03:00",
+    "provider": "Microsoft-Windows-Kernel-Power",
+    "id": 507,
+    "description": "The system is exiting Modern Standby "
+  },
+  {
+    "time": "2026-10-27T23:13:25.6538323+03:00",
+    "provider": "Microsoft-Windows-Kernel-Power",
+    "id": 506,
+    "description": "The system is entering Modern Standby "
+  },
+  {
+    "time": "2026-10-27T23:09:57.4691030+03:00",
+    "provider": "Microsoft-Windows-Kernel-Power",
+    "id": 507,
+    "description": "The system is exiting Modern Standby "
+  },
+  {
+    "time": "2026-10-27T23:09:03.8432410+03:00",
+    "provider": "Microsoft-Windows-Kernel-Power",
+    "id": 506,
+    "description": "The system is entering Modern Standby "
+  }
+]

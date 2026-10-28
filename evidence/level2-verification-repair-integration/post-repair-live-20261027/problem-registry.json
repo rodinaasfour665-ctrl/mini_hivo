@@ -1,0 +1,444 @@
+[
+  {
+    "id": "P1",
+    "classification": "confirmed provider/client defect",
+    "run_ids": [
+      "20261027T172137-d9c5357c",
+      "20261027T174632-342cd69a"
+    ],
+    "stage": "Specifier",
+    "original_requirement_reference": "original-requests.json",
+    "expected_behavior": "Admit a complete bounded specification or accurately diagnose inference failure.",
+    "actual_behavior": "Blocking nonstreaming request timed out while server was actively generating; message implied unreachability.",
+    "actual_tool_call_and_result": "No Builder or task tools executed.",
+    "state_changed": false,
+    "authorization_outcome": "No mutation requested",
+    "verification_outcome": "failed/root false",
+    "confirmed_cause_and_confidence": "HIGH: ask_ollama passes configured 120 seconds into urllib; timestamped server prefill/decode and cancellation corroborate deadline ownership. No OOM proof.",
+    "production_code": [
+      "mini.py::ask_ollama",
+      "hivo/http_client.py::post_json",
+      "hivo/inference_transport.py::stream_chat"
+    ],
+    "research_mapping": [
+      "Sarathi-Serve: prefill/decode distinction",
+      "Official Ollama streaming API"
+    ],
+    "alternatives_considered": [
+      "Global timeout increase rejected",
+      "Prompt trimming deferred: no evidence mandatory source is excessive",
+      "GPU configuration change deferred"
+    ],
+    "repair": "Specifier-only progress-aware bounded stream, 360 total/120 idle, typed errors and complete output admission; output cap/retries unchanged.",
+    "test_evidence": [
+      "StreamTests",
+      "WorkerHardeningTests provider boundary tests",
+      "live-run-registry.json"
+    ],
+    "remaining_limitations": "Other roles still use 120-second blocking inference. Live completed Specifier was under 120 seconds; >120 progression is controlled-clock evidence only."
+  },
+  {
+    "id": "P2",
+    "classification": "confirmed controller classification/tool projection defect",
+    "run_ids": [
+      "20261027T161357-1ee2c633"
+    ],
+    "stage": "child1 Falsifier",
+    "original_requirement_reference": "original-requests.json",
+    "expected_behavior": "Independently verify owned correct literal bytes; distinguish refused sibling inspection from output failure.",
+    "actual_behavior": "Correct products file passed native readback; refused run_file supplier entered unresolved executable failures and triggered Repairer.",
+    "actual_tool_call_and_result": "Owned read succeeds; sibling reads/run_file refused source-bound scope.",
+    "state_changed": false,
+    "authorization_outcome": "Scope guards correctly denied unauthorized inspection",
+    "verification_outcome": "Initial child verification failed despite correct owned bytes; later retry passed",
+    "confirmed_cause_and_confidence": "HIGH: SQLite results plus native digests and current verification failure aggregation.",
+    "production_code": [
+      "mini.py::execute_agent_task",
+      "mini.py::_safe_literal_policy_refusals",
+      "mini.py::_current_verification_failures",
+      "mini.py::_falsify_task_body"
+    ],
+    "research_mapping": [
+      "Saltzer/Schroeder least privilege",
+      "Agentless localization/validation",
+      "Reflexion feedback quality"
+    ],
+    "alternatives_considered": [
+      "Broaden sibling access rejected",
+      "Ignore all tool failures rejected",
+      "Extra model reflection rejected"
+    ],
+    "repair": "Project owned path enum; native guarded independent readback after exact refusal; preserve raw evidence; discharge only with full current local proof.",
+    "test_evidence": [
+      "Wrong-byte and stale/forged proof negatives",
+      "Actual Worker/ROOT recovery",
+      "Retained exact-byte functional replay"
+    ],
+    "remaining_limitations": "Literal-only recovery; dependencies/nonliteral artifacts keep ordinary gates. No universal Falsifier model reliability claim."
+  },
+  {
+    "id": "P3",
+    "classification": "confirmed caller propagation defect; validator correct",
+    "run_ids": [
+      "20261027T161357-1ee2c633"
+    ],
+    "stage": "Repairer",
+    "original_requirement_reference": "original-requests.json",
+    "expected_behavior": "Use accepted stable root/parent goal identity and current local task, not narrative summary as authority.",
+    "actual_behavior": "Two proposed writes rejected as GOAL_ANCHOR_DRIFT because parent_summary was passed as parent_goal.",
+    "actual_tool_call_and_result": "write_file products refused twice; run_file products passed.",
+    "state_changed": false,
+    "authorization_outcome": "Impact validator correctly rejected drift",
+    "verification_outcome": "Repair rounds failed; no accepted repair write",
+    "confirmed_cause_and_confidence": "HIGH: two impact_contract_rejected events, exact tool failures and preparation/repair context call paths.",
+    "production_code": [
+      "mini.py::_prepare_task_impact_contract",
+      "mini.py::repair_task"
+    ],
+    "research_mapping": [
+      "Saltzer/Schroeder complete mediation",
+      "Existing proof-binding discipline"
+    ],
+    "alternatives_considered": [
+      "Relax anchor validation rejected",
+      "Invent a new approval rejected"
+    ],
+    "repair": "Capture stable context at contract construction and propagate it into Repairer; current local goal remains revalidated.",
+    "test_evidence": [
+      "Stable parent narrative regression",
+      "Genuine changed goal remains rejected"
+    ],
+    "remaining_limitations": "Final-source genuine Repairer success not established merely by controlled anchor tests."
+  },
+  {
+    "id": "P4",
+    "classification": "correct safety policy plus inefficient valid behavior and instrumentation semantics",
+    "run_ids": [
+      "20261027T161357-1ee2c633"
+    ],
+    "stage": "strategy and parent integration",
+    "original_requirement_reference": "original-requests.json",
+    "expected_behavior": "Compose committed children read-only with current native/Falsifier/impact evidence; counters name the active route.",
+    "actual_behavior": "Strategy rewrote already-correct bytes; parent attempted write was refused. ROOT native coverage/Falsifier/impact comparison succeeded; optional Stage5 counters remained zero.",
+    "actual_tool_call_and_result": "Strategy native write_file accepted under same contract; parent write_file refused READ_ONLY_PARENT_INTEGRATION.",
+    "state_changed": "Strategy rewrote identical content; parent changed_paths=[]",
+    "authorization_outcome": "No system-call bypass; read-only parent correctly enforced",
+    "verification_outcome": "Historical genuine ROOT PASS; committed literal receipts exist",
+    "confirmed_cause_and_confidence": "HIGH: actual SQLite tool results, three receipt events and aggregate impact evidence; model label not execution evidence.",
+    "production_code": [
+      "mini.py::literal receipt registration",
+      "mini.py::aggregate parent completion",
+      "mini.py::parent integration context"
+    ],
+    "research_mapping": [
+      "Agentless focused recovery",
+      "Existing transaction/receipt research; no new saga engine"
+    ],
+    "alternatives_considered": [
+      "Relabel optional Stage5 counters rejected",
+      "Force parent rewrite rejected"
+    ],
+    "repair": "Avoid unnecessary repair via P2; explicit read-only parent guidance; add counters only for active literal events.",
+    "test_evidence": [
+      "Actual three-child scheduler/parent retained replay",
+      "Existing dependency and authority suites"
+    ],
+    "remaining_limitations": "No claim that all recursive/nonliteral parent integrations are covered; legacy optional counters retain original meanings."
+  },
+  {
+    "id": "P5",
+    "classification": "classification semantics; observability ambiguity",
+    "run_ids": [
+      "20261027T172137-d9c5357c"
+    ],
+    "stage": "project mode",
+    "original_requirement_reference": "original-requests.json",
+    "expected_behavior": "Distinguish absent implementation from physically empty filesystem and preserve existing TXT artifacts.",
+    "actual_behavior": "NEW_PROJECT selected with four existing TXT files and no recognized implementation.",
+    "actual_tool_call_and_result": "No task tools before Specifier timeout.",
+    "state_changed": false,
+    "authorization_outcome": "Existing preservation rules retained",
+    "verification_outcome": "Not a false conflict or state-leak proof",
+    "confirmed_cause_and_confidence": "HIGH: source inventory classification and preserved project-24 artifacts.",
+    "production_code": [
+      "hivo/project_understanding.py::inventory_repository"
+    ],
+    "research_mapping": [
+      "Conventional explicit-state diagnostics; no novel research algorithm needed"
+    ],
+    "alternatives_considered": [
+      "Treat every TXT as implementation rejected",
+      "Delete existing artifacts rejected"
+    ],
+    "repair": "Add separate filesystem_empty/implementation_empty; unknown when inventory incomplete.",
+    "test_evidence": [
+      "Empty/TXT/Python inventory checks",
+      "Project understanding regression"
+    ],
+    "remaining_limitations": "Project mode names remain unchanged; truncated inventory cannot prove emptiness."
+  },
+  {
+    "id": "P6",
+    "classification": "new confirmed environment discovery defect",
+    "run_ids": [
+      "20261027T182805-227ed5b0"
+    ],
+    "stage": "HTML native/browser verification",
+    "original_requirement_reference": "original-requests.json",
+    "expected_behavior": "Run applicable real browser verification using an available supported local browser.",
+    "actual_behavior": "Managed Chromium absent; existing browser discovery missed installed Windows channels. Edge probe closed; Chrome rendered correctly.",
+    "actual_tool_call_and_result": "write_file index.html accepted; run_file/verify_web_app failed browser environment; independent Chrome and final browser_snapshot pass.",
+    "state_changed": "1411-byte artifact preserved before failed run finalized",
+    "authorization_outcome": "No installation or personal-profile access",
+    "verification_outcome": "Intermediate ROOT failed; separate rendered artifact readback passes",
+    "confirmed_cause_and_confidence": "HIGH: executable presence, official channel API and actual isolated launch/DOM probes.",
+    "production_code": [
+      "mini.py::browser_launch_kwargs",
+      "mini.py::launch_verification_browser",
+      "mini.py::ensure_browser",
+      "mini.py::browser_snapshot"
+    ],
+    "research_mapping": [
+      "Official Playwright browser channels",
+      "Saltzer/Schroeder least privilege"
+    ],
+    "alternatives_considered": [
+      "Install managed Chromium automatically rejected",
+      "Skip browser gate rejected",
+      "Assume discovered binary launches rejected"
+    ],
+    "repair": "Prefer existing managed/PATH browser; discover installed supported Windows channels; bounded fallback when launch fails.",
+    "test_evidence": [
+      "Discovery/missing/failed-candidate tests",
+      "independent-browser-readback.json",
+      "Final-source genuine HTML replay separately recorded"
+    ],
+    "remaining_limitations": "Enterprise policies/browser-version compatibility can still fail. Rendering static page is not a complex-app reliability benchmark."
+  },
+  {
+    "id": "P7",
+    "classification": "new confirmed verification command validation gap",
+    "run_ids": [
+      "20261027T182805-227ed5b0"
+    ],
+    "stage": "Builder run_command",
+    "original_requirement_reference": "original-requests.json",
+    "expected_behavior": "Verification commands must not install packages or download browser dependencies.",
+    "actual_behavior": "npx playwright install passed validator, then failed process launch because executable was absent.",
+    "actual_tool_call_and_result": "npx install launch error, not policy refusal; npm install and shell listings refused.",
+    "state_changed": false,
+    "authorization_outcome": "Existing npx tool-name allowlist was too broad",
+    "verification_outcome": "No installation succeeded",
+    "confirmed_cause_and_confidence": "HIGH: actual tool result plus _validated_command_parts accepted installer subcommand.",
+    "production_code": [
+      "mini.py::_validated_command_parts"
+    ],
+    "research_mapping": [
+      "Saltzer/Schroeder least privilege/complete mediation"
+    ],
+    "alternatives_considered": [
+      "Allow installers to resolve environment rejected",
+      "Broadly enable shell commands rejected"
+    ],
+    "repair": "Reject installer verbs/package acquisition options; enforce --no-install for allowed npx verification.",
+    "test_evidence": [
+      "No-subprocess-on-installer regression",
+      "Legitimate npx playwright test normalization and npm test positive"
+    ],
+    "remaining_limitations": "Scoped gap closure, not a full package-manager/script or hostile-code security audit."
+  },
+  {
+    "id": "P8",
+    "classification": "new confirmed browser observation classification defect",
+    "run_ids": [
+      "20261027T184821-5b294417"
+    ],
+    "stage": "HTTP browser verification",
+    "original_requirement_reference": "original-requests.json",
+    "expected_behavior": "Do not require an unrequested extra task file solely for a browser-default icon request; retain genuine application errors.",
+    "actual_behavior": "Rendered page correct, but implicit favicon 404 console message failed both Builder and Falsifier checks; generic network handler already excluded favicon.",
+    "actual_tool_call_and_result": "run_file and verify_web_app returned console_errors FAIL; later Repairer started; bounded run interrupted.",
+    "state_changed": "Original accepted HTML preserved; no task PASS",
+    "authorization_outcome": "Browser gate correctly retained its failure until source-level diagnosis",
+    "verification_outcome": "Outer 900-second interruption; no finalized ROOT result",
+    "confirmed_cause_and_confidence": "HIGH: real HTTP reproduction captured console source URL /favicon.ico, local server GET 404 and no explicit icon reference.",
+    "production_code": [
+      "mini.py::_classify_browser_console_errors",
+      "mini.py::browser_snapshot"
+    ],
+    "research_mapping": [
+      "Saltzer/Schroeder complete mediation: narrow classification, preserve raw observation",
+      "Agentless focused failure localization; no extra artifact workaround"
+    ],
+    "alternatives_considered": [
+      "Add favicon file rejected: violates one-task-file source",
+      "Ignore all console 404s rejected",
+      "Skip browser verification rejected"
+    ],
+    "repair": "Classify only exact local-origin default-icon 404 without explicit reference/requirement as optional; retain raw console observation and reason. Other resources, explicit/required icon, foreign origin and 500 errors still fail.",
+    "test_evidence": [
+      "Unit positive and six negative classifications",
+      "Real HTTP positive page",
+      "Real HTTP explicit-icon and missing-script negative cases"
+    ],
+    "remaining_limitations": "Bounded final-source genuine replay separately recorded. Optional-resource handling is narrow, not a general browser-error suppression policy."
+  },
+  {
+    "id": "P9",
+    "classification": "new confirmed source-to-impact compilation defect",
+    "run_ids": [
+      "20261027T190608-7757cfd2"
+    ],
+    "stage": "final impact comparison",
+    "original_requirement_reference": "original-requests.json",
+    "expected_behavior": "One source-named physical output, semantic properties retained as verification duties.",
+    "actual_behavior": "Browser/Falsifier gates passed but impact expected ten word/symbol targets and found eight missing; transaction rolled back.",
+    "actual_tool_call_and_result": "Authorized write_file index.html and passing native/Falsifier browser checks; final comparison failed.",
+    "state_changed": "Page created, then safely removed by normal transaction rollback",
+    "authorization_outcome": "Authorization existed; post-state expectations were wrong",
+    "verification_outcome": "failed/root false, zero provider timeouts/retries",
+    "confirmed_cause_and_confidence": "HIGH: _identifier_candidates tokenizes ordinary goal words; empty nonliteral root scope allows them to become required semantic mutation targets.",
+    "production_code": [
+      "hivo/requirements.py::named_artifact_declarations",
+      "mini.py::_prepare_task_impact_contract"
+    ],
+    "research_mapping": [
+      "Source-grounding separation from preceding R4 research",
+      "Saltzer/Schroeder authority scope and complete mediation",
+      "Agentless localize failed gate before repair"
+    ],
+    "alternatives_considered": [
+      "Ignore missing impact targets rejected",
+      "Add files/symbols for English words rejected",
+      "Broaden mutation paths rejected"
+    ],
+    "repair": "Compile positive source-named physical declarations for nonliteral NEW_PROJECT roots. Preserve semantic obligations; exclude literal-route fallback, negative declarations and invalid/overflow/case-colliding sets; scope exact declared paths.",
+    "test_evidence": [
+      "Physical target and unauthorized-write regression",
+      "Parser name/type variants",
+      "Existing literal overflow/unsafe paths regressions",
+      "Final controlled real-browser ROOT/impact/transaction completion"
+    ],
+    "remaining_limitations": "Bounded named/called declaration grammar, not arbitrary natural language. Existing impact obligations cap at ten while full source ledger remains retained; independent case oracle is still necessary."
+  },
+  {
+    "id": "P10",
+    "classification": "new confirmed metadata-to-verifier classification defect",
+    "run_ids": [],
+    "stage": "controlled full HTML Falsifier/browser path",
+    "original_requirement_reference": "original-requests.json",
+    "expected_behavior": "Page verification type derives from source semantics, not authorization hash bytes.",
+    "actual_behavior": "Actual appended impact hash contained 3d; legacy full-JSON substring classifier selected game, demanding canvas and game bridge for static HTML.",
+    "actual_tool_call_and_result": "Real browser rendered correct page, then inappropriate game-profile assertions failed.",
+    "state_changed": "Controlled run rolled back after wrong profile; later corrected run committed",
+    "authorization_outcome": "No authority bypass; verifier selection was polluted by authority data",
+    "verification_outcome": "Controlled production ROOT done/pass after existing field-scoped policy adoption",
+    "confirmed_cause_and_confidence": "HIGH: original source contract had no game/3d token; attached impact hash did; legacy and field-scoped classifier reproductions differ exactly.",
+    "production_code": [
+      "mini.py::run_baseline_request",
+      "mini.py::run_recursive_request",
+      "mini.py::parse_args",
+      "mini.py::main",
+      "mini.py verification profile call sites",
+      "Existing hivo/verification.py::_profile_semantic_text"
+    ],
+    "research_mapping": [
+      "Existing Experiment17 field-scoped classification checkpoint (not prior full-flow proof)",
+      "Saltzer/Schroeder separation of authority and interpretation",
+      "Ground source semantics instead of metadata"
+    ],
+    "alternatives_considered": [
+      "Remove game assertions rejected",
+      "Change hashes to avoid a substring rejected",
+      "Hardcode HTML profile rejected"
+    ],
+    "repair": "Use existing field_scoped classifier for normal baseline/recursive CLI defaults; preserve explicit current legacy option for historical comparisons; propagate selection across modes.",
+    "test_evidence": [
+      "CLI default/legacy propagation expectations",
+      "Hash pollution negative and genuine 3D-game positive",
+      "Existing Experiment17 classifier tests",
+      "Actual controlled full browser/Falsifier/impact/transaction run"
+    ],
+    "remaining_limitations": "Legacy current explicitly selected still reproduces historical behavior. Field-scoped keyword interpretation remains finite; no universal semantic verification claim."
+  },
+  {
+    "id": "P11",
+    "classification": "confirmed legacy recursive literal binding and source propagation defect",
+    "run_ids": [
+      "20261027T203235-92306c8b"
+    ],
+    "stage": "child impact compilation before first Builder",
+    "original_requirement_reference": "original-requests.json",
+    "expected_behavior": "Each child owns only source-grounded literal artifacts, preserves exact bytes and reaches native readback before independent verification.",
+    "actual_behavior": "Child 1 accepted sibling writes; impact had eleven targets; run_file TXT unsupported; all three artifacts contained CRLF instead of LF before the external interruption.",
+    "actual_tool_call_and_result": "Ten tool records; accepted child1 sibling mutations and unsupported native verification. Exact scope_hint values were not persisted.",
+    "state_changed": "Files changed to incorrect 43/48/45-byte outputs rather than 41/46/43",
+    "authorization_outcome": "Impact grant existed but compilation lost literal/source ownership; existing guard enforced the overbroad compiled grant",
+    "verification_outcome": "Outer 900-second timeout; no finalized ROOT metrics, child receipt or commit. Not PASS.",
+    "confirmed_cause_and_confidence": "HIGH: optional hint filtering can discard all root literal bindings and trigger generic scope fallback. Empty/nonmatching hints reproduce it. Frozen source root_goal versus goal mismatch is confirmed; a particular unrecorded model hint is not established.",
+    "production_code": [
+      "mini.py::_source_goal_anchor",
+      "mini.py::_source_literal_child_paths",
+      "mini.py::_prepare_task_impact_contract",
+      "mini.py::_literal_worker_mission_projection",
+      "mini.py::execute_leaf"
+    ],
+    "research_mapping": [
+      "Saltzer/Schroeder least privilege and complete mediation",
+      "Source grounding and typed separation from earlier phase; focused localization, not another model reflection loop"
+    ],
+    "alternatives_considered": [
+      "Broaden sibling permission rejected",
+      "Force writes or bypass Specifier rejected",
+      "Increase production budgets rejected",
+      "Trust model hints as authority rejected"
+    ],
+    "repair": "Validate child local literal values against root source; bind canonical paths; fail closed on contradiction/ungrounded ownership; project derived source obligations and narrow mission targets. Preserve existing immutable child contracts.",
+    "test_evidence": [
+      "34 focused hardening passes",
+      "Production recursive Project Brain/MissionCompiler regression with empty hints and overly broad model advice",
+      "Actual 41/46/43-byte controlled artifacts, three child receipts and read-only parent ROOT completion",
+      "Approved final genuine recursive/HTML replays recorded separately"
+    ],
+    "remaining_limitations": "Controlled source binding passes do not prove live-model reliability. Historical successful HTML/provider recovery use an earlier mini.py hash. Publication requires both approved final-source live replays and final privacy/integrity checks."
+  },
+  {
+    "id": "P12",
+    "classification": "open final-source completion and latency acceptance blocker",
+    "run_ids": [
+      "20261027T210935-14cea8e4"
+    ],
+    "stage": "approved 2100-second outer replay boundary during third-child Builder inference",
+    "original_requirement_reference": "original-requests.json",
+    "expected_behavior": "Three exact artifacts, independent child verification, Parent Integration, parent Falsifier, impact/transactions and ROOT done/root true within the approved run.",
+    "actual_behavior": "Two exact files and committed verified children; third file absent, no parent gates, outer timeout. Final application metrics are null.",
+    "actual_tool_call_and_result": "Nine observed tools: three context checks, two writes, two native proofs and two Falsifier reads. No rejected shell loop or sibling write.",
+    "state_changed": "Correct products/supplier retained; shipment missing",
+    "authorization_outcome": "All three child candidates scoped to their own one source artifact; completed child comparisons have no scope violation",
+    "verification_outcome": "Acceptance incomplete, not ROOT PASS; harness exit1, outer_timeout true",
+    "confirmed_cause_and_confidence": "HIGH for stopping boundary and counts: 28 model requests, 19 completed replies, eight 120-second client timeouts and one in-flight retry. Active CPU/cancellation evidence is consistent with latency; environment-only causation or optimal prompt construction is not established.",
+    "production_code": [
+      "mini.py::ask_ollama",
+      "mini.py::run_recursive_request",
+      "mini.py::execute_leaf",
+      "scripts/replay_post_repair.py"
+    ],
+    "research_mapping": [
+      "Sarathi-Serve phase-aware latency measurement; no inference scheduler imported",
+      "Bounded supervision with independent postconditions, not completion prose"
+    ],
+    "alternatives_considered": [
+      "Silently extend outer or production limits rejected",
+      "Publish partial completion rejected",
+      "Claim earlier-source live passes prove final source rejected",
+      "Additional costly replay without permission rejected"
+    ],
+    "repair": "No completed repair claimed for this remaining latency/completion boundary. Preserve exact partial results, inspect role timing and retain independent three-file/root acceptance requirements. Production and outer limits remain unchanged.",
+    "test_evidence": [
+      "34 focused passes",
+      "Current controlled full recursive ROOT completion",
+      "Final-source genuine partial verification of two children; independent missing third artifact and absent parent gates"
+    ],
+    "remaining_limitations": "Required genuine final-source recursive completion remains unverified. Publication blocked even if the separately approved HTML run passes. Further costly replay requires user approval."
+  }
+]

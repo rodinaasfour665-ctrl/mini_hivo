@@ -1,0 +1,16 @@
+{
+  "scope": "Canonical UTF-8 LF local packet bytes; global publication-manifest records actual staged Git bytes and raw-tested hashes separately.",
+  "report": {
+    "path": "updates/R_UPDATE_004.md",
+    "working_tree_sha256": "9e77c53083fd1547fd7c2601d127a09db55844f82dc6fdb1481c1d47309f0743",
+    "canonical_lf_sha256": "9e77c53083fd1547fd7c2601d127a09db55844f82dc6fdb1481c1d47309f0743"
+  },
+  "files": {
+    "engineering-audit.json": "70cbf21b9b77beb1b34748b37515a6fb8660a30b2898be7c4f72c9cacbfb14d2",
+    "evidence-index.json": "2c67d2d1d8761beb6bdd54932d9490ef9ad2d24c6b088ed5c2724002067f1ccd",
+    "preservation.json": "e1ffc4a4fbe1a53ddd72366a63a056cd8621de0e9dd7dd07b1885551c7773e4a",
+    "README.md": "7e9f0d6ed381d9d3ea96313fcc1606ced15a1e0c4971ff702dff503279416d1f",
+    "validation.json": "3d390a3d873d47c693f1770cef99c83fe5c136dde4b0f93d4d077912f0f37d2d",
+    "whitespace-exceptions.json": "0b1226e75de3e6bcc8968415b69ddcc8045016012690ad240d366679926dcf9a"
+  }
+}

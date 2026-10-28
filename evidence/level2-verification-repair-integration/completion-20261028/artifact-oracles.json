@@ -1,0 +1,26 @@
+{
+  "scope": "Expected original inventory bytes only; no task artifact was created in this attempt.",
+  "artifacts": {
+    "products.txt": {
+      "expected_bytes": 41,
+      "expected_sha256": "66d0f5c32b72d2edc9af209125f18346c828767b84af10304009cb8e6177516b",
+      "actual_bytes": null,
+      "actual_sha256": null,
+      "created": false
+    },
+    "supplier.txt": {
+      "expected_bytes": 46,
+      "expected_sha256": "290e00c2af96732a9b48573cf9de857c75f11327855b62ee8223916abc3b27e4",
+      "actual_bytes": null,
+      "actual_sha256": null,
+      "created": false
+    },
+    "shipment.txt": {
+      "expected_bytes": 43,
+      "expected_sha256": "80e258c1a18bda44c6bdb66b1aef8ef3c2c006a9aa1f2c7911527111fa74c48e",
+      "actual_bytes": null,
+      "actual_sha256": null,
+      "created": false
+    }
+  }
+}

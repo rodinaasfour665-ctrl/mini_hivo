@@ -1,0 +1,49 @@
+{
+  "previous_update_reports": {
+    "updates/R_UPDATE_001.md": {
+      "original_sha256": "1b9347cceb50d08f581912ac9944a6d0cefa20fca7bf190a532d8d4908f7813c",
+      "current_sha256": "1b9347cceb50d08f581912ac9944a6d0cefa20fca7bf190a532d8d4908f7813c",
+      "unchanged": true
+    },
+    "updates/R_UPDATE_002.md": {
+      "original_sha256": "7560289df5adabb8c65ea54432fcb58e0df187df0fe50bd93f3455d8a23bf450",
+      "current_sha256": "7560289df5adabb8c65ea54432fcb58e0df187df0fe50bd93f3455d8a23bf450",
+      "unchanged": true
+    },
+    "updates/R_UPDATE_003.md": {
+      "original_sha256": "c41654563541607d9ae8b39a40198ebc0459a69c7fa738fe42fd2cde75801fa5",
+      "current_sha256": "c41654563541607d9ae8b39a40198ebc0459a69c7fa738fe42fd2cde75801fa5",
+      "unchanged": true
+    }
+  },
+  "protected_prior_curated_files": 143,
+  "prior_curated_unchanged": true,
+  "original_run_inventories": [
+    {
+      "phase": "child3-recovery-20261027",
+      "files": 10,
+      "unchanged": true
+    },
+    {
+      "phase": "parent-deadline-20261028",
+      "files": 6,
+      "unchanged": true
+    },
+    {
+      "phase": "completion-20261028",
+      "files": 6,
+      "unchanged": true
+    },
+    {
+      "phase": "host-requalification-20261028",
+      "files": 7,
+      "unchanged": true
+    }
+  ],
+  "before_snapshot_files": 174,
+  "backup_crc_valid": true,
+  "backup_sha256": "6b35ab194e07bd33d842684d8fcad5fb8425ef07bab843a00c967f9f68ca673b",
+  "prior_report_sections_2_through_T_preserved_as_text": true,
+  "R4_refinements": "Current WIP header/entrypoint and new section U; no previous numbered update rewritten.",
+  "scope": "Listed report/evidence/source inventories, not every ignored file in the entire checkout."
+}

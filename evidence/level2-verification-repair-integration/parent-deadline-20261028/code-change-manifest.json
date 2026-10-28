@@ -1,0 +1,33 @@
+{
+  "scope": "Incremental parent deadline phase; earlier R4 changes retained. Raw tested working-tree bytes, not staged Git blobs.",
+  "files": {
+    "mini.py": {
+      "before_sha256": "128d021f8687497dfff16ac9c284093d69f69aa59232b4f447975c86751b1e7a",
+      "current_sha256": "c372c9197e1c3d2f923b0e63623f176d71d799add844c8a7be0f8d309022a4d6"
+    },
+    "hivo/inference_transport.py": {
+      "before_sha256": "83cc18cae05827d7f62f2a0f4b515ee8195cc4c1323a24293ff6409b069667e2",
+      "current_sha256": "0017b2760c49a3868e556d328cd1b19a2258c300900a84e66fbf78516a8ed78c"
+    },
+    "hivo/process_supervision.py": {
+      "before_sha256": null,
+      "current_sha256": "a1d3b7cd2a6aea5c05541a4125fa66841f88bf3b8f1bc55fcff2108038dd89aa"
+    },
+    "scripts/replay_post_repair.py": {
+      "before_sha256": "ab6806ca165a566b966c080beefb034b5c2cb276ea085c47d386c31475364b8f",
+      "current_sha256": "1f0e0fbec9c46344812ad98d049795b45c7b72a8f98be4fefc1849da4e049392"
+    },
+    "scripts/verify_level2_offline.py": {
+      "before_sha256": "80ccad31125da08a7ce42aa850d7fe68831eaf0d5563038a49bb390c9fe83f26",
+      "current_sha256": "1b6be2aee7eb2639f7dda3bee9686c105898fbb26ba067a15bf0dd35cfe8dea4"
+    },
+    "tests/test_update004_verification_integration.py": {
+      "before_sha256": "770a392bca7824e9e66e1f60fbc081ebcd579e8bc806b20d7e3b7f6d838ee5f5",
+      "current_sha256": "c54473fc77089c532b90e6b93ecdea0dc71761ad42cbd37fd1553cc0cf82f984"
+    },
+    "tests/test_parent_deadline_recovery.py": {
+      "before_sha256": null,
+      "current_sha256": "506911e3267f28bf8b00430d00e74729da54a0e92c9364737c76a565d2d61964"
+    }
+  }
+}

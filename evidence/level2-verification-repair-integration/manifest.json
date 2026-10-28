@@ -1,0 +1,129 @@
+{
+  "policy": "LOCAL candidate, not staged/published. Hash actual working-tree bytes, not staged blobs. Curated JSON/text canonical UTF-8 LF. Original and derivative hashes distinct. Raw evidence private. Manifest excludes itself.",
+  "derivatives": [
+    {
+      "original_source": "audit_runs/20261021-workspace-audit/r-update-004/controlled-receipt-final/1-independent/inspection.json",
+      "original_source_sha256": "331aef851c0aae9efa8db20bc57321d80e8e5082c3121bddc7ece9fd9d6715dd",
+      "sanitized_derivative": "controlled/1-independent.json",
+      "sanitized_derivative_sha256": "331aef851c0aae9efa8db20bc57321d80e8e5082c3121bddc7ece9fd9d6715dd",
+      "transformation": "Canonical UTF-8 LF JSON; exact byte oracle unchanged; no raw runtime database."
+    },
+    {
+      "original_source": "audit_runs/20261021-workspace-audit/r-update-004/controlled-receipt-final/10-independent/inspection.json",
+      "original_source_sha256": "96f302969bcd9db9a328020dc6c16aa682d5b3a51c289a8b9c12d559ab5e3cb1",
+      "sanitized_derivative": "controlled/10-independent.json",
+      "sanitized_derivative_sha256": "96f302969bcd9db9a328020dc6c16aa682d5b3a51c289a8b9c12d559ab5e3cb1",
+      "transformation": "Canonical UTF-8 LF JSON; exact byte oracle unchanged; no raw runtime database."
+    },
+    {
+      "original_source": "audit_runs/20261021-workspace-audit/r-update-004/controlled-receipt-final/2-independent/inspection.json",
+      "original_source_sha256": "0305660eba1b62545c0dc0d58bef118855e7b9871086ed1c89537235d3835686",
+      "sanitized_derivative": "controlled/2-independent.json",
+      "sanitized_derivative_sha256": "0305660eba1b62545c0dc0d58bef118855e7b9871086ed1c89537235d3835686",
+      "transformation": "Canonical UTF-8 LF JSON; exact byte oracle unchanged; no raw runtime database."
+    },
+    {
+      "original_source": "audit_runs/20261021-workspace-audit/r-update-004/controlled-receipt-final/3-dependent/inspection.json",
+      "original_source_sha256": "4f6e651629ac6488d66a91b63b8ce3178011f2da32e23c0766f31265d6380d03",
+      "sanitized_derivative": "controlled/3-dependent.json",
+      "sanitized_derivative_sha256": "4f6e651629ac6488d66a91b63b8ce3178011f2da32e23c0766f31265d6380d03",
+      "transformation": "Canonical UTF-8 LF JSON; exact byte oracle unchanged; no raw runtime database."
+    },
+    {
+      "original_source": "audit_runs/20261021-workspace-audit/r-update-004/controlled-receipt-final/3-independent/inspection.json",
+      "original_source_sha256": "d9e47e2c2a4a6fa241b79ebaaa7685f3b0a262e3ea962d70bd1596dfb2cfc593",
+      "sanitized_derivative": "controlled/3-independent.json",
+      "sanitized_derivative_sha256": "d9e47e2c2a4a6fa241b79ebaaa7685f3b0a262e3ea962d70bd1596dfb2cfc593",
+      "transformation": "Canonical UTF-8 LF JSON; exact byte oracle unchanged; no raw runtime database."
+    },
+    {
+      "original_source": "audit_runs/20261021-workspace-audit/r-update-004/controlled-receipt-final/4-independent/inspection.json",
+      "original_source_sha256": "eb6ed6b878dbe1a0754a99077127f87cae988127d3ce4916d708769804258765",
+      "sanitized_derivative": "controlled/4-independent.json",
+      "sanitized_derivative_sha256": "eb6ed6b878dbe1a0754a99077127f87cae988127d3ce4916d708769804258765",
+      "transformation": "Canonical UTF-8 LF JSON; exact byte oracle unchanged; no raw runtime database."
+    },
+    {
+      "original_source": "audit_runs/20261021-workspace-audit/r-update-004/controlled-receipt-final/5-independent/inspection.json",
+      "original_source_sha256": "610bfb86c6f1d5a612f48de1b784d3a914ba7742c0123d3ef3e826dbd7569d0a",
+      "sanitized_derivative": "controlled/5-independent.json",
+      "sanitized_derivative_sha256": "610bfb86c6f1d5a612f48de1b784d3a914ba7742c0123d3ef3e826dbd7569d0a",
+      "transformation": "Canonical UTF-8 LF JSON; exact byte oracle unchanged; no raw runtime database."
+    },
+    {
+      "original_source": "audit_runs/20261021-workspace-audit/r-update-004/controlled-receipt-final/8-independent/inspection.json",
+      "original_source_sha256": "1402d970aae04c0dda330f719375640afbb0d98ad37b9d23157f7519cf6e6146",
+      "sanitized_derivative": "controlled/8-independent.json",
+      "sanitized_derivative_sha256": "1402d970aae04c0dda330f719375640afbb0d98ad37b9d23157f7519cf6e6146",
+      "transformation": "Canonical UTF-8 LF JSON; exact byte oracle unchanged; no raw runtime database."
+    },
+    {
+      "original_source": "audit_runs/20261021-workspace-audit/r-update-004/live-final/structured-blocks/result.json",
+      "original_source_sha256": "1c3a1d5cf1a274b3c2ab8e0b2d0f72139b4e527989c72863ad37e306a87b1bc3",
+      "sanitized_derivative": "live/live-final.json",
+      "sanitized_derivative_sha256": "3829cb0ecc59fb1378133e1dbc178675f8262ac62852cb9e22fdefb16d96a2dc",
+      "transformation": "Selected request, pins, outcomes and byte oracle; omit raw inventory/authorization and absolute paths."
+    },
+    {
+      "original_source": "audit_runs/20261021-workspace-audit/r-update-004/live-receipt-final/inventory/result.json",
+      "original_source_sha256": "4f73e58b1e6f147819074ab5650b93f3b83a21d2681bdd7c8970b20887706dde",
+      "sanitized_derivative": "live/live-receipt-final.json",
+      "sanitized_derivative_sha256": "d9d68ec87a5bf0cc036765edb36eb5f8755570b08b8192f1e20a3a53f604e61e",
+      "transformation": "Selected request, pins, outcomes and byte oracle; omit raw inventory/authorization and absolute paths."
+    },
+    {
+      "original_source": "audit_runs/20261021-workspace-audit/r-update-004/live-receipt-final/inventory/workspace/.agent_runs/20261025T204437-4d483ccf.jsonl",
+      "original_source_sha256": "6020044dd59921a413cd2180e0dc59ec9c3f1b7423b2df1a7f9a00db889c41a7",
+      "sanitized_derivative": "live/final-selected-events.json",
+      "sanitized_derivative_sha256": "04042568d68330b904b3ad4b9f597b4febb036cc5e073b731a71f13f788c151e",
+      "transformation": "Whitelist source/timing fields; typed provider timeout without service URL."
+    },
+    {
+      "original_source": "audit_runs/20261021-workspace-audit/r-update-004/offline-receipt-final/results.json",
+      "original_source_sha256": "95e4853e1374c98768fd9509258bd13b0afb55941bb02128635ac9e9667107f6",
+      "sanitized_derivative": "test-registry.json",
+      "sanitized_derivative_sha256": "30b2019ec4ae08ee92e4a7db1798f4eb776cc2e464c223f3917a819604872276",
+      "transformation": "Canonical LF JSON; append comparison, preserve every outcome and failing ID."
+    },
+    {
+      "original_source": "audit_runs/20261021-workspace-audit/r-update-004/offline-receipt-final/test_update004_verification_integration.log",
+      "original_source_sha256": "7eaf3dba24fe24aa608b33bbc8a913d43e07582efab51a388600f23da9a6ad9f",
+      "sanitized_derivative": "regression/test_update004_verification_integration.log",
+      "sanitized_derivative_sha256": "7eaf3dba24fe24aa608b33bbc8a913d43e07582efab51a388600f23da9a6ad9f",
+      "transformation": "UTF-8 LF; redact absolute Windows diagnostic paths where present."
+    },
+    {
+      "original_source": "audit_runs/20261021-workspace-audit/r-update-004/offline-receipt-final/test_context_recovery_functional.log",
+      "original_source_sha256": "16d6fecefcce41567538747d25dd791f35fbdc0945659369d72581d19da4c894",
+      "sanitized_derivative": "regression/test_context_recovery_functional.log",
+      "sanitized_derivative_sha256": "16d6fecefcce41567538747d25dd791f35fbdc0945659369d72581d19da4c894",
+      "transformation": "UTF-8 LF; redact absolute Windows diagnostic paths where present."
+    }
+  ],
+  "original_preservation": "preservation.json",
+  "files": {
+    "code-change-manifest.json": "26e4bb23f24c94b5b277bbe87a0143c32f1523ec9b92cb4f7810fdcc96ac7c9a",
+    "controlled/1-independent.json": "331aef851c0aae9efa8db20bc57321d80e8e5082c3121bddc7ece9fd9d6715dd",
+    "controlled/10-independent.json": "96f302969bcd9db9a328020dc6c16aa682d5b3a51c289a8b9c12d559ab5e3cb1",
+    "controlled/2-independent.json": "0305660eba1b62545c0dc0d58bef118855e7b9871086ed1c89537235d3835686",
+    "controlled/3-dependent.json": "4f6e651629ac6488d66a91b63b8ce3178011f2da32e23c0766f31265d6380d03",
+    "controlled/3-independent.json": "d9e47e2c2a4a6fa241b79ebaaa7685f3b0a262e3ea962d70bd1596dfb2cfc593",
+    "controlled/4-independent.json": "eb6ed6b878dbe1a0754a99077127f87cae988127d3ce4916d708769804258765",
+    "controlled/5-independent.json": "610bfb86c6f1d5a612f48de1b784d3a914ba7742c0123d3ef3e826dbd7569d0a",
+    "controlled/8-independent.json": "1402d970aae04c0dda330f719375640afbb0d98ad37b9d23157f7519cf6e6146",
+    "live/final-selected-events.json": "04042568d68330b904b3ad4b9f597b4febb036cc5e073b731a71f13f788c151e",
+    "live/live-final.json": "3829cb0ecc59fb1378133e1dbc178675f8262ac62852cb9e22fdefb16d96a2dc",
+    "live/live-receipt-final.json": "d9d68ec87a5bf0cc036765edb36eb5f8755570b08b8192f1e20a3a53f604e61e",
+    "preservation.json": "3fc277c2e8b42e5116035f800c02c8a87564235f34cd612fe22c9614edd51649",
+    "README.md": "5574b7241309e9fcecaf8390b565364efc300fc0a7c5940935d5b001b22b9bcc",
+    "regression/test_context_recovery_functional.log": "16d6fecefcce41567538747d25dd791f35fbdc0945659369d72581d19da4c894",
+    "regression/test_update004_verification_integration.log": "7eaf3dba24fe24aa608b33bbc8a913d43e07582efab51a388600f23da9a6ad9f",
+    "research-references.json": "4e208c4c15cd4b685c5a0b0ccf15c17b679a6edb3315f55834d745822b72398a",
+    "run-registry.json": "de3678fbd66be8de8076708bb01aa2a065d38110df0efede2ab8281cb5da5359",
+    "test-registry.json": "30b2019ec4ae08ee92e4a7db1798f4eb776cc2e464c223f3917a819604872276"
+  },
+  "related_document": {
+    "path": "updates/R_UPDATE_004.md",
+    "working_tree_sha256": "e4c9ba4cc312032603c3e675bf7ead0c87900b97965a47e0f1a449407deac3bd"
+  }
+}

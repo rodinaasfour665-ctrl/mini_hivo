@@ -1,0 +1,31 @@
+{
+  "scope": "Focused follow-up to prior phase research; research is not proof of Mini Hivo behavior.",
+  "references": [
+    {
+      "title": "The Tail at Scale",
+      "authors": [
+        "Jeffrey Dean",
+        "Luiz Andre Barroso"
+      ],
+      "year": 2013,
+      "venue": "Communications of the ACM 56(2), 74–80",
+      "doi": "10.1145/2408776.2408794",
+      "url": "https://research.google/pubs/the-tail-at-scale/",
+      "paper_url": "https://barroso.org/publications/TheTailAtScale.pdf",
+      "mechanism": "Measure latency variability and service-level amplification; distributed-service mitigation experiments.",
+      "adaptation": "Measurement-informed bounded phase handling; reject hedged duplicate inference on one CPU provider.",
+      "limits": "Different workloads; no agent correctness or timing-constant proof."
+    },
+    {
+      "title": "Tool calling with streaming",
+      "publisher": "Ollama official documentation",
+      "url": "https://docs.ollama.com/capabilities/tool-calling",
+      "mechanism": "Accumulate streamed thinking/content/tool_calls across chunks.",
+      "adaptation": "Preserve accumulation, admit a response only after done=true inside all limits; do not dispatch partial calls."
+    },
+    {
+      "prior_review": "../post-repair-live-20261027/research.json",
+      "adaptation": "Retain Sarathi-Serve prefill/decode distinction and least-privilege independent verification; no GPU scheduler or extra reflection calls."
+    }
+  ]
+}

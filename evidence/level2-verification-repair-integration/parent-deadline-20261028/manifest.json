@@ -1,0 +1,35 @@
+{
+  "scope": "Local canonical UTF-8 LF candidate derivatives; no staged-Git-blob validation or publication. Earlier manifests remain historical.",
+  "report": {
+    "path": "updates/R_UPDATE_004.md",
+    "working_tree_sha256": "23c0757d59785c7953b8cd96b0fb0577574aef63df66853c5f5030cdb704165c",
+    "canonical_lf_sha256": "23c0757d59785c7953b8cd96b0fb0577574aef63df66853c5f5030cdb704165c"
+  },
+  "files": {
+    "code-change-manifest.json": "7611f8fcd43945b9c1092e6ec0240697129bd1d475af3b1fe639c04684c3b8ad",
+    "controlled/cancel.json": "83861f56b735a90222a97ccce2dc69c465d00dde6b7ef68c68afb5c374a71387",
+    "controlled/permanent.json": "76fe61b3b6cfe67957277964b93c83ce2a25b6feb03978cd812b0db4d2a33bad",
+    "controlled/retry.json": "ed48bfe931a953463cb5f69d18e34e94df2a0df5467e8b8b126c9c6c8d684326",
+    "controlled/success.json": "48d74ff622d249c88adda0b07ad6fef4a32abd3ce8cdf5a842f8ef33f4d1ae0b",
+    "controlled-independent-checks.json": "e0bc64ae7eadecbc0afcc694020d679bd0d3f49e366dab436f08a5755e2c41b0",
+    "controlled-results.json": "754e44b8cc68281213bac865cfcfda64423426b103ea2cccafb3d94ffa5b38b7",
+    "frozen-source.json": "e223e60fb81bad54cf8151f6ae98985078255cd6f1f5aefc8b2d34171d8c4ec3",
+    "investigation.json": "6bd5be6268215465af25e481825e63c48ec651e9d27979084af08a981bc98a65",
+    "live-replay.json": "67136fd9fe1e6de26e9105937b8e7d195e96a8bf9bf8bafa817e228d28ad0cd2",
+    "power-events.json": "3e0bbbf085f9a99c0d0f7cf4d68904e3ec612cc8e9861dd9118ba36d03ca0665",
+    "preservation.json": "496b74709fd1924abc6f166bde6d3581756db45d2d766dfefd8ccb9a5cdbf54a",
+    "provenance.json": "9b0e9e7f76469feb412670b1b19bb5eff7747853c4c226478cec81a5cb721edf",
+    "provider-excerpt.log": "dc397f5ebedb11a281e3ba65be96a6fcd1218a23422cfa43da882550c67ee7e0",
+    "README.md": "16be054ffe378f04a57a3c3c35e5778ba61cd32e149047e60b0e036d9dde47b5",
+    "references.json": "66c7b8028acb14a532f491c62ea82133408f16a5a1064364919fb8d39c0170cf",
+    "regression-comparison.json": "c39e2c6c04e2227d7c66be88256a431ed2fb9e3b649941f652cb61215a3cea6e",
+    "regression-results.json": "7c4402f4a73623bc87a51e095ffec15cd3bfe85455001079bf5f057e51c1978e",
+    "REPRODUCE.md": "e813d0485276984301d920d64793e6d458708f1148dbc9d59eacd0582dfe5bfd",
+    "run-registry.json": "3e45aae9fccc2407d897979ac3e3f7837e0fd6ad7aaaceda77092705d5672ae8",
+    "supervision.json": "148771b9e40828160e3ec58328e6490ac358e11ef2143723056d504ec08456b4",
+    "test_child_inference_recovery.log": "f2f15fb3bc0b58603cd6b42c86408cda671d1b66d62fca04cf66ca62d2028478",
+    "test_parent_deadline_recovery.log": "632ed9500c0daa1d8ad17d46382b3f953817aa57e297ee9608356b032141523f",
+    "test_post_repair_hardening.log": "b5c9d468ed9f399d745a47450803fdea1aaf5af2c8b84b608c3d18f591ef1c2e",
+    "test_update004_verification_integration.log": "cecadcf6000b09e88d608b1061c1e66fc59624464cc41d20cf95a67e8c59f25b"
+  }
+}

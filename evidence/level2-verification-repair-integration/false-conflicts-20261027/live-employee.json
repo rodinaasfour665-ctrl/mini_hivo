@@ -1,0 +1,64 @@
+{
+  "verification_class": "LIVE_MODEL_ATTEMPT",
+  "case": "employee",
+  "model": "gemma4:e4b",
+  "request": "Create exactly one UTF-8 text file named employee.txt in the workspace.\n\nThe exact content must be:\nName: Sara\nDepartment: Engineering\nStatus: Active\n\nThe file must contain exactly three lines in the specified order.\n\nUse LF line separators and no trailing newline at the end of the file.\n\nDo not create any additional task files.\n\nVerify that the file exists and that its content exactly matches the requested text before reporting completion.",
+  "source_sha256": {
+    "mini.py": "c9ae706ecec4e6a698798525c14739e18e1434acfbad566cb0914f2764521fa4",
+    "hivo/requirements.py": "9f9d546262f0c7700e96aadf2ca18b283c987709d078ab45f4c93acc400da681",
+    "hivo/requirement_consistency.py": "831787a62706e75bc54fbeaf924465beee4a6220b981b47e183039e01c836abf",
+    "hivo/requirement_decisions.py": "b4002b4dc244d7d9f46d8f03dc0d17155299dbd7bb182ecafcb333ba53f8c5e2",
+    "hivo/literal_source.py": "2a66695e96096704313c43be2ec48bb799cea6e8fa73cd64fdabe915df0222b7",
+    "hivo/literal_clarification.py": "5a63638fff54e3afc45e816b2b3403597efd9516710a2a4167259205e5274c18",
+    "hivo/project_understanding.py": "1d09738c10b75f51f9dde9220ba5eb1a78b41a060ddf7fc0cd47b9eebc832bff",
+    "hivo/verification_routing.py": "750f196806baa198b772972fc708420feb74945533fafd0320b2e199c4983e82",
+    "hivo/pre_mutation_impact.py": "99d041fd17ab4c7497a6f8055c52aa2757498b980ef84f093e4ac5093a210217",
+    "hivo/context_sufficiency.py": "5256861508525786fd6848d8476bc8ac8d2a20d04be35bbd99034dc2314a2d8b",
+    "hivo/artifact_progress.py": "2eca277fcb33e9030e60446b624b59f75fe21181035466f1efcf572181930b7e",
+    "tests/test_requirement_consistency_flow.py": "26c14af1edeaf5bb892e34e1164a58ee81625bffe60a9ece39f4d1e189195a27"
+  },
+  "source_unchanged": true,
+  "process_exit": 2,
+  "outer_timeout": false,
+  "wall_limit_seconds": 360,
+  "wall_seconds": 18.83,
+  "run_ids": [],
+  "metrics": {
+    "run_id": null,
+    "status": null,
+    "root_verified": null,
+    "model_calls": null,
+    "builder_calls": null,
+    "tool_calls": null,
+    "falsifier_calls": null,
+    "repairer_calls": null,
+    "impact_contract_authorizations": null,
+    "impact_contract_comparisons": null,
+    "elapsed_seconds": null,
+    "control_flow": null,
+    "project_mode": null
+  },
+  "artifacts": {
+    "employee.txt": {
+      "expected_hex": "4e616d653a20536172610a4465706172746d656e743a20456e67696e656572696e670a5374617475733a20416374697665",
+      "expected_sha256": "91023bf45a8f10c835b228cf136b58612c69f618b0d563ca56a3995206761d9e",
+      "exists": false,
+      "actual_sha256": null,
+      "exact_bytes": false
+    }
+  },
+  "no_false_source_conflict": null,
+  "source_compiled": false,
+  "terminal_record_available": false,
+  "note": "Inspect trace, actual tool results and every final gate before any end-to-end PASS claim; process exit alone is insufficient.",
+  "interpretation": "HOST_PREFLIGHT_FAILED before task ingestion; no task run ID or application outcome. Original absent-event Boolean was vacuous and is not accepted as proof. Attempt predates final cancellation/audit hardening.",
+  "qualification": {
+    "passed": false,
+    "failure": "CRITICAL_MEMORY_HEADROOM",
+    "stage": "resource_monitoring",
+    "canaries_completed": 1,
+    "canaries_requested": 3
+  },
+  "final_source_live_status": "UNVERIFIED",
+  "html_replay": "DEFERRED after critical headroom qualification failure; no second expensive attempt"
+}

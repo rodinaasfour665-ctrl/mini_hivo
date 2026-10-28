@@ -1,0 +1,72 @@
+{
+  "method": "Focused primary-source review, 27 October 2026: USENIX/OSDI proceedings, NeurIPS proceedings, original arXiv manuscripts and an archived original IEEE paper. Queries concerned prefill/decode latency, feedback-based recovery, focused repair/validation and least privilege. Official Ollama and Playwright documentation was checked separately for implementation capabilities. No benchmark results are transferred to Mini Hivo.",
+  "papers": [
+    {
+      "title": "Taming Throughput-Latency Tradeoff in LLM Inference with Sarathi-Serve",
+      "authors": ["Amey Agrawal", "Nitin Kedia", "Ashish Panwar", "Jayashree Mohan", "Nipun Kwatra", "Bhargav Gulavani", "Alexey Tumanov", "Ramachandran Ramjee"],
+      "year": 2024,
+      "venue": "18th USENIX Symposium on Operating Systems Design and Implementation (OSDI 24), pages 117–134",
+      "identifier": "arXiv:2403.02310",
+      "url": "https://www.usenix.org/conference/osdi24/presentation/agrawal",
+      "mechanism": "Separate expensive prefill from sequential decode; chunked-prefill GPU scheduling reduces interference.",
+      "authors_evidence": "Authors report 2.6x Mistral-7B serving capacity on A100 versus vLLM and other multi-GPU experiments. These are their workloads and hardware.",
+      "limitations": "GPU batching scheduler; not an Ollama CPU client timeout repair.",
+      "adaptation": "Adapt phase-aware measurement and a bounded progressing Specifier response. Do not import scheduler, alter GPU settings or claim comparable speedup. Existing 1651-token prefill plus decode exceeded the original client boundary.",
+      "cost_safety_tests": "No training/dependency; bounded buffering and local metadata; 360-second total, 120-second idle, 8 MiB cap, complete response admission. Deterministic slow-clock, timeout and cancellation tests. Additional allowed latency is a cost, not a performance improvement."
+    },
+    {
+      "title": "Reflexion: Language Agents with Verbal Reinforcement Learning",
+      "authors": ["Noah Shinn", "Federico Cassano", "Ashwin Gopinath", "Karthik Narasimhan", "Shunyu Yao"],
+      "year": 2023,
+      "venue": "NeurIPS 2023, proceedings version",
+      "identifier": "arXiv:2303.11366; proceedings author list used here",
+      "url": "https://papers.nips.cc/paper_files/paper/2023/file/1b44b878bb782e6954cd888628510e90-Paper-Conference.pdf",
+      "mechanism": "Reflect on evaluation feedback and retain episodic verbal feedback across trials.",
+      "authors_evidence": "Authors report 91% HumanEval pass@1, versus their cited 80% GPT-4 baseline; also evaluate decision-making/reasoning and feedback ablations.",
+      "limitations": "Feedback may be wrong; extra inference/trials cost time. No guarantee of scope, authority or exact artifacts.",
+      "adaptation": "Feedback interpretation must distinguish refused inspection from failed output before invoking repair. Use deterministic current-byte/proof checking for known literal obligations; do not add a costly model-reflection loop or treat a narrative strategy label as authority.",
+      "cost_safety_tests": "No model changes or episodic subsystem added. Bounded native readbacks complement existing Worker; wrong-byte/stale-proof negatives and real ROOT recovery test validate our adaptation. Full Reflexion architecture rejected for local latency and unnecessary complexity."
+    },
+    {
+      "title": "The Protection of Information in Computer Systems",
+      "authors": ["Jerome H. Saltzer", "Michael D. Schroeder"],
+      "year": 1975,
+      "venue": "Proceedings of the IEEE, 63(9), pages 1278–1308",
+      "url": "https://www.cs.cmu.edu/afs/cs.cmu.edu/academic/class/15712-s05/www/readings/Saltzer75.pdf",
+      "mechanism": "Least privilege, fail-safe defaults and complete mediation.",
+      "authors_evidence": "Architectural/tutorial analysis and historical protection-system examples; not an agent benchmark or randomized empirical performance result.",
+      "limitations": "Design principles do not select tool schemas or prove this implementation secure.",
+      "adaptation": "Project Falsifier paths to actual local authority and keep dispatch guards. Preserve goal-anchor validation; repair caller identity propagation. Refuse installer commands and disable npx implicit downloads. Browser fallback uses installed channels and isolated profiles only.",
+      "cost_safety_tests": "No training/infrastructure; small scope/anchor checks. Test forged/stale proofs, real goal drift, refusal before subprocess, legitimate npx verification and installed-browser failure fallback."
+    },
+    {
+      "title": "Agentless: Demystifying LLM-based Software Engineering Agents",
+      "authors": ["Chunqiu Steven Xia", "Yinlin Deng", "Soren Dunn", "Lingming Zhang"],
+      "year": 2024,
+      "venue": "arXiv preprint v2, 29 October 2024",
+      "identifier": "arXiv:2407.01489v2",
+      "url": "https://arxiv.org/html/2407.01489v2",
+      "mechanism": "Separate localization, repair and independent patch validation instead of open-ended model-driven tool exploration.",
+      "authors_evidence": "Authors report 96 fixes (32%) on SWE-bench Lite and average $0.70 cost under their setup, with localization/validation ablations.",
+      "limitations": "Repository repair benchmark differs from creation tasks, recursive ownership and gemma4 CPU execution.",
+      "adaptation": "Localize the actual failed gate before mutation. Current correct bytes plus independent proof need inspection recovery, not another write. Keep existing recursive scheduler and final gates; do not replace Mini Hivo with Agentless.",
+      "cost_safety_tests": "No framework/model/dependency added. Native checks avoid extra reflection calls. Compare retained controlled recovery with historical redundant Builder/Repairer writes; genuine reliability remains separately measured."
+    }
+  ],
+  "official_implementation_sources": [
+    "https://docs.ollama.com/api/streaming",
+    "https://docs.ollama.com/gpu",
+    "https://github.com/ollama/ollama/blob/main/docs/capabilities/tool-calling.mdx",
+    "https://playwright.dev/python/docs/browsers",
+    "https://playwright.dev/python/docs/api/class-browsertype"
+  ],
+  "rejected_or_deferred": [
+    "Global timeout/budget inflation: expands every failure window without addressing phase or output admission.",
+    "GPU scheduler/framework import or model replacement: unsupported by this CPU local deployment and unnecessary for controller defects.",
+    "Full model-reflection retry loop: adds inference cost and cannot grant authority or override exact-byte evidence.",
+    "Enabling integrated GPU automatically: requires separate capacity/compatibility measurement and host configuration authorization.",
+    "Installing browsers from Builder run_command: dependency/environment mutation is outside verification authority.",
+    "Blanket suppression of Falsifier failures: would hide counterexamples. Only an exact refused out-of-scope probe with complete current local proof is discharged.",
+    "Global streaming expansion to tool-using roles: deferred; current wire admission tests do not establish every model-specific fragmented tool-call format. Builder latency is still disclosed."
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "state": "INTERRUPTED_WITHOUT_FINAL_RESULT",
+  "run_id": "20261027T223818-f8bbcf6e",
+  "model": "gemma4:e4b",
+  "configured_outer_limit_seconds": 3000,
+  "accepted": false,
+  "final_application_metrics": null,
+  "note": "No replay process remains. All three children committed; parent stopped before verification. No result.json exists. Actual cap enforcement and termination cause are unestablished; do not synthesize status, exit code or total duration."
+}

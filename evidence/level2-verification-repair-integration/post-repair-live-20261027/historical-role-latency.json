@@ -1,0 +1,40 @@
+{
+  "scope": "Matched model_request to model_response_shape only; failed request timing not inferred. Response time includes all provider wall time, not separated prefill/decode.",
+  "roles": {
+    "Specifier": {
+      "matched_successful_requests": 1,
+      "observed_response_wall_seconds": 76.979,
+      "max_estimated_context": 1372
+    },
+    "Builder": {
+      "matched_successful_requests": 10,
+      "observed_response_wall_seconds": 274.853,
+      "max_estimated_context": 3806
+    },
+    "MissionCompiler": {
+      "matched_successful_requests": 4,
+      "observed_response_wall_seconds": 344.177,
+      "max_estimated_context": 1519
+    },
+    "Coordinator": {
+      "matched_successful_requests": 6,
+      "observed_response_wall_seconds": 420.653,
+      "max_estimated_context": 1519
+    },
+    "Clarifier": {
+      "matched_successful_requests": 1,
+      "observed_response_wall_seconds": 34.621,
+      "max_estimated_context": 701
+    },
+    "Falsifier": {
+      "matched_successful_requests": 25,
+      "observed_response_wall_seconds": 507.893,
+      "max_estimated_context": 3085
+    },
+    "Repairer": {
+      "matched_successful_requests": 12,
+      "observed_response_wall_seconds": 399.651,
+      "max_estimated_context": 3075
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "scope": "Selected R_UPDATE_004 evidence. Original source hashes are distinct from sanitized derivative bytes. Manifest excludes itself. Earlier packet report hashes identify historical prefixes; this manifest identifies the appended report. No publication success is inferred.",
+  "report": {
+    "path": "updates/R_UPDATE_004.md",
+    "sha256": "17baca18730316fc5fc63fc9eb098f7958cbc9db4ab1aa175946bde4bf0312b3",
+    "hash_policy": "Canonical LF publication bytes; original local historical prefix preserved in backup and working tree.",
+    "original_working_tree_sha256": "17baca18730316fc5fc63fc9eb098f7958cbc9db4ab1aa175946bde4bf0312b3"
+  },
+  "files": {
+    "artifacts/employee-profile-20261027T214528-8dfdcb28.html": "b8c4a4387cdebdba2703a559307319530f6e72ccf4c1a12103705fdaafa352f0",
+    "artifacts/employee-profile.html": "b8c4a4387cdebdba2703a559307319530f6e72ccf4c1a12103705fdaafa352f0",
+    "code-change-manifest.json": "73804dd10d0ce11a8bcde7c47ed13ea55ca9eaaf9dffd7d935bffd91eef664ff",
+    "controlled-functional.json": "0323079884ff6cde2e51c26c5ef983dbc702fc15487e6f63853add235e9d2dad",
+    "controlled-html-root.json": "53efdbe91c34ad7a1bccaac1542d982fd17d5151709dc6608d5934ae3853ee8d",
+    "genuine-html-acceptance.json": "9ee45abf5f2a69456c8aa19191f977e2802aec27350eccc002d8e86afa15fb35",
+    "genuine-html-checkpoint-20261027T194758-1ef7c59c.json": "fd3314788fff69df3ed146ce8e87c175ed876e7865a6dbea8394eb503f69c4d3",
+    "genuine-model-provider-recovery.json": "212158f91bb332c51051ea4d61c4f082ea85b0ef99f7638a6f2b1d18e0acc73f",
+    "genuine-recursive-acceptance.json": "6b4322d4250ab705ad632187388106bbe86ee50f797f7f2db20589153b8fa4b9",
+    "historical-role-latency.json": "d4a91360f0060c713d44568e26141ddde7728a46ed0489f3c9ac875e7a6d783e",
+    "historical-run-ledger.json": "e3c286e72d22dade48c17fc312de87af5e906d4c54c802471de2ad15ca12a90c",
+    "html-artifact-provenance-checkpoint-20261027T194758-1ef7c59c.json": "8c04243c8c3bce083fa7f838ce3477b5af49b8eadaa537cbad8bd8e81e1da3af",
+    "html-artifact-provenance.json": "b1e4c6059254f3926a3858d2766e1ce264c61bfb3f202eca0dc42e2ec3fd2c5f",
+    "http-browser-functional.json": "2472ff58e33514eb98f5efbfa97d010a57264a0c9032dd8bd14e078bbc5f092e",
+    "independent-browser-readback.json": "fb6e07a4f25496fc59432b1b986192228f6a8a07a8871ff871c40f93959072aa",
+    "live-run-registry.json": "a5b31f20defa26fecaeb2b39cdbd1a5a80110bb794c3eb4813a25b670705fbdb",
+    "original-requests.json": "02a858affd1fa3aaf494fe56af25947b27e39bad8ea56ff0bb4dcff3d44ed5cb",
+    "preservation.json": "7a4ddb960882ad5fc51732099117d585447e87076874d1624ea2328507bbfb31",
+    "problem-registry.json": "c0075831881d693077cbc7c0ee2d5ebacc6b9f5ce59176c4a7046055828dcedf",
+    "provenance.json": "1054b701452645c412e508a2d2e20df80ede1e792971746fbb717185cb8e4b12",
+    "README.md": "85dd5682d1087a5a0e257f8b60bfbd0f6d1c96f44d871794f53f8e1bf6a73a16",
+    "recursive-scope-regression.json": "e9ef78a0521ac23f5c05790897e14ba2a17939d214034009de971137259592dc",
+    "regression-hardening.log": "f0abc6b13a53a9de7038fae19c6f10b10a4859e7fece8d5f09f8e67156c4ea42",
+    "regression-v26.log": "25f48165ba3f7e00688ac46233d25ba0d76fa9549d04b08627b91e06be9a6bf0",
+    "regression-verification-policy.log": "8cb0bb143b8ba63cbcf8e2650553e6ca6dd099196c7d97163c30123eaf81f984",
+    "REPRODUCE.md": "a5e31901bc62236b06d0dbedb8ae01edb5e04c2cf864f3ce3f66cd663badb5fa",
+    "research.json": "70928bb88a8479bdbf69bd40fb365099aea63f403ca59ff48faa5d9bba2adb67",
+    "resumed-focused-tests.json": "29c177a5cb4251f5ae6f79e4b4e765b6b726f6b1794a6d6fe6cc656a7be89516",
+    "server-diagnostics.json": "357ee0f1519b99b93abfc4be83edf30b4b227f15b91aa8f07801c56c1a88c5d6",
+    "test-log-provenance.json": "9c1b9db654107a1a0a27bf8f6eed0ccd707673e35887eb666fe840e0ecaae153",
+    "test-registry.json": "ca7160dbea4fa70b18ba27a6edf183591102d09f7ae70db166b26d5ef375582e"
+  }
+}

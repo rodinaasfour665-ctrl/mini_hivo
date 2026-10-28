@@ -1,0 +1,14 @@
+{
+  "attempt_identity": "completion-20261028/live-inventory",
+  "model": "gemma4:e4b",
+  "application_run_id": null,
+  "status": "HOST_PREFLIGHT_FAILED",
+  "accepted": false,
+  "evidence": "live-summary.json",
+  "unchanged_tested_source": "frozen-source.json",
+  "historical_test_results": "../parent-deadline-20261028/regression-results.json",
+  "historical_controlled_parent": "../parent-deadline-20261028/controlled-results.json",
+  "extra_live_replays": 0,
+  "implementation_changes": [],
+  "publication": "BLOCKED"
+}

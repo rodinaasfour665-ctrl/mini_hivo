@@ -1,0 +1,44 @@
+[
+  {
+    "original_source": "audit_runs/20261021-workspace-audit/r-update-004/completion-20261028/live-inventory/result.json",
+    "original_source_sha256": "b5255273d5e0fe69d6ddd03d6431acb1384a669d7eacf95e0b1b4a4b9dcee155",
+    "derivative": "live-summary.json",
+    "derivative_sha256": "6090ee0842246dfa0ee39fd79818f80f9c57eeb56c628cee48969396bf50f07a",
+    "transformation": "Selected relevant fields; canonical UTF-8 LF."
+  },
+  {
+    "original_source": "audit_runs/20261021-workspace-audit/r-update-004/completion-20261028/independent-inspection.json",
+    "original_source_sha256": "6f9fef7e45c01fbc52130a76834ae84d7bd74a627420ec28a604a16af71be1d4",
+    "derivative": "independent-inspection.json",
+    "derivative_sha256": "6f9fef7e45c01fbc52130a76834ae84d7bd74a627420ec28a604a16af71be1d4",
+    "transformation": "Selected relevant fields; canonical UTF-8 LF."
+  },
+  {
+    "original_source": "audit_runs/20261021-workspace-audit/r-update-004/completion-20261028/host-readiness.json",
+    "original_source_sha256": "fa5672d8c496f459bcf02426909929af3867b28289734bd8720214b8179d79eb",
+    "derivative": "host-readiness.json",
+    "derivative_sha256": "fa5672d8c496f459bcf02426909929af3867b28289734bd8720214b8179d79eb",
+    "transformation": "Selected relevant fields; canonical UTF-8 LF."
+  },
+  {
+    "original_source": "audit_runs/20261021-workspace-audit/r-update-004/completion-20261028/prelaunch-power-events.json",
+    "original_source_sha256": "efb7ba65e311f4b259567a828c1080bb69d114f93e65d408be3034dc9d48832f",
+    "derivative": "power-events.json",
+    "derivative_sha256": "61f030a372a431a3561c466fdc84be3a9510a45482b36e23afcf4b8d728f79a0",
+    "transformation": "Selected relevant fields; canonical UTF-8 LF."
+  },
+  {
+    "original_source": "audit_runs/20261021-workspace-audit/r-update-004/completion-20261028/live-inventory/supervision.jsonl",
+    "original_source_sha256": "282c78acdc6b22cfd5c5056b7060817f36b7f8e720cc10886f74f8c50713e0b3",
+    "derivative": "supervision.json",
+    "derivative_sha256": "fd83193ddfb9be566284c610dfe8ce53303c4e9a6397ee75d6a4748de653dc05",
+    "transformation": "Remove local PID; preserve timestamps, elapsed times and terminal supervision outcome."
+  },
+  {
+    "original_source": "audit_runs/20261021-workspace-audit/r-update-004/completion-20261028/frozen-source.json",
+    "original_source_sha256": "fd29058f7573499207c31052fcb8c4fc5eeadb253b96a96823afe17f40fdfe32",
+    "derivative": "frozen-source.json",
+    "derivative_sha256": "279101c6731a5614cbd6c2ec38302fc3aaa3f8c87b71059ecac24aca9d2a4d7b",
+    "transformation": "Selected relevant fields; canonical UTF-8 LF."
+  }
+]

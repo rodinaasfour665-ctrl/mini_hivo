@@ -1,0 +1,60 @@
+{
+  "scope": "This post-repair phase; prior uncommitted R4 files remain intact. Hashes are working-tree bytes, not Git blobs. Containing commit pending; HEAD is pre-existing checkpoint.",
+  "files": {
+    "mini.py": {
+      "sha256": "4ff3c7eb18cbc5c0a565e3c2fb16665428f1e722a99d809b6c4096551970d5e8",
+      "before_sha256": "f3f5a47461087a4ae9bbb9fe95b78a75dd35cb87b5533bbee874a425aa477428",
+      "before_known": true
+    },
+    "hivo/requirements.py": {
+      "sha256": "53e27084410bc4253c2bd09a07430e7c01708d671345dd9371caae0bd9a94b2b",
+      "before_sha256": null,
+      "before_known": false
+    },
+    "hivo/inference_transport.py": {
+      "sha256": "4bfa8f2f32e1409dd5a892666b20143f7a625ec9a3c2e7a26f385aa086de3df2",
+      "before_sha256": null,
+      "before_known": false
+    },
+    "hivo/host_preflight.py": {
+      "sha256": "f43e2b156d4193e95b9d7f693daab8fef6f33436a46f8613dd8f39692574033e",
+      "before_sha256": null,
+      "before_known": false
+    },
+    "hivo/project_understanding.py": {
+      "sha256": "c1711d5886f4d120b9ffbde54587406df8d680d6b419d1e24bb03300ab6b3f46",
+      "before_sha256": "1d09738c10b75f51f9dde9220ba5eb1a78b41a060ddf7fc0cd47b9eebc832bff",
+      "before_known": true
+    },
+    "tests/test_post_repair_hardening.py": {
+      "sha256": "014f7bb8a78f58cfa2b89469da27f6df6d5133e32f8cf617e6b3ede55e678aa8",
+      "before_sha256": null,
+      "before_known": false
+    },
+    "tests/test_host_preflight.py": {
+      "sha256": "cef7a49af8e6e08d054e423717174609dad57af4eafe288d9a063e278853d592",
+      "before_sha256": null,
+      "before_known": false
+    },
+    "tests/fixtures/post_repair_requests.json": {
+      "sha256": "02a858affd1fa3aaf494fe56af25947b27e39bad8ea56ff0bb4dcff3d44ed5cb",
+      "before_sha256": null,
+      "before_known": false
+    },
+    "scripts/replay_post_repair.py": {
+      "sha256": "ac310790ff5b50cde7edeee0b00860626169b09712563ed01e5c3aec3b363108",
+      "before_sha256": null,
+      "before_known": false
+    },
+    "scripts/replay_provider_recovery.py": {
+      "sha256": "1e1023c2947e5607dc61cb142bb6739a16d330965a70cf55a4f2824a3958a073",
+      "before_sha256": null,
+      "before_known": false
+    },
+    "scripts/verify_level2_offline.py": {
+      "sha256": "b506bbb48378c331e00ad0780f876a0f129beb01e255270b007be714fb6c9f4d",
+      "before_sha256": null,
+      "before_known": false
+    }
+  }
+}

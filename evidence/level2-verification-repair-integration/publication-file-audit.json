@@ -1,0 +1,1027 @@
+{
+  "base_commit": "6f0047ca27e979db10e338357f0fa6a22fe0bf93",
+  "intended_new_branch": "wip/r-update-004-level2-hardening",
+  "review_status": "EXPLICITLY_AUTHORIZED_WIP; genuine final-source Recursive ROOT acceptance remains pending and is not a publication prerequisite for this checkpoint",
+  "inclusions": [
+    {
+      "path": ".gitattributes",
+      "decision": "INCLUDE",
+      "reason": "Scoped canonical evidence bytes/private generated-workspace publication protection"
+    },
+    {
+      "path": ".gitignore",
+      "decision": "INCLUDE",
+      "reason": "Scoped canonical evidence bytes/private generated-workspace publication protection"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/CURRENT_REVIEW.md",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/README.md",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/child3-inference-recovery-20261027/README.md",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/child3-inference-recovery-20261027/REPRODUCE.md",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/child3-inference-recovery-20261027/artifacts/products.txt",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/child3-inference-recovery-20261027/artifacts/shipment.txt",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/child3-inference-recovery-20261027/artifacts/supplier.txt",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/child3-inference-recovery-20261027/code-change-manifest.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/child3-inference-recovery-20261027/controlled-child3.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/child3-inference-recovery-20261027/controlled-html.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/child3-inference-recovery-20261027/frozen-source.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/child3-inference-recovery-20261027/live-artifact-provenance.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/child3-inference-recovery-20261027/live-independent-acceptance.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/child3-inference-recovery-20261027/live-replay.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/child3-inference-recovery-20261027/local-review.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/child3-inference-recovery-20261027/log-provenance.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/child3-inference-recovery-20261027/manifest.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/child3-inference-recovery-20261027/preservation.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/child3-inference-recovery-20261027/previous-recursive-timeline.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/child3-inference-recovery-20261027/regression-results.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/child3-inference-recovery-20261027/research.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/child3-inference-recovery-20261027/run-registry.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/child3-inference-recovery-20261027/test_child_inference_recovery.log",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/child3-inference-recovery-20261027/test_post_repair_hardening.log",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/child3-inference-recovery-20261027/test_v26_all.log",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/child3-inference-recovery-20261027/test_verification_policy.log",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/code-change-manifest.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/completion-20261028/README.md",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/completion-20261028/artifact-oracles.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/completion-20261028/frozen-source.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/completion-20261028/host-readiness.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/completion-20261028/independent-inspection.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/completion-20261028/live-summary.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/completion-20261028/manifest.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/completion-20261028/power-events.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/completion-20261028/preservation.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/completion-20261028/provenance.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/completion-20261028/run-registry.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/completion-20261028/supervision.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/controlled/1-independent.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/controlled/10-independent.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/controlled/2-independent.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/controlled/3-dependent.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/controlled/3-independent.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/controlled/4-independent.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/controlled/5-independent.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/controlled/8-independent.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/false-conflicts-20261027/README.md",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/false-conflicts-20261027/code-change-manifest.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/false-conflicts-20261027/controlled/content-decision.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/false-conflicts-20261027/controlled/employee.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/false-conflicts-20261027/controlled/html-boundary.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/false-conflicts-20261027/controlled/multiple.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/false-conflicts-20261027/final/code-change-manifest.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/false-conflicts-20261027/final/controlled/content-decision.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/false-conflicts-20261027/final/controlled/employee.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/false-conflicts-20261027/final/controlled/html-boundary.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/false-conflicts-20261027/final/controlled/multiple.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/false-conflicts-20261027/final/focused-tests.log",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/false-conflicts-20261027/final/provenance.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/false-conflicts-20261027/final/run-registry.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/false-conflicts-20261027/final/test-registry.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/false-conflicts-20261027/focused-tests.log",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/false-conflicts-20261027/live-employee.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/false-conflicts-20261027/manifest.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/false-conflicts-20261027/original-failure.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/false-conflicts-20261027/preservation.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/false-conflicts-20261027/provenance.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/false-conflicts-20261027/run-registry.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/false-conflicts-20261027/test-registry.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/host-requalification-20261028/README.md",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/host-requalification-20261028/frozen-source.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/host-requalification-20261028/manifest.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/host-requalification-20261028/preservation.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/host-requalification-20261028/provenance.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/host-requalification-20261028/qualification.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/live/final-selected-events.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/live/live-final.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/live/live-receipt-final.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/manifest.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/parent-deadline-20261028/README.md",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/parent-deadline-20261028/REPRODUCE.md",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/parent-deadline-20261028/code-change-manifest.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/parent-deadline-20261028/controlled-independent-checks.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/parent-deadline-20261028/controlled-results.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/parent-deadline-20261028/controlled/cancel.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/parent-deadline-20261028/controlled/permanent.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/parent-deadline-20261028/controlled/retry.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/parent-deadline-20261028/controlled/success.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/parent-deadline-20261028/frozen-source.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/parent-deadline-20261028/investigation.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/parent-deadline-20261028/live-replay.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/parent-deadline-20261028/manifest.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/parent-deadline-20261028/power-events.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/parent-deadline-20261028/preservation.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/parent-deadline-20261028/provenance.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/parent-deadline-20261028/provider-excerpt.log",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/parent-deadline-20261028/references.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/parent-deadline-20261028/regression-comparison.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/parent-deadline-20261028/regression-results.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/parent-deadline-20261028/run-registry.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/parent-deadline-20261028/supervision.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/parent-deadline-20261028/test_child_inference_recovery.log",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/parent-deadline-20261028/test_parent_deadline_recovery.log",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/parent-deadline-20261028/test_post_repair_hardening.log",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/parent-deadline-20261028/test_update004_verification_integration.log",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/post-repair-live-20261027/README.md",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/post-repair-live-20261027/REPRODUCE.md",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/post-repair-live-20261027/artifacts/employee-profile-20261027T214528-8dfdcb28.html",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/post-repair-live-20261027/artifacts/employee-profile.html",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/post-repair-live-20261027/code-change-manifest.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/post-repair-live-20261027/controlled-functional.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/post-repair-live-20261027/controlled-html-root.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/post-repair-live-20261027/genuine-html-acceptance.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/post-repair-live-20261027/genuine-html-checkpoint-20261027T194758-1ef7c59c.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/post-repair-live-20261027/genuine-model-provider-recovery.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/post-repair-live-20261027/genuine-recursive-acceptance.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/post-repair-live-20261027/historical-role-latency.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/post-repair-live-20261027/historical-run-ledger.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/post-repair-live-20261027/html-artifact-provenance-checkpoint-20261027T194758-1ef7c59c.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/post-repair-live-20261027/html-artifact-provenance.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/post-repair-live-20261027/http-browser-functional.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/post-repair-live-20261027/independent-browser-readback.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/post-repair-live-20261027/live-run-registry.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/post-repair-live-20261027/manifest.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/post-repair-live-20261027/original-requests.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/post-repair-live-20261027/preservation.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/post-repair-live-20261027/problem-registry.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/post-repair-live-20261027/provenance.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/post-repair-live-20261027/recursive-scope-regression.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/post-repair-live-20261027/regression-hardening.log",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/post-repair-live-20261027/regression-v26.log",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/post-repair-live-20261027/regression-verification-policy.log",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/post-repair-live-20261027/research.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/post-repair-live-20261027/resumed-focused-tests.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/post-repair-live-20261027/server-diagnostics.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/post-repair-live-20261027/test-log-provenance.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/post-repair-live-20261027/test-registry.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/preservation.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/publication-file-audit.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/publication-manifest.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/regression/test_context_recovery_functional.log",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/regression/test_update004_verification_integration.log",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/research-references.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/run-registry.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/test-registry.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/wip-publication-20261028/README.md",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/wip-publication-20261028/engineering-audit.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/wip-publication-20261028/evidence-index.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/wip-publication-20261028/manifest.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/wip-publication-20261028/preservation.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/wip-publication-20261028/validation.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "evidence/level2-verification-repair-integration/wip-publication-20261028/whitespace-exceptions.json",
+      "decision": "INCLUDE",
+      "reason": "Curated review evidence or historical R4 checkpoint with separate source pins"
+    },
+    {
+      "path": "hivo/host_preflight.py",
+      "decision": "INCLUDE",
+      "reason": "R_UPDATE_004 production implementation, including prior local false-conflict work"
+    },
+    {
+      "path": "hivo/inference_transport.py",
+      "decision": "INCLUDE",
+      "reason": "R_UPDATE_004 production implementation, including prior local false-conflict work"
+    },
+    {
+      "path": "hivo/literal_source.py",
+      "decision": "INCLUDE",
+      "reason": "R_UPDATE_004 production implementation, including prior local false-conflict work"
+    },
+    {
+      "path": "hivo/process_supervision.py",
+      "decision": "INCLUDE",
+      "reason": "R_UPDATE_004 production implementation, including prior local false-conflict work"
+    },
+    {
+      "path": "hivo/project_understanding.py",
+      "decision": "INCLUDE",
+      "reason": "R_UPDATE_004 production implementation, including prior local false-conflict work"
+    },
+    {
+      "path": "hivo/requirement_consistency.py",
+      "decision": "INCLUDE",
+      "reason": "R_UPDATE_004 production implementation, including prior local false-conflict work"
+    },
+    {
+      "path": "hivo/requirement_decisions.py",
+      "decision": "INCLUDE",
+      "reason": "R_UPDATE_004 production implementation, including prior local false-conflict work"
+    },
+    {
+      "path": "hivo/requirements.py",
+      "decision": "INCLUDE",
+      "reason": "R_UPDATE_004 production implementation, including prior local false-conflict work"
+    },
+    {
+      "path": "hivo/verification_routing.py",
+      "decision": "INCLUDE",
+      "reason": "R_UPDATE_004 production implementation, including prior local false-conflict work"
+    },
+    {
+      "path": "mini.py",
+      "decision": "INCLUDE",
+      "reason": "R_UPDATE_004 production implementation, including prior local false-conflict work"
+    },
+    {
+      "path": "scripts/level2_clarification_replay.py",
+      "decision": "INCLUDE",
+      "reason": "Reproducible verification/replay harness; runtime outputs excluded"
+    },
+    {
+      "path": "scripts/replay_post_repair.py",
+      "decision": "INCLUDE",
+      "reason": "Reproducible verification/replay harness; runtime outputs excluded"
+    },
+    {
+      "path": "scripts/replay_provider_recovery.py",
+      "decision": "INCLUDE",
+      "reason": "Reproducible verification/replay harness; runtime outputs excluded"
+    },
+    {
+      "path": "scripts/replay_requirement_consistency.py",
+      "decision": "INCLUDE",
+      "reason": "Reproducible verification/replay harness; runtime outputs excluded"
+    },
+    {
+      "path": "scripts/update004_controlled_replay.py",
+      "decision": "INCLUDE",
+      "reason": "Reproducible verification/replay harness; runtime outputs excluded"
+    },
+    {
+      "path": "scripts/verify_level2_offline.py",
+      "decision": "INCLUDE",
+      "reason": "Reproducible verification/replay harness; runtime outputs excluded"
+    },
+    {
+      "path": "tests/fixtures/post_repair_requests.json",
+      "decision": "INCLUDE",
+      "reason": "R_UPDATE_004 regression or exact-request fixture"
+    },
+    {
+      "path": "tests/test_child_inference_recovery.py",
+      "decision": "INCLUDE",
+      "reason": "R_UPDATE_004 regression or exact-request fixture"
+    },
+    {
+      "path": "tests/test_host_preflight.py",
+      "decision": "INCLUDE",
+      "reason": "R_UPDATE_004 regression or exact-request fixture"
+    },
+    {
+      "path": "tests/test_parent_deadline_recovery.py",
+      "decision": "INCLUDE",
+      "reason": "R_UPDATE_004 regression or exact-request fixture"
+    },
+    {
+      "path": "tests/test_post_repair_hardening.py",
+      "decision": "INCLUDE",
+      "reason": "R_UPDATE_004 regression or exact-request fixture"
+    },
+    {
+      "path": "tests/test_requirement_consistency_flow.py",
+      "decision": "INCLUDE",
+      "reason": "R_UPDATE_004 regression or exact-request fixture"
+    },
+    {
+      "path": "tests/test_update004_verification_integration.py",
+      "decision": "INCLUDE",
+      "reason": "R_UPDATE_004 regression or exact-request fixture"
+    },
+    {
+      "path": "updates/R_UPDATE_004.md",
+      "decision": "INCLUDE",
+      "reason": "Complete chronological R_UPDATE_004; prior R_UPDATE_003 unchanged"
+    }
+  ],
+  "exclusions": [
+    {
+      "path": "list/project-22/.agent_experiment.jsonl",
+      "decision": "EXCLUDE",
+      "reason": "Private original runtime/workspace; preserve locally, covered by scoped ignore"
+    },
+    {
+      "path": "list/project-22/.agent_host_preflight.json",
+      "decision": "EXCLUDE",
+      "reason": "Private original runtime/workspace; preserve locally, covered by scoped ignore"
+    },
+    {
+      "path": "list/project-22/.agent_runs/20261027T151126-fabceeb5.jsonl",
+      "decision": "EXCLUDE",
+      "reason": "Private original runtime/workspace; preserve locally, covered by scoped ignore"
+    },
+    {
+      "path": "list/project-22/.agent_runs/20261027T151514-6fea1b5f.jsonl",
+      "decision": "EXCLUDE",
+      "reason": "Private original runtime/workspace; preserve locally, covered by scoped ignore"
+    },
+    {
+      "path": "list/project-22/.hivo/memory.sqlite3",
+      "decision": "EXCLUDE",
+      "reason": "Private original runtime/workspace; preserve locally, covered by scoped ignore"
+    },
+    {
+      "path": "list/project-23/.agent_host_preflight.json",
+      "decision": "EXCLUDE",
+      "reason": "Private original runtime/workspace; preserve locally, covered by scoped ignore"
+    },
+    {
+      "path": "list/project-23/.hivo/memory.sqlite3",
+      "decision": "EXCLUDE",
+      "reason": "Private original runtime/workspace; preserve locally, covered by scoped ignore"
+    },
+    {
+      "path": "list/project-24/.agent_experiment.jsonl",
+      "decision": "EXCLUDE",
+      "reason": "Private original runtime/workspace; preserve locally, covered by scoped ignore"
+    },
+    {
+      "path": "list/project-24/.agent_host_preflight.json",
+      "decision": "EXCLUDE",
+      "reason": "Private original runtime/workspace; preserve locally, covered by scoped ignore"
+    },
+    {
+      "path": "list/project-24/employee.txt",
+      "decision": "EXCLUDE",
+      "reason": "Private original runtime/workspace; preserve locally, covered by scoped ignore"
+    },
+    {
+      "path": "list/project-24/products.txt",
+      "decision": "EXCLUDE",
+      "reason": "Private original runtime/workspace; preserve locally, covered by scoped ignore"
+    },
+    {
+      "path": "list/project-24/shipment.txt",
+      "decision": "EXCLUDE",
+      "reason": "Private original runtime/workspace; preserve locally, covered by scoped ignore"
+    },
+    {
+      "path": "list/project-24/supplier.txt",
+      "decision": "EXCLUDE",
+      "reason": "Private original runtime/workspace; preserve locally, covered by scoped ignore"
+    },
+    {
+      "path": "list/project-24/.agent_runs/20261027T160613-55469a33.jsonl",
+      "decision": "EXCLUDE",
+      "reason": "Private original runtime/workspace; preserve locally, covered by scoped ignore"
+    },
+    {
+      "path": "list/project-24/.agent_runs/20261027T161357-1ee2c633.jsonl",
+      "decision": "EXCLUDE",
+      "reason": "Private original runtime/workspace; preserve locally, covered by scoped ignore"
+    },
+    {
+      "path": "list/project-24/.agent_runs/20261027T172137-d9c5357c.jsonl",
+      "decision": "EXCLUDE",
+      "reason": "Private original runtime/workspace; preserve locally, covered by scoped ignore"
+    },
+    {
+      "path": "list/project-24/.hivo/literal-clarification-history.jsonl",
+      "decision": "EXCLUDE",
+      "reason": "Private original runtime/workspace; preserve locally, covered by scoped ignore"
+    },
+    {
+      "path": "list/project-24/.hivo/literal-clarification.json",
+      "decision": "EXCLUDE",
+      "reason": "Private original runtime/workspace; preserve locally, covered by scoped ignore"
+    },
+    {
+      "path": "list/project-24/.hivo/memory.sqlite3",
+      "decision": "EXCLUDE",
+      "reason": "Private original runtime/workspace; preserve locally, covered by scoped ignore"
+    },
+    {
+      "path": "list/project-25/.agent_experiment.jsonl",
+      "decision": "EXCLUDE",
+      "reason": "Private original runtime/workspace; preserve locally, covered by scoped ignore"
+    },
+    {
+      "path": "list/project-25/.agent_host_preflight.json",
+      "decision": "EXCLUDE",
+      "reason": "Private original runtime/workspace; preserve locally, covered by scoped ignore"
+    },
+    {
+      "path": "list/project-25/.agent_runs/20261027T174632-342cd69a.jsonl",
+      "decision": "EXCLUDE",
+      "reason": "Private original runtime/workspace; preserve locally, covered by scoped ignore"
+    },
+    {
+      "path": "list/project-25/.hivo/memory.sqlite3",
+      "decision": "EXCLUDE",
+      "reason": "Private original runtime/workspace; preserve locally, covered by scoped ignore"
+    }
+  ],
+  "other_exclusions": [
+    "Private ignored audit_runs/ backups, logs, SQLite databases, screenshots and temporary environments",
+    "Existing unchanged AGENTS.md/UPDATE_TEMPLATE.md and prior updates remain inherited from base, not new changes"
+  ],
+  "scope": "Complete R_UPDATE_004 diff from checkpoint 6f0047c; no R_UPDATE_003 file or existing PR branch change.",
+  "genuine_final_source_root_verified": false,
+  "publication_scope": "WIP checkpoint; not a release or full Level 2 completion",
+  "engineering_audit": "wip-publication-20261028/engineering-audit.json"
+}

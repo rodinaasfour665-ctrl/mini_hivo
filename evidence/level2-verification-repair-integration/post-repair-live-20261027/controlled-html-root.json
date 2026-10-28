@@ -1,0 +1,334 @@
+{
+  "verification_class": "CONTROLLED_FUNCTIONAL_REAL_BROWSER",
+  "request": "Create a simple standalone HTML page named index.html for an employee profile.\n\nThe page must include:\n- A valid HTML5 document structure.\n- The page title \"Employee Profile\".\n- An H1 heading containing \"Sara\".\n- A paragraph containing \"Engineering Department\".\n- A visible status label containing \"Active\".\n- Internal CSS to give the page a clean professional layout.\n\nUse UTF-8 encoding.\n\nKeep all CSS inside the HTML file. Do not create any external CSS or JavaScript files.\n\nCreate exactly one HTML file and no additional task files.\n\nVerify that the required text and HTML elements are present before reporting completion.",
+  "status": "done",
+  "root_verified": true,
+  "impact_comparison": {
+    "status": "IMPACT_CONTRACT_PASSED",
+    "passed": true,
+    "failure_type": null,
+    "comparisons": [
+      {
+        "kind": "target",
+        "target": "index.html",
+        "status": "EXPECTED_AND_OBSERVED",
+        "actual": [
+          {
+            "target": "index.html",
+            "kind": "path",
+            "path": "index.html"
+          },
+          {
+            "target": "index.html",
+            "path": "index.html",
+            "kind": "path"
+          }
+        ]
+      },
+      {
+        "kind": "verification_obligation",
+        "id": "impact-obligation-1",
+        "status": "SATISFIED"
+      },
+      {
+        "kind": "verification_obligation",
+        "id": "impact-obligation-2",
+        "status": "SATISFIED"
+      },
+      {
+        "kind": "verification_obligation",
+        "id": "impact-obligation-3",
+        "status": "SATISFIED"
+      },
+      {
+        "kind": "verification_obligation",
+        "id": "impact-obligation-4",
+        "status": "SATISFIED"
+      },
+      {
+        "kind": "verification_obligation",
+        "id": "impact-obligation-5",
+        "status": "SATISFIED"
+      },
+      {
+        "kind": "verification_obligation",
+        "id": "impact-obligation-6",
+        "status": "SATISFIED"
+      },
+      {
+        "kind": "verification_obligation",
+        "id": "impact-obligation-7",
+        "status": "SATISFIED"
+      },
+      {
+        "kind": "verification_obligation",
+        "id": "impact-obligation-8",
+        "status": "SATISFIED"
+      },
+      {
+        "kind": "verification_obligation",
+        "id": "impact-obligation-9",
+        "status": "SATISFIED"
+      },
+      {
+        "kind": "verification_obligation",
+        "id": "impact-obligation-10",
+        "status": "SATISFIED"
+      }
+    ],
+    "missing": [],
+    "unexpected_related": [],
+    "out_of_scope": [],
+    "preservation_violations": [],
+    "obligations": [
+      {
+        "id": "impact-obligation-1",
+        "category": "BEHAVIOR",
+        "meaning": "Create a simple standalone HTML page named index.html for an employee profile.",
+        "target": "",
+        "required": true,
+        "verification_kind": "existing_gate",
+        "mode": "controller",
+        "status": "SATISFIED",
+        "provenance": [
+          {
+            "source_identity": "controller:approved-task-contract",
+            "path": "controller:approved-task-contract",
+            "location": "ROOT",
+            "evidence_kind": "approved_task_contract",
+            "evidence_id": "",
+            "authority_tier": "HIGH",
+            "authority_score": 100,
+            "excerpt": "Create a simple standalone HTML page named index.html for an employee profile."
+          }
+        ]
+      },
+      {
+        "id": "impact-obligation-2",
+        "category": "BEHAVIOR",
+        "meaning": "The page must include:",
+        "target": "",
+        "required": true,
+        "verification_kind": "existing_gate",
+        "mode": "controller",
+        "status": "SATISFIED",
+        "provenance": [
+          {
+            "source_identity": "controller:approved-task-contract",
+            "path": "controller:approved-task-contract",
+            "location": "ROOT",
+            "evidence_kind": "approved_task_contract",
+            "evidence_id": "",
+            "authority_tier": "HIGH",
+            "authority_score": 100,
+            "excerpt": "Create a simple standalone HTML page named index.html for an employee profile."
+          }
+        ]
+      },
+      {
+        "id": "impact-obligation-3",
+        "category": "BEHAVIOR",
+        "meaning": "A valid HTML5 document structure.",
+        "target": "",
+        "required": true,
+        "verification_kind": "existing_gate",
+        "mode": "controller",
+        "status": "SATISFIED",
+        "provenance": [
+          {
+            "source_identity": "controller:approved-task-contract",
+            "path": "controller:approved-task-contract",
+            "location": "ROOT",
+            "evidence_kind": "approved_task_contract",
+            "evidence_id": "",
+            "authority_tier": "HIGH",
+            "authority_score": 100,
+            "excerpt": "Create a simple standalone HTML page named index.html for an employee profile."
+          }
+        ]
+      },
+      {
+        "id": "impact-obligation-4",
+        "category": "BEHAVIOR",
+        "meaning": "The page title \"Employee Profile\".",
+        "target": "",
+        "required": true,
+        "verification_kind": "existing_gate",
+        "mode": "controller",
+        "status": "SATISFIED",
+        "provenance": [
+          {
+            "source_identity": "controller:approved-task-contract",
+            "path": "controller:approved-task-contract",
+            "location": "ROOT",
+            "evidence_kind": "approved_task_contract",
+            "evidence_id": "",
+            "authority_tier": "HIGH",
+            "authority_score": 100,
+            "excerpt": "Create a simple standalone HTML page named index.html for an employee profile."
+          }
+        ]
+      },
+      {
+        "id": "impact-obligation-5",
+        "category": "BEHAVIOR",
+        "meaning": "An H1 heading containing \"Sara\".",
+        "target": "",
+        "required": true,
+        "verification_kind": "existing_gate",
+        "mode": "controller",
+        "status": "SATISFIED",
+        "provenance": [
+          {
+            "source_identity": "controller:approved-task-contract",
+            "path": "controller:approved-task-contract",
+            "location": "ROOT",
+            "evidence_kind": "approved_task_contract",
+            "evidence_id": "",
+            "authority_tier": "HIGH",
+            "authority_score": 100,
+            "excerpt": "Create a simple standalone HTML page named index.html for an employee profile."
+          }
+        ]
+      },
+      {
+        "id": "impact-obligation-6",
+        "category": "BEHAVIOR",
+        "meaning": "A paragraph containing \"Engineering Department\".",
+        "target": "",
+        "required": true,
+        "verification_kind": "existing_gate",
+        "mode": "controller",
+        "status": "SATISFIED",
+        "provenance": [
+          {
+            "source_identity": "controller:approved-task-contract",
+            "path": "controller:approved-task-contract",
+            "location": "ROOT",
+            "evidence_kind": "approved_task_contract",
+            "evidence_id": "",
+            "authority_tier": "HIGH",
+            "authority_score": 100,
+            "excerpt": "Create a simple standalone HTML page named index.html for an employee profile."
+          }
+        ]
+      },
+      {
+        "id": "impact-obligation-7",
+        "category": "BEHAVIOR",
+        "meaning": "A visible status label containing \"Active\".",
+        "target": "",
+        "required": true,
+        "verification_kind": "existing_gate",
+        "mode": "controller",
+        "status": "SATISFIED",
+        "provenance": [
+          {
+            "source_identity": "controller:approved-task-contract",
+            "path": "controller:approved-task-contract",
+            "location": "ROOT",
+            "evidence_kind": "approved_task_contract",
+            "evidence_id": "",
+            "authority_tier": "HIGH",
+            "authority_score": 100,
+            "excerpt": "Create a simple standalone HTML page named index.html for an employee profile."
+          }
+        ]
+      },
+      {
+        "id": "impact-obligation-8",
+        "category": "BEHAVIOR",
+        "meaning": "Internal CSS to give the page a clean professional layout.",
+        "target": "",
+        "required": true,
+        "verification_kind": "existing_gate",
+        "mode": "controller",
+        "status": "SATISFIED",
+        "provenance": [
+          {
+            "source_identity": "controller:approved-task-contract",
+            "path": "controller:approved-task-contract",
+            "location": "ROOT",
+            "evidence_kind": "approved_task_contract",
+            "evidence_id": "",
+            "authority_tier": "HIGH",
+            "authority_score": 100,
+            "excerpt": "Create a simple standalone HTML page named index.html for an employee profile."
+          }
+        ]
+      },
+      {
+        "id": "impact-obligation-9",
+        "category": "BEHAVIOR",
+        "meaning": "Use UTF-8 encoding.",
+        "target": "",
+        "required": true,
+        "verification_kind": "existing_gate",
+        "mode": "controller",
+        "status": "SATISFIED",
+        "provenance": [
+          {
+            "source_identity": "controller:approved-task-contract",
+            "path": "controller:approved-task-contract",
+            "location": "ROOT",
+            "evidence_kind": "approved_task_contract",
+            "evidence_id": "",
+            "authority_tier": "HIGH",
+            "authority_score": 100,
+            "excerpt": "Create a simple standalone HTML page named index.html for an employee profile."
+          }
+        ]
+      },
+      {
+        "id": "impact-obligation-10",
+        "category": "BEHAVIOR",
+        "meaning": "Keep all CSS inside the HTML file.",
+        "target": "",
+        "required": true,
+        "verification_kind": "existing_gate",
+        "mode": "controller",
+        "status": "SATISFIED",
+        "provenance": [
+          {
+            "source_identity": "controller:approved-task-contract",
+            "path": "controller:approved-task-contract",
+            "location": "ROOT",
+            "evidence_kind": "approved_task_contract",
+            "evidence_id": "",
+            "authority_tier": "HIGH",
+            "authority_score": 100,
+            "excerpt": "Create a simple standalone HTML page named index.html for an employee profile."
+          }
+        ]
+      }
+    ],
+    "unresolved_obligations": [],
+    "conflicts": [],
+    "actual_changed_paths": [
+      "index.html"
+    ],
+    "contract_hash": "1a582a8c065ac1d05c20a60fa5b8e598d77bd8f6a8db2d93da5a5bb78bfebc6c",
+    "revision": 0,
+    "bounded": true
+  },
+  "artifact": {
+    "bytes": 1619,
+    "sha256": "7baf141e23c0786db8732a297269bb626f74aa04d7f4897de655817e41627527",
+    "matches_scripted_expected_utf8": true,
+    "expected_line_ending_policy": "Native text writer; source requires UTF-8, not LF/no-trailing-newline."
+  },
+  "source_sha256": {
+    "mini.py": "4ff3c7eb18cbc5c0a565e3c2fb16665428f1e722a99d809b6c4096551970d5e8",
+    "hivo/requirements.py": "53e27084410bc4253c2bd09a07430e7c01708d671345dd9371caae0bd9a94b2b",
+    "hivo/inference_transport.py": "4bfa8f2f32e1409dd5a892666b20143f7a625ec9a3c2e7a26f385aa086de3df2"
+  },
+  "boundaries": [
+    "Scripted model proposals",
+    "Production deterministic specification fallback",
+    "Real context/impact, mutation, native HTTP browser, independent Falsifier, impact comparison and transaction"
+  ],
+  "tool_role_turns": {
+    "Builder": 4,
+    "Falsifier": 3
+  }
+}

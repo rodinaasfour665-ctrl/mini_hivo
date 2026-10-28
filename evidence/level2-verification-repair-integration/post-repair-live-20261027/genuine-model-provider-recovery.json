@@ -1,0 +1,136 @@
+{
+  "verification_class": "CONTROLLED_TRANSPORT_FAULT_WITH_GENUINE_OLLAMA",
+  "run_id": "20261027T202418-3cc93760",
+  "source_matched_at_original_inspection": true,
+  "matches_current_production_source": false,
+  "original_inspection_sha256": "98e8b47a13629c7a1d45681e4804ae25d2d18ae7a4d961cc22020cb62bfc0e2e",
+  "artifact": {
+    "bytes": 49,
+    "sha256": "91023bf45a8f10c835b228cf136b58612c69f618b0d563ca56a3995206761d9e",
+    "independent_exact_source_bytes": true
+  },
+  "metrics": {
+    "run_id": "20261027T202418-3cc93760",
+    "status": "done",
+    "root_verified": true,
+    "model_calls": 8,
+    "tool_calls": 4,
+    "builder_calls": 1,
+    "falsifier_calls": 1,
+    "repairer_calls": 0,
+    "elapsed_seconds": 420.83,
+    "ollama_timeout_failures": 1,
+    "ollama_retry_count": 1,
+    "verification_classification_policy": "field_scoped"
+  },
+  "event_counts": {
+    "agent_finished": 2,
+    "clarification_gate_evaluated": 1,
+    "context_sufficiency_decision": 1,
+    "context_sufficiency_initial_context": 1,
+    "controlled_inference_fault_injected": 1,
+    "controller_literal_readback": 1,
+    "impact_contract_authorized": 1,
+    "impact_contract_compared": 1,
+    "impact_contract_created": 1,
+    "inference_progress": 301,
+    "literal_artifacts_ready": 1,
+    "literal_source_compiled": 1,
+    "model_request": 8,
+    "model_response": 7,
+    "model_response_shape": 7,
+    "project_brain_created": 1,
+    "provider_request_completed": 7,
+    "provider_request_failed": 1,
+    "run_started": 1,
+    "source_contract_ready": 1,
+    "source_requirement_ledger_created": 2,
+    "status": 7,
+    "task_brain_created": 1,
+    "transaction_commit": 1,
+    "verification_applicability_analyzed": 1,
+    "verification_evidence_aggregated": 1,
+    "verification_route_result": 1,
+    "world_model_initialized": 1,
+    "world_model_revalidation": 2
+  },
+  "gates": [
+    {
+      "kind": "impact_contract_authorized",
+      "task_id": "ROOT",
+      "mutation_authorized": true
+    },
+    {
+      "kind": "agent_finished",
+      "role": "Builder",
+      "task_id": "ROOT",
+      "status": "done",
+      "context_status": "sufficient",
+      "mutation_authorized": true,
+      "impact_authorized": true
+    },
+    {
+      "kind": "agent_finished",
+      "role": "Falsifier",
+      "task_id": "ROOT",
+      "status": "done",
+      "context_status": null,
+      "mutation_authorized": false,
+      "impact_authorized": false
+    },
+    {
+      "kind": "verification_route_result"
+    },
+    {
+      "kind": "verification_evidence_aggregated"
+    },
+    {
+      "kind": "impact_contract_compared",
+      "task_id": "ROOT",
+      "status": "IMPACT_CONTRACT_PASSED",
+      "mutation_authorized": true,
+      "changed_paths": [
+        "employee.txt"
+      ],
+      "missing": 0,
+      "unexpected_related": 0,
+      "out_of_scope": 0,
+      "preservation_violations": 0
+    },
+    {
+      "kind": "transaction_commit",
+      "task_id": "ROOT"
+    }
+  ],
+  "tools": [
+    {
+      "task_id": "ROOT",
+      "role": "Builder",
+      "tool": "context_sufficiency_check",
+      "target": "",
+      "status": "succeeded"
+    },
+    {
+      "task_id": "ROOT",
+      "role": "Builder",
+      "tool": "write_file",
+      "target": "employee.txt",
+      "status": "succeeded"
+    },
+    {
+      "task_id": "ROOT",
+      "role": "Builder",
+      "tool": "run_file",
+      "target": "employee.txt",
+      "status": "succeeded"
+    },
+    {
+      "task_id": "ROOT",
+      "role": "Falsifier",
+      "tool": "read_file",
+      "target": "employee.txt",
+      "status": "succeeded"
+    }
+  ],
+  "limits": "Exactly one controlled failure before HTTP dispatch. Seven actual completed provider calls; not a spontaneous outage. Real task, artifact, readback/Falsifier and transaction."
+}

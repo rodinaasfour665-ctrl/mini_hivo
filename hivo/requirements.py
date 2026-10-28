@@ -126,6 +126,8 @@ def _has_negation(text):
 
 
 def _can_merge(a, b):
+    if re.search(r'(?i)(?:content.*exactly|containing\s+exactly)', str(a)+' '+str(b)):
+        return str(a)==str(b)  # Literal values are case/byte sensitive.
     first, second = _requirement_key(a), _requirement_key(b)
     if not first or not second:
         return False
@@ -384,6 +386,38 @@ def _append_candidate_text(candidate, text):
     candidate["_raw_text"] = f"{current} {text}".strip()
 
 
+def named_artifact_declarations(text):
+    """Positive source declarations, not arbitrary nouns or literal-body data.
+
+    These identify physical output scope only. They make no claim about the
+    artifact's content or satisfaction of its semantic requirements.
+    """
+    from .artifact_progress import literal_requests
+    source = str(text or "")
+    # Literal requests have a stronger, separate parser. An invalid/overflowed
+    # exact-content request must never gain weaker authority via this fallback.
+    if re.search(r'\bcontaining\s+exactly\b|\bexact\s+contents?\b', source, re.IGNORECASE):
+        return []
+    opaque = literal_requests(source)
+    pattern = re.compile(
+        r'\b(?:create|make|write|generate|produce|save)\b[^\r\n;!?]{0,160}?'
+        r'\b(?:file|page|document|script|module|component|stylesheet)\s+'
+        r'(?:named|called)\s+(?P<name>`[^`\r\n]+`|"[^"\r\n]+"|\'[^\'\r\n]+\'|[^\s,;]+)',
+        re.IGNORECASE)
+    result = []
+    for match in pattern.finditer(source):
+        if any(item['source_start'] <= match.start() < item['source_end'] for item in opaque):
+            continue
+        boundary = max(source.rfind('\n', 0, match.start()), source.rfind(';', 0, match.start()))
+        prefix = source[boundary + 1:match.start()].lower()
+        if re.search(r"\b(?:do\s+not|must\s+not|never|don't)\b", prefix):
+            continue
+        name = match.group('name').strip('`"\'').rstrip('.,:')
+        result.append({'path': name, 'source_start': match.start(),
+                       'source_end': match.end(), 'source_clause': match.group(0)})
+    return result
+
+
 def literal_file_request(text):
     """Recognize an explicit single-file request; never guess executable code or paths."""
     token = r"(?:`[^`\n]*`|'[^'\n]*'|\"[^\"\n]*\"|[^\s'\"`]+)"
@@ -434,7 +468,8 @@ def deterministic_requirement_candidates(segment_text, source_segment):
                 for item in artifacts]
     artifact = literal_file_request(segment_text)
     if artifact:
-        return [{"text": text, "category": "functional", "source_segment": source_segment}
+        return [{"text": text, "category": "functional", "source_segment": source_segment,
+                 "artifact_path": artifact['name'], "source_clause": str(segment_text)}
                 for text in ("Create a text file.",
                              f"The file name must be {artifact['name']!r}.",
                              f"The content of the file must be exactly {artifact['content']!r}.")]
@@ -572,7 +607,8 @@ def build_source_requirement_ledger(candidates, existing_ledger=None, max_requir
             continue
         explicit_items_truncated += int(candidate.get("_explicit_items_omitted", 0) or 0)
         text_truncated += int(bool(candidate.get("text_truncated")))
-        match = next((index for index, item in enumerate(records) if _can_merge(item.get("text"), text)), None)
+        match = next((index for index, item in enumerate(records)
+                      if item.get('artifact_path')==candidate.get('artifact_path') and _can_merge(item.get("text"), text)), None)
         if match is not None:
             records[match] = _merge_record(records[match], candidate)
             continue
@@ -592,7 +628,7 @@ def build_source_requirement_ledger(candidates, existing_ledger=None, max_requir
             "source_variants": [text],
             "status": str(candidate.get("status") or "active"),
         }
-        for field in ("explicit_items", "explicit_item_count", "explicit_items_truncated", "text_truncated"):
+        for field in ("explicit_items", "explicit_item_count", "explicit_items_truncated", "text_truncated", "artifact_path", "source_clause"):
             if field in candidate:
                 record[field] = candidate[field]
         records.append(record)
@@ -799,27 +835,29 @@ def _lifecycle_kinds(text):
     return kinds
 
 
-def _conflict_evidence(left, right, left_text, right_text):
+def _conflict_evidence(left, right, left_text, right_text, default_target='artifact-set'):
     """Return bounded positive contradiction evidence, or None when uncertain."""
     if _is_conflict_heading(left_text) or _is_conflict_heading(right_text):
         return None
 
-    left_positive = _positive_target_tokens(left_text)
-    right_positive = _positive_target_tokens(right_text)
-    left_negative = _negative_target_tokens(left_text)
-    right_negative = _negative_target_tokens(right_text)
-
-    if left_positive & right_negative or right_positive & left_negative:
-        left_effect = compact_text(left_text, 260)
-        right_effect = compact_text(right_text, 260)
-        return {
-            "relationship": "CONFLICT",
-            "type": "opposite_polarity",
-            "incompatibility": "The requirements explicitly prescribe opposite behavior for the same target.",
-            "choice_a_effect": left_effect,
-            "choice_b_effect": right_effect,
-            "can_satisfy_both": False,
-        }
+    from .requirement_consistency import contradiction, targets, condition, facts
+    left_path,right_path=(str(x).replace('\\','/').casefold() if x else None
+                          for x in (left.get('artifact_path'),right.get('artifact_path')))
+    if left_path and right_path and left_path!=right_path:return None
+    default_target=left_path or right_path or default_target
+    evidence = contradiction(left_text, right_text, default_target)
+    if evidence:
+        return evidence
+    if any(f.get('property')=='exact_content' for value in (left_text,right_text)
+           for f in facts(value,default_target)):
+        # Legacy lifecycle patterns may not interpret literal data as policy.
+        return None
+    # Different explicit artifacts/conditions cannot justify the legacy broad
+    # lifecycle/resource patterns either. Unknown alignment is not proof.
+    if targets(left_text) and targets(right_text) and targets(left_text).isdisjoint(targets(right_text)):
+        return None
+    if condition(left_text) != condition(right_text):
+        return None
 
     left_global_reset = bool(_RESET_SCOPE_RE.search(left_text))
     right_global_reset = bool(_RESET_SCOPE_RE.search(right_text))
@@ -863,12 +901,15 @@ def _conflict_evidence(left, right, left_text, right_text):
 def detect_explicit_conflicts(ledger):
     """Find only visible source conflicts with positive incompatibility evidence."""
     records = ledger_requirements(ledger)
+    from .requirement_consistency import targets
+    names = set().union(*(targets(r.get('text','')) for r in records)) if records else set()
+    default_target = next(iter(names)) if len(names)==1 else 'artifact-set'
     conflicts = []
     for left_index, left in enumerate(records):
         left_text = str(left.get("text", ""))
         for right in records[left_index + 1:]:
             right_text = str(right.get("text", ""))
-            evidence = _conflict_evidence(left, right, left_text, right_text)
+            evidence = _conflict_evidence(left, right, left_text, right_text, default_target)
             if evidence and evidence.get("can_satisfy_both") is False:
                 conflicts.append({
                     "conflict_id": f"CONFLICT-{len(conflicts) + 1:03d}",
@@ -1107,7 +1148,8 @@ def retention_summary(ledger, retained_records=None, coverage=None):
 # Public helpers keep the pure boundary convenient for callers and tests.
 def extract_source_requirements(raw_prompt, max_segments=MAX_SOURCE_SEGMENTS):
     candidates = []
-    for segment in bounded_source_segments(raw_prompt, max_segments=max_segments):
+    from .literal_source import policy_text
+    for segment in bounded_source_segments(policy_text(raw_prompt), max_segments=max_segments):
         candidates.extend(deterministic_requirement_candidates(segment["text"], segment["segment"]))
     return build_source_requirement_ledger(candidates)
 

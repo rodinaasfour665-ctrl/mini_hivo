@@ -1,0 +1,9 @@
+{
+  "original_source": "audit_runs/20261021-workspace-audit/r-update-004/post-repair-20261027/live-html-child-binding-final/workspace/index.html",
+  "original_source_bytes": 1507,
+  "original_source_sha256": "140fa931879c13e7ee16553258b9ee231bb00fee6495aa8e0e142a7c05112398",
+  "sanitized_derivative": "artifacts/employee-profile-20261027T214528-8dfdcb28.html",
+  "sanitized_derivative_bytes": 1453,
+  "sanitized_derivative_sha256": "b8c4a4387cdebdba2703a559307319530f6e72ccf4c1a12103705fdaafa352f0",
+  "transformation": "Canonical UTF-8 LF publication copy; no content substitutions. Source requires UTF-8 but no exact line-ending policy. Original remains unchanged locally."
+}

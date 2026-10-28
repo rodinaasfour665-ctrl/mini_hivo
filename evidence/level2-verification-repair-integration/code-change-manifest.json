@@ -1,0 +1,55 @@
+{
+  "base_commit": "6f0047ca27e979db10e338357f0fa6a22fe0bf93",
+  "containing_commit": "pending; local only",
+  "files": [
+    {
+      "path": "mini.py",
+      "purpose": "Scoped verification/repair, committed child receipts, read-only parent composition and source retention",
+      "base_blob_sha256": "d6f7e391b55e0f57d20252d2c1e6ff3b7c73076a48072dd3f53801c93f90ad7c",
+      "working_tree_sha256": "178fea6b34f491e8a092f88ddb2a804f98c5f6152967db1381da06951854885f",
+      "status": "modified"
+    },
+    {
+      "path": "hivo/project_understanding.py",
+      "purpose": "Source/inventory-aware classification",
+      "base_blob_sha256": "1dffb1f654c68d88b8d5a94660f9287f644ebae6508d8077419423757c23b092",
+      "working_tree_sha256": "1d09738c10b75f51f9dde9220ba5eb1a78b41a060ddf7fc0cd47b9eebc832bff",
+      "status": "modified"
+    },
+    {
+      "path": "hivo/verification_routing.py",
+      "purpose": "Read-only literal inspection route",
+      "base_blob_sha256": "397a3e85c2f24654830db11514ed266446a3f7f79d10a95ac96f5a40988edbc2",
+      "working_tree_sha256": "750f196806baa198b772972fc708420feb74945533fafd0320b2e199c4983e82",
+      "status": "modified"
+    },
+    {
+      "path": "tests/test_update004_verification_integration.py",
+      "purpose": "12-case controlled functional/regression suite",
+      "base_blob_sha256": null,
+      "working_tree_sha256": "770a392bca7824e9e66e1f60fbc081ebcd579e8bc806b20d7e3b7f6d838ee5f5",
+      "status": "new_untracked"
+    },
+    {
+      "path": "scripts/update004_controlled_replay.py",
+      "purpose": "Persistent actual-artifact matrix with scripted DAG/provider",
+      "base_blob_sha256": null,
+      "working_tree_sha256": "87ac45f0fe55003f21692ea046f9fec21d6f318c3d513700f888e1f0ba76ea0c",
+      "status": "new_untracked"
+    },
+    {
+      "path": "scripts/verify_level2_offline.py",
+      "purpose": "New suite and source pins, provider forbidden",
+      "base_blob_sha256": "a7901801d82396f8d9d877f4b9baf80fc05332c08c9a5f53babf73901a31b7bf",
+      "working_tree_sha256": "deb4016e082804996a5490be421d344e0af48c18ef51c4a7c29c6e56aff21834",
+      "status": "modified"
+    },
+    {
+      "path": "scripts/level2_clarification_replay.py",
+      "purpose": "Relevant source hash pins",
+      "base_blob_sha256": "5442d78c88414d466f5461abd0e24c9d774845f2198b74479ebba49e05fb52e8",
+      "working_tree_sha256": "5f631ca6efbff18c64213b474b582a9af5401765d4a6d2b6c30e159cc51d2eac",
+      "status": "modified"
+    }
+  ]
+}

@@ -1,0 +1,670 @@
+{
+  "status": "LEVEL_2_INCOMPLETE",
+  "date": "2026-10-25",
+  "base_commit": "6f0047ca27e979db10e338357f0fa6a22fe0bf93",
+  "controlled": [
+    {
+      "verification_class": "CONTROLLED_FUNCTIONAL",
+      "case": "1-independent",
+      "run_id": "20261025T204216-ee434e6f",
+      "provider": "scripted tool proposals; real source/context/impact/leaf/Falsifier/parent/transaction",
+      "decomposition": "explicit fixture child DAG; production scheduler/leaf/parent, no mocked successful child receipts",
+      "workspace_snapshot": "Exact retained copy of test execution files; original temporary path differs.",
+      "source_sha256": {
+        "mini.py": "178fea6b34f491e8a092f88ddb2a804f98c5f6152967db1381da06951854885f",
+        "hivo/project_understanding.py": "1d09738c10b75f51f9dde9220ba5eb1a78b41a060ddf7fc0cd47b9eebc832bff",
+        "hivo/verification_routing.py": "750f196806baa198b772972fc708420feb74945533fafd0320b2e199c4983e82",
+        "hivo/pre_mutation_impact.py": "99d041fd17ab4c7497a6f8055c52aa2757498b980ef84f093e4ac5093a210217",
+        "hivo/context_sufficiency.py": "5256861508525786fd6848d8476bc8ac8d2a20d04be35bbd99034dc2314a2d8b",
+        "hivo/artifact_progress.py": "2eca277fcb33e9030e60446b624b59f75fe21181035466f1efcf572181930b7e",
+        "hivo/literal_source.py": "c7b1700ea7208ef80aac95ee3fdd0476ab2364f5c3c450a1754a64ac18db4c84",
+        "hivo/literal_clarification.py": "5a63638fff54e3afc45e816b2b3403597efd9516710a2a4167259205e5274c18",
+        "hivo/requirements.py": "85de898719fe86073f392659c4e1798077f4b0c30ef57ad8ac092cc908234104",
+        "tests/test_update004_verification_integration.py": "770a392bca7824e9e66e1f60fbc081ebcd579e8bc806b20d7e3b7f6d838ee5f5"
+      },
+      "metrics": {
+        "status": "done",
+        "root_verified": true,
+        "model_calls": 0,
+        "tool_calls": 8,
+        "falsifier_calls": 2,
+        "verified_nodes": 2,
+        "failed_nodes": 0
+      },
+      "checks": {
+        "status_done": true,
+        "root_verified": true,
+        "exact_current_bytes": true,
+        "no_extra_task_files": true,
+        "parent_builder_native_coverage": true,
+        "parent_falsifier_coverage": true,
+        "parent_no_mutation": true,
+        "parent_impact_passed": true,
+        "parent_gate_passed": true,
+        "parent_transaction_commit": true,
+        "no_failed_nodes": true
+      },
+      "artifacts": {
+        "entry_0.txt": {
+          "exact": true,
+          "expected_hex": "4964656e7469666965723a20300a47726f75703a20310a5374617475733a206578616374",
+          "actual_sha256": "52f3200bf2ecc87dfa79630e8a2bb549a39ec802650ec89f535476ca2eedc2ba"
+        }
+      },
+      "passed": true
+    },
+    {
+      "verification_class": "CONTROLLED_FUNCTIONAL",
+      "case": "2-independent",
+      "run_id": "20261025T204216-c764dba8",
+      "provider": "scripted tool proposals; real source/context/impact/leaf/Falsifier/parent/transaction",
+      "decomposition": "explicit fixture child DAG; production scheduler/leaf/parent, no mocked successful child receipts",
+      "workspace_snapshot": "Exact retained copy of test execution files; original temporary path differs.",
+      "source_sha256": {
+        "mini.py": "178fea6b34f491e8a092f88ddb2a804f98c5f6152967db1381da06951854885f",
+        "hivo/project_understanding.py": "1d09738c10b75f51f9dde9220ba5eb1a78b41a060ddf7fc0cd47b9eebc832bff",
+        "hivo/verification_routing.py": "750f196806baa198b772972fc708420feb74945533fafd0320b2e199c4983e82",
+        "hivo/pre_mutation_impact.py": "99d041fd17ab4c7497a6f8055c52aa2757498b980ef84f093e4ac5093a210217",
+        "hivo/context_sufficiency.py": "5256861508525786fd6848d8476bc8ac8d2a20d04be35bbd99034dc2314a2d8b",
+        "hivo/artifact_progress.py": "2eca277fcb33e9030e60446b624b59f75fe21181035466f1efcf572181930b7e",
+        "hivo/literal_source.py": "c7b1700ea7208ef80aac95ee3fdd0476ab2364f5c3c450a1754a64ac18db4c84",
+        "hivo/literal_clarification.py": "5a63638fff54e3afc45e816b2b3403597efd9516710a2a4167259205e5274c18",
+        "hivo/requirements.py": "85de898719fe86073f392659c4e1798077f4b0c30ef57ad8ac092cc908234104",
+        "tests/test_update004_verification_integration.py": "770a392bca7824e9e66e1f60fbc081ebcd579e8bc806b20d7e3b7f6d838ee5f5"
+      },
+      "metrics": {
+        "status": "done",
+        "root_verified": true,
+        "model_calls": 0,
+        "tool_calls": 14,
+        "falsifier_calls": 3,
+        "verified_nodes": 3,
+        "failed_nodes": 0
+      },
+      "checks": {
+        "status_done": true,
+        "root_verified": true,
+        "exact_current_bytes": true,
+        "no_extra_task_files": true,
+        "parent_builder_native_coverage": true,
+        "parent_falsifier_coverage": true,
+        "parent_no_mutation": true,
+        "parent_impact_passed": true,
+        "parent_gate_passed": true,
+        "parent_transaction_commit": true,
+        "no_failed_nodes": true
+      },
+      "artifacts": {
+        "entry_0.txt": {
+          "exact": true,
+          "expected_hex": "4964656e7469666965723a20300a47726f75703a20320a5374617475733a206578616374",
+          "actual_sha256": "39b408eee70af7c6c9bec4e383130de2641af5944e6ab559714b9e8405907582"
+        },
+        "entry_1.txt": {
+          "exact": true,
+          "expected_hex": "4964656e7469666965723a20310a47726f75703a20320a5374617475733a206578616374",
+          "actual_sha256": "a667c5dc8d80099513d30cd7dfc631e2147d9dac1a0130e9aedd6f1276e0f96e"
+        }
+      },
+      "passed": true
+    },
+    {
+      "verification_class": "CONTROLLED_FUNCTIONAL",
+      "case": "3-independent",
+      "run_id": "20261025T204217-3c595f50",
+      "provider": "scripted tool proposals; real source/context/impact/leaf/Falsifier/parent/transaction",
+      "decomposition": "explicit fixture child DAG; production scheduler/leaf/parent, no mocked successful child receipts",
+      "workspace_snapshot": "Exact retained copy of test execution files; original temporary path differs.",
+      "source_sha256": {
+        "mini.py": "178fea6b34f491e8a092f88ddb2a804f98c5f6152967db1381da06951854885f",
+        "hivo/project_understanding.py": "1d09738c10b75f51f9dde9220ba5eb1a78b41a060ddf7fc0cd47b9eebc832bff",
+        "hivo/verification_routing.py": "750f196806baa198b772972fc708420feb74945533fafd0320b2e199c4983e82",
+        "hivo/pre_mutation_impact.py": "99d041fd17ab4c7497a6f8055c52aa2757498b980ef84f093e4ac5093a210217",
+        "hivo/context_sufficiency.py": "5256861508525786fd6848d8476bc8ac8d2a20d04be35bbd99034dc2314a2d8b",
+        "hivo/artifact_progress.py": "2eca277fcb33e9030e60446b624b59f75fe21181035466f1efcf572181930b7e",
+        "hivo/literal_source.py": "c7b1700ea7208ef80aac95ee3fdd0476ab2364f5c3c450a1754a64ac18db4c84",
+        "hivo/literal_clarification.py": "5a63638fff54e3afc45e816b2b3403597efd9516710a2a4167259205e5274c18",
+        "hivo/requirements.py": "85de898719fe86073f392659c4e1798077f4b0c30ef57ad8ac092cc908234104",
+        "tests/test_update004_verification_integration.py": "770a392bca7824e9e66e1f60fbc081ebcd579e8bc806b20d7e3b7f6d838ee5f5"
+      },
+      "metrics": {
+        "status": "done",
+        "root_verified": true,
+        "model_calls": 0,
+        "tool_calls": 20,
+        "falsifier_calls": 4,
+        "verified_nodes": 4,
+        "failed_nodes": 0
+      },
+      "checks": {
+        "status_done": true,
+        "root_verified": true,
+        "exact_current_bytes": true,
+        "no_extra_task_files": true,
+        "parent_builder_native_coverage": true,
+        "parent_falsifier_coverage": true,
+        "parent_no_mutation": true,
+        "parent_impact_passed": true,
+        "parent_gate_passed": true,
+        "parent_transaction_commit": true,
+        "no_failed_nodes": true
+      },
+      "artifacts": {
+        "entry_0.txt": {
+          "exact": true,
+          "expected_hex": "4964656e7469666965723a20300a47726f75703a20330a5374617475733a206578616374",
+          "actual_sha256": "3fa650c5f0b987032b102b51eef501faed08b2614673e7d226fa937c65f8fe88"
+        },
+        "entry_1.txt": {
+          "exact": true,
+          "expected_hex": "4964656e7469666965723a20310a47726f75703a20330a5374617475733a206578616374",
+          "actual_sha256": "8cd4a9451fb3e01827b1415f3c78c900dfb8110ad494c84bc867a987370b591f"
+        },
+        "entry_2.txt": {
+          "exact": true,
+          "expected_hex": "4964656e7469666965723a20320a47726f75703a20330a5374617475733a206578616374",
+          "actual_sha256": "66b80cb1c75f40daf5a60fd3dd667d4bca1d7a6f984d53eab721889a75438b51"
+        }
+      },
+      "passed": true
+    },
+    {
+      "verification_class": "CONTROLLED_FUNCTIONAL",
+      "case": "4-independent",
+      "run_id": "20261025T204219-ce7031e4",
+      "provider": "scripted tool proposals; real source/context/impact/leaf/Falsifier/parent/transaction",
+      "decomposition": "explicit fixture child DAG; production scheduler/leaf/parent, no mocked successful child receipts",
+      "workspace_snapshot": "Exact retained copy of test execution files; original temporary path differs.",
+      "source_sha256": {
+        "mini.py": "178fea6b34f491e8a092f88ddb2a804f98c5f6152967db1381da06951854885f",
+        "hivo/project_understanding.py": "1d09738c10b75f51f9dde9220ba5eb1a78b41a060ddf7fc0cd47b9eebc832bff",
+        "hivo/verification_routing.py": "750f196806baa198b772972fc708420feb74945533fafd0320b2e199c4983e82",
+        "hivo/pre_mutation_impact.py": "99d041fd17ab4c7497a6f8055c52aa2757498b980ef84f093e4ac5093a210217",
+        "hivo/context_sufficiency.py": "5256861508525786fd6848d8476bc8ac8d2a20d04be35bbd99034dc2314a2d8b",
+        "hivo/artifact_progress.py": "2eca277fcb33e9030e60446b624b59f75fe21181035466f1efcf572181930b7e",
+        "hivo/literal_source.py": "c7b1700ea7208ef80aac95ee3fdd0476ab2364f5c3c450a1754a64ac18db4c84",
+        "hivo/literal_clarification.py": "5a63638fff54e3afc45e816b2b3403597efd9516710a2a4167259205e5274c18",
+        "hivo/requirements.py": "85de898719fe86073f392659c4e1798077f4b0c30ef57ad8ac092cc908234104",
+        "tests/test_update004_verification_integration.py": "770a392bca7824e9e66e1f60fbc081ebcd579e8bc806b20d7e3b7f6d838ee5f5"
+      },
+      "metrics": {
+        "status": "done",
+        "root_verified": true,
+        "model_calls": 0,
+        "tool_calls": 26,
+        "falsifier_calls": 5,
+        "verified_nodes": 5,
+        "failed_nodes": 0
+      },
+      "checks": {
+        "status_done": true,
+        "root_verified": true,
+        "exact_current_bytes": true,
+        "no_extra_task_files": true,
+        "parent_builder_native_coverage": true,
+        "parent_falsifier_coverage": true,
+        "parent_no_mutation": true,
+        "parent_impact_passed": true,
+        "parent_gate_passed": true,
+        "parent_transaction_commit": true,
+        "no_failed_nodes": true
+      },
+      "artifacts": {
+        "entry_0.txt": {
+          "exact": true,
+          "expected_hex": "4964656e7469666965723a20300a47726f75703a20340a5374617475733a206578616374",
+          "actual_sha256": "1c9ea7e278780e35eaf6ed8decd7e270d41dac5becd8b4195fa76b8504a74b1c"
+        },
+        "entry_1.txt": {
+          "exact": true,
+          "expected_hex": "4964656e7469666965723a20310a47726f75703a20340a5374617475733a206578616374",
+          "actual_sha256": "8edbfc7317577190d00cc72ecc80962c02892f908c310322386e3acd0b0e9138"
+        },
+        "entry_2.txt": {
+          "exact": true,
+          "expected_hex": "4964656e7469666965723a20320a47726f75703a20340a5374617475733a206578616374",
+          "actual_sha256": "7712ae6887e95b7ad711b9f0f567722985c516310fb35c9ad770eb44966d0d3b"
+        },
+        "entry_3.txt": {
+          "exact": true,
+          "expected_hex": "4964656e7469666965723a20330a47726f75703a20340a5374617475733a206578616374",
+          "actual_sha256": "9d379f793bbfb8790753a466404847bdfac6d5331db88834b7fe3623cd01db32"
+        }
+      },
+      "passed": true
+    },
+    {
+      "verification_class": "CONTROLLED_FUNCTIONAL",
+      "case": "5-independent",
+      "run_id": "20261025T204221-5298b881",
+      "provider": "scripted tool proposals; real source/context/impact/leaf/Falsifier/parent/transaction",
+      "decomposition": "explicit fixture child DAG; production scheduler/leaf/parent, no mocked successful child receipts",
+      "workspace_snapshot": "Exact retained copy of test execution files; original temporary path differs.",
+      "source_sha256": {
+        "mini.py": "178fea6b34f491e8a092f88ddb2a804f98c5f6152967db1381da06951854885f",
+        "hivo/project_understanding.py": "1d09738c10b75f51f9dde9220ba5eb1a78b41a060ddf7fc0cd47b9eebc832bff",
+        "hivo/verification_routing.py": "750f196806baa198b772972fc708420feb74945533fafd0320b2e199c4983e82",
+        "hivo/pre_mutation_impact.py": "99d041fd17ab4c7497a6f8055c52aa2757498b980ef84f093e4ac5093a210217",
+        "hivo/context_sufficiency.py": "5256861508525786fd6848d8476bc8ac8d2a20d04be35bbd99034dc2314a2d8b",
+        "hivo/artifact_progress.py": "2eca277fcb33e9030e60446b624b59f75fe21181035466f1efcf572181930b7e",
+        "hivo/literal_source.py": "c7b1700ea7208ef80aac95ee3fdd0476ab2364f5c3c450a1754a64ac18db4c84",
+        "hivo/literal_clarification.py": "5a63638fff54e3afc45e816b2b3403597efd9516710a2a4167259205e5274c18",
+        "hivo/requirements.py": "85de898719fe86073f392659c4e1798077f4b0c30ef57ad8ac092cc908234104",
+        "tests/test_update004_verification_integration.py": "770a392bca7824e9e66e1f60fbc081ebcd579e8bc806b20d7e3b7f6d838ee5f5"
+      },
+      "metrics": {
+        "status": "done",
+        "root_verified": true,
+        "model_calls": 0,
+        "tool_calls": 32,
+        "falsifier_calls": 6,
+        "verified_nodes": 6,
+        "failed_nodes": 0
+      },
+      "checks": {
+        "status_done": true,
+        "root_verified": true,
+        "exact_current_bytes": true,
+        "no_extra_task_files": true,
+        "parent_builder_native_coverage": true,
+        "parent_falsifier_coverage": true,
+        "parent_no_mutation": true,
+        "parent_impact_passed": true,
+        "parent_gate_passed": true,
+        "parent_transaction_commit": true,
+        "no_failed_nodes": true
+      },
+      "artifacts": {
+        "entry_0.txt": {
+          "exact": true,
+          "expected_hex": "4964656e7469666965723a20300a47726f75703a20350a5374617475733a206578616374",
+          "actual_sha256": "91ba403679dba86a4fef8db742eb3806246a7d239980a72e89f55d912dcb9022"
+        },
+        "entry_1.txt": {
+          "exact": true,
+          "expected_hex": "4964656e7469666965723a20310a47726f75703a20350a5374617475733a206578616374",
+          "actual_sha256": "a8680e426621ec0ef66c855464e4cfeb309f0f180b446108f797733fb51839bc"
+        },
+        "entry_2.txt": {
+          "exact": true,
+          "expected_hex": "4964656e7469666965723a20320a47726f75703a20350a5374617475733a206578616374",
+          "actual_sha256": "341479a3e3f4b452dbfd44591643fdf70424b16084d60d6c10aff0d9a7fc1fc0"
+        },
+        "entry_3.txt": {
+          "exact": true,
+          "expected_hex": "4964656e7469666965723a20330a47726f75703a20350a5374617475733a206578616374",
+          "actual_sha256": "a064f13647bc8cc2237a72c19fc1e008bb6ad8b49330aba34e77e6ec6f78d5a3"
+        },
+        "entry_4.txt": {
+          "exact": true,
+          "expected_hex": "4964656e7469666965723a20340a47726f75703a20350a5374617475733a206578616374",
+          "actual_sha256": "9835a88a5a00bb1ff70958dc7b694413971d325c63d78fd8194840899d621a5d"
+        }
+      },
+      "passed": true
+    },
+    {
+      "verification_class": "CONTROLLED_FUNCTIONAL",
+      "case": "8-independent",
+      "run_id": "20261025T204224-2c54d11a",
+      "provider": "scripted tool proposals; real source/context/impact/leaf/Falsifier/parent/transaction",
+      "decomposition": "explicit fixture child DAG; production scheduler/leaf/parent, no mocked successful child receipts",
+      "workspace_snapshot": "Exact retained copy of test execution files; original temporary path differs.",
+      "source_sha256": {
+        "mini.py": "178fea6b34f491e8a092f88ddb2a804f98c5f6152967db1381da06951854885f",
+        "hivo/project_understanding.py": "1d09738c10b75f51f9dde9220ba5eb1a78b41a060ddf7fc0cd47b9eebc832bff",
+        "hivo/verification_routing.py": "750f196806baa198b772972fc708420feb74945533fafd0320b2e199c4983e82",
+        "hivo/pre_mutation_impact.py": "99d041fd17ab4c7497a6f8055c52aa2757498b980ef84f093e4ac5093a210217",
+        "hivo/context_sufficiency.py": "5256861508525786fd6848d8476bc8ac8d2a20d04be35bbd99034dc2314a2d8b",
+        "hivo/artifact_progress.py": "2eca277fcb33e9030e60446b624b59f75fe21181035466f1efcf572181930b7e",
+        "hivo/literal_source.py": "c7b1700ea7208ef80aac95ee3fdd0476ab2364f5c3c450a1754a64ac18db4c84",
+        "hivo/literal_clarification.py": "5a63638fff54e3afc45e816b2b3403597efd9516710a2a4167259205e5274c18",
+        "hivo/requirements.py": "85de898719fe86073f392659c4e1798077f4b0c30ef57ad8ac092cc908234104",
+        "tests/test_update004_verification_integration.py": "770a392bca7824e9e66e1f60fbc081ebcd579e8bc806b20d7e3b7f6d838ee5f5"
+      },
+      "metrics": {
+        "status": "done",
+        "root_verified": true,
+        "model_calls": 0,
+        "tool_calls": 50,
+        "falsifier_calls": 9,
+        "verified_nodes": 9,
+        "failed_nodes": 0
+      },
+      "checks": {
+        "status_done": true,
+        "root_verified": true,
+        "exact_current_bytes": true,
+        "no_extra_task_files": true,
+        "parent_builder_native_coverage": true,
+        "parent_falsifier_coverage": true,
+        "parent_no_mutation": true,
+        "parent_impact_passed": true,
+        "parent_gate_passed": true,
+        "parent_transaction_commit": true,
+        "no_failed_nodes": true
+      },
+      "artifacts": {
+        "entry_0.txt": {
+          "exact": true,
+          "expected_hex": "4964656e7469666965723a20300a47726f75703a20380a5374617475733a206578616374",
+          "actual_sha256": "6016e6e1e58c7e19a9d68e79e592d5167697fbb7fc5d1e20bc47a2dca02e1425"
+        },
+        "entry_1.txt": {
+          "exact": true,
+          "expected_hex": "4964656e7469666965723a20310a47726f75703a20380a5374617475733a206578616374",
+          "actual_sha256": "ee870e1e484436887692f9872929746f71802b0dbf4ae7d723640b974fad6b5a"
+        },
+        "entry_2.txt": {
+          "exact": true,
+          "expected_hex": "4964656e7469666965723a20320a47726f75703a20380a5374617475733a206578616374",
+          "actual_sha256": "3e325ba529eaa03a6d5645d3cb6eaebefa01490784944a24a8b3b185bee02ae8"
+        },
+        "entry_3.txt": {
+          "exact": true,
+          "expected_hex": "4964656e7469666965723a20330a47726f75703a20380a5374617475733a206578616374",
+          "actual_sha256": "8b2b2ca27c707e5f8d8411c87ed83f9a90d3a63b88412c49f29e729832dd30f1"
+        },
+        "entry_4.txt": {
+          "exact": true,
+          "expected_hex": "4964656e7469666965723a20340a47726f75703a20380a5374617475733a206578616374",
+          "actual_sha256": "687e21c6f9e7181be3144d21b45fd46125baeec3419451fb6560795df73eec49"
+        },
+        "entry_5.txt": {
+          "exact": true,
+          "expected_hex": "4964656e7469666965723a20350a47726f75703a20380a5374617475733a206578616374",
+          "actual_sha256": "d285a599aa8300b8b9583c3634cdf8be32b1348229d541499eadc8428c3b7027"
+        },
+        "entry_6.txt": {
+          "exact": true,
+          "expected_hex": "4964656e7469666965723a20360a47726f75703a20380a5374617475733a206578616374",
+          "actual_sha256": "0e6ed12dae2fd8da5e7ab9448fb1e0606fd61c94b37233f414b463bf95517c3b"
+        },
+        "entry_7.txt": {
+          "exact": true,
+          "expected_hex": "4964656e7469666965723a20370a47726f75703a20380a5374617475733a206578616374",
+          "actual_sha256": "66e861aa787e33206d6293957cb0f726719c5ba7beedaced4985295343a11113"
+        }
+      },
+      "passed": true
+    },
+    {
+      "verification_class": "CONTROLLED_FUNCTIONAL",
+      "case": "10-independent",
+      "run_id": "20261025T204229-c39ea2d8",
+      "provider": "scripted tool proposals; real source/context/impact/leaf/Falsifier/parent/transaction",
+      "decomposition": "explicit fixture child DAG; production scheduler/leaf/parent, no mocked successful child receipts",
+      "workspace_snapshot": "Exact retained copy of test execution files; original temporary path differs.",
+      "source_sha256": {
+        "mini.py": "178fea6b34f491e8a092f88ddb2a804f98c5f6152967db1381da06951854885f",
+        "hivo/project_understanding.py": "1d09738c10b75f51f9dde9220ba5eb1a78b41a060ddf7fc0cd47b9eebc832bff",
+        "hivo/verification_routing.py": "750f196806baa198b772972fc708420feb74945533fafd0320b2e199c4983e82",
+        "hivo/pre_mutation_impact.py": "99d041fd17ab4c7497a6f8055c52aa2757498b980ef84f093e4ac5093a210217",
+        "hivo/context_sufficiency.py": "5256861508525786fd6848d8476bc8ac8d2a20d04be35bbd99034dc2314a2d8b",
+        "hivo/artifact_progress.py": "2eca277fcb33e9030e60446b624b59f75fe21181035466f1efcf572181930b7e",
+        "hivo/literal_source.py": "c7b1700ea7208ef80aac95ee3fdd0476ab2364f5c3c450a1754a64ac18db4c84",
+        "hivo/literal_clarification.py": "5a63638fff54e3afc45e816b2b3403597efd9516710a2a4167259205e5274c18",
+        "hivo/requirements.py": "85de898719fe86073f392659c4e1798077f4b0c30ef57ad8ac092cc908234104",
+        "tests/test_update004_verification_integration.py": "770a392bca7824e9e66e1f60fbc081ebcd579e8bc806b20d7e3b7f6d838ee5f5"
+      },
+      "metrics": {
+        "status": "done",
+        "root_verified": true,
+        "model_calls": 0,
+        "tool_calls": 62,
+        "falsifier_calls": 11,
+        "verified_nodes": 11,
+        "failed_nodes": 0
+      },
+      "checks": {
+        "status_done": true,
+        "root_verified": true,
+        "exact_current_bytes": true,
+        "no_extra_task_files": true,
+        "parent_builder_native_coverage": true,
+        "parent_falsifier_coverage": true,
+        "parent_no_mutation": true,
+        "parent_impact_passed": true,
+        "parent_gate_passed": true,
+        "parent_transaction_commit": true,
+        "no_failed_nodes": true
+      },
+      "artifacts": {
+        "entry_0.txt": {
+          "exact": true,
+          "expected_hex": "4964656e7469666965723a20300a47726f75703a2031300a5374617475733a206578616374",
+          "actual_sha256": "6257480b0895a590b228cb03cde6b1ec98e7cb13b26864ab8f48d4344a7704ed"
+        },
+        "entry_1.txt": {
+          "exact": true,
+          "expected_hex": "4964656e7469666965723a20310a47726f75703a2031300a5374617475733a206578616374",
+          "actual_sha256": "5b5cdd6be690b542035935a3f78b8eccaa7856174ff6b7597ce069874d610dc7"
+        },
+        "entry_2.txt": {
+          "exact": true,
+          "expected_hex": "4964656e7469666965723a20320a47726f75703a2031300a5374617475733a206578616374",
+          "actual_sha256": "48ffa5ff394b5fc09656cf3efb6f53e4429aefa84a4ab30460ada9938b39a66d"
+        },
+        "entry_3.txt": {
+          "exact": true,
+          "expected_hex": "4964656e7469666965723a20330a47726f75703a2031300a5374617475733a206578616374",
+          "actual_sha256": "06b7ce381c511b1e21d2cac5c21188663635be49896f80fe631b9379cd97f4e0"
+        },
+        "entry_4.txt": {
+          "exact": true,
+          "expected_hex": "4964656e7469666965723a20340a47726f75703a2031300a5374617475733a206578616374",
+          "actual_sha256": "28cb359654a55716107cc0501d8d3a11429d0a1771a5043e07dc037597481674"
+        },
+        "entry_5.txt": {
+          "exact": true,
+          "expected_hex": "4964656e7469666965723a20350a47726f75703a2031300a5374617475733a206578616374",
+          "actual_sha256": "d7e228323492aaeaca64aca1d291a4369372e1a2f84dbf815883b904c6036dd8"
+        },
+        "entry_6.txt": {
+          "exact": true,
+          "expected_hex": "4964656e7469666965723a20360a47726f75703a2031300a5374617475733a206578616374",
+          "actual_sha256": "d3a595948fa62af4b9409b5dbb132391fa68b7be3ab65dad7e349d173cc7a99f"
+        },
+        "entry_7.txt": {
+          "exact": true,
+          "expected_hex": "4964656e7469666965723a20370a47726f75703a2031300a5374617475733a206578616374",
+          "actual_sha256": "495e24f26d779f05a506063a4d97eb44cc570763205cccb21eabd52cb54d644b"
+        },
+        "entry_8.txt": {
+          "exact": true,
+          "expected_hex": "4964656e7469666965723a20380a47726f75703a2031300a5374617475733a206578616374",
+          "actual_sha256": "0f3e23ddc0eac5414bf6a85cd651abf4b0c55e749e630a5038e47970f36e1e14"
+        },
+        "entry_9.txt": {
+          "exact": true,
+          "expected_hex": "4964656e7469666965723a20390a47726f75703a2031300a5374617475733a206578616374",
+          "actual_sha256": "5369fca4bb5c6cd86815370cc8c5e6bb7644a54771f22f6aecd96dbdf4bc6f05"
+        }
+      },
+      "passed": true
+    },
+    {
+      "verification_class": "CONTROLLED_FUNCTIONAL",
+      "case": "3-dependent",
+      "run_id": "20261025T204235-a8befced",
+      "provider": "scripted tool proposals; real source/context/impact/leaf/Falsifier/parent/transaction",
+      "decomposition": "explicit fixture child DAG; production scheduler/leaf/parent, no mocked successful child receipts",
+      "workspace_snapshot": "Exact retained copy of test execution files; original temporary path differs.",
+      "source_sha256": {
+        "mini.py": "178fea6b34f491e8a092f88ddb2a804f98c5f6152967db1381da06951854885f",
+        "hivo/project_understanding.py": "1d09738c10b75f51f9dde9220ba5eb1a78b41a060ddf7fc0cd47b9eebc832bff",
+        "hivo/verification_routing.py": "750f196806baa198b772972fc708420feb74945533fafd0320b2e199c4983e82",
+        "hivo/pre_mutation_impact.py": "99d041fd17ab4c7497a6f8055c52aa2757498b980ef84f093e4ac5093a210217",
+        "hivo/context_sufficiency.py": "5256861508525786fd6848d8476bc8ac8d2a20d04be35bbd99034dc2314a2d8b",
+        "hivo/artifact_progress.py": "2eca277fcb33e9030e60446b624b59f75fe21181035466f1efcf572181930b7e",
+        "hivo/literal_source.py": "c7b1700ea7208ef80aac95ee3fdd0476ab2364f5c3c450a1754a64ac18db4c84",
+        "hivo/literal_clarification.py": "5a63638fff54e3afc45e816b2b3403597efd9516710a2a4167259205e5274c18",
+        "hivo/requirements.py": "85de898719fe86073f392659c4e1798077f4b0c30ef57ad8ac092cc908234104",
+        "tests/test_update004_verification_integration.py": "770a392bca7824e9e66e1f60fbc081ebcd579e8bc806b20d7e3b7f6d838ee5f5"
+      },
+      "metrics": {
+        "status": "done",
+        "root_verified": true,
+        "model_calls": 0,
+        "tool_calls": 20,
+        "falsifier_calls": 4,
+        "verified_nodes": 4,
+        "failed_nodes": 0
+      },
+      "checks": {
+        "status_done": true,
+        "root_verified": true,
+        "exact_current_bytes": true,
+        "no_extra_task_files": true,
+        "parent_builder_native_coverage": true,
+        "parent_falsifier_coverage": true,
+        "parent_no_mutation": true,
+        "parent_impact_passed": true,
+        "parent_gate_passed": true,
+        "parent_transaction_commit": true,
+        "no_failed_nodes": true
+      },
+      "artifacts": {
+        "entry_0.txt": {
+          "exact": true,
+          "expected_hex": "4964656e7469666965723a20300a496e7075743a206e6f6e650a496e7075745348413235363a206e6f6e65",
+          "actual_sha256": "79f788cf50f62457772312f1ce05c5ddb690641cf6912016066894e2eccd8df4"
+        },
+        "entry_1.txt": {
+          "exact": true,
+          "expected_hex": "4964656e7469666965723a20310a496e7075743a20656e7472795f302e7478740a496e7075745348413235363a2037396637383863663530663632343537373732333132663163653035633564646236393036343163663639313230313630363638393465326563636438646634",
+          "actual_sha256": "6f97553cfb1899a2af93de0f03c8f4e41dc3dffc8205acecc6507d08ca7c756a"
+        },
+        "entry_2.txt": {
+          "exact": true,
+          "expected_hex": "4964656e7469666965723a20320a496e7075743a20656e7472795f312e7478740a496e7075745348413235363a2036663937353533636662313839396132616639336465306630336338663465343164633364666663383230356163656363363530376430386361376337353661",
+          "actual_sha256": "ceb55fe47675d3618e3d23072feff2b5f30af3bfa60022aa53b40e014c1f4b2c"
+        }
+      },
+      "passed": true
+    }
+  ],
+  "live": [
+    {
+      "verification_class": "LIVE_MODEL_END_TO_END",
+      "case": "structured-blocks",
+      "request": "Create exactly two UTF-8 text files in the workspace.\n\nFile 1: student.txt\nThe exact content must be:\nName: Sara\nAge: 21\nDepartment: Computer Science\n\nFile 2: course.txt\nThe exact content must be:\nCourse: Software Engineering\nSemester: Fall 2026\nStatus: Active\n\nEach file must contain exactly three lines, in the specified order. Use LF line separators and no trailing newline at the end of either file.\n\nVerify both files independently against the exact requested contents. Do not add extra files or extra text.",
+      "turns": [
+        "Create exactly two UTF-8 text files in the workspace.\n\nFile 1: student.txt\nThe exact content must be:\nName: Sara\nAge: 21\nDepartment: Computer Science\n\nFile 2: course.txt\nThe exact content must be:\nCourse: Software Engineering\nSemester: Fall 2026\nStatus: Active\n\nEach file must contain exactly three lines, in the specified order. Use LF line separators and no trailing newline at the end of either file.\n\nVerify both files independently against the exact requested contents. Do not add extra files or extra text."
+      ],
+      "source_sha256": {
+        "mini.py": "e8afec728d68eb90454e6bb7acf7d6dfcd0b64e2e388ba49d2aa85beca1704cb",
+        "hivo/project_understanding.py": "1d09738c10b75f51f9dde9220ba5eb1a78b41a060ddf7fc0cd47b9eebc832bff",
+        "hivo/context_sufficiency.py": "5256861508525786fd6848d8476bc8ac8d2a20d04be35bbd99034dc2314a2d8b",
+        "hivo/artifact_progress.py": "2eca277fcb33e9030e60446b624b59f75fe21181035466f1efcf572181930b7e",
+        "hivo/literal_source.py": "c7b1700ea7208ef80aac95ee3fdd0476ab2364f5c3c450a1754a64ac18db4c84",
+        "hivo/literal_clarification.py": "5a63638fff54e3afc45e816b2b3403597efd9516710a2a4167259205e5274c18",
+        "hivo/requirements.py": "85de898719fe86073f392659c4e1798077f4b0c30ef57ad8ac092cc908234104",
+        "hivo/pre_mutation_impact.py": "99d041fd17ab4c7497a6f8055c52aa2757498b980ef84f093e4ac5093a210217",
+        "hivo/verification_routing.py": "750f196806baa198b772972fc708420feb74945533fafd0320b2e199c4983e82"
+      },
+      "process_exit": 2,
+      "interrupted": false,
+      "wall_seconds": 26.39,
+      "wall_limit_seconds": 720,
+      "metrics": {},
+      "turn_statuses": [],
+      "artifacts": {
+        "student.txt": {
+          "exists": false,
+          "exact_bytes": false,
+          "expected_sha256": "a78e17570df51d1b4628e3a6e36003699b242003df3c0c34eac7087407fd8781",
+          "actual_sha256": null,
+          "expected_hex": "4e616d653a20536172610a4167653a2032310a4465706172746d656e743a20436f6d707574657220536369656e6365"
+        },
+        "course.txt": {
+          "exists": false,
+          "exact_bytes": false,
+          "expected_sha256": "29ed196cb71c833975ee69e79b092401dae9cdeaef0316073c7fd894a45dcbba",
+          "actual_sha256": null,
+          "expected_hex": "436f757273653a20536f66747761726520456e67696e656572696e670a53656d65737465723a2046616c6c20323032360a5374617475733a20416374697665"
+        }
+      },
+      "independent_pass": false,
+      "latest_trace_run_id": null,
+      "metrics_scope": "no_completed_metrics",
+      "audit_outcome": "PRE_EXECUTION_PREFLIGHT_FAILURE",
+      "retained_workspace": "audit_runs/20261021-workspace-audit/r-update-004/live-final/structured-blocks/workspace",
+      "source_current": false
+    },
+    {
+      "verification_class": "LIVE_MODEL_END_TO_END",
+      "case": "inventory",
+      "request": "Create a small inventory record using exactly three UTF-8 text files.\n\nFile: products.txt\nExact content:\nProduct: Keyboard\nQuantity: 12\nPrice: 250\n\nFile: supplier.txt\nExact content:\nSupplier: Nile Tech\nCity: Cairo\nStatus: Active\n\nFile: shipment.txt\nExact content:\nShipment: SH-2026\nItems: 12\nStatus: Pending\n\nEach file must contain exactly three lines, with LF line separators and no trailing newline.\n\nDo not create any other files.\n\nVerify that all three files exist and independently confirm their exact contents before reporting the task as complete.",
+      "turns": [
+        "Create a small inventory record using exactly three UTF-8 text files.\n\nFile: products.txt\nExact content:\nProduct: Keyboard\nQuantity: 12\nPrice: 250\n\nFile: supplier.txt\nExact content:\nSupplier: Nile Tech\nCity: Cairo\nStatus: Active\n\nFile: shipment.txt\nExact content:\nShipment: SH-2026\nItems: 12\nStatus: Pending\n\nEach file must contain exactly three lines, with LF line separators and no trailing newline.\n\nDo not create any other files.\n\nVerify that all three files exist and independently confirm their exact contents before reporting the task as complete."
+      ],
+      "source_sha256": {
+        "mini.py": "178fea6b34f491e8a092f88ddb2a804f98c5f6152967db1381da06951854885f",
+        "hivo/project_understanding.py": "1d09738c10b75f51f9dde9220ba5eb1a78b41a060ddf7fc0cd47b9eebc832bff",
+        "hivo/context_sufficiency.py": "5256861508525786fd6848d8476bc8ac8d2a20d04be35bbd99034dc2314a2d8b",
+        "hivo/artifact_progress.py": "2eca277fcb33e9030e60446b624b59f75fe21181035466f1efcf572181930b7e",
+        "hivo/literal_source.py": "c7b1700ea7208ef80aac95ee3fdd0476ab2364f5c3c450a1754a64ac18db4c84",
+        "hivo/literal_clarification.py": "5a63638fff54e3afc45e816b2b3403597efd9516710a2a4167259205e5274c18",
+        "hivo/requirements.py": "85de898719fe86073f392659c4e1798077f4b0c30ef57ad8ac092cc908234104",
+        "hivo/pre_mutation_impact.py": "99d041fd17ab4c7497a6f8055c52aa2757498b980ef84f093e4ac5093a210217",
+        "hivo/verification_routing.py": "750f196806baa198b772972fc708420feb74945533fafd0320b2e199c4983e82"
+      },
+      "process_exit": 0,
+      "interrupted": false,
+      "wall_seconds": 219.53,
+      "wall_limit_seconds": 720,
+      "metrics": {
+        "run_id": "20261025T204437-4d483ccf",
+        "status": "failed",
+        "root_verified": false,
+        "model_calls": 2,
+        "tool_calls": 0,
+        "falsifier_calls": 0,
+        "impact_contract_authorizations": 0,
+        "impact_contract_comparisons": 0,
+        "execution_budget_exhaustions": 0,
+        "elapsed_seconds": 186.29
+      },
+      "turn_statuses": [
+        "failed"
+      ],
+      "artifacts": {
+        "products.txt": {
+          "exists": false,
+          "exact_bytes": false,
+          "expected_sha256": "66d0f5c32b72d2edc9af209125f18346c828767b84af10304009cb8e6177516b",
+          "actual_sha256": null,
+          "expected_hex": "50726f647563743a204b6579626f6172640a5175616e746974793a2031320a50726963653a20323530"
+        },
+        "supplier.txt": {
+          "exists": false,
+          "exact_bytes": false,
+          "expected_sha256": "290e00c2af96732a9b48573cf9de857c75f11327855b62ee8223916abc3b27e4",
+          "actual_sha256": null,
+          "expected_hex": "537570706c6965723a204e696c6520546563680a436974793a20436169726f0a5374617475733a20416374697665"
+        },
+        "shipment.txt": {
+          "exists": false,
+          "exact_bytes": false,
+          "expected_sha256": "80e258c1a18bda44c6bdb66b1aef8ef3c2c006a9aa1f2c7911527111fa74c48e",
+          "actual_sha256": null,
+          "expected_hex": "536869706d656e743a2053482d323032360a4974656d733a2031320a5374617475733a2050656e64696e67"
+        }
+      },
+      "independent_pass": false,
+      "latest_trace_run_id": "20261025T204437-4d483ccf",
+      "metrics_scope": "latest_turn",
+      "audit_outcome": "SPECIFIER_PROVIDER_TIMEOUT_BEFORE_BUILDER",
+      "retained_workspace": "audit_runs/20261021-workspace-audit/r-update-004/live-receipt-final/inventory/workspace",
+      "source_current": true
+    }
+  ],
+  "deferred_live_scenarios": [
+    "final-source baseline",
+    "different recursive task",
+    "dependency task",
+    "live recovery",
+    "existing-project counterpart"
+  ]
+}

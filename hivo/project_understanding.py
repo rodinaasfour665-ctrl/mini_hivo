@@ -336,6 +336,8 @@ def inventory_repository(workspace, max_files=MAX_RECON_INVENTORY_FILES, max_dep
     status = REPOSITORY_EMPTY if not meaningful and not truncated else REPOSITORY_RECONNAISSANCE_COMPLETE
     return {
         "status": status, "root": str(root), "files": files, "meaningful_files": meaningful,
+        "filesystem_empty": (not bool(files) if not truncated else False if files else None),
+        "implementation_empty": (not bool(meaningful) if not truncated else False if meaningful else None),
         "files_considered": total_considered, "truncated": truncated,
         "limits": {"max_files": int(max_files), "max_depth": int(max_depth)},
         "fingerprint": _inventory_fingerprint(files),
@@ -359,11 +361,24 @@ def classify_project_mode(raw_goal, inventory=None):
     inventory = inventory if isinstance(inventory, dict) else {}
     has_project = _snapshot_has_meaningful_files(inventory)
     text = str(raw_goal or "")
+    # Literal bodies are data, not routing instructions. Explicit complete
+    # creation obligations may carry preservation/verification policy prose.
+    from .artifact_progress import literal_requests
+    literals = literal_requests(text)
+    action_text = text
+    for item in reversed(literals):
+        action_text = action_text[:item['source_start']] + action_text[item['source_end']:]
+    existing_action = re.search(
+        r'\b(?:modify|update|fix|refactor|replace|migrate|remove|delete|add\s+to)\s+(?:the\s+)?(?:existing|current|legacy)\b',
+        action_text, re.IGNORECASE)
     if has_project:
         reason = "meaningful project files are present"
         mode = EXISTING_PROJECT
-    elif _GREENFIELD_RE.search(text):
+    elif _GREENFIELD_RE.search(action_text) and not existing_action:
         reason = "the workspace is empty and the request is explicitly greenfield"
+        mode = NEW_PROJECT
+    elif literals and not existing_action:
+        reason = "empty workspace with explicit source-bound artifact creation obligations"
         mode = NEW_PROJECT
     elif _MODIFICATION_RE.search(text):
         reason = "the request assumes an existing implementation but no project files were observed"

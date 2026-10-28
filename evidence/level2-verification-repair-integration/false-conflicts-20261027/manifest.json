@@ -1,0 +1,37 @@
+{
+  "scope": "LOCAL R_UPDATE_004 27 October addendum. Working-tree SHA-256, not staged blobs. Canonical curated UTF-8 LF. Original experiment records and prior checkpoints unchanged. This manifest excludes itself. No staging/publication.",
+  "report": {
+    "path": "updates/R_UPDATE_004.md",
+    "sha256": "6c4fdcbce4489ac1a2c7cce43660f74edc07e2da41f8206f44fa6f4c93a13f49"
+  },
+  "current_registries": [
+    "final/run-registry.json",
+    "final/test-registry.json",
+    "final/code-change-manifest.json",
+    "final/provenance.json"
+  ],
+  "files": {
+    "code-change-manifest.json": "8fdca6b1261794e906b58fd9b68d1fccc0893494b8f4ff4004f1d7555db91e5e",
+    "controlled/content-decision.json": "94bc273390a6502dc85645acecb7df78c4d73e4b9f9d2d87fb8af99f0d55e488",
+    "controlled/employee.json": "94968e2c2e311905a3c22f92c9e8503988f39540e7d8b79f1ee64086005d6225",
+    "controlled/html-boundary.json": "971ac8307ccb185aeb4050271ab09e02d2147fddbbd15bff170225a357899b98",
+    "controlled/multiple.json": "82d438be2780f1ca1c14ff88c83b81585fed8ca224f776e236ab1e4eab6cacae",
+    "final/code-change-manifest.json": "685d6197183637fcf4be457ea7d0af71a1ffff93f1b1e1009ff522c01f861d13",
+    "final/controlled/content-decision.json": "cd2bd020b4f06472bb89728cc40fd5d7487fab6f6f829324343de06c1f8a2db3",
+    "final/controlled/employee.json": "f4ff28d99e27e737147c90b9634e260879ce6deb4f93fdb5676339e5d8d3f921",
+    "final/controlled/html-boundary.json": "37b0f1c89a824ade3e5d6c39d06643cfd8d2ea4657296c81a2f5860ffefccc81",
+    "final/controlled/multiple.json": "a9e4345b08769c9a3afbd637ac632972cafbb347b23b629aed28aa94d3e3b779",
+    "final/focused-tests.log": "bc70ee4cb55f56c23f01fa9894f7d38cf6315664b40bc0938a710c6027b5c336",
+    "final/provenance.json": "bece1000f76ba048b7da3201dcb4db138afad397d128f0e87380c9ca565b42b8",
+    "final/run-registry.json": "968298cedb706a37971fcd6216cc3ba6b08e639c1c4a686294e8901b89c0f0dd",
+    "final/test-registry.json": "19fe5f5992b0e4bd87fdb3cd505113e097e2163aeb6ab700187d4e3c2c44d0d8",
+    "focused-tests.log": "be21541c9ca6af6ad830e5078ba340f58b140246e64f848f41f1a1a81b8b4afe",
+    "live-employee.json": "4482ee95cacd048de040eb83f95fc3a9c702f309e496411f4e719f54c29b534c",
+    "original-failure.json": "beaf026afe3da323af9321a46f0cee7fa316377cd6738c34a6d135e88d4bd60e",
+    "preservation.json": "4978989dc8311ba27bf6e0560c346c46a9cc8a8d34fd8cf91560b716aed4d2c5",
+    "provenance.json": "8bb1d88ff65ef183f0123368f22f1c885e76eae31124714e1b9b9e16d9f3b787",
+    "README.md": "c8eae6ef892bfc0c081275289febe933e10c9a3143e4385d7afb18bb185fdbd4",
+    "run-registry.json": "5fc07179f1994549ca49603dedeab86c75a8f79a880ccbfcd60560d2928adc67",
+    "test-registry.json": "b5b34be0714359772e330c0085d5b96c7ac18258bacf981e65505198612ed2b2"
+  }
+}

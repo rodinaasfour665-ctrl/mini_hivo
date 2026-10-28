@@ -1,0 +1,49 @@
+{
+  "derivatives": [
+    {
+      "original_source": "audit_runs/20261021-workspace-audit/r-update-004/false-conflicts-20261027/offline-verified-final/results.json",
+      "original_source_sha256": "f8741a6582e978714752b10d743a0209b53190f96bb4c6d2a5bbe3f1aa211137",
+      "sanitized_derivative": "final/test-registry.json",
+      "sanitized_derivative_sha256": "19fe5f5992b0e4bd87fdb3cd505113e097e2163aeb6ab700187d4e3c2c44d0d8",
+      "transformation": "Canonical LF JSON; preserve results and source pins, append baseline comparison."
+    },
+    {
+      "original_source": "audit_runs/20261021-workspace-audit/r-update-004/false-conflicts-20261027/controlled-verified-final/content-decision/inspection.json",
+      "original_source_sha256": "7fda3ee8840bdcf4e96e8c36f1d2a605afd777a213fdefdff9fd7d63a8cc289d",
+      "sanitized_derivative": "final/controlled/content-decision.json",
+      "sanitized_derivative_sha256": "cd2bd020b4f06472bb89728cc40fd5d7487fab6f6f829324343de06c1f8a2db3",
+      "transformation": "Add independent current byte/SQLite/trace checks; omit machine paths and raw databases. Exact retained copy before cleanup, not a live-model run."
+    },
+    {
+      "original_source": "audit_runs/20261021-workspace-audit/r-update-004/false-conflicts-20261027/controlled-verified-final/employee/inspection.json",
+      "original_source_sha256": "ff25b5a3c06a939eddb141676bd884fcc4b246174d37e6c35a3a70d628a6130b",
+      "sanitized_derivative": "final/controlled/employee.json",
+      "sanitized_derivative_sha256": "f4ff28d99e27e737147c90b9634e260879ce6deb4f93fdb5676339e5d8d3f921",
+      "transformation": "Add independent current byte/SQLite/trace checks; omit machine paths and raw databases. Exact retained copy before cleanup, not a live-model run."
+    },
+    {
+      "original_source": "audit_runs/20261021-workspace-audit/r-update-004/false-conflicts-20261027/controlled-verified-final/html-boundary/inspection.json",
+      "original_source_sha256": "43c2ea659d8c584e4706fd40f6fcc9c40e1429c08fb433d8edeedc72f3492700",
+      "sanitized_derivative": "final/controlled/html-boundary.json",
+      "sanitized_derivative_sha256": "37b0f1c89a824ade3e5d6c39d06643cfd8d2ea4657296c81a2f5860ffefccc81",
+      "transformation": "Add independent current byte/SQLite/trace checks; omit machine paths and raw databases. Exact retained copy before cleanup, not a live-model run."
+    },
+    {
+      "original_source": "audit_runs/20261021-workspace-audit/r-update-004/false-conflicts-20261027/controlled-verified-final/multiple/inspection.json",
+      "original_source_sha256": "cc417e33b2d7d43ece33c869f7547d801a80e5d7538525e3262d5a63e37375cf",
+      "sanitized_derivative": "final/controlled/multiple.json",
+      "sanitized_derivative_sha256": "a9e4345b08769c9a3afbd637ac632972cafbb347b23b629aed28aa94d3e3b779",
+      "transformation": "Add independent current byte/SQLite/trace checks; omit machine paths and raw databases. Exact retained copy before cleanup, not a live-model run."
+    },
+    {
+      "original_source": "audit_runs/20261021-workspace-audit/r-update-004/false-conflicts-20261027/offline-verified-final/test_requirement_consistency_flow.log",
+      "original_source_sha256": "bc70ee4cb55f56c23f01fa9894f7d38cf6315664b40bc0938a710c6027b5c336",
+      "sanitized_derivative": "final/focused-tests.log",
+      "sanitized_derivative_sha256": "bc70ee4cb55f56c23f01fa9894f7d38cf6315664b40bc0938a710c6027b5c336",
+      "transformation": "UTF-8 LF passing case/results log, no raw runtime metadata."
+    }
+  ],
+  "superseded_curated_checkpoint_backup": "audit_runs/20261021-workspace-audit/r-update-004/false-conflicts-20261027/curated-before-final-audit.zip",
+  "backup_sha256": "0a88c40451b96fdee20b3ce76e6aad804979a8d5af12edcae334c8c30149f1e4",
+  "scope": "Final 18-test source plus retained actual artifacts, working-tree bytes only. Original experiments and intermediate cohorts unchanged. Earlier candidate derivative bytes preserved in backup before final audit refresh."
+}

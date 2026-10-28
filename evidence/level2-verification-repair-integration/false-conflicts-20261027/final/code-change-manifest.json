@@ -1,0 +1,48 @@
+{
+  "phase": "2026-10-27 final reviewed source",
+  "base_commit": "6f0047ca27e979db10e338357f0fa6a22fe0bf93",
+  "containing_commit": "pending, all local",
+  "null_start_hash_means": "Not captured in scoped initial backup; no invented prior hash",
+  "files": [
+    {
+      "path": "mini.py",
+      "phase_start_hash": "178fea6b34f491e8a092f88ddb2a804f98c5f6152967db1381da06951854885f",
+      "current_working_tree_sha256": "f3f5a47461087a4ae9bbb9fe95b78a75dd35cb87b5533bbee874a425aa477428"
+    },
+    {
+      "path": "hivo/requirements.py",
+      "phase_start_hash": "85de898719fe86073f392659c4e1798077f4b0c30ef57ad8ac092cc908234104",
+      "current_working_tree_sha256": "108f165ae54705413cd91a71ad2229ff3424fe345db759b0722287cc31dfe12e"
+    },
+    {
+      "path": "hivo/literal_source.py",
+      "phase_start_hash": "c7b1700ea7208ef80aac95ee3fdd0476ab2364f5c3c450a1754a64ac18db4c84",
+      "current_working_tree_sha256": "9e0f202ba0c24a60cf89e87f266ca85c1e8fe480ecf37bb5913cbc8bd8d11303"
+    },
+    {
+      "path": "hivo/requirement_consistency.py",
+      "phase_start_hash": null,
+      "current_working_tree_sha256": "7566e19c14f433d6b9b3c1da0efaf9989315831b47eb881087c228a1b68134eb"
+    },
+    {
+      "path": "hivo/requirement_decisions.py",
+      "phase_start_hash": null,
+      "current_working_tree_sha256": "b4002b4dc244d7d9f46d8f03dc0d17155299dbd7bb182ecafcb333ba53f8c5e2"
+    },
+    {
+      "path": "scripts/verify_level2_offline.py",
+      "phase_start_hash": null,
+      "current_working_tree_sha256": "4ed56f5b6f831192eb0a18318b698c38726eec52d99cf53d1d1ee15f2f605281"
+    },
+    {
+      "path": "scripts/replay_requirement_consistency.py",
+      "phase_start_hash": null,
+      "current_working_tree_sha256": "4f6c0179605160b7d71107b360557590b91fcf2a93b325e571a3ea36446451b9"
+    },
+    {
+      "path": "tests/test_requirement_consistency_flow.py",
+      "phase_start_hash": null,
+      "current_working_tree_sha256": "22ee9158b9601df43a913672599fa3cec74d4147e75899b8aca113729d49a109"
+    }
+  ]
+}

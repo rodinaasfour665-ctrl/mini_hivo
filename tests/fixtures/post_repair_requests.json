@@ -1,0 +1,14 @@
+{
+  "employee": {
+    "request": "Create exactly one UTF-8 text file named employee.txt in the workspace.\n\nThe exact content must be:\nName: Sara\nDepartment: Engineering\nStatus: Active\n\nThe file must contain exactly three lines in the specified order.\n\nUse LF line separators and no trailing newline at the end of the file.\n\nDo not create any additional task files.\n\nVerify that the file exists and that its content exactly matches the requested text before reporting completion.",
+    "historical_run_id": "20261027T160613-55469a33"
+  },
+  "inventory": {
+    "request": "Create a small inventory record using exactly three UTF-8 text files.\n\nFile 1: products.txt\nThe exact content must be:\nProduct: Keyboard\nQuantity: 12\nPrice: 250\n\nFile 2: supplier.txt\nThe exact content must be:\nSupplier: Nile Tech\nCity: Cairo\nStatus: Active\n\nFile 3: shipment.txt\nThe exact content must be:\nShipment: SH-2026\nItems: 12\nStatus: Pending\n\nEach file must contain exactly three lines, in the specified order.\n\nUse LF line separators and no trailing newline at the end of any file.\n\nDo not create any other files.\n\nVerify that all three files exist and independently confirm their exact contents before reporting the task as complete.",
+    "historical_run_id": "20261027T161357-1ee2c633"
+  },
+  "html": {
+    "request": "Create a simple standalone HTML page named index.html for an employee profile.\n\nThe page must include:\n- A valid HTML5 document structure.\n- The page title \"Employee Profile\".\n- An H1 heading containing \"Sara\".\n- A paragraph containing \"Engineering Department\".\n- A visible status label containing \"Active\".\n- Internal CSS to give the page a clean professional layout.\n\nUse UTF-8 encoding.\n\nKeep all CSS inside the HTML file. Do not create any external CSS or JavaScript files.\n\nCreate exactly one HTML file and no additional task files.\n\nVerify that the required text and HTML elements are present before reporting completion.",
+    "historical_run_id": "20261027T174632-342cd69a"
+  }
+}

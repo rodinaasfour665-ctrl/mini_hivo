@@ -1,0 +1,13 @@
+{
+  "protected_previous_files": 100,
+  "all_protected_unchanged": true,
+  "backup_crc_valid": true,
+  "backup_sha256": "744d9e3a6f93e5d8c80238f8b63edbb138fa14ed92b3c94ad5fad465e8a9bf2f",
+  "previous_report_prefix_preserved": true,
+  "old_genuine_run_original_files": 10,
+  "old_genuine_unchanged": true,
+  "new_preflight_attempt_original_files": 6,
+  "new_attempt_unchanged": true,
+  "new_attempt_backup_crc_valid": true,
+  "new_attempt_backup_sha256": "b449da48b61174b569ade98becee674557cc9056b3ca046d5829ccbeada9c9af"
+}

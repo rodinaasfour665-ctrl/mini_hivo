@@ -1,0 +1,41 @@
+{
+  "verification_class": "GENUINE_HOST_PREFLIGHT_ONLY",
+  "model": "gemma4:e4b",
+  "passed": false,
+  "preflight_id": "3901756e30e44780a25415de33dcdd38",
+  "started_at": "2026-10-27T23:31:32.358+00:00",
+  "finished_at": "2026-10-27T23:31:50.829+00:00",
+  "duration_seconds": 18.471,
+  "failure_reason": "CRITICAL_MEMORY_HEADROOM",
+  "failure_stage": "resource_monitoring",
+  "canary_calls_completed": 1,
+  "canary_calls_requested": 3,
+  "memory_samples": [
+    {
+      "phase": "before_canary",
+      "sampled_at": "2026-10-27T23:31:32.367+00:00",
+      "available_ram_bytes": 6594793472
+    },
+    {
+      "phase": "after_call_1",
+      "sampled_at": "2026-10-27T23:31:50.828+00:00",
+      "available_ram_bytes": 157323264
+    }
+  ],
+  "existing_min_available_ram_bytes": 536870912,
+  "recursive_replay_started": false,
+  "application_run_id": null,
+  "root_verified": null,
+  "parent_integrations_passed": null,
+  "accepted": false,
+  "additional_model_attempts": 0,
+  "source_pins_match": true,
+  "production_changes": [],
+  "ollama_service_started": true,
+  "power": {
+    "ac_power": true,
+    "ac_sleep_seconds": 7200,
+    "dc_sleep_seconds": 3600,
+    "policy_changed": false
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "genuine_run_id": "20261027T223818-f8bbcf6e",
+  "parent_request_started": "2026-10-27T23:11:42.626+03:00",
+  "parent_failure_recorded": "2026-10-27T23:29:33.121+03:00",
+  "recorded_elapsed_seconds": 1070.4922240999986,
+  "request_total_limit_seconds": 360,
+  "first_output_limit_seconds": 240,
+  "modern_standby_enter": {
+    "time": "2026-10-27T23:13:25.6538323+03:00",
+    "provider": "Microsoft-Windows-Kernel-Power",
+    "id": 506,
+    "description": "The system is entering Modern Standby "
+  },
+  "modern_standby_exit": {
+    "time": "2026-10-27T23:29:32.9204929+03:00",
+    "provider": "Microsoft-Windows-Kernel-Power",
+    "id": 507,
+    "description": "The system is exiting Modern Standby "
+  },
+  "standby_interval_seconds": 967.26666,
+  "interpretation": "Confirmed Modern Standby overlaps request and expires controller clock; failure recorded about 0.201 seconds after resume. Modern Standby may allow brief background execution; do not treat its entire span as measured CPU-off time.",
+  "blocking_boundary": "Synchronous urllib header/open or first read, before any recorded stream chunk. Historical trace did not log phase/stack; exact suboperation unobservable. New inference_wait events identify each boundary.",
+  "provider_evidence": {
+    "actual_prompt_tokens": 4326,
+    "last_reported_prefill_tokens": 3072,
+    "cancelled_prefill_tokens": 3302,
+    "load_seconds": 18.4,
+    "cancel_http_status": 500,
+    "cancel_second": "2026-10-27T23:29:32+03:00",
+    "retry_prompt_reused_tokens": 3302,
+    "retry_completed_seconds": 37.1917184,
+    "final_disconnect_second": "2026-10-27T23:31:50+03:00",
+    "final_disconnect_prefill_tokens": 3301
+  },
+  "outer_limit_explanation": "Installed Python Popen._wait on Windows calls WaitForSingleObject once with the entire interval. Windows 8+ excludes low-power time. The old subprocess.run(timeout=3000) therefore was not the assumed suspend-inclusive elapsed deadline. Final process termination cause remains unrecorded: no old supervisor log/result; provider disconnect alone does not identify who killed it.",
+  "final_state": "Three child commits/receipt events; parent context/impact authorized; no parent Falsifier, impact comparison, commit or final ROOT metrics.",
+  "source_policy": "New code has no genuine-model result yet. Original run/source and all historical packets remain unchanged."
+}

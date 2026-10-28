@@ -655,6 +655,7 @@ def format_host_preflight_report(result):
         "Recommended action: inspect host/model stability before retrying." if status == "FAIL"
         else "Starting HIVO...",
     ])
+    if status=='PASS':lines.append('Qualification: small canary inference and sampled resources passed; sustained task inference is not guaranteed.')
     return "\n".join(lines)
 
 

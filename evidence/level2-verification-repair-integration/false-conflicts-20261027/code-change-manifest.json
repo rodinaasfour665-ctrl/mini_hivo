@@ -1,0 +1,47 @@
+{
+  "base_commit": "6f0047ca27e979db10e338357f0fa6a22fe0bf93",
+  "containing_commit": "pending; LOCAL only",
+  "phase_date": "2026-10-27",
+  "files": [
+    {
+      "path": "mini.py",
+      "phase_start_working_tree_sha256": "178fea6b34f491e8a092f88ddb2a804f98c5f6152967db1381da06951854885f",
+      "current_working_tree_sha256": "13cfe43d9d644b28d1b06292281a74bcb248d30fd910414852a2d19b99c0f85b"
+    },
+    {
+      "path": "hivo/requirements.py",
+      "phase_start_working_tree_sha256": "85de898719fe86073f392659c4e1798077f4b0c30ef57ad8ac092cc908234104",
+      "current_working_tree_sha256": "9f9d546262f0c7700e96aadf2ca18b283c987709d078ab45f4c93acc400da681"
+    },
+    {
+      "path": "hivo/requirement_consistency.py",
+      "phase_start_working_tree_sha256": null,
+      "current_working_tree_sha256": "343871e707eef62d7d6baf100aec2a11bbbf5e079729f9516ea904caf2e106d9"
+    },
+    {
+      "path": "hivo/requirement_decisions.py",
+      "phase_start_working_tree_sha256": null,
+      "current_working_tree_sha256": "b4002b4dc244d7d9f46d8f03dc0d17155299dbd7bb182ecafcb333ba53f8c5e2"
+    },
+    {
+      "path": "hivo/literal_source.py",
+      "phase_start_working_tree_sha256": "c7b1700ea7208ef80aac95ee3fdd0476ab2364f5c3c450a1754a64ac18db4c84",
+      "current_working_tree_sha256": "2a66695e96096704313c43be2ec48bb799cea6e8fa73cd64fdabe915df0222b7"
+    },
+    {
+      "path": "scripts/verify_level2_offline.py",
+      "phase_start_working_tree_sha256": null,
+      "current_working_tree_sha256": "4ed56f5b6f831192eb0a18318b698c38726eec52d99cf53d1d1ee15f2f605281"
+    },
+    {
+      "path": "scripts/replay_requirement_consistency.py",
+      "phase_start_working_tree_sha256": null,
+      "current_working_tree_sha256": "4f6c0179605160b7d71107b360557590b91fcf2a93b325e571a3ea36446451b9"
+    },
+    {
+      "path": "tests/test_requirement_consistency_flow.py",
+      "phase_start_working_tree_sha256": null,
+      "current_working_tree_sha256": "ab073c7b29fee7ced7358c7923efa6ea15419bf53652c2306c0cef304612249c"
+    }
+  ]
+}

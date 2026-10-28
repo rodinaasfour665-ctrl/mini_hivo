@@ -1,0 +1,26 @@
+{
+  "scope": "Selected exact nonprivate task artifacts; incomplete ROOT run, not full acceptance.",
+  "files": [
+    {
+      "original_source": "audit_runs/20261021-workspace-audit/r-update-004/child3-recovery-20261027/live-inventory-final50/workspace/products.txt",
+      "original_source_sha256": "66d0f5c32b72d2edc9af209125f18346c828767b84af10304009cb8e6177516b",
+      "derivative": "artifacts/products.txt",
+      "derivative_sha256": "66d0f5c32b72d2edc9af209125f18346c828767b84af10304009cb8e6177516b",
+      "transformation": "None; exact UTF-8 LF source bytes preserved."
+    },
+    {
+      "original_source": "audit_runs/20261021-workspace-audit/r-update-004/child3-recovery-20261027/live-inventory-final50/workspace/supplier.txt",
+      "original_source_sha256": "290e00c2af96732a9b48573cf9de857c75f11327855b62ee8223916abc3b27e4",
+      "derivative": "artifacts/supplier.txt",
+      "derivative_sha256": "290e00c2af96732a9b48573cf9de857c75f11327855b62ee8223916abc3b27e4",
+      "transformation": "None; exact UTF-8 LF source bytes preserved."
+    },
+    {
+      "original_source": "audit_runs/20261021-workspace-audit/r-update-004/child3-recovery-20261027/live-inventory-final50/workspace/shipment.txt",
+      "original_source_sha256": "80e258c1a18bda44c6bdb66b1aef8ef3c2c006a9aa1f2c7911527111fa74c48e",
+      "derivative": "artifacts/shipment.txt",
+      "derivative_sha256": "80e258c1a18bda44c6bdb66b1aef8ef3c2c006a9aa1f2c7911527111fa74c48e",
+      "transformation": "None; exact UTF-8 LF source bytes preserved."
+    }
+  ]
+}

@@ -1,0 +1,188 @@
+{
+  "run_id": "20261027T151126-fabceeb5",
+  "raw_user_request": "Create exactly one UTF-8 text file named employee.txt in the workspace.\n\nThe exact content must be:\nName: Sara\nDepartment: Engineering\nStatus: Active\n\nThe file must contain exactly three lines in the specified order.\n\nUse LF line separators and no trailing newline at the end of the file.\n\nDo not create any additional task files.\n\nVerify that the file exists and that its content exactly matches the requested text before reporting completion.",
+  "raw_user_request_sha256": "df6e34ce860f792f6bb466feb28fccfae0f88b992f6b286990655fbee3147cdd",
+  "source_requirement_ledger": {
+    "version": 1,
+    "immutable": true,
+    "requirements": [
+      {
+        "requirement_id": "REQ-001",
+        "text": "Create exactly one UTF-8 text file named employee.txt in the workspace.",
+        "category": "functional",
+        "provenance": "USER_STATED",
+        "source_segment": 1,
+        "source_segments": [
+          1
+        ],
+        "source_variants": [
+          "Create exactly one UTF-8 text file named employee.txt in the workspace."
+        ],
+        "status": "active",
+        "explicit_items": [
+          "UTF",
+          "employee.txt"
+        ],
+        "explicit_item_count": 2
+      },
+      {
+        "requirement_id": "REQ-002",
+        "text": "The exact content must be:",
+        "category": "functional",
+        "provenance": "USER_STATED",
+        "source_segment": 2,
+        "source_segments": [
+          2
+        ],
+        "source_variants": [
+          "The exact content must be:"
+        ],
+        "status": "active"
+      },
+      {
+        "requirement_id": "REQ-003",
+        "text": "The file must contain exactly three lines in the specified order.",
+        "category": "functional",
+        "provenance": "USER_STATED",
+        "source_segment": 3,
+        "source_segments": [
+          3
+        ],
+        "source_variants": [
+          "The file must contain exactly three lines in the specified order."
+        ],
+        "status": "active"
+      },
+      {
+        "requirement_id": "REQ-004",
+        "text": "Use LF line separators and no trailing newline at the end of the file.",
+        "category": "functional",
+        "provenance": "USER_STATED",
+        "source_segment": 4,
+        "source_segments": [
+          4
+        ],
+        "source_variants": [
+          "Use LF line separators and no trailing newline at the end of the file."
+        ],
+        "status": "active",
+        "explicit_items": [
+          "LF"
+        ],
+        "explicit_item_count": 1
+      },
+      {
+        "requirement_id": "REQ-005",
+        "text": "Do not create any additional task files.",
+        "category": "constraint",
+        "provenance": "USER_STATED",
+        "source_segment": 5,
+        "source_segments": [
+          5
+        ],
+        "source_variants": [
+          "Do not create any additional task files."
+        ],
+        "status": "active"
+      },
+      {
+        "requirement_id": "REQ-006",
+        "text": "Verify that the file exists and that its content exactly matches the requested text before reporting completion.",
+        "category": "acceptance",
+        "provenance": "USER_STATED",
+        "source_segment": 6,
+        "source_segments": [
+          6
+        ],
+        "source_variants": [
+          "Verify that the file exists and that its content exactly matches the requested text before reporting completion."
+        ],
+        "status": "active"
+      }
+    ],
+    "confirmed_requirements": [],
+    "limits": {
+      "max_requirements": 64,
+      "max_segment_chars": 2200,
+      "max_explicit_items": 64
+    },
+    "extraction": {
+      "mode": "deterministic",
+      "status": "complete",
+      "segments": 6,
+      "failures": [],
+      "failure_count": 0
+    }
+  },
+  "pending_clarification_questions": [
+    {
+      "question_id": "Q-001",
+      "question": "Which behavior should apply: Create exactly one UTF-8 text file named employee.txt in the workspace. or Use LF line separators and no trailing newline at the end of the file.?",
+      "reason": "The requirements explicitly prescribe opposite behavior for the same target.",
+      "affected_requirement_ids": [
+        "REQ-001",
+        "REQ-004"
+      ],
+      "impact_if_unknown": "Proceeding without this decision would violate one explicit requirement.",
+      "recommended_option": "",
+      "options": [
+        "Create exactly one UTF-8 text file named employee.txt in the workspace.",
+        "Use LF line separators and no trailing newline at the end of the file."
+      ],
+      "allow_other": true,
+      "blocking": true,
+      "category": "conflict",
+      "phase": "REQUEST_CLARIFICATION",
+      "repository_evidence_ids": []
+    },
+    {
+      "question_id": "Q-002",
+      "question": "Which behavior should apply: Create exactly one UTF-8 text file named employee.txt in the workspace. or Do not create any additional task files.?",
+      "reason": "The requirements explicitly prescribe opposite behavior for the same target.",
+      "affected_requirement_ids": [
+        "REQ-001",
+        "REQ-005"
+      ],
+      "impact_if_unknown": "Proceeding without this decision would violate one explicit requirement.",
+      "recommended_option": "",
+      "options": [
+        "Create exactly one UTF-8 text file named employee.txt in the workspace.",
+        "Do not create any additional task files."
+      ],
+      "allow_other": true,
+      "blocking": true,
+      "category": "conflict",
+      "phase": "REQUEST_CLARIFICATION",
+      "repository_evidence_ids": []
+    },
+    {
+      "question_id": "Q-003",
+      "question": "Which behavior should apply: The file must contain exactly three lines in the specified order. or Use LF line separators and no trailing newline at the end of the file.?",
+      "reason": "The requirements explicitly prescribe opposite behavior for the same target.",
+      "affected_requirement_ids": [
+        "REQ-003",
+        "REQ-004"
+      ],
+      "impact_if_unknown": "Proceeding without this decision would violate one explicit requirement.",
+      "recommended_option": "",
+      "options": [
+        "The file must contain exactly three lines in the specified order.",
+        "Use LF line separators and no trailing newline at the end of the file."
+      ],
+      "allow_other": true,
+      "blocking": true,
+      "category": "conflict",
+      "phase": "REQUEST_CLARIFICATION",
+      "repository_evidence_ids": []
+    }
+  ],
+  "status": "clarification_required",
+  "root_verified": false,
+  "control_flow": [
+    "SOURCE_REQUIREMENT_INGESTION",
+    "REQUEST_CLARIFICATION"
+  ],
+  "model_calls": 0,
+  "builder_calls": 0,
+  "tool_calls": 0
+}

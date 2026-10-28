@@ -1,0 +1,23 @@
+[
+  {
+    "original_source": "audit_runs/20261021-workspace-audit/r-update-004/post-repair-20261027/offline-source-binding-reviewed/test_post_repair_hardening.log",
+    "original_source_sha256": "f0abc6b13a53a9de7038fae19c6f10b10a4859e7fece8d5f09f8e67156c4ea42",
+    "sanitized_derivative": "regression-hardening.log",
+    "sanitized_derivative_sha256": "f0abc6b13a53a9de7038fae19c6f10b10a4859e7fece8d5f09f8e67156c4ea42",
+    "transformation": "Preserve assertions/outcomes; replace workspace/user/runtime path prefixes; canonical UTF-8 LF."
+  },
+  {
+    "original_source": "audit_runs/20261021-workspace-audit/r-update-004/post-repair-20261027/offline-source-binding-reviewed/test_verification_policy.log",
+    "original_source_sha256": "2496a77b17fa5f6d9b17eecd021cae6d66e68dab1b1f4deead88eabc89f30b17",
+    "sanitized_derivative": "regression-verification-policy.log",
+    "sanitized_derivative_sha256": "8cb0bb143b8ba63cbcf8e2650553e6ca6dd099196c7d97163c30123eaf81f984",
+    "transformation": "Preserve assertions/outcomes; replace workspace/user/runtime path prefixes; canonical UTF-8 LF."
+  },
+  {
+    "original_source": "audit_runs/20261021-workspace-audit/r-update-004/post-repair-20261027/offline-source-binding-reviewed/test_v26_all.log",
+    "original_source_sha256": "beb40ea0cc8b695f7de7ce533f83ec249eac950825fe36cfcbc3e3e787f036c4",
+    "sanitized_derivative": "regression-v26.log",
+    "sanitized_derivative_sha256": "25f48165ba3f7e00688ac46233d25ba0d76fa9549d04b08627b91e06be9a6bf0",
+    "transformation": "Preserve assertions/outcomes; replace workspace/user/runtime path prefixes; canonical UTF-8 LF."
+  }
+]

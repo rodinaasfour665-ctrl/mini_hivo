@@ -1,0 +1,12 @@
+[
+  {
+    "time": "2026-10-28T01:50:00.4680812+03:00",
+    "id": 507,
+    "description": "The system is exiting Modern Standby "
+  },
+  {
+    "time": "2026-10-28T01:49:17.3991309+03:00",
+    "id": 506,
+    "description": "The system is entering Modern Standby "
+  }
+]

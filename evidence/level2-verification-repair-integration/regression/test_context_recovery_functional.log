@@ -1,0 +1,9 @@
+test_child_source_hashes_do_not_expand_to_sibling_scope (test_context_recovery_functional.ContextRecoveryFunctionalTests.test_child_source_hashes_do_not_expand_to_sibling_scope) ... ok
+test_real_recursive_scheduler_reaches_bounded_worker_recovery (test_context_recovery_functional.ContextRecoveryFunctionalTests.test_real_recursive_scheduler_reaches_bounded_worker_recovery) ... ok
+test_recursive_children_recover_and_mutate_with_real_leaf_engine (test_context_recovery_functional.ContextRecoveryFunctionalTests.test_recursive_children_recover_and_mutate_with_real_leaf_engine) ... ok
+test_redundant_prerequisite_recovers_to_verified_mutation_at_varied_counts (test_context_recovery_functional.ContextRecoveryFunctionalTests.test_redundant_prerequisite_recovers_to_verified_mutation_at_varied_counts) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 13.500s
+
+OK

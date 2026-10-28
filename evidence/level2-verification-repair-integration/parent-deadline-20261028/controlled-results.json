@@ -1,0 +1,58 @@
+[
+  {
+    "case": "success",
+    "run_id": "20261028T013526-13f8ef11",
+    "outcome": "done",
+    "metrics": {
+      "root_verified": true,
+      "parent_integrations_passed": 1,
+      "literal_child_receipts_committed": 3,
+      "literal_parent_integrations_verified": 1,
+      "verified_nodes": 4,
+      "failed_nodes": 0
+    },
+    "evidence": "controlled/success.json"
+  },
+  {
+    "case": "retry",
+    "run_id": "20261028T013528-8bf72845",
+    "outcome": "done",
+    "metrics": {
+      "root_verified": true,
+      "parent_integrations_passed": 1,
+      "literal_child_receipts_committed": 3,
+      "literal_parent_integrations_verified": 1,
+      "verified_nodes": 4,
+      "failed_nodes": 0
+    },
+    "evidence": "controlled/retry.json"
+  },
+  {
+    "case": "permanent",
+    "run_id": "20261028T013529-9f83557e",
+    "outcome": "failed",
+    "metrics": {
+      "root_verified": false,
+      "parent_integrations_passed": 0,
+      "literal_child_receipts_committed": 3,
+      "literal_parent_integrations_verified": null,
+      "verified_nodes": 3,
+      "failed_nodes": 1
+    },
+    "evidence": "controlled/permanent.json"
+  },
+  {
+    "case": "cancel",
+    "run_id": "20261028T013530-e979e329",
+    "outcome": "failed",
+    "metrics": {
+      "root_verified": false,
+      "parent_integrations_passed": 0,
+      "literal_child_receipts_committed": 3,
+      "literal_parent_integrations_verified": null,
+      "verified_nodes": 3,
+      "failed_nodes": 1
+    },
+    "evidence": "controlled/cancel.json"
+  }
+]

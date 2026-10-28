@@ -310,7 +310,7 @@ class HostPreflightTests(unittest.TestCase):
         }
         args = SimpleNamespace(
             mode="recursive", model=None, prompt_file=str(prompt_path), workspace=str(self.workspace),
-            self_test=False, install_browser=False, no_bootstrap=True,
+            self_test=False, install_browser=False, no_bootstrap=True, conversation_file=None,
         )
         old_result = mini.HOST_PREFLIGHT_RESULT
         try:
@@ -322,7 +322,8 @@ class HostPreflightTests(unittest.TestCase):
                     patch.object(mini, "load_memory", return_value={}), \
                     patch.object(mini, "run_recursive_request", return_value=({"status": "done", "summary": "ok"}, {})) as run:
                 mini.main()
-            run.assert_called_once_with("deterministic test prompt", {}, interactive=False)
+            run.assert_called_once_with("deterministic test prompt", {}, interactive=False,
+                                        verification_classification_policy="field_scoped")
         finally:
             mini.HOST_PREFLIGHT_RESULT = old_result
 

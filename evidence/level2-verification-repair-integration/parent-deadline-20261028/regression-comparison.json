@@ -1,0 +1,282 @@
+{
+  "suites": [
+    {
+      "pattern": "test_level1_native_verification.py",
+      "tests": 10,
+      "failures": 0,
+      "errors": 0,
+      "skips": 0,
+      "passed": true,
+      "prior_present": true,
+      "failure_ids_unchanged": true,
+      "error_ids_unchanged": true
+    },
+    {
+      "pattern": "test_level2_generalized_recovery.py",
+      "tests": 20,
+      "failures": 0,
+      "errors": 0,
+      "skips": 0,
+      "passed": true,
+      "prior_present": true,
+      "failure_ids_unchanged": true,
+      "error_ids_unchanged": true
+    },
+    {
+      "pattern": "test_literal_clarification_lifecycle.py",
+      "tests": 9,
+      "failures": 0,
+      "errors": 0,
+      "skips": 0,
+      "passed": true,
+      "prior_present": true,
+      "failure_ids_unchanged": true,
+      "error_ids_unchanged": true
+    },
+    {
+      "pattern": "test_project12_clarification.py",
+      "tests": 9,
+      "failures": 0,
+      "errors": 0,
+      "skips": 0,
+      "passed": true,
+      "prior_present": true,
+      "failure_ids_unchanged": true,
+      "error_ids_unchanged": true
+    },
+    {
+      "pattern": "test_requirement_consistency_flow.py",
+      "tests": 18,
+      "failures": 0,
+      "errors": 0,
+      "skips": 0,
+      "passed": true,
+      "prior_present": true,
+      "failure_ids_unchanged": true,
+      "error_ids_unchanged": true
+    },
+    {
+      "pattern": "test_post_repair_hardening.py",
+      "tests": 34,
+      "failures": 0,
+      "errors": 0,
+      "skips": 0,
+      "passed": true,
+      "prior_present": true,
+      "failure_ids_unchanged": true,
+      "error_ids_unchanged": true
+    },
+    {
+      "pattern": "test_child_inference_recovery.py",
+      "tests": 8,
+      "failures": 0,
+      "errors": 0,
+      "skips": 0,
+      "passed": true,
+      "prior_present": true,
+      "failure_ids_unchanged": true,
+      "error_ids_unchanged": true
+    },
+    {
+      "pattern": "test_parent_deadline_recovery.py",
+      "tests": 12,
+      "failures": 0,
+      "errors": 0,
+      "skips": 0,
+      "passed": true,
+      "prior_present": false,
+      "failure_ids_unchanged": false,
+      "error_ids_unchanged": false
+    },
+    {
+      "pattern": "test_host_preflight.py",
+      "tests": 20,
+      "failures": 0,
+      "errors": 0,
+      "skips": 0,
+      "passed": true,
+      "prior_present": true,
+      "failure_ids_unchanged": true,
+      "error_ids_unchanged": true
+    },
+    {
+      "pattern": "test_context_completed_progress.py",
+      "tests": 11,
+      "failures": 0,
+      "errors": 0,
+      "skips": 0,
+      "passed": true,
+      "prior_present": true,
+      "failure_ids_unchanged": true,
+      "error_ids_unchanged": true
+    },
+    {
+      "pattern": "test_context_recovery_functional.py",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skips": 0,
+      "passed": true,
+      "prior_present": true,
+      "failure_ids_unchanged": true,
+      "error_ids_unchanged": true
+    },
+    {
+      "pattern": "test_update004_verification_integration.py",
+      "tests": 12,
+      "failures": 0,
+      "errors": 0,
+      "skips": 0,
+      "passed": true,
+      "prior_present": true,
+      "failure_ids_unchanged": true,
+      "error_ids_unchanged": true
+    },
+    {
+      "pattern": "test_dependency_aware_scheduler.py",
+      "tests": 9,
+      "failures": 0,
+      "errors": 0,
+      "skips": 0,
+      "passed": true,
+      "prior_present": true,
+      "failure_ids_unchanged": true,
+      "error_ids_unchanged": true
+    },
+    {
+      "pattern": "test_greenfield_impact_lifecycle.py",
+      "tests": 17,
+      "failures": 0,
+      "errors": 0,
+      "skips": 0,
+      "passed": true,
+      "prior_present": true,
+      "failure_ids_unchanged": true,
+      "error_ids_unchanged": true
+    },
+    {
+      "pattern": "test_pre_mutation_impact.py",
+      "tests": 27,
+      "failures": 0,
+      "errors": 0,
+      "skips": 0,
+      "passed": true,
+      "prior_present": true,
+      "failure_ids_unchanged": true,
+      "error_ids_unchanged": true
+    },
+    {
+      "pattern": "test_context_sufficiency_gate.py",
+      "tests": 9,
+      "failures": 0,
+      "errors": 0,
+      "skips": 0,
+      "passed": true,
+      "prior_present": true,
+      "failure_ids_unchanged": true,
+      "error_ids_unchanged": true
+    },
+    {
+      "pattern": "test_verification_applicability.py",
+      "tests": 15,
+      "failures": 0,
+      "errors": 0,
+      "skips": 0,
+      "passed": true,
+      "prior_present": true,
+      "failure_ids_unchanged": true,
+      "error_ids_unchanged": true
+    },
+    {
+      "pattern": "test_authority*.py",
+      "tests": 23,
+      "failures": 0,
+      "errors": 0,
+      "skips": 0,
+      "passed": true,
+      "prior_present": true,
+      "failure_ids_unchanged": true,
+      "error_ids_unchanged": true
+    },
+    {
+      "pattern": "test_experiment*.py",
+      "tests": 122,
+      "failures": 0,
+      "errors": 0,
+      "skips": 0,
+      "passed": true,
+      "prior_present": true,
+      "failure_ids_unchanged": true,
+      "error_ids_unchanged": true
+    },
+    {
+      "pattern": "test_adaptive_architecture.py",
+      "tests": 90,
+      "failures": 0,
+      "errors": 0,
+      "skips": 0,
+      "passed": true,
+      "prior_present": true,
+      "failure_ids_unchanged": true,
+      "error_ids_unchanged": true
+    },
+    {
+      "pattern": "test_project_understanding.py",
+      "tests": 32,
+      "failures": 0,
+      "errors": 0,
+      "skips": 0,
+      "passed": true,
+      "prior_present": true,
+      "failure_ids_unchanged": true,
+      "error_ids_unchanged": true
+    },
+    {
+      "pattern": "test_model_policy.py",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skips": 0,
+      "passed": true,
+      "prior_present": true,
+      "failure_ids_unchanged": true,
+      "error_ids_unchanged": true
+    },
+    {
+      "pattern": "test_verification_policy.py",
+      "tests": 8,
+      "failures": 0,
+      "errors": 2,
+      "skips": 0,
+      "passed": false,
+      "prior_present": true,
+      "failure_ids_unchanged": true,
+      "error_ids_unchanged": true
+    },
+    {
+      "pattern": "test_v26_*.py",
+      "tests": 186,
+      "failures": 24,
+      "errors": 2,
+      "skips": 3,
+      "passed": false,
+      "prior_present": true,
+      "failure_ids_unchanged": true,
+      "error_ids_unchanged": true
+    },
+    {
+      "pattern": "test_requirement_clarification.py",
+      "tests": 49,
+      "failures": 0,
+      "errors": 0,
+      "skips": 0,
+      "passed": true,
+      "prior_present": true,
+      "failure_ids_unchanged": true,
+      "error_ids_unchanged": true
+    }
+  ],
+  "driver_exit": 1,
+  "counts_overlap_do_not_sum": true,
+  "known_baseline_failure_ids_unchanged": true
+}

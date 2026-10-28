@@ -1,0 +1,14 @@
+{
+  "verification_class": "OFFLINE_REGRESSION_AND_CONTROLLED_FUNCTIONAL",
+  "tests": 31,
+  "failures": 0,
+  "errors": 0,
+  "skips": 0,
+  "passed": true,
+  "source_sha256": {
+    "mini.py": "37a118499df6dd824b0fcc7998e540e6b972c9c613992331f46c178b932f2591",
+    "hivo/requirements.py": "53e27084410bc4253c2bd09a07430e7c01708d671345dd9371caae0bd9a94b2b",
+    "hivo/inference_transport.py": "4bfa8f2f32e1409dd5a892666b20143f7a625ec9a3c2e7a26f385aa086de3df2",
+    "tests/test_post_repair_hardening.py": "a8e4d088b7c1e9f50ddbef6e3bd2b5da5dbef443da7d33c69e1a8e38c99b996a"
+  }
+}

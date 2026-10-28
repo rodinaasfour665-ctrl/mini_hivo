@@ -1,0 +1,37 @@
+{
+  "verification_class": "CONTROLLED_FUNCTIONAL",
+  "tests": 1,
+  "failures": 0,
+  "errors": 0,
+  "passed": true,
+  "boundaries": [
+    "Real production leaf, Worker, ask_ollama, streaming parser, context/impact authorization, native readback, Falsifier, impact/transaction/receipt",
+    "Model NDJSON chunks scripted, first output at virtual 180 seconds; no live provider",
+    "Sibling files seeded from original source; no parent integration in this diagnostic; no Project Brain/MissionCompiler model path"
+  ],
+  "source_sha256": {
+    "mini.py": "128d021f8687497dfff16ac9c284093d69f69aa59232b4f447975c86751b1e7a",
+    "hivo/inference_transport.py": "83cc18cae05827d7f62f2a0f4b515ee8195cc4c1323a24293ff6409b069667e2",
+    "tests/test_child_inference_recovery.py": "be76ab5059eb43ec9d40039430e32b8a97aa452658164231ebe3ce3adbe52e13"
+  },
+  "independent_artifact": {
+    "bytes": 43,
+    "sha256": "80e258c1a18bda44c6bdb66b1aef8ef3c2c006a9aa1f2c7911527111fa74c48e",
+    "exact_source_bytes": true
+  },
+  "gate_observations": {
+    "impact_status": "IMPACT_CONTRACT_PASSED",
+    "scope": [
+      "shipment.txt"
+    ],
+    "controlled_first_output_seconds": 180
+  },
+  "receipt_evidence": {
+    "receipt_hash": "a9d0ce931fc44558e79e1fc5d5bb9287a55fbd0489845312cbb9162fffab91dd",
+    "artifacts": {
+      "shipment.txt": "80e258c1a18bda44c6bdb66b1aef8ef3c2c006a9aa1f2c7911527111fa74c48e"
+    },
+    "runtime_authorization": false,
+    "note": "Evidence excerpt; cannot be reused as a runtime grant."
+  }
+}

@@ -1,0 +1,144 @@
+{
+  "scope": "Selected current handoff with links to full chronological registries; not a consolidated previous-update history.",
+  "real_html": {
+    "run_id": "20261027T214528-8dfdcb28",
+    "status": "done",
+    "root_verified": true,
+    "mini_py_sha256": "4ff3c7eb18cbc5c0a565e3c2fb16665428f1e722a99d809b6c4096551970d5e8",
+    "matches_current_tested_mini": false,
+    "artifact": {
+      "bytes": 1507,
+      "sha256": "140fa931879c13e7ee16553258b9ee231bb00fee6495aa8e0e142a7c05112398"
+    },
+    "evidence": "../post-repair-live-20261027/genuine-html-acceptance.json"
+  },
+  "real_recursive_partial": {
+    "run_id": "20261027T223818-f8bbcf6e",
+    "accepted": false,
+    "mini_py_sha256": "128d021f8687497dfff16ac9c284093d69f69aa59232b4f447975c86751b1e7a",
+    "committed_child_ids": [
+      "1",
+      "2",
+      "3"
+    ],
+    "artifacts": {
+      "products.txt": {
+        "expected_bytes": 41,
+        "expected_sha256": "66d0f5c32b72d2edc9af209125f18346c828767b84af10304009cb8e6177516b",
+        "actual_bytes": 41,
+        "actual_sha256": "66d0f5c32b72d2edc9af209125f18346c828767b84af10304009cb8e6177516b",
+        "exact_source_bytes": true
+      },
+      "supplier.txt": {
+        "expected_bytes": 46,
+        "expected_sha256": "290e00c2af96732a9b48573cf9de857c75f11327855b62ee8223916abc3b27e4",
+        "actual_bytes": 46,
+        "actual_sha256": "290e00c2af96732a9b48573cf9de857c75f11327855b62ee8223916abc3b27e4",
+        "exact_source_bytes": true
+      },
+      "shipment.txt": {
+        "expected_bytes": 43,
+        "expected_sha256": "80e258c1a18bda44c6bdb66b1aef8ef3c2c006a9aa1f2c7911527111fa74c48e",
+        "actual_bytes": 43,
+        "actual_sha256": "80e258c1a18bda44c6bdb66b1aef8ef3c2c006a9aa1f2c7911527111fa74c48e",
+        "exact_source_bytes": true
+      }
+    },
+    "final_metrics": {},
+    "evidence": "../child3-inference-recovery-20261027/live-independent-acceptance.json"
+  },
+  "controlled_final_source": {
+    "mini_py_sha256": "c372c9197e1c3d2f923b0e63623f176d71d799add844c8a7be0f8d309022a4d6",
+    "records": [
+      {
+        "case": "success",
+        "run_id": "20261028T013526-13f8ef11",
+        "outcome": "done",
+        "metrics": {
+          "root_verified": true,
+          "parent_integrations_passed": 1,
+          "literal_child_receipts_committed": 3,
+          "literal_parent_integrations_verified": 1,
+          "verified_nodes": 4,
+          "failed_nodes": 0
+        },
+        "evidence": "controlled/success.json"
+      },
+      {
+        "case": "retry",
+        "run_id": "20261028T013528-8bf72845",
+        "outcome": "done",
+        "metrics": {
+          "root_verified": true,
+          "parent_integrations_passed": 1,
+          "literal_child_receipts_committed": 3,
+          "literal_parent_integrations_verified": 1,
+          "verified_nodes": 4,
+          "failed_nodes": 0
+        },
+        "evidence": "controlled/retry.json"
+      },
+      {
+        "case": "permanent",
+        "run_id": "20261028T013529-9f83557e",
+        "outcome": "failed",
+        "metrics": {
+          "root_verified": false,
+          "parent_integrations_passed": 0,
+          "literal_child_receipts_committed": 3,
+          "literal_parent_integrations_verified": null,
+          "verified_nodes": 3,
+          "failed_nodes": 1
+        },
+        "evidence": "controlled/permanent.json"
+      },
+      {
+        "case": "cancel",
+        "run_id": "20261028T013530-e979e329",
+        "outcome": "failed",
+        "metrics": {
+          "root_verified": false,
+          "parent_integrations_passed": 0,
+          "literal_child_receipts_committed": 3,
+          "literal_parent_integrations_verified": null,
+          "verified_nodes": 3,
+          "failed_nodes": 1
+        },
+        "evidence": "controlled/cancel.json"
+      }
+    ],
+    "oracle": "../parent-deadline-20261028/controlled-independent-checks.json",
+    "provider": "Scripted model proposals/NDJSON; production controller, filesystem and gates."
+  },
+  "regressions": {
+    "results": "../parent-deadline-20261028/regression-results.json",
+    "driver_exit": 1,
+    "counts_overlap_do_not_sum": true
+  },
+  "latest_host_qualification": {
+    "preflight_id": "3901756e30e44780a25415de33dcdd38",
+    "failure_reason": "CRITICAL_MEMORY_HEADROOM",
+    "memory_samples": [
+      {
+        "phase": "before_canary",
+        "sampled_at": "2026-10-27T23:31:32.367+00:00",
+        "available_ram_bytes": 6594793472
+      },
+      {
+        "phase": "after_call_1",
+        "sampled_at": "2026-10-27T23:31:50.828+00:00",
+        "available_ram_bytes": 157323264
+      }
+    ],
+    "application_run_id": null,
+    "recursive_replay_started": false,
+    "evidence": "../host-requalification-20261028/qualification.json"
+  },
+  "other_run_registries": [
+    "../run-registry.json",
+    "../false-conflicts-20261027/run-registry.json",
+    "../post-repair-live-20261027/live-run-registry.json",
+    "../parent-deadline-20261028/run-registry.json"
+  ],
+  "legacy_fields": "Current/final source and publication flags in earlier packets describe their own checkpoint; they are not current WIP acceptance claims."
+}

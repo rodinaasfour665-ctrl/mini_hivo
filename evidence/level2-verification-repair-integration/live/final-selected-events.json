@@ -1,0 +1,54 @@
+[
+  {
+    "time": "2026-10-25T20:44:37.711",
+    "run_id": "20261025T204437-4d483ccf",
+    "kind": "model_request",
+    "role": "Clarifier",
+    "attempt": 1,
+    "structured": true,
+    "context_tokens": 701,
+    "num_ctx": 4096,
+    "stream": false,
+    "think": false
+  },
+  {
+    "time": "2026-10-25T20:45:43.946",
+    "run_id": "20261025T204437-4d483ccf",
+    "kind": "source_contract_ready",
+    "requirement_count": 3,
+    "confirmed_count": 0,
+    "derived_count": 0
+  },
+  {
+    "time": "2026-10-25T20:45:43.947",
+    "run_id": "20261025T204437-4d483ccf",
+    "kind": "literal_source_compiled",
+    "original_sha256": "510f1b950be0864f54d5a1e3795d265306239a6360bc5104c32736dacddff621",
+    "paths": [
+      "products.txt",
+      "supplier.txt",
+      "shipment.txt"
+    ],
+    "answer_count": 0
+  },
+  {
+    "time": "2026-10-25T20:45:43.960",
+    "run_id": "20261025T204437-4d483ccf",
+    "kind": "model_request",
+    "role": "Specifier",
+    "attempt": 1,
+    "structured": true,
+    "context_tokens": 1350,
+    "num_ctx": 4096,
+    "stream": false,
+    "think": false
+  },
+  {
+    "time": "2026-10-25T20:47:43.967",
+    "run_id": "20261025T204437-4d483ccf",
+    "kind": "provider_failure",
+    "role": "Coordinator",
+    "action": "Stage 2 provider failure",
+    "diagnosis": "local Ollama chat request timed out; no Builder/tool calls"
+  }
+]

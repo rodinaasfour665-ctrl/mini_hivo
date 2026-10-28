@@ -1,0 +1,30 @@
+[
+  {
+    "original_source": "audit_runs/20261021-workspace-audit/r-update-004/child3-recovery-20261027/after-offline-final/test_post_repair_hardening.log",
+    "original_source_sha256": "c9929f31faee972b7af26ae45a44dae52340e859cfea0060aea903942fb43385",
+    "sanitized_derivative": "test_post_repair_hardening.log",
+    "sanitized_derivative_sha256": "c9929f31faee972b7af26ae45a44dae52340e859cfea0060aea903942fb43385",
+    "transformation": "Preserve assertions/outcomes; replace private workspace/user/runtime prefixes; canonical UTF-8 LF."
+  },
+  {
+    "original_source": "audit_runs/20261021-workspace-audit/r-update-004/child3-recovery-20261027/after-offline-final/test_child_inference_recovery.log",
+    "original_source_sha256": "35c0a26ba9ff3fbc4c1edf7364a0fd63e7958403dc19a72d95ec65ecf00f6735",
+    "sanitized_derivative": "test_child_inference_recovery.log",
+    "sanitized_derivative_sha256": "35c0a26ba9ff3fbc4c1edf7364a0fd63e7958403dc19a72d95ec65ecf00f6735",
+    "transformation": "Preserve assertions/outcomes; replace private workspace/user/runtime prefixes; canonical UTF-8 LF."
+  },
+  {
+    "original_source": "audit_runs/20261021-workspace-audit/r-update-004/child3-recovery-20261027/after-offline-final/test_verification_policy.log",
+    "original_source_sha256": "cb1e7e8e69d6bde209d1dfb8ddded601d14aa64f806939bef7eac0dd75aeb6d0",
+    "sanitized_derivative": "test_verification_policy.log",
+    "sanitized_derivative_sha256": "14bfcef1b147d191de05dc83c0798843ff21c770bfe39fff16575b76714c68af",
+    "transformation": "Preserve assertions/outcomes; replace private workspace/user/runtime prefixes; canonical UTF-8 LF."
+  },
+  {
+    "original_source": "audit_runs/20261021-workspace-audit/r-update-004/child3-recovery-20261027/after-offline-final/test_v26_all.log",
+    "original_source_sha256": "206f8c3b8524332179365b27a508eac03b48aa4bdc419ac1cb37e88a63124d55",
+    "sanitized_derivative": "test_v26_all.log",
+    "sanitized_derivative_sha256": "fff68a0cd7d206f8806e0a3c16492fcee709f398481333b76d8d6bab7bb8c991",
+    "transformation": "Preserve assertions/outcomes; replace private workspace/user/runtime prefixes; canonical UTF-8 LF."
+  }
+]

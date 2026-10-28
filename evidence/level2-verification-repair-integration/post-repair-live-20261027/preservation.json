@@ -1,0 +1,140 @@
+{
+  "originals": {
+    "list/project-24/.agent_experiment.jsonl": {
+      "original_source_sha256": "36012436a90247a5d5580ba583acc8dc406d057dc6dbef3a8672f691472d4ca7",
+      "current_sha256": "36012436a90247a5d5580ba583acc8dc406d057dc6dbef3a8672f691472d4ca7",
+      "unchanged": true
+    },
+    "list/project-24/.agent_host_preflight.json": {
+      "original_source_sha256": "8b6ebde487dcf13a8e564ae5043dc52e12f7884cb4b3a5ba53e531013f5d65a6",
+      "current_sha256": "8b6ebde487dcf13a8e564ae5043dc52e12f7884cb4b3a5ba53e531013f5d65a6",
+      "unchanged": true
+    },
+    "list/project-24/employee.txt": {
+      "original_source_sha256": "91023bf45a8f10c835b228cf136b58612c69f618b0d563ca56a3995206761d9e",
+      "current_sha256": "91023bf45a8f10c835b228cf136b58612c69f618b0d563ca56a3995206761d9e",
+      "unchanged": true
+    },
+    "list/project-24/products.txt": {
+      "original_source_sha256": "66d0f5c32b72d2edc9af209125f18346c828767b84af10304009cb8e6177516b",
+      "current_sha256": "66d0f5c32b72d2edc9af209125f18346c828767b84af10304009cb8e6177516b",
+      "unchanged": true
+    },
+    "list/project-24/shipment.txt": {
+      "original_source_sha256": "80e258c1a18bda44c6bdb66b1aef8ef3c2c006a9aa1f2c7911527111fa74c48e",
+      "current_sha256": "80e258c1a18bda44c6bdb66b1aef8ef3c2c006a9aa1f2c7911527111fa74c48e",
+      "unchanged": true
+    },
+    "list/project-24/supplier.txt": {
+      "original_source_sha256": "290e00c2af96732a9b48573cf9de857c75f11327855b62ee8223916abc3b27e4",
+      "current_sha256": "290e00c2af96732a9b48573cf9de857c75f11327855b62ee8223916abc3b27e4",
+      "unchanged": true
+    },
+    "list/project-24/.agent_runs/20261027T160613-55469a33.jsonl": {
+      "original_source_sha256": "327d8dc7c2fe9b3ae0c46a6c3e9f9639839feedb7b363b58574e611c6673de4b",
+      "current_sha256": "327d8dc7c2fe9b3ae0c46a6c3e9f9639839feedb7b363b58574e611c6673de4b",
+      "unchanged": true
+    },
+    "list/project-24/.agent_runs/20261027T161357-1ee2c633.jsonl": {
+      "original_source_sha256": "154231e486afc0a4e31339965d5bacd9ca6ab9fac7270602b7a616968165829e",
+      "current_sha256": "154231e486afc0a4e31339965d5bacd9ca6ab9fac7270602b7a616968165829e",
+      "unchanged": true
+    },
+    "list/project-24/.agent_runs/20261027T172137-d9c5357c.jsonl": {
+      "original_source_sha256": "8df68d5c3d153d9f3d50db179d8c6f38e409383c583d94580ed7bf53a6f29359",
+      "current_sha256": "8df68d5c3d153d9f3d50db179d8c6f38e409383c583d94580ed7bf53a6f29359",
+      "unchanged": true
+    },
+    "list/project-24/.hivo/literal-clarification-history.jsonl": {
+      "original_source_sha256": "2441bb0bf7b2b0654d658d241f5161ec22f0a60e3694e393f672478610732e62",
+      "current_sha256": "2441bb0bf7b2b0654d658d241f5161ec22f0a60e3694e393f672478610732e62",
+      "unchanged": true
+    },
+    "list/project-24/.hivo/literal-clarification.json": {
+      "original_source_sha256": "2663bbbf2402384befcd240dce139094762d1387b62a681dd62c6c70ffd339f9",
+      "current_sha256": "2663bbbf2402384befcd240dce139094762d1387b62a681dd62c6c70ffd339f9",
+      "unchanged": true
+    },
+    "list/project-24/.hivo/memory.sqlite3": {
+      "original_source_sha256": "86f4e867e3ae83786cc0eb31e7d6c923739ba7856b8ce92e02b36a9de203741a",
+      "current_sha256": "86f4e867e3ae83786cc0eb31e7d6c923739ba7856b8ce92e02b36a9de203741a",
+      "unchanged": true
+    },
+    "list/project-25/.agent_experiment.jsonl": {
+      "original_source_sha256": "98850d241868be14e42f81b1bb4ad4774fe1b549a23c91cdbb9e892b997045ca",
+      "current_sha256": "98850d241868be14e42f81b1bb4ad4774fe1b549a23c91cdbb9e892b997045ca",
+      "unchanged": true
+    },
+    "list/project-25/.agent_host_preflight.json": {
+      "original_source_sha256": "674385a3fcb5885b7966c047fc61053d6f550473bd5d9038842be5e38d0b166b",
+      "current_sha256": "674385a3fcb5885b7966c047fc61053d6f550473bd5d9038842be5e38d0b166b",
+      "unchanged": true
+    },
+    "list/project-25/.agent_runs/20261027T174632-342cd69a.jsonl": {
+      "original_source_sha256": "a00b8cfb0d6c45f728a2ae1bd86552f87387798a6c682b697e4567c25cba3917",
+      "current_sha256": "a00b8cfb0d6c45f728a2ae1bd86552f87387798a6c682b697e4567c25cba3917",
+      "unchanged": true
+    },
+    "list/project-25/.hivo/memory.sqlite3": {
+      "original_source_sha256": "cde222b7ca73c11d6cd077227bf3db7fd15e031918589d2e349e9e6e656eec3e",
+      "current_sha256": "cde222b7ca73c11d6cd077227bf3db7fd15e031918589d2e349e9e6e656eec3e",
+      "unchanged": true
+    },
+    "updates/R_UPDATE_003.md": {
+      "original_source_sha256": "c41654563541607d9ae8b39a40198ebc0459a69c7fa738fe42fd2cde75801fa5",
+      "current_sha256": "c41654563541607d9ae8b39a40198ebc0459a69c7fa738fe42fd2cde75801fa5",
+      "unchanged": true
+    }
+  },
+  "all_originals_unchanged": true,
+  "original_experiment_file_count": 16,
+  "backup_sha256": "4594612b98b2325cb0ce6fbb89266410c0808b5c889b26f3deafa7caea58359e",
+  "backup_crc_valid": true,
+  "historical_report_prefix_sha256": "6c4fdcbce4489ac1a2c7cce43660f74edc07e2da41f8206f44fa6f4c93a13f49",
+  "report_preserves_prior_bytes": true,
+  "server_snapshot_sha256": "eabec74bf3fa3248b424eae92c20c6ff5fa68462ac071fe74153d01f1a7282a0",
+  "server_note": "Active external server log can append. Only the retained original snapshot is pinned.",
+  "server_snapshot_matches_backup": true,
+  "previous_packet_files_unchanged": {
+    "code-change-manifest.json": true,
+    "controlled/content-decision.json": true,
+    "controlled/employee.json": true,
+    "controlled/html-boundary.json": true,
+    "controlled/multiple.json": true,
+    "final/code-change-manifest.json": true,
+    "final/controlled/content-decision.json": true,
+    "final/controlled/employee.json": true,
+    "final/controlled/html-boundary.json": true,
+    "final/controlled/multiple.json": true,
+    "final/focused-tests.log": true,
+    "final/provenance.json": true,
+    "final/run-registry.json": true,
+    "final/test-registry.json": true,
+    "focused-tests.log": true,
+    "live-employee.json": true,
+    "original-failure.json": true,
+    "preservation.json": true,
+    "provenance.json": true,
+    "README.md": true,
+    "run-registry.json": true,
+    "test-registry.json": true
+  },
+  "later_interrupted_recursive_run": {
+    "original_interrupted_run_files": 10,
+    "all_original_files_unchanged": true,
+    "per_file": {
+      ".agent_host_preflight.json": true,
+      "products.txt": true,
+      "shipment.txt": true,
+      "supplier.txt": true,
+      ".agent_runs/20261027T203235-92306c8b.jsonl": true,
+      ".hivo/literal-clarification-history.jsonl": true,
+      ".hivo/literal-clarification.json": true,
+      ".hivo/memory.sqlite3": true,
+      ".hivo/memory.sqlite3-shm": true,
+      ".hivo/memory.sqlite3-wal": true
+    },
+    "backup_crc_valid": true,
+    "backup_sha256": "c1ce9c855f3e94e2089fdf6a0b2d943a985765eb550473d0c49a798c09feb02c"
+  }
+}

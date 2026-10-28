@@ -1,0 +1,266 @@
+{
+  "verification_class": "CONTROLLED_FUNCTIONAL_PRODUCTION_PARENT_WORKER_AND_GATES",
+  "scripted": "Child proposals/DAG and parent NDJSON responses; injected resume-like clock jump for retry/permanent. No live provider.",
+  "mode": "success",
+  "run_id": "20261028T013526-13f8ef11",
+  "application_result_status": "done",
+  "metrics": {
+    "root_verified": true,
+    "parent_integrations_passed": 1,
+    "literal_child_receipts_committed": 3,
+    "literal_parent_integrations_verified": 1,
+    "verified_nodes": 4,
+    "failed_nodes": 0
+  },
+  "artifacts": {
+    "entry_0.txt": {
+      "expected_hex": "4964656e7469666965723a20300a47726f75703a20330a5374617475733a206578616374",
+      "actual_hex": "4964656e7469666965723a20300a47726f75703a20330a5374617475733a206578616374",
+      "exact": true,
+      "sha256": "3fa650c5f0b987032b102b51eef501faed08b2614673e7d226fa937c65f8fe88"
+    },
+    "entry_1.txt": {
+      "expected_hex": "4964656e7469666965723a20310a47726f75703a20330a5374617475733a206578616374",
+      "actual_hex": "4964656e7469666965723a20310a47726f75703a20330a5374617475733a206578616374",
+      "exact": true,
+      "sha256": "8cd4a9451fb3e01827b1415f3c78c900dfb8110ad494c84bc867a987370b591f"
+    },
+    "entry_2.txt": {
+      "expected_hex": "4964656e7469666965723a20320a47726f75703a20330a5374617475733a206578616374",
+      "actual_hex": "4964656e7469666965723a20320a47726f75703a20330a5374617475733a206578616374",
+      "exact": true,
+      "sha256": "66b80cb1c75f40daf5a60fd3dd667d4bca1d7a6f984d53eab721889a75438b51"
+    }
+  },
+  "tools": [
+    {
+      "task_id": "1",
+      "role": "Builder",
+      "tool": "context_sufficiency_check",
+      "target": "",
+      "status": "succeeded"
+    },
+    {
+      "task_id": "1",
+      "role": "Builder",
+      "tool": "write_file",
+      "target": "entry_0.txt",
+      "status": "succeeded"
+    },
+    {
+      "task_id": "1",
+      "role": "Builder",
+      "tool": "run_file",
+      "target": "entry_0.txt",
+      "status": "succeeded"
+    },
+    {
+      "task_id": "1",
+      "role": "Falsifier",
+      "tool": "read_file",
+      "target": "entry_0.txt",
+      "status": "succeeded"
+    },
+    {
+      "task_id": "2",
+      "role": "Builder",
+      "tool": "context_sufficiency_check",
+      "target": "",
+      "status": "succeeded"
+    },
+    {
+      "task_id": "2",
+      "role": "Builder",
+      "tool": "write_file",
+      "target": "entry_1.txt",
+      "status": "succeeded"
+    },
+    {
+      "task_id": "2",
+      "role": "Builder",
+      "tool": "run_file",
+      "target": "entry_1.txt",
+      "status": "succeeded"
+    },
+    {
+      "task_id": "2",
+      "role": "Falsifier",
+      "tool": "read_file",
+      "target": "entry_1.txt",
+      "status": "succeeded"
+    },
+    {
+      "task_id": "3",
+      "role": "Builder",
+      "tool": "context_sufficiency_check",
+      "target": "",
+      "status": "succeeded"
+    },
+    {
+      "task_id": "3",
+      "role": "Builder",
+      "tool": "write_file",
+      "target": "entry_2.txt",
+      "status": "succeeded"
+    },
+    {
+      "task_id": "3",
+      "role": "Builder",
+      "tool": "run_file",
+      "target": "entry_2.txt",
+      "status": "succeeded"
+    },
+    {
+      "task_id": "3",
+      "role": "Falsifier",
+      "tool": "read_file",
+      "target": "entry_2.txt",
+      "status": "succeeded"
+    },
+    {
+      "task_id": "ROOT",
+      "role": "Builder",
+      "tool": "context_sufficiency_check",
+      "target": "",
+      "status": "succeeded"
+    },
+    {
+      "task_id": "ROOT",
+      "role": "Builder",
+      "tool": "read_file",
+      "target": "entry_0.txt",
+      "status": "succeeded"
+    },
+    {
+      "task_id": "ROOT",
+      "role": "Builder",
+      "tool": "run_file",
+      "target": "entry_0.txt",
+      "status": "succeeded"
+    },
+    {
+      "task_id": "ROOT",
+      "role": "Builder",
+      "tool": "run_file",
+      "target": "entry_1.txt",
+      "status": "succeeded"
+    },
+    {
+      "task_id": "ROOT",
+      "role": "Builder",
+      "tool": "run_file",
+      "target": "entry_2.txt",
+      "status": "succeeded"
+    },
+    {
+      "task_id": "ROOT",
+      "role": "Falsifier",
+      "tool": "read_file",
+      "target": "entry_1.txt",
+      "status": "succeeded"
+    },
+    {
+      "task_id": "ROOT",
+      "role": "Falsifier",
+      "tool": "read_file",
+      "target": "entry_2.txt",
+      "status": "succeeded"
+    },
+    {
+      "task_id": "ROOT",
+      "role": "Falsifier",
+      "tool": "run_file",
+      "target": "entry_0.txt",
+      "status": "succeeded"
+    }
+  ],
+  "root_mutations": [],
+  "gates": [
+    {
+      "kind": "impact_contract_compared",
+      "task_id": "1",
+      "status": "IMPACT_CONTRACT_PASSED",
+      "changed_paths": [
+        "entry_0.txt"
+      ],
+      "missing": 0,
+      "out_of_scope": 0,
+      "mutation_authorized": true
+    },
+    {
+      "kind": "transaction_commit",
+      "task_id": "1"
+    },
+    {
+      "kind": "literal_child_receipt_committed",
+      "task_id": "1",
+      "receipt_hash": "50eea124706bcd2b65585a80b40c8bdfed1637747e0640f902cb6abbf992c621"
+    },
+    {
+      "kind": "impact_contract_compared",
+      "task_id": "2",
+      "status": "IMPACT_CONTRACT_PASSED",
+      "changed_paths": [
+        "entry_1.txt"
+      ],
+      "missing": 0,
+      "out_of_scope": 0,
+      "mutation_authorized": true
+    },
+    {
+      "kind": "transaction_commit",
+      "task_id": "2"
+    },
+    {
+      "kind": "literal_child_receipt_committed",
+      "task_id": "2",
+      "receipt_hash": "77a1a4f7e623b4cf15f612c1ae943ea19cbe2435fdcf5721b88d48db53e0a910"
+    },
+    {
+      "kind": "impact_contract_compared",
+      "task_id": "3",
+      "status": "IMPACT_CONTRACT_PASSED",
+      "changed_paths": [
+        "entry_2.txt"
+      ],
+      "missing": 0,
+      "out_of_scope": 0,
+      "mutation_authorized": true
+    },
+    {
+      "kind": "transaction_commit",
+      "task_id": "3"
+    },
+    {
+      "kind": "literal_child_receipt_committed",
+      "task_id": "3",
+      "receipt_hash": "d66483bb349c162b83da804335a4ed365cc30dc293083849c811044dfeee4776"
+    },
+    {
+      "kind": "impact_contract_compared",
+      "task_id": "ROOT",
+      "status": "IMPACT_CONTRACT_PASSED",
+      "changed_paths": [],
+      "missing": 0,
+      "out_of_scope": 0,
+      "mutation_authorized": true
+    },
+    {
+      "kind": "transaction_commit",
+      "task_id": "aggregate-ROOT"
+    },
+    {
+      "kind": "parent_integration_finished",
+      "task_id": "ROOT",
+      "passed": true
+    }
+  ],
+  "test_assertions_passed": true,
+  "source_sha256": {
+    "mini.py": "c372c9197e1c3d2f923b0e63623f176d71d799add844c8a7be0f8d309022a4d6",
+    "hivo/inference_transport.py": "0017b2760c49a3868e556d328cd1b19a2258c300900a84e66fbf78516a8ed78c",
+    "hivo/process_supervision.py": "a1d3b7cd2a6aea5c05541a4125fa66841f88bf3b8f1bc55fcff2108038dd89aa",
+    "tests/test_parent_deadline_recovery.py": "506911e3267f28bf8b00430d00e74729da54a0e92c9364737c76a565d2d61964",
+    "tests/test_update004_verification_integration.py": "c54473fc77089c532b90e6b93ecdea0dc71761ad42cbd37fd1553cc0cf82f984"
+  }
+}

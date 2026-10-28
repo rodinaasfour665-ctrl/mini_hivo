@@ -1,0 +1,30 @@
+{
+  "canonical_derivatives": "UTF-8 LF, selected fields; current local files, no staged blobs. Raw runtime evidence stays private.",
+  "sources": {
+    "list/project-24/.agent_experiment.jsonl": "36012436a90247a5d5580ba583acc8dc406d057dc6dbef3a8672f691472d4ca7",
+    "list/project-24/.agent_host_preflight.json": "8b6ebde487dcf13a8e564ae5043dc52e12f7884cb4b3a5ba53e531013f5d65a6",
+    "list/project-24/employee.txt": "91023bf45a8f10c835b228cf136b58612c69f618b0d563ca56a3995206761d9e",
+    "list/project-24/products.txt": "66d0f5c32b72d2edc9af209125f18346c828767b84af10304009cb8e6177516b",
+    "list/project-24/shipment.txt": "80e258c1a18bda44c6bdb66b1aef8ef3c2c006a9aa1f2c7911527111fa74c48e",
+    "list/project-24/supplier.txt": "290e00c2af96732a9b48573cf9de857c75f11327855b62ee8223916abc3b27e4",
+    "list/project-24/.agent_runs/20261027T160613-55469a33.jsonl": "327d8dc7c2fe9b3ae0c46a6c3e9f9639839feedb7b363b58574e611c6673de4b",
+    "list/project-24/.agent_runs/20261027T161357-1ee2c633.jsonl": "154231e486afc0a4e31339965d5bacd9ca6ab9fac7270602b7a616968165829e",
+    "list/project-24/.agent_runs/20261027T172137-d9c5357c.jsonl": "8df68d5c3d153d9f3d50db179d8c6f38e409383c583d94580ed7bf53a6f29359",
+    "list/project-24/.hivo/literal-clarification-history.jsonl": "2441bb0bf7b2b0654d658d241f5161ec22f0a60e3694e393f672478610732e62",
+    "list/project-24/.hivo/literal-clarification.json": "2663bbbf2402384befcd240dce139094762d1387b62a681dd62c6c70ffd339f9",
+    "list/project-24/.hivo/memory.sqlite3": "86f4e867e3ae83786cc0eb31e7d6c923739ba7856b8ce92e02b36a9de203741a",
+    "list/project-25/.agent_experiment.jsonl": "98850d241868be14e42f81b1bb4ad4774fe1b549a23c91cdbb9e892b997045ca",
+    "list/project-25/.agent_host_preflight.json": "674385a3fcb5885b7966c047fc61053d6f550473bd5d9038842be5e38d0b166b",
+    "list/project-25/.agent_runs/20261027T174632-342cd69a.jsonl": "a00b8cfb0d6c45f728a2ae1bd86552f87387798a6c682b697e4567c25cba3917",
+    "list/project-25/.hivo/memory.sqlite3": "cde222b7ca73c11d6cd077227bf3db7fd15e031918589d2e349e9e6e656eec3e"
+  },
+  "server_original_sha256": "eabec74bf3fa3248b424eae92c20c6ff5fa68462ac071fe74153d01f1a7282a0",
+  "transformations": {
+    "historical-run-ledger.json": "Select metrics, role model-request metadata and trace counts; no full request messages or host inventories.",
+    "historical-role-latency.json": "Match completed role model_request/response pairs; exclude failed requests; not prefill/decode decomposition.",
+    "test-registry.json": "Copy exact offline counts/failure IDs/source hashes, compare with prior packet.",
+    "controlled-functional.json": "Selected real filesystem bytes, native gate outcomes, scripted model boundary.",
+    "live-run-registry.json": "Selected bounded replay results and per-attempt source pins; no runtime databases.",
+    "independent-browser-readback.json": "Drop absolute file URL; retain observed DOM and negative console/network checks."
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "verification_class": "CONTROLLED_FUNCTIONAL",
+  "case": "1-independent",
+  "run_id": "20261025T204216-ee434e6f",
+  "provider": "scripted tool proposals; real source/context/impact/leaf/Falsifier/parent/transaction",
+  "decomposition": "explicit fixture child DAG; production scheduler/leaf/parent, no mocked successful child receipts",
+  "workspace_snapshot": "Exact retained copy of test execution files; original temporary path differs.",
+  "source_sha256": {
+    "mini.py": "178fea6b34f491e8a092f88ddb2a804f98c5f6152967db1381da06951854885f",
+    "hivo/project_understanding.py": "1d09738c10b75f51f9dde9220ba5eb1a78b41a060ddf7fc0cd47b9eebc832bff",
+    "hivo/verification_routing.py": "750f196806baa198b772972fc708420feb74945533fafd0320b2e199c4983e82",
+    "hivo/pre_mutation_impact.py": "99d041fd17ab4c7497a6f8055c52aa2757498b980ef84f093e4ac5093a210217",
+    "hivo/context_sufficiency.py": "5256861508525786fd6848d8476bc8ac8d2a20d04be35bbd99034dc2314a2d8b",
+    "hivo/artifact_progress.py": "2eca277fcb33e9030e60446b624b59f75fe21181035466f1efcf572181930b7e",
+    "hivo/literal_source.py": "c7b1700ea7208ef80aac95ee3fdd0476ab2364f5c3c450a1754a64ac18db4c84",
+    "hivo/literal_clarification.py": "5a63638fff54e3afc45e816b2b3403597efd9516710a2a4167259205e5274c18",
+    "hivo/requirements.py": "85de898719fe86073f392659c4e1798077f4b0c30ef57ad8ac092cc908234104",
+    "tests/test_update004_verification_integration.py": "770a392bca7824e9e66e1f60fbc081ebcd579e8bc806b20d7e3b7f6d838ee5f5"
+  },
+  "metrics": {
+    "status": "done",
+    "root_verified": true,
+    "model_calls": 0,
+    "tool_calls": 8,
+    "falsifier_calls": 2,
+    "verified_nodes": 2,
+    "failed_nodes": 0
+  },
+  "checks": {
+    "status_done": true,
+    "root_verified": true,
+    "exact_current_bytes": true,
+    "no_extra_task_files": true,
+    "parent_builder_native_coverage": true,
+    "parent_falsifier_coverage": true,
+    "parent_no_mutation": true,
+    "parent_impact_passed": true,
+    "parent_gate_passed": true,
+    "parent_transaction_commit": true,
+    "no_failed_nodes": true
+  },
+  "artifacts": {
+    "entry_0.txt": {
+      "exact": true,
+      "expected_hex": "4964656e7469666965723a20300a47726f75703a20310a5374617475733a206578616374",
+      "actual_sha256": "52f3200bf2ecc87dfa79630e8a2bb549a39ec802650ec89f535476ca2eedc2ba"
+    }
+  },
+  "passed": true
+}

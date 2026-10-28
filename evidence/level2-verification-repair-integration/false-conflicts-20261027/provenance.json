@@ -1,0 +1,61 @@
+{
+  "derivatives": [
+    {
+      "original_source": "list/project-22/.agent_experiment.jsonl",
+      "original_source_sha256": "33e299672e172d19381ff07f4c5d17b3854704d78db96557db36bfa3fdbf5c44",
+      "sanitized_derivative": "original-failure.json",
+      "sanitized_derivative_sha256": "beaf026afe3da323af9321a46f0cee7fa316377cd6738c34a6d135e88d4bd60e",
+      "transformation": "Select exact request, source ledger, original questions and task metrics; omit complete machine/runtime record."
+    },
+    {
+      "original_source": "audit_runs/20261021-workspace-audit/r-update-004/false-conflicts-20261027/offline-audit-final/results.json",
+      "original_source_sha256": "63109111aa1fd1befbe86d97c6ce61878ec191c3804ff96004d9e012df4d001a",
+      "sanitized_derivative": "test-registry.json",
+      "sanitized_derivative_sha256": "b5b34be0714359772e330c0085d5b96c7ac18258bacf981e65505198612ed2b2",
+      "transformation": "Canonical LF JSON, append exact baseline-ID comparison and driver exit; no failure removed."
+    },
+    {
+      "original_source": "audit_runs/20261021-workspace-audit/r-update-004/false-conflicts-20261027/controlled-audit-final/content-decision/inspection.json",
+      "original_source_sha256": "ba750cf09bdca5efcb094b2f578c4a3885246bdc84c115d33f5738bbb3355783",
+      "sanitized_derivative": "controlled/content-decision.json",
+      "sanitized_derivative_sha256": "94bc273390a6502dc85645acecb7df78c4d73e4b9f9d2d87fb8af99f0d55e488",
+      "transformation": "Add independent current byte, real SQLite native/Falsifier and impact/commit inspection; omit all raw transcripts, databases and absolute transaction paths."
+    },
+    {
+      "original_source": "audit_runs/20261021-workspace-audit/r-update-004/false-conflicts-20261027/controlled-audit-final/employee/inspection.json",
+      "original_source_sha256": "3dbbb8c09bb5e28f5dc631f3656c3a3960a1f0a99617d12f20c1b0994bdeb312",
+      "sanitized_derivative": "controlled/employee.json",
+      "sanitized_derivative_sha256": "94968e2c2e311905a3c22f92c9e8503988f39540e7d8b79f1ee64086005d6225",
+      "transformation": "Add independent current byte, real SQLite native/Falsifier and impact/commit inspection; omit all raw transcripts, databases and absolute transaction paths."
+    },
+    {
+      "original_source": "audit_runs/20261021-workspace-audit/r-update-004/false-conflicts-20261027/controlled-audit-final/html-boundary/inspection.json",
+      "original_source_sha256": "58775f1d36ab59cae072ce44e5d41a4c16b0068452aa8b8bbd4c272e0454f343",
+      "sanitized_derivative": "controlled/html-boundary.json",
+      "sanitized_derivative_sha256": "971ac8307ccb185aeb4050271ab09e02d2147fddbbd15bff170225a357899b98",
+      "transformation": "Add independent current byte, real SQLite native/Falsifier and impact/commit inspection; omit all raw transcripts, databases and absolute transaction paths."
+    },
+    {
+      "original_source": "audit_runs/20261021-workspace-audit/r-update-004/false-conflicts-20261027/controlled-audit-final/multiple/inspection.json",
+      "original_source_sha256": "8dab4366965f2fb7d2b388cec2b87726e4e9a712a646a32044536be52dcdfe51",
+      "sanitized_derivative": "controlled/multiple.json",
+      "sanitized_derivative_sha256": "82d438be2780f1ca1c14ff88c83b81585fed8ca224f776e236ab1e4eab6cacae",
+      "transformation": "Add independent current byte, real SQLite native/Falsifier and impact/commit inspection; omit all raw transcripts, databases and absolute transaction paths."
+    },
+    {
+      "original_source": "audit_runs/20261021-workspace-audit/r-update-004/false-conflicts-20261027/live-employee/result.json",
+      "original_source_sha256": "fdb780d95a841b4db97db0ceefd54402b0477056f14ed4121f53ed6a2bec3a62",
+      "sanitized_derivative": "live-employee.json",
+      "sanitized_derivative_sha256": "4482ee95cacd048de040eb83f95fc3a9c702f309e496411f4e719f54c29b534c",
+      "transformation": "Preserve exact request/pins/observations; explicitly null vacuous absent-event conflict result and label pre-ingestion qualification outcome; omit host inventory."
+    },
+    {
+      "original_source": "audit_runs/20261021-workspace-audit/r-update-004/false-conflicts-20261027/offline-audit-final/test_requirement_consistency_flow.log",
+      "original_source_sha256": "be21541c9ca6af6ad830e5078ba340f58b140246e64f848f41f1a1a81b8b4afe",
+      "sanitized_derivative": "focused-tests.log",
+      "sanitized_derivative_sha256": "be21541c9ca6af6ad830e5078ba340f58b140246e64f848f41f1a1a81b8b4afe",
+      "transformation": "UTF-8 LF copy; redact diagnostic absolute paths if any."
+    }
+  ],
+  "byte_policy": "Curated UTF-8 LF JSON/logs. Original hashes and derivative hashes distinct. No staged blobs exist; hashes are working-tree bytes. Raw workspaces/databases private. Records are evidence, not runtime authorization. Prior phase packet unchanged."
+}

@@ -19,7 +19,7 @@ ORIGINAL=('Create exactly two text files in the workspace.File 1:Name: student.t
           'Verify that both files exist and that each file contains exactly the specified three lines, in the correct order, without additional text.')
 CONTENTS={'student.txt':'Name: Sara\nAge: 21\nDepartment: Computer Science',
           'course.txt':'Course: Software Engineering\nSemester: Fall 2026\nStatus: Active'}
-SOURCES=['mini.py','hivo/artifact_progress.py','hivo/literal_source.py','hivo/literal_clarification.py','hivo/requirements.py','hivo/pre_mutation_impact.py','hivo/verification_routing.py']
+SOURCES=['mini.py','hivo/project_understanding.py','hivo/context_sufficiency.py','hivo/artifact_progress.py','hivo/literal_source.py','hivo/literal_clarification.py','hivo/requirements.py','hivo/pre_mutation_impact.py','hivo/verification_routing.py']
 
 def call(name,**args):return {'role':'assistant','content':'','tool_calls':[{'function':{'name':name,'arguments':args}}]}
 

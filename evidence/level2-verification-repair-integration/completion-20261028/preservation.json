@@ -1,0 +1,25 @@
+{
+  "scope": "Explicit protected candidate/historical files and prior-run inventories; not an exhaustive hash of every ignored workspace file.",
+  "protected_prior_files": 126,
+  "all_protected_unchanged": true,
+  "snapshot_files": 154,
+  "snapshot_backup_crc_valid": true,
+  "snapshot_sha256": "dd965ca337c69230a091a47a9551560fd93b32a50943b4022fe37797215baafe",
+  "previous_report_prefix_preserved": true,
+  "historical_run_checks": [
+    {
+      "phase": "child3-recovery-20261027",
+      "files": 10,
+      "unchanged": true
+    },
+    {
+      "phase": "parent-deadline-20261028",
+      "files": 6,
+      "unchanged": true
+    }
+  ],
+  "new_original_files": 6,
+  "new_originals_unchanged": true,
+  "new_backup_crc_valid": true,
+  "new_backup_sha256": "8d61b599d5d9e73792988382eeea15fbcb7b1509f858b145145346b18efbbb11"
+}

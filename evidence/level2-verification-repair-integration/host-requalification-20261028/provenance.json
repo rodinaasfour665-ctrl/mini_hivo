@@ -1,0 +1,16 @@
+[
+  {
+    "original_source": "audit_runs/20261021-workspace-audit/r-update-004/host-requalification-20261028/preflight-result.json",
+    "original_source_sha256": "678702537dd248706c2fad630562b0168a789d562c9e9cd90fed7851f71f8837",
+    "derivative": "qualification.json",
+    "derivative_sha256": "813a4648aeadc672fd43983fa8b7780120e758287803650e6b6fc8b03012ca99",
+    "transformation": "Select relevant results and omit full runtime/host/process metadata; canonical UTF-8 LF."
+  },
+  {
+    "original_source": "audit_runs/20261021-workspace-audit/r-update-004/parent-deadline-20261028/frozen-source.json",
+    "original_source_sha256": "e223e60fb81bad54cf8151f6ae98985078255cd6f1f5aefc8b2d34171d8c4ec3",
+    "derivative": "frozen-source.json",
+    "derivative_sha256": "e223e60fb81bad54cf8151f6ae98985078255cd6f1f5aefc8b2d34171d8c4ec3",
+    "transformation": "Select relevant results and omit full runtime/host/process metadata; canonical UTF-8 LF."
+  }
+]

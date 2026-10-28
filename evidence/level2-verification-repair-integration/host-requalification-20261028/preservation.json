@@ -1,0 +1,12 @@
+{
+  "scope": "Listed originals and protected earlier candidate files; active Ollama service logs may continue changing and are excluded from immutable-original claims.",
+  "original_files": 7,
+  "original_hashes_match": true,
+  "backup_crc_valid": true,
+  "backup_sha256": "506eea0a1a23f20c9a2d40ad04a2c6c76bb8e1a5e6c523302e1cd332134271d8",
+  "source_pins_match": true,
+  "source_pins": 68,
+  "protected_prior_files": 126,
+  "protected_unchanged": true,
+  "previous_report_prefix_preserved": true
+}

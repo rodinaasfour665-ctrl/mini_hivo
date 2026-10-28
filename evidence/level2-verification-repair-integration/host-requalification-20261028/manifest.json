@@ -1,0 +1,15 @@
+{
+  "scope": "Local UTF-8 LF candidate evidence. No staging/publication; prior packet manifests remain historical.",
+  "report": {
+    "path": "updates/R_UPDATE_004.md",
+    "working_tree_sha256": "de22cf54ff25ffa357afdad8f45979f5d21816bb3b079bfad01290ba1a232c45",
+    "canonical_lf_sha256": "de22cf54ff25ffa357afdad8f45979f5d21816bb3b079bfad01290ba1a232c45"
+  },
+  "files": {
+    "frozen-source.json": "e223e60fb81bad54cf8151f6ae98985078255cd6f1f5aefc8b2d34171d8c4ec3",
+    "preservation.json": "1ce94cd05609a2f16ac2c600fab4fcf49e4fc381465a4a2a26be91abad85364e",
+    "provenance.json": "aa9cbe1b62b4d828310fdf228d78086bca92975aefb5723e6defbb2b4b84793c",
+    "qualification.json": "813a4648aeadc672fd43983fa8b7780120e758287803650e6b6fc8b03012ca99",
+    "README.md": "a60ec44c8f30c60b7feca29401f8ea08e58f21fdf43563dac649572d8e3cf4c1"
+  }
+}

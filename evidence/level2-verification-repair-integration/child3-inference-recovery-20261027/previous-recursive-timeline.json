@@ -1,0 +1,1420 @@
+{
+  "run_id": "20261027T210935-14cea8e4",
+  "timezone": "Africa/Cairo for trace/server timestamps; SQLite timestamps retain UTC offsets",
+  "source_trace_sha256": "43c0e028082151b1169412f55de3d0e7a365f5c08e9ed61748a4b50c58da72c9",
+  "server_snapshot_sha256": "798524a0405e60f6c1668f00ae9ae2f570b47484c5745bd594cf89159ad12534",
+  "outer_wall_seconds": 2100.0764524,
+  "server_cancel_time": "2026-10-27T21:43:59",
+  "task_trace_start": "2026-10-27T21:09:35.594",
+  "initial_planning_seconds": 303.3,
+  "model_seconds": 2060.398,
+  "timeout_seconds": 960.1080000000001,
+  "completed_model_seconds": 1090.047,
+  "interrupted_model_seconds": 10.243,
+  "task_trace_wall_to_server_cancel": 2063.406,
+  "initial_host_and_harness_residual_seconds": 36.67045240000016,
+  "calls": [
+    {
+      "time": "2026-10-27T21:09:35.959",
+      "role": "Clarifier",
+      "attempt": 1,
+      "context_tokens": 701,
+      "num_ctx": 4096,
+      "stream": false,
+      "request_deadline_seconds": 120,
+      "num_predict": 1536,
+      "task_id": "ROOT",
+      "request_index": 1,
+      "end": "2026-10-27T21:10:23.422",
+      "seconds": 47.463,
+      "outcome": "complete",
+      "server_completion_timing": {
+        "total_duration": 47456109700,
+        "load_duration": 17134458300,
+        "prompt_eval_count": 738,
+        "prompt_eval_duration": 29674067000,
+        "eval_count": 5,
+        "eval_duration": 609825000,
+        "client_timing": null
+      }
+    },
+    {
+      "time": "2026-10-27T21:10:23.435",
+      "role": "Specifier",
+      "attempt": 1,
+      "context_tokens": 1372,
+      "num_ctx": 4096,
+      "stream": true,
+      "request_deadline_seconds": 360,
+      "num_predict": 1536,
+      "task_id": "ROOT",
+      "request_index": 2,
+      "end": "2026-10-27T21:12:13.510",
+      "seconds": 110.075,
+      "outcome": "complete",
+      "server_completion_timing": {
+        "total_duration": 110052277500,
+        "load_duration": 17767300,
+        "prompt_eval_count": 1511,
+        "prompt_eval_duration": 62947331000,
+        "eval_count": 385,
+        "eval_duration": 47024353000,
+        "client_timing": {
+          "wall_seconds": 110.07357200000024,
+          "first_output_seconds": 63.047520200000235,
+          "chunks": 385,
+          "total_limit_seconds": 360,
+          "idle_limit_seconds": 120
+        }
+      }
+    },
+    {
+      "time": "2026-10-27T21:12:13.571",
+      "role": "Coordinator",
+      "attempt": 1,
+      "context_tokens": 1329,
+      "num_ctx": 4096,
+      "stream": false,
+      "request_deadline_seconds": 120,
+      "num_predict": 1536,
+      "task_id": "ROOT",
+      "request_index": 3,
+      "end": "2026-10-27T21:13:13.587",
+      "seconds": 60.016,
+      "outcome": "complete",
+      "server_completion_timing": {
+        "total_duration": 60000130700,
+        "load_duration": 13351500,
+        "prompt_eval_count": 1453,
+        "prompt_eval_duration": 59088800000,
+        "eval_count": 7,
+        "eval_duration": 797156000,
+        "client_timing": null
+      }
+    },
+    {
+      "time": "2026-10-27T21:13:13.633",
+      "role": "Coordinator",
+      "attempt": 1,
+      "context_tokens": 1412,
+      "num_ctx": 4096,
+      "stream": false,
+      "request_deadline_seconds": 120,
+      "num_predict": 1536,
+      "task_id": "ROOT",
+      "request_index": 4,
+      "end": "2026-10-27T21:14:38.807",
+      "seconds": 85.174,
+      "outcome": "complete",
+      "server_completion_timing": {
+        "total_duration": 85169414200,
+        "load_duration": 8284500,
+        "prompt_eval_count": 1569,
+        "prompt_eval_duration": 63066243000,
+        "eval_count": 200,
+        "eval_duration": 22014263000,
+        "client_timing": null
+      }
+    },
+    {
+      "time": "2026-10-27T21:14:38.905",
+      "role": "Coordinator",
+      "attempt": 1,
+      "context_tokens": 1368,
+      "num_ctx": 4096,
+      "stream": false,
+      "request_deadline_seconds": 120,
+      "num_predict": 1536,
+      "task_id": "1",
+      "request_index": 5,
+      "end": "2026-10-27T21:15:38.906",
+      "seconds": 60.001,
+      "outcome": "complete",
+      "server_completion_timing": {
+        "total_duration": 59985554100,
+        "load_duration": 13462800,
+        "prompt_eval_count": 1513,
+        "prompt_eval_duration": 59172322000,
+        "eval_count": 7,
+        "eval_duration": 691826000,
+        "client_timing": null
+      }
+    },
+    {
+      "time": "2026-10-27T21:15:38.927",
+      "role": "MissionCompiler",
+      "attempt": 1,
+      "context_tokens": 1519,
+      "num_ctx": 4096,
+      "stream": false,
+      "request_deadline_seconds": 120,
+      "num_predict": 1536,
+      "task_id": "1",
+      "request_index": 6,
+      "end": "2026-10-27T21:17:21.472",
+      "seconds": 102.545,
+      "outcome": "complete",
+      "server_completion_timing": {
+        "total_duration": 102541986500,
+        "load_duration": 9983200,
+        "prompt_eval_count": 1623,
+        "prompt_eval_duration": 65890628000,
+        "eval_count": 349,
+        "eval_duration": 36552556000,
+        "client_timing": null
+      }
+    },
+    {
+      "time": "2026-10-27T21:17:21.510",
+      "role": "Builder",
+      "attempt": 1,
+      "context_tokens": 2516,
+      "num_ctx": 12288,
+      "stream": false,
+      "request_deadline_seconds": 120,
+      "num_predict": 4096,
+      "task_id": "1",
+      "request_index": 7,
+      "end": "2026-10-27T21:19:21.525",
+      "seconds": 120.015,
+      "outcome": "INFERENCE_TIMEOUT"
+    },
+    {
+      "time": "2026-10-27T21:19:21.728",
+      "role": "Builder",
+      "attempt": 2,
+      "context_tokens": 2516,
+      "num_ctx": 12288,
+      "stream": false,
+      "request_deadline_seconds": 120,
+      "num_predict": 4096,
+      "task_id": "1",
+      "request_index": 8,
+      "end": "2026-10-27T21:20:03.182",
+      "seconds": 41.454,
+      "outcome": "complete",
+      "server_completion_timing": {
+        "total_duration": 41444842100,
+        "load_duration": 25929000,
+        "prompt_eval_count": 3155,
+        "prompt_eval_duration": 380991000,
+        "eval_count": 19,
+        "eval_duration": 2615633000,
+        "client_timing": null
+      }
+    },
+    {
+      "time": "2026-10-27T21:20:03.217",
+      "role": "Builder",
+      "attempt": 1,
+      "context_tokens": 2758,
+      "num_ctx": 12288,
+      "stream": false,
+      "request_deadline_seconds": 120,
+      "num_predict": 4096,
+      "task_id": "1",
+      "request_index": 9,
+      "end": "2026-10-27T21:22:03.228",
+      "seconds": 120.011,
+      "outcome": "INFERENCE_TIMEOUT"
+    },
+    {
+      "time": "2026-10-27T21:22:03.429",
+      "role": "Builder",
+      "attempt": 2,
+      "context_tokens": 2758,
+      "num_ctx": 12288,
+      "stream": false,
+      "request_deadline_seconds": 120,
+      "num_predict": 4096,
+      "task_id": "1",
+      "request_index": 10,
+      "end": "2026-10-27T21:22:41.939",
+      "seconds": 38.51,
+      "outcome": "complete",
+      "server_completion_timing": {
+        "total_duration": 38502808600,
+        "load_duration": 16436000,
+        "prompt_eval_count": 3552,
+        "prompt_eval_duration": 427434000,
+        "eval_count": 38,
+        "eval_duration": 4382361000,
+        "client_timing": null
+      }
+    },
+    {
+      "time": "2026-10-27T21:22:42.037",
+      "role": "Falsifier",
+      "attempt": 1,
+      "context_tokens": 2351,
+      "num_ctx": 8192,
+      "stream": false,
+      "request_deadline_seconds": 120,
+      "num_predict": 1536,
+      "task_id": "1",
+      "request_index": 11,
+      "end": "2026-10-27T21:24:42.043",
+      "seconds": 120.006,
+      "outcome": "INFERENCE_TIMEOUT"
+    },
+    {
+      "time": "2026-10-27T21:24:42.245",
+      "role": "Falsifier",
+      "attempt": 2,
+      "context_tokens": 2351,
+      "num_ctx": 8192,
+      "stream": false,
+      "request_deadline_seconds": 120,
+      "num_predict": 1536,
+      "task_id": "1",
+      "request_index": 12,
+      "end": "2026-10-27T21:25:09.469",
+      "seconds": 27.224,
+      "outcome": "complete",
+      "server_completion_timing": {
+        "total_duration": 27219178400,
+        "load_duration": 21390000,
+        "prompt_eval_count": 2748,
+        "prompt_eval_duration": 420128000,
+        "eval_count": 17,
+        "eval_duration": 1741448000,
+        "client_timing": null
+      }
+    },
+    {
+      "time": "2026-10-27T21:25:09.495",
+      "role": "Falsifier",
+      "attempt": 1,
+      "context_tokens": 2384,
+      "num_ctx": 8192,
+      "stream": false,
+      "request_deadline_seconds": 120,
+      "num_predict": 1536,
+      "task_id": "1",
+      "request_index": 13,
+      "end": "2026-10-27T21:25:11.914",
+      "seconds": 2.419,
+      "outcome": "complete",
+      "server_completion_timing": {
+        "total_duration": 2414650100,
+        "load_duration": 12294800,
+        "prompt_eval_count": 2793,
+        "prompt_eval_duration": 2348927000,
+        "eval_count": 1,
+        "eval_duration": 1000,
+        "client_timing": null
+      }
+    },
+    {
+      "time": "2026-10-27T21:25:12.039",
+      "role": "Coordinator",
+      "attempt": 1,
+      "context_tokens": 1371,
+      "num_ctx": 4096,
+      "stream": false,
+      "request_deadline_seconds": 120,
+      "num_predict": 1536,
+      "task_id": "2",
+      "request_index": 14,
+      "end": "2026-10-27T21:26:39.178",
+      "seconds": 87.139,
+      "outcome": "complete",
+      "server_completion_timing": {
+        "total_duration": 87135090400,
+        "load_duration": 20726089800,
+        "prompt_eval_count": 1505,
+        "prompt_eval_duration": 65534401000,
+        "eval_count": 7,
+        "eval_duration": 810683000,
+        "client_timing": null
+      }
+    },
+    {
+      "time": "2026-10-27T21:26:39.204",
+      "role": "MissionCompiler",
+      "attempt": 1,
+      "context_tokens": 1519,
+      "num_ctx": 4096,
+      "stream": false,
+      "request_deadline_seconds": 120,
+      "num_predict": 1536,
+      "task_id": "2",
+      "request_index": 15,
+      "end": "2026-10-27T21:28:29.961",
+      "seconds": 110.757,
+      "outcome": "complete",
+      "server_completion_timing": {
+        "total_duration": 110749394400,
+        "load_duration": 14832300,
+        "prompt_eval_count": 1616,
+        "prompt_eval_duration": 69934420000,
+        "eval_count": 353,
+        "eval_duration": 40701231000,
+        "client_timing": null
+      }
+    },
+    {
+      "time": "2026-10-27T21:28:30.015",
+      "role": "Builder",
+      "attempt": 1,
+      "context_tokens": 2897,
+      "num_ctx": 12288,
+      "stream": false,
+      "request_deadline_seconds": 120,
+      "num_predict": 4096,
+      "task_id": "2",
+      "request_index": 16,
+      "end": "2026-10-27T21:30:30.028",
+      "seconds": 120.013,
+      "outcome": "INFERENCE_TIMEOUT"
+    },
+    {
+      "time": "2026-10-27T21:30:30.230",
+      "role": "Builder",
+      "attempt": 2,
+      "context_tokens": 2897,
+      "num_ctx": 12288,
+      "stream": false,
+      "request_deadline_seconds": 120,
+      "num_predict": 4096,
+      "task_id": "2",
+      "request_index": 17,
+      "end": "2026-10-27T21:31:31.682",
+      "seconds": 61.452,
+      "outcome": "complete",
+      "server_completion_timing": {
+        "total_duration": 61447380100,
+        "load_duration": 22381000,
+        "prompt_eval_count": 3531,
+        "prompt_eval_duration": 47212954000,
+        "eval_count": 19,
+        "eval_duration": 2707579000,
+        "client_timing": null
+      }
+    },
+    {
+      "time": "2026-10-27T21:31:31.710",
+      "role": "Builder",
+      "attempt": 1,
+      "context_tokens": 3138,
+      "num_ctx": 12288,
+      "stream": false,
+      "request_deadline_seconds": 120,
+      "num_predict": 4096,
+      "task_id": "2",
+      "request_index": 18,
+      "end": "2026-10-27T21:33:31.717",
+      "seconds": 120.007,
+      "outcome": "INFERENCE_TIMEOUT"
+    },
+    {
+      "time": "2026-10-27T21:33:31.918",
+      "role": "Builder",
+      "attempt": 2,
+      "context_tokens": 3138,
+      "num_ctx": 12288,
+      "stream": false,
+      "request_deadline_seconds": 120,
+      "num_predict": 4096,
+      "task_id": "2",
+      "request_index": 19,
+      "end": "2026-10-27T21:34:09.580",
+      "seconds": 37.662,
+      "outcome": "complete",
+      "server_completion_timing": {
+        "total_duration": 37658567500,
+        "load_duration": 17242600,
+        "prompt_eval_count": 3925,
+        "prompt_eval_duration": 595886000,
+        "eval_count": 34,
+        "eval_duration": 4426477000,
+        "client_timing": null
+      }
+    },
+    {
+      "time": "2026-10-27T21:34:09.661",
+      "role": "Falsifier",
+      "attempt": 1,
+      "context_tokens": 2731,
+      "num_ctx": 8192,
+      "stream": false,
+      "request_deadline_seconds": 120,
+      "num_predict": 1536,
+      "task_id": "2",
+      "request_index": 20,
+      "end": "2026-10-27T21:36:09.673",
+      "seconds": 120.012,
+      "outcome": "INFERENCE_TIMEOUT"
+    },
+    {
+      "time": "2026-10-27T21:36:09.875",
+      "role": "Falsifier",
+      "attempt": 2,
+      "context_tokens": 2731,
+      "num_ctx": 8192,
+      "stream": false,
+      "request_deadline_seconds": 120,
+      "num_predict": 1536,
+      "task_id": "2",
+      "request_index": 21,
+      "end": "2026-10-27T21:36:22.486",
+      "seconds": 12.611,
+      "outcome": "complete",
+      "server_completion_timing": {
+        "total_duration": 12606046900,
+        "load_duration": 31416600,
+        "prompt_eval_count": 3128,
+        "prompt_eval_duration": 302008000,
+        "eval_count": 17,
+        "eval_duration": 1380015000,
+        "client_timing": null
+      }
+    },
+    {
+      "time": "2026-10-27T21:36:22.505",
+      "role": "Falsifier",
+      "attempt": 1,
+      "context_tokens": 2765,
+      "num_ctx": 8192,
+      "stream": false,
+      "request_deadline_seconds": 120,
+      "num_predict": 1536,
+      "task_id": "2",
+      "request_index": 22,
+      "end": "2026-10-27T21:36:24.321",
+      "seconds": 1.816,
+      "outcome": "complete",
+      "server_completion_timing": {
+        "total_duration": 1813476600,
+        "load_duration": 13350900,
+        "prompt_eval_count": 3169,
+        "prompt_eval_duration": 1744544000,
+        "eval_count": 1,
+        "eval_duration": 1000,
+        "client_timing": null
+      }
+    },
+    {
+      "time": "2026-10-27T21:36:24.444",
+      "role": "Coordinator",
+      "attempt": 1,
+      "context_tokens": 1369,
+      "num_ctx": 4096,
+      "stream": false,
+      "request_deadline_seconds": 120,
+      "num_predict": 1536,
+      "task_id": "3",
+      "request_index": 23,
+      "end": "2026-10-27T21:37:39.287",
+      "seconds": 74.843,
+      "outcome": "complete",
+      "server_completion_timing": {
+        "total_duration": 74838754900,
+        "load_duration": 16510734500,
+        "prompt_eval_count": 1520,
+        "prompt_eval_duration": 57216404000,
+        "eval_count": 7,
+        "eval_duration": 1063627999,
+        "client_timing": null
+      }
+    },
+    {
+      "time": "2026-10-27T21:37:39.320",
+      "role": "MissionCompiler",
+      "attempt": 1,
+      "context_tokens": 1519,
+      "num_ctx": 4096,
+      "stream": false,
+      "request_deadline_seconds": 120,
+      "num_predict": 1536,
+      "task_id": "3",
+      "request_index": 24,
+      "end": "2026-10-27T21:39:08.813",
+      "seconds": 89.493,
+      "outcome": "complete",
+      "server_completion_timing": {
+        "total_duration": 89485902900,
+        "load_duration": 24034200,
+        "prompt_eval_count": 1632,
+        "prompt_eval_duration": 59739767000,
+        "eval_count": 322,
+        "eval_duration": 29590955000,
+        "client_timing": null
+      }
+    },
+    {
+      "time": "2026-10-27T21:39:08.886",
+      "role": "Builder",
+      "attempt": 1,
+      "context_tokens": 3121,
+      "num_ctx": 12288,
+      "stream": false,
+      "request_deadline_seconds": 120,
+      "num_predict": 4096,
+      "task_id": "3",
+      "request_index": 25,
+      "end": "2026-10-27T21:41:08.902",
+      "seconds": 120.016,
+      "outcome": "INFERENCE_TIMEOUT"
+    },
+    {
+      "time": "2026-10-27T21:41:09.104",
+      "role": "Builder",
+      "attempt": 2,
+      "context_tokens": 3121,
+      "num_ctx": 12288,
+      "stream": false,
+      "request_deadline_seconds": 120,
+      "num_predict": 4096,
+      "task_id": "3",
+      "request_index": 26,
+      "end": "2026-10-27T21:41:48.497",
+      "seconds": 39.393,
+      "outcome": "complete",
+      "server_completion_timing": {
+        "total_duration": 39390484800,
+        "load_duration": 14033700,
+        "prompt_eval_count": 3871,
+        "prompt_eval_duration": 350494000,
+        "eval_count": 19,
+        "eval_duration": 2578869000,
+        "client_timing": null
+      }
+    },
+    {
+      "time": "2026-10-27T21:41:48.527",
+      "role": "Builder",
+      "attempt": 1,
+      "context_tokens": 3363,
+      "num_ctx": 12288,
+      "stream": false,
+      "request_deadline_seconds": 120,
+      "num_predict": 4096,
+      "task_id": "3",
+      "request_index": 27,
+      "end": "2026-10-27T21:43:48.555",
+      "seconds": 120.028,
+      "outcome": "INFERENCE_TIMEOUT"
+    },
+    {
+      "time": "2026-10-27T21:43:48.757",
+      "role": "Builder",
+      "attempt": 2,
+      "context_tokens": 3363,
+      "num_ctx": 12288,
+      "stream": false,
+      "request_deadline_seconds": 120,
+      "num_predict": 4096,
+      "task_id": "3",
+      "request_index": 28,
+      "end": "2026-10-27T21:43:59",
+      "seconds": 10.243,
+      "outcome": "outer_interruption"
+    }
+  ],
+  "timeouts": [
+    {
+      "time": "2026-10-27T21:17:21.510",
+      "role": "Builder",
+      "attempt": 1,
+      "context_tokens": 2516,
+      "num_ctx": 12288,
+      "stream": false,
+      "request_deadline_seconds": 120,
+      "num_predict": 4096,
+      "task_id": "1",
+      "request_index": 7,
+      "end": "2026-10-27T21:19:21.525",
+      "seconds": 120.015,
+      "outcome": "INFERENCE_TIMEOUT",
+      "actual_prompt_tokens": 3155,
+      "server_prefill_progress": [
+        {
+          "tokens": 1024,
+          "fraction": 0.32,
+          "prefill_seconds": 40.68
+        },
+        {
+          "tokens": 2048,
+          "fraction": 0.65,
+          "prefill_seconds": 83.57
+        },
+        {
+          "tokens": 2131,
+          "fraction": 0.68,
+          "prefill_seconds": 88.66
+        }
+      ],
+      "server_excerpt": [
+        "slot   operator(): id  0 | task 0 | new prompt, n_ctx_slot = 12288, n_keep = 4, task.n_tokens = 3155",
+        "slot print_timing: id  0 | task 0 | prompt processing, n_tokens =   1024, progress = 0.32, t =  40.68 s / 25.17 tokens per second",
+        "slot print_timing: id  0 | task 0 | prompt processing, n_tokens =   2048, progress = 0.65, t =  83.57 s / 24.51 tokens per second",
+        "slot print_timing: id  0 | task 0 | prompt processing, n_tokens =   2131, progress = 0.68, t =  88.66 s / 24.03 tokens per second"
+      ],
+      "client_observed_streaming_progress": false,
+      "server_generation_started_proven": false,
+      "server_post_status": 500,
+      "retried": true,
+      "retry_seconds": 41.454,
+      "retry_outcome": "complete",
+      "retry_equivalence": "Same captured provider payload per production ask_ollama loop; raw trace does not record full payload, so payload byte identity is source-supported, not independently hashed."
+    },
+    {
+      "time": "2026-10-27T21:20:03.217",
+      "role": "Builder",
+      "attempt": 1,
+      "context_tokens": 2758,
+      "num_ctx": 12288,
+      "stream": false,
+      "request_deadline_seconds": 120,
+      "num_predict": 4096,
+      "task_id": "1",
+      "request_index": 9,
+      "end": "2026-10-27T21:22:03.228",
+      "seconds": 120.011,
+      "outcome": "INFERENCE_TIMEOUT",
+      "actual_prompt_tokens": 3552,
+      "server_prefill_progress": [
+        {
+          "tokens": 1024,
+          "fraction": 0.29,
+          "prefill_seconds": 42.48
+        },
+        {
+          "tokens": 2048,
+          "fraction": 0.58,
+          "prefill_seconds": 85.08
+        },
+        {
+          "tokens": 2528,
+          "fraction": 0.71,
+          "prefill_seconds": 107.17
+        }
+      ],
+      "server_excerpt": [
+        "slot   operator(): id  0 | task 14 | new prompt, n_ctx_slot = 12288, n_keep = 4, task.n_tokens = 3552",
+        "slot print_timing: id  0 | task 14 | prompt processing, n_tokens =   1024, progress = 0.29, t =  42.48 s / 24.11 tokens per second",
+        "slot print_timing: id  0 | task 14 | prompt processing, n_tokens =   2048, progress = 0.58, t =  85.08 s / 24.07 tokens per second",
+        "slot print_timing: id  0 | task 14 | prompt processing, n_tokens =   2528, progress = 0.71, t = 107.17 s / 23.59 tokens per second"
+      ],
+      "client_observed_streaming_progress": false,
+      "server_generation_started_proven": false,
+      "server_post_status": 500,
+      "retried": true,
+      "retry_seconds": 38.51,
+      "retry_outcome": "complete",
+      "retry_equivalence": "Same captured provider payload per production ask_ollama loop; raw trace does not record full payload, so payload byte identity is source-supported, not independently hashed."
+    },
+    {
+      "time": "2026-10-27T21:22:42.037",
+      "role": "Falsifier",
+      "attempt": 1,
+      "context_tokens": 2351,
+      "num_ctx": 8192,
+      "stream": false,
+      "request_deadline_seconds": 120,
+      "num_predict": 1536,
+      "task_id": "1",
+      "request_index": 11,
+      "end": "2026-10-27T21:24:42.043",
+      "seconds": 120.006,
+      "outcome": "INFERENCE_TIMEOUT",
+      "actual_prompt_tokens": 2748,
+      "server_prefill_progress": [
+        {
+          "tokens": 1024,
+          "fraction": 0.37,
+          "prefill_seconds": 43.69
+        },
+        {
+          "tokens": 1724,
+          "fraction": 0.63,
+          "prefill_seconds": 77.86
+        }
+      ],
+      "server_excerpt": [
+        "slot   operator(): id  0 | task 0 | new prompt, n_ctx_slot = 8192, n_keep = 4, task.n_tokens = 2748",
+        "slot print_timing: id  0 | task 0 | prompt processing, n_tokens =   1024, progress = 0.37, t =  43.69 s / 23.44 tokens per second",
+        "slot print_timing: id  0 | task 0 | prompt processing, n_tokens =   1724, progress = 0.63, t =  77.86 s / 22.14 tokens per second"
+      ],
+      "client_observed_streaming_progress": false,
+      "server_generation_started_proven": false,
+      "server_post_status": 500,
+      "retried": true,
+      "retry_seconds": 27.224,
+      "retry_outcome": "complete",
+      "retry_equivalence": "Same captured provider payload per production ask_ollama loop; raw trace does not record full payload, so payload byte identity is source-supported, not independently hashed."
+    },
+    {
+      "time": "2026-10-27T21:28:30.015",
+      "role": "Builder",
+      "attempt": 1,
+      "context_tokens": 2897,
+      "num_ctx": 12288,
+      "stream": false,
+      "request_deadline_seconds": 120,
+      "num_predict": 4096,
+      "task_id": "2",
+      "request_index": 16,
+      "end": "2026-10-27T21:30:30.028",
+      "seconds": 120.013,
+      "outcome": "INFERENCE_TIMEOUT",
+      "actual_prompt_tokens": 3531,
+      "server_prefill_progress": [
+        {
+          "tokens": 1024,
+          "fraction": 0.29,
+          "prefill_seconds": 42.84
+        },
+        {
+          "tokens": 2048,
+          "fraction": 0.58,
+          "prefill_seconds": 88.86
+        }
+      ],
+      "server_excerpt": [
+        "slot   operator(): id  0 | task 0 | new prompt, n_ctx_slot = 12288, n_keep = 4, task.n_tokens = 3531",
+        "slot print_timing: id  0 | task 0 | prompt processing, n_tokens =   1024, progress = 0.29, t =  42.84 s / 23.91 tokens per second",
+        "slot print_timing: id  0 | task 0 | prompt processing, n_tokens =   2048, progress = 0.58, t =  88.86 s / 23.05 tokens per second"
+      ],
+      "client_observed_streaming_progress": false,
+      "server_generation_started_proven": false,
+      "server_post_status": 500,
+      "retried": true,
+      "retry_seconds": 61.452,
+      "retry_outcome": "complete",
+      "retry_equivalence": "Same captured provider payload per production ask_ollama loop; raw trace does not record full payload, so payload byte identity is source-supported, not independently hashed."
+    },
+    {
+      "time": "2026-10-27T21:31:31.710",
+      "role": "Builder",
+      "attempt": 1,
+      "context_tokens": 3138,
+      "num_ctx": 12288,
+      "stream": false,
+      "request_deadline_seconds": 120,
+      "num_predict": 4096,
+      "task_id": "2",
+      "request_index": 18,
+      "end": "2026-10-27T21:33:31.717",
+      "seconds": 120.007,
+      "outcome": "INFERENCE_TIMEOUT",
+      "actual_prompt_tokens": 3925,
+      "server_prefill_progress": [
+        {
+          "tokens": 1024,
+          "fraction": 0.26,
+          "prefill_seconds": 41.7
+        },
+        {
+          "tokens": 2048,
+          "fraction": 0.52,
+          "prefill_seconds": 86.21
+        },
+        {
+          "tokens": 2901,
+          "fraction": 0.74,
+          "prefill_seconds": 115.03
+        }
+      ],
+      "server_excerpt": [
+        "slot   operator(): id  0 | task 14 | new prompt, n_ctx_slot = 12288, n_keep = 4, task.n_tokens = 3925",
+        "slot print_timing: id  0 | task 14 | prompt processing, n_tokens =   1024, progress = 0.26, t =  41.70 s / 24.56 tokens per second",
+        "slot print_timing: id  0 | task 14 | prompt processing, n_tokens =   2048, progress = 0.52, t =  86.21 s / 23.76 tokens per second",
+        "slot print_timing: id  0 | task 14 | prompt processing, n_tokens =   2901, progress = 0.74, t = 115.03 s / 25.22 tokens per second"
+      ],
+      "client_observed_streaming_progress": false,
+      "server_generation_started_proven": false,
+      "server_post_status": 500,
+      "retried": true,
+      "retry_seconds": 37.662,
+      "retry_outcome": "complete",
+      "retry_equivalence": "Same captured provider payload per production ask_ollama loop; raw trace does not record full payload, so payload byte identity is source-supported, not independently hashed."
+    },
+    {
+      "time": "2026-10-27T21:34:09.661",
+      "role": "Falsifier",
+      "attempt": 1,
+      "context_tokens": 2731,
+      "num_ctx": 8192,
+      "stream": false,
+      "request_deadline_seconds": 120,
+      "num_predict": 1536,
+      "task_id": "2",
+      "request_index": 20,
+      "end": "2026-10-27T21:36:09.673",
+      "seconds": 120.012,
+      "outcome": "INFERENCE_TIMEOUT",
+      "actual_prompt_tokens": 3128,
+      "server_prefill_progress": [
+        {
+          "tokens": 1024,
+          "fraction": 0.33,
+          "prefill_seconds": 31.94
+        },
+        {
+          "tokens": 2048,
+          "fraction": 0.65,
+          "prefill_seconds": 70.52
+        },
+        {
+          "tokens": 2104,
+          "fraction": 0.67,
+          "prefill_seconds": 73.14
+        }
+      ],
+      "server_excerpt": [
+        "slot   operator(): id  0 | task 0 | new prompt, n_ctx_slot = 8192, n_keep = 4, task.n_tokens = 3128",
+        "slot print_timing: id  0 | task 0 | prompt processing, n_tokens =   1024, progress = 0.33, t =  31.94 s / 32.06 tokens per second",
+        "slot print_timing: id  0 | task 0 | prompt processing, n_tokens =   2048, progress = 0.65, t =  70.52 s / 29.04 tokens per second",
+        "slot print_timing: id  0 | task 0 | prompt processing, n_tokens =   2104, progress = 0.67, t =  73.14 s / 28.77 tokens per second"
+      ],
+      "client_observed_streaming_progress": false,
+      "server_generation_started_proven": false,
+      "server_post_status": 500,
+      "retried": true,
+      "retry_seconds": 12.611,
+      "retry_outcome": "complete",
+      "retry_equivalence": "Same captured provider payload per production ask_ollama loop; raw trace does not record full payload, so payload byte identity is source-supported, not independently hashed."
+    },
+    {
+      "time": "2026-10-27T21:39:08.886",
+      "role": "Builder",
+      "attempt": 1,
+      "context_tokens": 3121,
+      "num_ctx": 12288,
+      "stream": false,
+      "request_deadline_seconds": 120,
+      "num_predict": 4096,
+      "task_id": "3",
+      "request_index": 25,
+      "end": "2026-10-27T21:41:08.902",
+      "seconds": 120.016,
+      "outcome": "INFERENCE_TIMEOUT",
+      "actual_prompt_tokens": 3871,
+      "server_prefill_progress": [
+        {
+          "tokens": 1024,
+          "fraction": 0.26,
+          "prefill_seconds": 32.68
+        },
+        {
+          "tokens": 2048,
+          "fraction": 0.53,
+          "prefill_seconds": 71.79
+        },
+        {
+          "tokens": 2847,
+          "fraction": 0.74,
+          "prefill_seconds": 103.52
+        }
+      ],
+      "server_excerpt": [
+        "slot   operator(): id  0 | task 0 | new prompt, n_ctx_slot = 12288, n_keep = 4, task.n_tokens = 3871",
+        "slot print_timing: id  0 | task 0 | prompt processing, n_tokens =   1024, progress = 0.26, t =  32.68 s / 31.34 tokens per second",
+        "slot print_timing: id  0 | task 0 | prompt processing, n_tokens =   2048, progress = 0.53, t =  71.79 s / 28.53 tokens per second",
+        "slot print_timing: id  0 | task 0 | prompt processing, n_tokens =   2847, progress = 0.74, t = 103.52 s / 27.50 tokens per second"
+      ],
+      "client_observed_streaming_progress": false,
+      "server_generation_started_proven": false,
+      "server_post_status": 500,
+      "retried": true,
+      "retry_seconds": 39.393,
+      "retry_outcome": "complete",
+      "retry_equivalence": "Same captured provider payload per production ask_ollama loop; raw trace does not record full payload, so payload byte identity is source-supported, not independently hashed."
+    },
+    {
+      "time": "2026-10-27T21:41:48.527",
+      "role": "Builder",
+      "attempt": 1,
+      "context_tokens": 3363,
+      "num_ctx": 12288,
+      "stream": false,
+      "request_deadline_seconds": 120,
+      "num_predict": 4096,
+      "task_id": "3",
+      "request_index": 27,
+      "end": "2026-10-27T21:43:48.555",
+      "seconds": 120.028,
+      "outcome": "INFERENCE_TIMEOUT",
+      "actual_prompt_tokens": 4264,
+      "server_prefill_progress": [
+        {
+          "tokens": 1024,
+          "fraction": 0.24,
+          "prefill_seconds": 35.22
+        },
+        {
+          "tokens": 2048,
+          "fraction": 0.48,
+          "prefill_seconds": 72.2
+        },
+        {
+          "tokens": 3072,
+          "fraction": 0.72,
+          "prefill_seconds": 108.6
+        },
+        {
+          "tokens": 3240,
+          "fraction": 0.76,
+          "prefill_seconds": 115.5
+        }
+      ],
+      "server_excerpt": [
+        "slot   operator(): id  0 | task 14 | new prompt, n_ctx_slot = 12288, n_keep = 4, task.n_tokens = 4264",
+        "slot print_timing: id  0 | task 14 | prompt processing, n_tokens =   1024, progress = 0.24, t =  35.22 s / 29.08 tokens per second",
+        "slot print_timing: id  0 | task 14 | prompt processing, n_tokens =   2048, progress = 0.48, t =  72.20 s / 28.37 tokens per second",
+        "slot print_timing: id  0 | task 14 | prompt processing, n_tokens =   3072, progress = 0.72, t = 108.60 s / 28.29 tokens per second",
+        "slot print_timing: id  0 | task 14 | prompt processing, n_tokens =   3240, progress = 0.76, t = 115.50 s / 28.05 tokens per second"
+      ],
+      "client_observed_streaming_progress": false,
+      "server_generation_started_proven": false,
+      "server_post_status": 500,
+      "retried": true,
+      "retry_seconds": 10.243,
+      "retry_outcome": "outer_interruption",
+      "retry_equivalence": "Same captured provider payload per production ask_ollama loop; raw trace does not record full payload, so payload byte identity is source-supported, not independently hashed."
+    }
+  ],
+  "children": [
+    {
+      "task_id": "1",
+      "scheduled": "2026-10-27T21:14:38.894",
+      "end": "2026-10-27T21:25:12.013",
+      "end_kind": "verified_commit",
+      "wall_seconds": 633.119,
+      "model_seconds": 632.185,
+      "model_requests": 9,
+      "timeout_seconds": 360.032,
+      "tools": [
+        {
+          "created_at": "2026-10-27T18:20:03+00:00",
+          "task_id": "1",
+          "role": "Builder",
+          "tool": "context_sufficiency_check",
+          "target": "",
+          "status": "succeeded"
+        },
+        {
+          "created_at": "2026-10-27T18:22:41+00:00",
+          "task_id": "1",
+          "role": "Builder",
+          "tool": "write_file",
+          "target": "products.txt",
+          "status": "succeeded"
+        },
+        {
+          "created_at": "2026-10-27T18:22:41+00:00",
+          "task_id": "1",
+          "role": "Builder",
+          "tool": "run_file",
+          "target": "products.txt",
+          "status": "succeeded"
+        },
+        {
+          "created_at": "2026-10-27T18:25:09+00:00",
+          "task_id": "1",
+          "role": "Falsifier",
+          "tool": "read_file",
+          "target": "products.txt",
+          "status": "succeeded"
+        }
+      ],
+      "gates": [
+        {
+          "time": "2026-10-27T21:17:21.475",
+          "kind": "source_literal_child_scope_resolved",
+          "task_id": "1",
+          "paths": [
+            "products.txt"
+          ]
+        },
+        {
+          "time": "2026-10-27T21:17:21.481",
+          "kind": "impact_contract_created",
+          "task_id": "1",
+          "target_count": 1
+        },
+        {
+          "time": "2026-10-27T21:20:03.189",
+          "kind": "context_sufficiency_decision",
+          "task_id": "1",
+          "context_status": "sufficient",
+          "mutation_authorized": true
+        },
+        {
+          "time": "2026-10-27T21:20:03.194",
+          "kind": "impact_contract_authorized",
+          "task_id": "1",
+          "mutation_authorized": true
+        },
+        {
+          "time": "2026-10-27T21:25:11.964",
+          "kind": "impact_contract_compared",
+          "task_id": "1",
+          "status": "IMPACT_CONTRACT_PASSED",
+          "mutation_authorized": true,
+          "changed_paths": [
+            "products.txt"
+          ]
+        },
+        {
+          "time": "2026-10-27T21:25:11.996",
+          "kind": "literal_child_receipt_committed",
+          "task_id": "1",
+          "receipt_hash": "6732c7cc3287b17128c983961e3c83dacd0d113a3a68954593f7ecbf4d20ceb8"
+        }
+      ]
+    },
+    {
+      "task_id": "2",
+      "scheduled": "2026-10-27T21:25:12.029",
+      "end": "2026-10-27T21:36:24.415",
+      "end_kind": "verified_commit",
+      "wall_seconds": 672.386,
+      "model_seconds": 671.469,
+      "model_requests": 9,
+      "timeout_seconds": 360.03200000000004,
+      "tools": [
+        {
+          "created_at": "2026-10-27T18:31:31+00:00",
+          "task_id": "2",
+          "role": "Builder",
+          "tool": "context_sufficiency_check",
+          "target": "",
+          "status": "succeeded"
+        },
+        {
+          "created_at": "2026-10-27T18:34:09+00:00",
+          "task_id": "2",
+          "role": "Builder",
+          "tool": "write_file",
+          "target": "supplier.txt",
+          "status": "succeeded"
+        },
+        {
+          "created_at": "2026-10-27T18:34:09+00:00",
+          "task_id": "2",
+          "role": "Builder",
+          "tool": "run_file",
+          "target": "supplier.txt",
+          "status": "succeeded"
+        },
+        {
+          "created_at": "2026-10-27T18:36:22+00:00",
+          "task_id": "2",
+          "role": "Falsifier",
+          "tool": "read_file",
+          "target": "supplier.txt",
+          "status": "succeeded"
+        }
+      ],
+      "gates": [
+        {
+          "time": "2026-10-27T21:28:29.968",
+          "kind": "source_literal_child_scope_resolved",
+          "task_id": "2",
+          "paths": [
+            "supplier.txt"
+          ]
+        },
+        {
+          "time": "2026-10-27T21:28:29.980",
+          "kind": "impact_contract_created",
+          "task_id": "2",
+          "target_count": 1
+        },
+        {
+          "time": "2026-10-27T21:31:31.685",
+          "kind": "context_sufficiency_decision",
+          "task_id": "2",
+          "context_status": "sufficient",
+          "mutation_authorized": true
+        },
+        {
+          "time": "2026-10-27T21:31:31.691",
+          "kind": "impact_contract_authorized",
+          "task_id": "2",
+          "mutation_authorized": true
+        },
+        {
+          "time": "2026-10-27T21:36:24.370",
+          "kind": "impact_contract_compared",
+          "task_id": "2",
+          "status": "IMPACT_CONTRACT_PASSED",
+          "mutation_authorized": true,
+          "changed_paths": [
+            "supplier.txt"
+          ]
+        },
+        {
+          "time": "2026-10-27T21:36:24.401",
+          "kind": "literal_child_receipt_committed",
+          "task_id": "2",
+          "receipt_hash": "644fdaf3b81309dcb78e2739e78c80ed84adea1df33726c86847c8603379fe3a"
+        }
+      ]
+    },
+    {
+      "task_id": "3",
+      "scheduled": "2026-10-27T21:36:24.430",
+      "end": "2026-10-27T21:43:59",
+      "end_kind": "outer_interruption",
+      "wall_seconds": 454.57,
+      "model_seconds": 454.016,
+      "model_requests": 6,
+      "timeout_seconds": 240.044,
+      "tools": [
+        {
+          "created_at": "2026-10-27T18:41:48+00:00",
+          "task_id": "3",
+          "role": "Builder",
+          "tool": "context_sufficiency_check",
+          "target": "",
+          "status": "succeeded"
+        }
+      ],
+      "gates": [
+        {
+          "time": "2026-10-27T21:39:08.819",
+          "kind": "source_literal_child_scope_resolved",
+          "task_id": "3",
+          "paths": [
+            "shipment.txt"
+          ]
+        },
+        {
+          "time": "2026-10-27T21:39:08.851",
+          "kind": "impact_contract_created",
+          "task_id": "3",
+          "target_count": 1
+        },
+        {
+          "time": "2026-10-27T21:41:48.503",
+          "kind": "context_sufficiency_decision",
+          "task_id": "3",
+          "context_status": "sufficient",
+          "mutation_authorized": true
+        },
+        {
+          "time": "2026-10-27T21:41:48.509",
+          "kind": "impact_contract_authorized",
+          "task_id": "3",
+          "mutation_authorized": true
+        }
+      ]
+    }
+  ],
+  "persisted_tasks": [
+    {
+      "task_id": "ROOT",
+      "parent_id": null,
+      "status": "running",
+      "updated_at": "2026-10-27T18:13:13+00:00"
+    },
+    {
+      "task_id": "1",
+      "parent_id": "ROOT",
+      "status": "done",
+      "updated_at": "2026-10-27T18:25:12+00:00"
+    },
+    {
+      "task_id": "2",
+      "parent_id": "ROOT",
+      "status": "done",
+      "updated_at": "2026-10-27T18:36:24+00:00"
+    },
+    {
+      "task_id": "3",
+      "parent_id": "ROOT",
+      "status": "running",
+      "updated_at": "2026-10-27T18:37:39+00:00"
+    }
+  ],
+  "transitions": [
+    {
+      "time": "2026-10-27T21:13:13.619",
+      "role": "Coordinator",
+      "task": "ROOT",
+      "action": "task fit",
+      "text": "[ROOT] Create a text file named products.txt containing exactly:\"Product: Keyboard\\nQuantity: 12\\nPrice: 250\"; Create a text file named supplier.txt containing exactly:\"Supplier: Nile ..."
+    },
+    {
+      "time": "2026-10-27T21:13:13.625",
+      "role": "Coordinator",
+      "task": "ROOT",
+      "action": "granularity decision",
+      "text": "[FIT ROOT] SPLIT"
+    },
+    {
+      "time": "2026-10-27T21:14:38.894",
+      "role": "Coordinator",
+      "task": "1",
+      "action": "task fit",
+      "text": "[TASK 1] Create a text file named products.txt containing exactly:\"Product: Keyboard\\nQuantity: 12\\nPrice: 250\""
+    },
+    {
+      "time": "2026-10-27T21:15:38.920",
+      "role": "Coordinator",
+      "task": "1",
+      "action": "granularity decision",
+      "text": "[FIT 1] EXECUTE"
+    },
+    {
+      "time": "2026-10-27T21:17:21.509",
+      "role": "Builder",
+      "task": "1",
+      "action": "focused tool loop",
+      "text": "[BUILDER] 1 executing"
+    },
+    {
+      "time": "2026-10-27T21:20:03.215",
+      "role": "Builder",
+      "task": "1",
+      "action": null,
+      "text": "[TOOL] context_sufficiency_check -"
+    },
+    {
+      "time": "2026-10-27T21:22:41.987",
+      "role": "Builder",
+      "task": "1",
+      "action": null,
+      "text": "[TOOL] write_file products.txt"
+    },
+    {
+      "time": "2026-10-27T21:22:42.020",
+      "role": "Falsifier",
+      "task": "1",
+      "action": "adversarial verification",
+      "text": "[FALSIFY 1]"
+    },
+    {
+      "time": "2026-10-27T21:22:42.036",
+      "role": "Falsifier",
+      "task": "1",
+      "action": "focused tool loop",
+      "text": "[FALSIFIER] 1 executing"
+    },
+    {
+      "time": "2026-10-27T21:25:09.493",
+      "role": "Falsifier",
+      "task": "1",
+      "action": null,
+      "text": "[TOOL] read_file products.txt"
+    },
+    {
+      "time": "2026-10-27T21:25:11.956",
+      "role": "Quality Review",
+      "task": "1",
+      "action": "deterministic evidence gate",
+      "text": "[VERIFY 1] PASS"
+    },
+    {
+      "time": "2026-10-27T21:25:12.013",
+      "role": null,
+      "task": "1",
+      "action": "verified leaf",
+      "text": "[DONE 1]"
+    },
+    {
+      "time": "2026-10-27T21:25:12.029",
+      "role": "Coordinator",
+      "task": "2",
+      "action": "task fit",
+      "text": "[TASK 2] Create a text file named supplier.txt containing exactly:\"Supplier: Nile Tech\\nCity: Cairo\\nStatus: Active\""
+    },
+    {
+      "time": "2026-10-27T21:26:39.193",
+      "role": "Coordinator",
+      "task": "2",
+      "action": "granularity decision",
+      "text": "[FIT 2] EXECUTE"
+    },
+    {
+      "time": "2026-10-27T21:28:30.014",
+      "role": "Builder",
+      "task": "2",
+      "action": "focused tool loop",
+      "text": "[BUILDER] 2 executing"
+    },
+    {
+      "time": "2026-10-27T21:31:31.708",
+      "role": "Builder",
+      "task": "2",
+      "action": null,
+      "text": "[TOOL] context_sufficiency_check -"
+    },
+    {
+      "time": "2026-10-27T21:34:09.623",
+      "role": "Builder",
+      "task": "2",
+      "action": null,
+      "text": "[TOOL] write_file supplier.txt"
+    },
+    {
+      "time": "2026-10-27T21:34:09.650",
+      "role": "Falsifier",
+      "task": "2",
+      "action": "adversarial verification",
+      "text": "[FALSIFY 2]"
+    },
+    {
+      "time": "2026-10-27T21:34:09.660",
+      "role": "Falsifier",
+      "task": "2",
+      "action": "focused tool loop",
+      "text": "[FALSIFIER] 2 executing"
+    },
+    {
+      "time": "2026-10-27T21:36:22.503",
+      "role": "Falsifier",
+      "task": "2",
+      "action": null,
+      "text": "[TOOL] read_file supplier.txt"
+    },
+    {
+      "time": "2026-10-27T21:36:24.358",
+      "role": "Quality Review",
+      "task": "2",
+      "action": "deterministic evidence gate",
+      "text": "[VERIFY 2] PASS"
+    },
+    {
+      "time": "2026-10-27T21:36:24.415",
+      "role": null,
+      "task": "2",
+      "action": "verified leaf",
+      "text": "[DONE 2]"
+    },
+    {
+      "time": "2026-10-27T21:36:24.430",
+      "role": "Coordinator",
+      "task": "3",
+      "action": "task fit",
+      "text": "[TASK 3] Create a text file named shipment.txt containing exactly:\"Shipment: SH-2026\\nItems: 12\\nStatus: Pending\""
+    },
+    {
+      "time": "2026-10-27T21:37:39.306",
+      "role": "Coordinator",
+      "task": "3",
+      "action": "granularity decision",
+      "text": "[FIT 3] EXECUTE"
+    },
+    {
+      "time": "2026-10-27T21:39:08.883",
+      "role": "Builder",
+      "task": "3",
+      "action": "focused tool loop",
+      "text": "[BUILDER] 3 executing"
+    },
+    {
+      "time": "2026-10-27T21:41:48.525",
+      "role": "Builder",
+      "task": "3",
+      "action": null,
+      "text": "[TOOL] context_sufficiency_check -"
+    }
+  ],
+  "finding": "Child3 scheduled, fitted execute, scoped/authorized and context sufficient; write inference retry interrupted before any mutation. All eight timeouts coincide with active incomplete prefill, not proven stalled generation. Sequential scheduler advanced after genuine commits; no repeated completed tool loop. Generic 120-second nonstreaming initial-response policy cannot distinguish cold prefill from dead provider.",
+  "precision_limits": "Server GIN endpoints have one-second resolution; interruption duration/residual are approximate. Completed client durations use millisecond trace timestamps. No measured performance counterfactual or environment-only causation claim."
+}

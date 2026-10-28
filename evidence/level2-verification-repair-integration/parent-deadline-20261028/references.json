@@ -1,0 +1,18 @@
+{
+  "scope": "Primary OS/implementation references, not proof of Mini Hivo correctness.",
+  "references": [
+    {
+      "title": "WaitForSingleObject function",
+      "publisher": "Microsoft",
+      "url": "https://learn.microsoft.com/en-us/windows/win32/api/synchapi/nf-synchapi-waitforsingleobject",
+      "relevance": "Windows 8+ native wait interval excludes low-power time; inspect installed Popen._wait to establish actual use."
+    },
+    {
+      "title": "System power states",
+      "publisher": "Microsoft",
+      "url": "https://learn.microsoft.com/en-us/windows/win32/power/system-power-states",
+      "relevance": "Modern Standby can suspend application activity while permitting background wake work; no guarantee of execution during sleep."
+    }
+  ],
+  "local_implementation_observation": "Installed Python 3.14.8 Popen._wait invokes _winapi.WaitForSingleObject once; monotonic uses QueryPerformanceCounter. Full host inventories are omitted."
+}

@@ -1,0 +1,872 @@
+[
+  {
+    "run_id": "20261027T160613-55469a33",
+    "status": "done",
+    "root_verified": true,
+    "project_mode": "NEW_PROJECT",
+    "model_calls": 7,
+    "tool_calls": 4,
+    "builder_calls": 1,
+    "falsifier_calls": 1,
+    "repairer_calls": 0,
+    "elapsed_seconds": 350.96,
+    "impact_contracts_rejected": 0,
+    "impact_contract_mutation_blocks": 0,
+    "source_requirements_retained": 3,
+    "control_flow": [
+      "SOURCE_REQUIREMENT_INGESTION",
+      "SOURCE_REQUIREMENT_INGESTION",
+      "REQUEST_CLARIFICATION",
+      "PROJECT_MODE_CLASSIFICATION",
+      "REPOSITORY_RECONNAISSANCE_SKIPPED",
+      "SPECIFICATION_EXPANSION",
+      "PROJECT_BRAIN",
+      "TASK_BRAIN",
+      "IMPACT_PLANNING_SKIPPED_GREENFIELD",
+      "TASK_FIT"
+    ],
+    "workspace": "list/project-24",
+    "trace_event_counts": {
+      "run_started": 1,
+      "source_requirement_ledger_created": 2,
+      "model_request": 7,
+      "model_response_shape": 7,
+      "model_response": 7,
+      "clarification_gate_evaluated": 1,
+      "source_contract_ready": 1,
+      "literal_source_compiled": 1,
+      "project_brain_created": 1,
+      "task_brain_created": 1,
+      "world_model_initialized": 1,
+      "impact_contract_created": 1,
+      "context_sufficiency_initial_context": 1,
+      "status": 7,
+      "context_sufficiency_decision": 1,
+      "impact_contract_authorized": 1,
+      "controller_literal_readback": 1,
+      "literal_artifacts_ready": 1,
+      "agent_finished": 2,
+      "verification_applicability_analyzed": 1,
+      "verification_route_result": 1,
+      "verification_evidence_aggregated": 1,
+      "world_model_revalidation": 2,
+      "impact_contract_compared": 1,
+      "transaction_commit": 1
+    },
+    "model_requests": [
+      {
+        "time": "2026-10-27T16:06:13.720",
+        "role": "Clarifier",
+        "attempt": 1,
+        "context_tokens": 607,
+        "num_ctx": 4096,
+        "stream": false
+      },
+      {
+        "time": "2026-10-27T16:06:49.223",
+        "role": "Specifier",
+        "attempt": 1,
+        "context_tokens": 1185,
+        "num_ctx": 4096,
+        "stream": false
+      },
+      {
+        "time": "2026-10-27T16:07:55.018",
+        "role": "Coordinator",
+        "attempt": 1,
+        "context_tokens": 1031,
+        "num_ctx": 4096,
+        "stream": false
+      },
+      {
+        "time": "2026-10-27T16:08:28.971",
+        "role": "Builder",
+        "attempt": 1,
+        "context_tokens": 1204,
+        "num_ctx": 12288,
+        "stream": false
+      },
+      {
+        "time": "2026-10-27T16:09:38.136",
+        "role": "Builder",
+        "attempt": 1,
+        "context_tokens": 1446,
+        "num_ctx": 12288,
+        "stream": false
+      },
+      {
+        "time": "2026-10-27T16:10:47.700",
+        "role": "Falsifier",
+        "attempt": 1,
+        "context_tokens": 982,
+        "num_ctx": 8192,
+        "stream": false
+      },
+      {
+        "time": "2026-10-27T16:11:44.430",
+        "role": "Falsifier",
+        "attempt": 1,
+        "context_tokens": 1017,
+        "num_ctx": 8192,
+        "stream": false
+      }
+    ]
+  },
+  {
+    "run_id": "20261027T161357-1ee2c633",
+    "status": "done",
+    "root_verified": true,
+    "project_mode": "NEW_PROJECT",
+    "model_calls": 72,
+    "tool_calls": 47,
+    "builder_calls": 5,
+    "falsifier_calls": 5,
+    "repairer_calls": 2,
+    "elapsed_seconds": 3623.58,
+    "impact_contracts_rejected": 2,
+    "impact_contract_mutation_blocks": 2,
+    "source_requirements_retained": 3,
+    "control_flow": [
+      "SOURCE_REQUIREMENT_INGESTION",
+      "SOURCE_REQUIREMENT_INGESTION",
+      "REQUEST_CLARIFICATION",
+      "PROJECT_MODE_CLASSIFICATION",
+      "REPOSITORY_RECONNAISSANCE_SKIPPED",
+      "SPECIFICATION_EXPANSION",
+      "PROJECT_BRAIN",
+      "TASK_BRAIN",
+      "IMPACT_PLANNING_SKIPPED_GREENFIELD",
+      "TASK_FIT",
+      "DECOMPOSITION"
+    ],
+    "workspace": "list/project-24",
+    "trace_event_counts": {
+      "run_started": 1,
+      "source_requirement_ledger_created": 2,
+      "model_request": 72,
+      "model_response_shape": 59,
+      "model_response": 59,
+      "clarification_gate_evaluated": 1,
+      "source_contract_ready": 1,
+      "literal_source_compiled": 1,
+      "project_brain_created": 1,
+      "task_brain_created": 1,
+      "world_model_initialized": 1,
+      "TASK_ACCEPTED": 1,
+      "TASK_BRAIN_READY": 1,
+      "status": 79,
+      "semantic_coupling_analysis": 1,
+      "worker_mission_ready": 4,
+      "impact_contract_created": 5,
+      "context_sufficiency_initial_context": 7,
+      "FIRST_WORKER_STARTED": 1,
+      "context_sufficiency_decision": 7,
+      "impact_contract_authorized": 5,
+      "controller_literal_readback": 7,
+      "literal_artifacts_ready": 5,
+      "agent_finished": 12,
+      "verification_applicability_analyzed": 4,
+      "verification_route_result": 7,
+      "verification_evidence_aggregated": 7,
+      "impact_contract_rejected": 2,
+      "impact_contract_mutation_blocked": 2,
+      "transaction_rollback": 1,
+      "node_failure": 1,
+      "strategy_search": 1,
+      "world_model_revalidation": 7,
+      "impact_contract_compared": 4,
+      "transaction_commit": 4,
+      "literal_child_receipt_committed": 3,
+      "strategy_attempt": 1,
+      "strategy_rescue": 1,
+      "diagnosis_recovery_route": 1,
+      "child_scheduler_node": 3,
+      "integration_preflight": 2,
+      "parent_integration_started": 1,
+      "falsifier_literal_coverage": 2,
+      "parent_integration_finished": 1,
+      "child_scheduler_complete": 1,
+      "ROOT_VERIFIED": 1
+    },
+    "model_requests": [
+      {
+        "time": "2026-10-27T16:13:57.635",
+        "role": "Clarifier",
+        "attempt": 1,
+        "context_tokens": 701,
+        "num_ctx": 4096,
+        "stream": false
+      },
+      {
+        "time": "2026-10-27T16:14:32.261",
+        "role": "Specifier",
+        "attempt": 1,
+        "context_tokens": 1372,
+        "num_ctx": 4096,
+        "stream": false
+      },
+      {
+        "time": "2026-10-27T16:15:49.264",
+        "role": "Coordinator",
+        "attempt": 1,
+        "context_tokens": 1338,
+        "num_ctx": 4096,
+        "stream": false
+      },
+      {
+        "time": "2026-10-27T16:16:39.997",
+        "role": "Coordinator",
+        "attempt": 1,
+        "context_tokens": 1421,
+        "num_ctx": 4096,
+        "stream": false
+      },
+      {
+        "time": "2026-10-27T16:17:50.723",
+        "role": "Coordinator",
+        "attempt": 1,
+        "context_tokens": 1361,
+        "num_ctx": 4096,
+        "stream": false
+      },
+      {
+        "time": "2026-10-27T16:18:40.743",
+        "role": "MissionCompiler",
+        "attempt": 1,
+        "context_tokens": 1519,
+        "num_ctx": 4096,
+        "stream": false
+      },
+      {
+        "time": "2026-10-27T16:20:05.272",
+        "role": "Builder",
+        "attempt": 1,
+        "context_tokens": 2643,
+        "num_ctx": 12288,
+        "stream": false
+      },
+      {
+        "time": "2026-10-27T16:22:05.505",
+        "role": "Builder",
+        "attempt": 2,
+        "context_tokens": 2643,
+        "num_ctx": 12288,
+        "stream": false
+      },
+      {
+        "time": "2026-10-27T16:22:10.509",
+        "role": "Builder",
+        "attempt": 1,
+        "context_tokens": 2885,
+        "num_ctx": 12288,
+        "stream": false
+      },
+      {
+        "time": "2026-10-27T16:24:10.729",
+        "role": "Builder",
+        "attempt": 2,
+        "context_tokens": 2885,
+        "num_ctx": 12288,
+        "stream": false
+      },
+      {
+        "time": "2026-10-27T16:24:16.356",
+        "role": "Falsifier",
+        "attempt": 1,
+        "context_tokens": 2434,
+        "num_ctx": 8192,
+        "stream": false
+      },
+      {
+        "time": "2026-10-27T16:26:03.515",
+        "role": "Falsifier",
+        "attempt": 1,
+        "context_tokens": 2464,
+        "num_ctx": 8192,
+        "stream": false
+      },
+      {
+        "time": "2026-10-27T16:26:06.799",
+        "role": "Falsifier",
+        "attempt": 1,
+        "context_tokens": 2497,
+        "num_ctx": 8192,
+        "stream": false
+      },
+      {
+        "time": "2026-10-27T16:26:09.683",
+        "role": "Falsifier",
+        "attempt": 1,
+        "context_tokens": 2552,
+        "num_ctx": 8192,
+        "stream": false
+      },
+      {
+        "time": "2026-10-27T16:26:13.118",
+        "role": "Falsifier",
+        "attempt": 1,
+        "context_tokens": 2606,
+        "num_ctx": 8192,
+        "stream": false
+      },
+      {
+        "time": "2026-10-27T16:26:35.470",
+        "role": "Falsifier",
+        "attempt": 1,
+        "context_tokens": 2820,
+        "num_ctx": 8192,
+        "stream": false
+      },
+      {
+        "time": "2026-10-27T16:26:43.961",
+        "role": "Repairer",
+        "attempt": 1,
+        "context_tokens": 2775,
+        "num_ctx": 8192,
+        "stream": false
+      },
+      {
+        "time": "2026-10-27T16:28:33.115",
+        "role": "Repairer",
+        "attempt": 1,
+        "context_tokens": 3016,
+        "num_ctx": 8192,
+        "stream": false
+      },
+      {
+        "time": "2026-10-27T16:30:27.202",
+        "role": "Repairer",
+        "attempt": 1,
+        "context_tokens": 3075,
+        "num_ctx": 8192,
+        "stream": false
+      },
+      {
+        "time": "2026-10-27T16:30:29.118",
+        "role": "Repairer",
+        "attempt": 1,
+        "context_tokens": 861,
+        "num_ctx": 8192,
+        "stream": false
+      },
+      {
+        "time": "2026-10-27T16:31:02.400",
+        "role": "Repairer",
+        "attempt": 1,
+        "context_tokens": 892,
+        "num_ctx": 8192,
+        "stream": false
+      },
+      {
+        "time": "2026-10-27T16:31:05.272",
+        "role": "Repairer",
+        "attempt": 1,
+        "context_tokens": 1005,
+        "num_ctx": 8192,
+        "stream": false
+      },
+      {
+        "time": "2026-10-27T16:31:18.969",
+        "role": "Repairer",
+        "attempt": 1,
+        "context_tokens": 2730,
+        "num_ctx": 8192,
+        "stream": false
+      },
+      {
+        "time": "2026-10-27T16:31:54.339",
+        "role": "Repairer",
+        "attempt": 1,
+        "context_tokens": 2971,
+        "num_ctx": 8192,
+        "stream": false
+      },
+      {
+        "time": "2026-10-27T16:32:32.493",
+        "role": "Repairer",
+        "attempt": 1,
+        "context_tokens": 3030,
+        "num_ctx": 8192,
+        "stream": false
+      },
+      {
+        "time": "2026-10-27T16:32:34.232",
+        "role": "Repairer",
+        "attempt": 1,
+        "context_tokens": 861,
+        "num_ctx": 8192,
+        "stream": false
+      },
+      {
+        "time": "2026-10-27T16:33:06.724",
+        "role": "Repairer",
+        "attempt": 1,
+        "context_tokens": 892,
+        "num_ctx": 8192,
+        "stream": false
+      },
+      {
+        "time": "2026-10-27T16:33:09.598",
+        "role": "Repairer",
+        "attempt": 1,
+        "context_tokens": 1005,
+        "num_ctx": 8192,
+        "stream": false
+      },
+      {
+        "time": "2026-10-27T16:33:23.819",
+        "role": "Coordinator",
+        "attempt": 1,
+        "context_tokens": 1519,
+        "num_ctx": 4096,
+        "stream": false
+      },
+      {
+        "time": "2026-10-27T16:35:22.747",
+        "role": "MissionCompiler",
+        "attempt": 1,
+        "context_tokens": 1519,
+        "num_ctx": 4096,
+        "stream": false
+      },
+      {
+        "time": "2026-10-27T16:36:49.640",
+        "role": "Builder",
+        "attempt": 1,
+        "context_tokens": 3565,
+        "num_ctx": 12288,
+        "stream": false
+      },
+      {
+        "time": "2026-10-27T16:38:49.850",
+        "role": "Builder",
+        "attempt": 2,
+        "context_tokens": 3565,
+        "num_ctx": 12288,
+        "stream": false
+      },
+      {
+        "time": "2026-10-27T16:39:40.135",
+        "role": "Builder",
+        "attempt": 1,
+        "context_tokens": 3806,
+        "num_ctx": 12288,
+        "stream": false
+      },
+      {
+        "time": "2026-10-27T16:41:40.366",
+        "role": "Builder",
+        "attempt": 2,
+        "context_tokens": 3806,
+        "num_ctx": 12288,
+        "stream": false
+      },
+      {
+        "time": "2026-10-27T16:42:33.550",
+        "role": "Falsifier",
+        "attempt": 1,
+        "context_tokens": 3055,
+        "num_ctx": 8192,
+        "stream": false
+      },
+      {
+        "time": "2026-10-27T16:44:33.782",
+        "role": "Falsifier",
+        "attempt": 2,
+        "context_tokens": 3055,
+        "num_ctx": 8192,
+        "stream": false
+      },
+      {
+        "time": "2026-10-27T16:44:54.079",
+        "role": "Falsifier",
+        "attempt": 1,
+        "context_tokens": 194,
+        "num_ctx": 8192,
+        "stream": false
+      },
+      {
+        "time": "2026-10-27T16:45:07.408",
+        "role": "Coordinator",
+        "attempt": 1,
+        "context_tokens": 1363,
+        "num_ctx": 4096,
+        "stream": false
+      },
+      {
+        "time": "2026-10-27T16:46:12.928",
+        "role": "MissionCompiler",
+        "attempt": 1,
+        "context_tokens": 1519,
+        "num_ctx": 4096,
+        "stream": false
+      },
+      {
+        "time": "2026-10-27T16:47:39.267",
+        "role": "Builder",
+        "attempt": 1,
+        "context_tokens": 2908,
+        "num_ctx": 12288,
+        "stream": false
+      },
+      {
+        "time": "2026-10-27T16:49:39.498",
+        "role": "Builder",
+        "attempt": 2,
+        "context_tokens": 2908,
+        "num_ctx": 12288,
+        "stream": false
+      },
+      {
+        "time": "2026-10-27T16:49:50.245",
+        "role": "Builder",
+        "attempt": 1,
+        "context_tokens": 3149,
+        "num_ctx": 12288,
+        "stream": false
+      },
+      {
+        "time": "2026-10-27T16:51:50.473",
+        "role": "Builder",
+        "attempt": 2,
+        "context_tokens": 3149,
+        "num_ctx": 12288,
+        "stream": false
+      },
+      {
+        "time": "2026-10-27T16:52:07.003",
+        "role": "Falsifier",
+        "attempt": 1,
+        "context_tokens": 2698,
+        "num_ctx": 8192,
+        "stream": false
+      },
+      {
+        "time": "2026-10-27T16:54:04.279",
+        "role": "Falsifier",
+        "attempt": 1,
+        "context_tokens": 2732,
+        "num_ctx": 8192,
+        "stream": false
+      },
+      {
+        "time": "2026-10-27T16:54:07.757",
+        "role": "Falsifier",
+        "attempt": 1,
+        "context_tokens": 2766,
+        "num_ctx": 8192,
+        "stream": false
+      },
+      {
+        "time": "2026-10-27T16:54:10.544",
+        "role": "Falsifier",
+        "attempt": 1,
+        "context_tokens": 2821,
+        "num_ctx": 8192,
+        "stream": false
+      },
+      {
+        "time": "2026-10-27T16:54:14.105",
+        "role": "Falsifier",
+        "attempt": 1,
+        "context_tokens": 2875,
+        "num_ctx": 8192,
+        "stream": false
+      },
+      {
+        "time": "2026-10-27T16:54:48.661",
+        "role": "Falsifier",
+        "attempt": 1,
+        "context_tokens": 628,
+        "num_ctx": 8192,
+        "stream": false
+      },
+      {
+        "time": "2026-10-27T16:55:19.109",
+        "role": "Falsifier",
+        "attempt": 1,
+        "context_tokens": 683,
+        "num_ctx": 8192,
+        "stream": false
+      },
+      {
+        "time": "2026-10-27T16:55:49.064",
+        "role": "Coordinator",
+        "attempt": 1,
+        "context_tokens": 1362,
+        "num_ctx": 4096,
+        "stream": false
+      },
+      {
+        "time": "2026-10-27T16:56:53.937",
+        "role": "MissionCompiler",
+        "attempt": 1,
+        "context_tokens": 1519,
+        "num_ctx": 4096,
+        "stream": false
+      },
+      {
+        "time": "2026-10-27T16:58:20.502",
+        "role": "Builder",
+        "attempt": 1,
+        "context_tokens": 3061,
+        "num_ctx": 12288,
+        "stream": false
+      },
+      {
+        "time": "2026-10-27T17:00:20.730",
+        "role": "Builder",
+        "attempt": 2,
+        "context_tokens": 3061,
+        "num_ctx": 12288,
+        "stream": false
+      },
+      {
+        "time": "2026-10-27T17:00:42.474",
+        "role": "Builder",
+        "attempt": 1,
+        "context_tokens": 3303,
+        "num_ctx": 12288,
+        "stream": false
+      },
+      {
+        "time": "2026-10-27T17:02:42.681",
+        "role": "Builder",
+        "attempt": 2,
+        "context_tokens": 3303,
+        "num_ctx": 12288,
+        "stream": false
+      },
+      {
+        "time": "2026-10-27T17:03:37.224",
+        "role": "Falsifier",
+        "attempt": 1,
+        "context_tokens": 2852,
+        "num_ctx": 8192,
+        "stream": false
+      },
+      {
+        "time": "2026-10-27T17:05:37.431",
+        "role": "Falsifier",
+        "attempt": 2,
+        "context_tokens": 2852,
+        "num_ctx": 8192,
+        "stream": false
+      },
+      {
+        "time": "2026-10-27T17:06:05.637",
+        "role": "Falsifier",
+        "attempt": 1,
+        "context_tokens": 2889,
+        "num_ctx": 8192,
+        "stream": false
+      },
+      {
+        "time": "2026-10-27T17:06:10.430",
+        "role": "Falsifier",
+        "attempt": 1,
+        "context_tokens": 2943,
+        "num_ctx": 8192,
+        "stream": false
+      },
+      {
+        "time": "2026-10-27T17:06:14.043",
+        "role": "Falsifier",
+        "attempt": 1,
+        "context_tokens": 2997,
+        "num_ctx": 8192,
+        "stream": false
+      },
+      {
+        "time": "2026-10-27T17:06:17.867",
+        "role": "Falsifier",
+        "attempt": 1,
+        "context_tokens": 3031,
+        "num_ctx": 8192,
+        "stream": false
+      },
+      {
+        "time": "2026-10-27T17:06:21.012",
+        "role": "Falsifier",
+        "attempt": 1,
+        "context_tokens": 3085,
+        "num_ctx": 8192,
+        "stream": false
+      },
+      {
+        "time": "2026-10-27T17:06:24.358",
+        "role": "Falsifier",
+        "attempt": 1,
+        "context_tokens": 448,
+        "num_ctx": 8192,
+        "stream": false
+      },
+      {
+        "time": "2026-10-27T17:06:55.452",
+        "role": "Falsifier",
+        "attempt": 1,
+        "context_tokens": 576,
+        "num_ctx": 8192,
+        "stream": false
+      },
+      {
+        "time": "2026-10-27T17:06:59.988",
+        "role": "Builder",
+        "attempt": 1,
+        "context_tokens": 3540,
+        "num_ctx": 12288,
+        "stream": false
+      },
+      {
+        "time": "2026-10-27T17:09:00.214",
+        "role": "Builder",
+        "attempt": 2,
+        "context_tokens": 3540,
+        "num_ctx": 12288,
+        "stream": false
+      },
+      {
+        "time": "2026-10-27T17:09:35.667",
+        "role": "Builder",
+        "attempt": 1,
+        "context_tokens": 3782,
+        "num_ctx": 12288,
+        "stream": false
+      },
+      {
+        "time": "2026-10-27T17:11:35.901",
+        "role": "Builder",
+        "attempt": 2,
+        "context_tokens": 3782,
+        "num_ctx": 12288,
+        "stream": false
+      },
+      {
+        "time": "2026-10-27T17:11:58.073",
+        "role": "Falsifier",
+        "attempt": 1,
+        "context_tokens": 3055,
+        "num_ctx": 8192,
+        "stream": false
+      },
+      {
+        "time": "2026-10-27T17:13:58.282",
+        "role": "Falsifier",
+        "attempt": 2,
+        "context_tokens": 3055,
+        "num_ctx": 8192,
+        "stream": false
+      },
+      {
+        "time": "2026-10-27T17:14:06.943",
+        "role": "Falsifier",
+        "attempt": 1,
+        "context_tokens": 194,
+        "num_ctx": 8192,
+        "stream": false
+      }
+    ]
+  },
+  {
+    "run_id": "20261027T172137-d9c5357c",
+    "status": "failed",
+    "root_verified": false,
+    "project_mode": "NEW_PROJECT",
+    "model_calls": 2,
+    "tool_calls": 0,
+    "builder_calls": 0,
+    "falsifier_calls": 0,
+    "repairer_calls": 0,
+    "elapsed_seconds": 184.22,
+    "impact_contracts_rejected": 0,
+    "impact_contract_mutation_blocks": 0,
+    "source_requirements_retained": 13,
+    "control_flow": [
+      "SOURCE_REQUIREMENT_INGESTION",
+      "REQUEST_CLARIFICATION",
+      "PROJECT_MODE_CLASSIFICATION",
+      "REPOSITORY_RECONNAISSANCE_SKIPPED",
+      "SPECIFICATION_EXPANSION"
+    ],
+    "workspace": "list/project-24",
+    "trace_event_counts": {
+      "run_started": 1,
+      "source_requirement_ledger_created": 1,
+      "model_request": 2,
+      "model_response_shape": 1,
+      "model_response": 1,
+      "clarification_gate_evaluated": 1,
+      "source_contract_ready": 1,
+      "status": 1
+    },
+    "model_requests": [
+      {
+        "time": "2026-10-27T17:21:37.452",
+        "role": "Clarifier",
+        "attempt": 1,
+        "context_tokens": 1072,
+        "num_ctx": 4096,
+        "stream": false
+      },
+      {
+        "time": "2026-10-27T17:22:41.609",
+        "role": "Specifier",
+        "attempt": 1,
+        "context_tokens": 1519,
+        "num_ctx": 4096,
+        "stream": false
+      }
+    ]
+  },
+  {
+    "run_id": "20261027T174632-342cd69a",
+    "status": "failed",
+    "root_verified": false,
+    "project_mode": "NEW_PROJECT",
+    "model_calls": 2,
+    "tool_calls": 0,
+    "builder_calls": 0,
+    "falsifier_calls": 0,
+    "repairer_calls": 0,
+    "elapsed_seconds": 179.57,
+    "impact_contracts_rejected": 0,
+    "impact_contract_mutation_blocks": 0,
+    "source_requirements_retained": 13,
+    "control_flow": [
+      "SOURCE_REQUIREMENT_INGESTION",
+      "REQUEST_CLARIFICATION",
+      "PROJECT_MODE_CLASSIFICATION",
+      "REPOSITORY_RECONNAISSANCE_SKIPPED",
+      "SPECIFICATION_EXPANSION"
+    ],
+    "workspace": "list/project-25",
+    "trace_event_counts": {
+      "run_started": 1,
+      "source_requirement_ledger_created": 1,
+      "model_request": 2,
+      "model_response_shape": 1,
+      "model_response": 1,
+      "clarification_gate_evaluated": 1,
+      "source_contract_ready": 1,
+      "status": 1
+    },
+    "model_requests": [
+      {
+        "time": "2026-10-27T17:46:32.959",
+        "role": "Clarifier",
+        "attempt": 1,
+        "context_tokens": 1072,
+        "num_ctx": 4096,
+        "stream": false
+      },
+      {
+        "time": "2026-10-27T17:47:32.438",
+        "role": "Specifier",
+        "attempt": 1,
+        "context_tokens": 1519,
+        "num_ctx": 4096,
+        "stream": false
+      }
+    ]
+  }
+]

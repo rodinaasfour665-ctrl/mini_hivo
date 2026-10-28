@@ -1,0 +1,228 @@
+{
+  "run_id": "20261027T194758-1ef7c59c",
+  "original_inspection_sha256": "5b8330e894b869ffc720ec8fa17bc5d3b1d5fb50ca56d3b46499b12c5dc7ddeb",
+  "source_matched_at_original_inspection": true,
+  "matches_current_production_source": false,
+  "artifact": {
+    "bytes": 1507,
+    "sha256": "140fa931879c13e7ee16553258b9ee231bb00fee6495aa8e0e142a7c05112398",
+    "oracle": {
+      "utf8": true,
+      "doctype_html5": true,
+      "charset_utf8": true,
+      "head_body": true,
+      "dom": {
+        "title": "Employee Profile",
+        "h1": "Sara",
+        "paragraphs": [
+          "Engineering Department"
+        ],
+        "active_visible": true,
+        "styles": 1,
+        "external_count": 0
+      },
+      "one_task_file": true,
+      "passed": true
+    }
+  },
+  "metrics": {
+    "run_id": "20261027T194758-1ef7c59c",
+    "status": "done",
+    "root_verified": true,
+    "model_calls": 11,
+    "tool_calls": 5,
+    "builder_calls": 1,
+    "falsifier_calls": 1,
+    "repairer_calls": 0,
+    "elapsed_seconds": 651.05,
+    "ollama_timeout_failures": 1,
+    "ollama_retry_count": 1,
+    "project_mode": "NEW_PROJECT",
+    "control_flow": [
+      "SOURCE_REQUIREMENT_INGESTION",
+      "REQUEST_CLARIFICATION",
+      "PROJECT_MODE_CLASSIFICATION",
+      "REPOSITORY_RECONNAISSANCE_SKIPPED",
+      "SPECIFICATION_EXPANSION",
+      "PROJECT_BRAIN",
+      "TASK_BRAIN",
+      "IMPACT_PLANNING_SKIPPED_GREENFIELD",
+      "TASK_FIT"
+    ],
+    "verification_classification_policy": "field_scoped",
+    "browser_checks": 3,
+    "impact_missing_targets": 0,
+    "literal_child_receipts_committed": null,
+    "literal_parent_integrations_verified": null
+  },
+  "event_counts": {
+    "agent_finished": 2,
+    "browser_verification_target": 3,
+    "clarification_gate_evaluated": 1,
+    "context_sufficiency_decision": 1,
+    "context_sufficiency_initial_context": 1,
+    "impact_contract_authorized": 1,
+    "impact_contract_compared": 1,
+    "impact_contract_created": 1,
+    "inference_progress": 340,
+    "model_request": 11,
+    "model_response": 10,
+    "model_response_shape": 10,
+    "project_brain_created": 1,
+    "provider_request_completed": 10,
+    "provider_request_failed": 1,
+    "run_started": 1,
+    "source_contract_ready": 1,
+    "source_requirement_ledger_created": 1,
+    "status": 9,
+    "task_brain_created": 1,
+    "transaction_commit": 1,
+    "verification_applicability_analyzed": 2,
+    "verification_evidence_aggregated": 1,
+    "verification_route_result": 2,
+    "world_model_initialized": 1,
+    "world_model_revalidation": 2
+  },
+  "gates": [
+    {
+      "time": "2026-10-27T19:52:10.531",
+      "kind": "impact_contract_authorized",
+      "task_id": "ROOT",
+      "mutation_authorized": true
+    },
+    {
+      "time": "2026-10-27T19:55:51.785",
+      "kind": "agent_finished",
+      "role": "Builder",
+      "task_id": "ROOT",
+      "status": "done",
+      "context_status": "sufficient",
+      "mutation_authorized": true,
+      "impact_authorized": true,
+      "impact_contract_status": "IMPACT_CONTRACT_ACCEPTED"
+    },
+    {
+      "time": "2026-10-27T19:58:43.992",
+      "kind": "agent_finished",
+      "role": "Falsifier",
+      "task_id": "ROOT",
+      "status": "done",
+      "context_status": null,
+      "mutation_authorized": false,
+      "impact_authorized": false,
+      "impact_contract_status": null
+    },
+    {
+      "time": "2026-10-27T19:57:40.222",
+      "kind": "verification_route_result"
+    },
+    {
+      "time": "2026-10-27T19:58:48.969",
+      "kind": "verification_route_result"
+    },
+    {
+      "time": "2026-10-27T19:58:48.992",
+      "kind": "verification_evidence_aggregated",
+      "passed": true
+    },
+    {
+      "time": "2026-10-27T19:58:49.034",
+      "kind": "impact_contract_compared",
+      "task_id": "ROOT",
+      "status": "IMPACT_CONTRACT_PASSED",
+      "mutation_authorized": true,
+      "changed_paths": [
+        "index.html"
+      ],
+      "missing": 0,
+      "unexpected_related": 0,
+      "out_of_scope": 0,
+      "preservation_violations": 0
+    },
+    {
+      "time": "2026-10-27T19:58:49.042",
+      "kind": "transaction_commit",
+      "task_id": "ROOT"
+    }
+  ],
+  "tools": [
+    {
+      "task_id": "ROOT",
+      "role": "Builder",
+      "tool": "context_sufficiency_check",
+      "target": "",
+      "status": "succeeded",
+      "native_result": {}
+    },
+    {
+      "task_id": "ROOT",
+      "role": "Builder",
+      "tool": "write_file",
+      "target": "index.html",
+      "status": "succeeded"
+    },
+    {
+      "task_id": "ROOT",
+      "role": "Builder",
+      "tool": "run_file",
+      "target": "index.html",
+      "status": "succeeded",
+      "native_result": {
+        "passed": true,
+        "environment_error": false,
+        "title": "Employee Profile",
+        "text": "Sara\n\nEngineering Department\n\nACTIVE",
+        "verification_profile": {
+          "kind": "web",
+          "require_title": true,
+          "require_canvas": false,
+          "require_game_bridge": false,
+          "required_interactions": []
+        },
+        "failures": []
+      }
+    },
+    {
+      "task_id": "ROOT",
+      "role": "Falsifier",
+      "tool": "read_file",
+      "target": "index.html",
+      "status": "succeeded"
+    },
+    {
+      "task_id": "ROOT",
+      "role": "Falsifier",
+      "tool": "verify_web_app",
+      "target": "index.html",
+      "status": "succeeded",
+      "native_result": {
+        "passed": true,
+        "environment_error": false,
+        "title": "Employee Profile",
+        "text": "Sara\n\nEngineering Department\n\nACTIVE",
+        "verification_status": "PASS",
+        "verification_profile": {
+          "kind": "web",
+          "require_title": true,
+          "require_canvas": false,
+          "require_game_bridge": false,
+          "required_interactions": []
+        },
+        "failures": []
+      }
+    }
+  ],
+  "provider_failures": [
+    {
+      "time": "2026-10-27T19:54:10.583",
+      "run_id": "20261027T194758-1ef7c59c",
+      "kind": "provider_request_failed",
+      "role": "Builder",
+      "attempt": 1,
+      "category": "INFERENCE_TIMEOUT",
+      "elapsed_seconds": 120.03425320005044
+    }
+  ],
+  "accepted_at_tested_checkpoint": true,
+  "accepted_for_current_source": false
+}

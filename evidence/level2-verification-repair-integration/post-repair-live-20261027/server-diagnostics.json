@@ -1,0 +1,66 @@
+{
+  "original_source_sha256": "eabec74bf3fa3248b424eae92c20c6ff5fa68462ac071fe74153d01f1a7282a0",
+  "scope": "Original server snapshot; selected diagnostic lines and exact substrings, no host inventory. Model latency/cancellation, not OOM proof.",
+  "excerpts": [
+    {
+      "source_line": 8,
+      "excerpt": "dropping integrated GPU; to enable, set OLLAMA_IGPU_ENABLE=1",
+      "transformation": "Exact message substring; omit device/host inventory."
+    },
+    {
+      "source_line": 9,
+      "excerpt": "msg=\"inference compute\" id=cpu library=cpu",
+      "transformation": "Exact substring; omit memory/host inventory."
+    },
+    {
+      "source_line": 15141,
+      "excerpt": "slot print_timing: id  0 | task 0 | prompt eval time =   41486.38 ms /  1101 tokens (   37.68 ms per token,    26.54 tokens per second)",
+      "transformation": "Selected complete diagnostic line; raw process/cache/address inventory omitted."
+    },
+    {
+      "source_line": 15142,
+      "excerpt": "slot print_timing: id  0 | task 0 |        eval time =     804.99 ms /     5 tokens (  201.25 ms per token,     4.97 tokens per second)",
+      "transformation": "Selected complete diagnostic line; raw process/cache/address inventory omitted."
+    },
+    {
+      "source_line": 15151,
+      "excerpt": "[GIN] 2026/10/27 - 17:47:32 | 200 |   59.44s |       127.0.0.1 | POST     \"/api/chat\"",
+      "transformation": "Selected complete diagnostic line; raw process/cache/address inventory omitted."
+    },
+    {
+      "source_line": 15169,
+      "excerpt": "slot   operator(): id  0 | task 7 | new prompt, n_ctx_slot = 4096, n_keep = 4, task.n_tokens = 1651",
+      "transformation": "Selected complete diagnostic line; raw process/cache/address inventory omitted."
+    },
+    {
+      "source_line": 15172,
+      "excerpt": "slot   operator(): id  0 | task 7 | forcing full prompt re-processing due to lack of cache data (likely due to SWA or hybrid/recurrent memory, see https://github.com/ggml-org/llama.cpp/pull/13194#issuecomment-2868343055)",
+      "transformation": "Selected complete diagnostic line; raw process/cache/address inventory omitted."
+    },
+    {
+      "source_line": 15183,
+      "excerpt": "slot print_timing: id  0 | task 7 | prompt processing, n_tokens =   1647, progress = 1.00, t =  71.27 s / 23.11 tokens per second",
+      "transformation": "Selected complete diagnostic line; raw process/cache/address inventory omitted."
+    },
+    {
+      "source_line": 15197,
+      "excerpt": "slot print_timing: id  0 | task 7 | n_gen =    309, tg =   6.54 t/s, tg_3s =   4.52 t/s",
+      "transformation": "Selected complete diagnostic line; raw process/cache/address inventory omitted."
+    },
+    {
+      "source_line": 15198,
+      "excerpt": "[GIN] 2026/10/27 - 17:49:32 | 500 |     2m0s |       127.0.0.1 | POST     \"/api/chat\"",
+      "transformation": "Selected complete diagnostic line; raw process/cache/address inventory omitted."
+    },
+    {
+      "source_line": 15199,
+      "excerpt": "srv          stop: cancel task, id_task = 7",
+      "transformation": "Selected complete diagnostic line; raw process/cache/address inventory omitted."
+    },
+    {
+      "source_line": 15202,
+      "excerpt": "[GIN] 2026/10/27 - 17:51:43 | 200 |       0s |       127.0.0.1 | HEAD     \"/\"",
+      "transformation": "Selected complete diagnostic line; raw process/cache/address inventory omitted."
+    }
+  ]
+}

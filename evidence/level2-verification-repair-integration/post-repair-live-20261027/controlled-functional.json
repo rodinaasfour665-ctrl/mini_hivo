@@ -1,0 +1,114 @@
+[
+  {
+    "case": "test_scope_recovery_reaches_root_commit_without_repair_or_duplicate_write",
+    "assertions_passed": true,
+    "status": "done",
+    "root_verified": true,
+    "artifact_oracle": {
+      "welcone.txt": {
+        "bytes": "77656c636f6d65",
+        "sha256": "280d44ab1e9f79b5cce2dd4f58f5fe91f0fbacdac9f7447dffc318ceb79f2d02"
+      }
+    },
+    "metrics": {
+      "repairer_calls": 0,
+      "literal_child_receipts_committed": null,
+      "literal_parent_integrations_verified": null,
+      "verified_nodes": 1,
+      "impact_contracts_rejected": 0
+    },
+    "source_sha256": {
+      "mini.py": "4ff3c7eb18cbc5c0a565e3c2fb16665428f1e722a99d809b6c4096551970d5e8",
+      "hivo/requirements.py": "53e27084410bc4253c2bd09a07430e7c01708d671345dd9371caae0bd9a94b2b",
+      "hivo/inference_transport.py": "4bfa8f2f32e1409dd5a892666b20143f7a625ec9a3c2e7a26f385aa086de3df2",
+      "tests/test_post_repair_hardening.py": "014f7bb8a78f58cfa2b89469da27f6df6d5133e32f8cf617e6b3ede55e678aa8"
+    },
+    "raw_harness_boundary_label": "model proposals only; real Worker, scheduler, filesystem, native readback and final gates",
+    "controlled_boundaries": [
+      "Scripted Worker model proposals",
+      "Structured specification model unavailable fixture uses production deterministic contract fallback",
+      "Recursive helper case supplies child missions and a fixed execute-fit decision; real scheduler/leaf/parent remain active"
+    ],
+    "boundary_correction": "Raw harness label said model proposals only; this derivative expands it after source review. Raw record is preserved, not rewritten."
+  },
+  {
+    "case": "test_real_recursive_receipt_counters_do_not_relabel_optional_stage5_metrics",
+    "assertions_passed": true,
+    "status": "unknown",
+    "root_verified": true,
+    "artifact_oracle": {
+      "entry_0.txt": {
+        "bytes": "4964656e7469666965723a20300a47726f75703a20330a5374617475733a206578616374",
+        "sha256": "3fa650c5f0b987032b102b51eef501faed08b2614673e7d226fa937c65f8fe88"
+      },
+      "entry_1.txt": {
+        "bytes": "4964656e7469666965723a20310a47726f75703a20330a5374617475733a206578616374",
+        "sha256": "8cd4a9451fb3e01827b1415f3c78c900dfb8110ad494c84bc867a987370b591f"
+      },
+      "entry_2.txt": {
+        "bytes": "4964656e7469666965723a20320a47726f75703a20330a5374617475733a206578616374",
+        "sha256": "66b80cb1c75f40daf5a60fd3dd667d4bca1d7a6f984d53eab721889a75438b51"
+      }
+    },
+    "metrics": {
+      "repairer_calls": 0,
+      "literal_child_receipts_committed": 3,
+      "literal_parent_integrations_verified": 1,
+      "verified_nodes": 4,
+      "impact_contracts_rejected": 0
+    },
+    "source_sha256": {
+      "mini.py": "4ff3c7eb18cbc5c0a565e3c2fb16665428f1e722a99d809b6c4096551970d5e8",
+      "hivo/requirements.py": "53e27084410bc4253c2bd09a07430e7c01708d671345dd9371caae0bd9a94b2b",
+      "hivo/inference_transport.py": "4bfa8f2f32e1409dd5a892666b20143f7a625ec9a3c2e7a26f385aa086de3df2",
+      "tests/test_post_repair_hardening.py": "014f7bb8a78f58cfa2b89469da27f6df6d5133e32f8cf617e6b3ede55e678aa8"
+    },
+    "raw_harness_boundary_label": "model proposals only; real Worker, scheduler, filesystem, native readback and final gates",
+    "controlled_boundaries": [
+      "Scripted Worker model proposals",
+      "Structured specification model unavailable fixture uses production deterministic contract fallback",
+      "Recursive helper case supplies child missions and a fixed execute-fit decision; real scheduler/leaf/parent remain active"
+    ],
+    "boundary_correction": "Raw harness label said model proposals only; this derivative expands it after source review. Raw record is preserved, not rewritten."
+  },
+  {
+    "case": "test_real_recursive_orchestration_with_brain_mission_compiler_and_empty_hints",
+    "assertions_passed": true,
+    "status": "unknown",
+    "root_verified": true,
+    "artifact_oracle": {
+      "products.txt": {
+        "bytes": "50726f647563743a204b6579626f6172640a5175616e746974793a2031320a50726963653a20323530",
+        "sha256": "66d0f5c32b72d2edc9af209125f18346c828767b84af10304009cb8e6177516b"
+      },
+      "shipment.txt": {
+        "bytes": "536869706d656e743a2053482d323032360a4974656d733a2031320a5374617475733a2050656e64696e67",
+        "sha256": "80e258c1a18bda44c6bdb66b1aef8ef3c2c006a9aa1f2c7911527111fa74c48e"
+      },
+      "supplier.txt": {
+        "bytes": "537570706c6965723a204e696c6520546563680a436974793a20436169726f0a5374617475733a20416374697665",
+        "sha256": "290e00c2af96732a9b48573cf9de857c75f11327855b62ee8223916abc3b27e4"
+      }
+    },
+    "metrics": {
+      "repairer_calls": 0,
+      "literal_child_receipts_committed": 3,
+      "literal_parent_integrations_verified": 1,
+      "verified_nodes": 4,
+      "impact_contracts_rejected": 0
+    },
+    "source_sha256": {
+      "mini.py": "4ff3c7eb18cbc5c0a565e3c2fb16665428f1e722a99d809b6c4096551970d5e8",
+      "hivo/requirements.py": "53e27084410bc4253c2bd09a07430e7c01708d671345dd9371caae0bd9a94b2b",
+      "hivo/inference_transport.py": "4bfa8f2f32e1409dd5a892666b20143f7a625ec9a3c2e7a26f385aa086de3df2",
+      "tests/test_post_repair_hardening.py": "014f7bb8a78f58cfa2b89469da27f6df6d5133e32f8cf617e6b3ede55e678aa8"
+    },
+    "raw_harness_boundary_label": "model proposals only; real Worker, scheduler, filesystem, native readback and final gates",
+    "controlled_boundaries": [
+      "Scripted Coordinator decomposition/fit, MissionCompiler and Worker model replies; validators and normalizers execute",
+      "ROOT initial split supplied; specification supplied through production deterministic specification builder",
+      "Real public recursive orchestration, Project Brain/source freezing, mission normalization, scope projection, scheduler/leaves/parent and all file/verification/transaction gates; not a host-preflight or interactive-CLI test"
+    ],
+    "boundary_correction": "Raw harness label said model proposals only; this derivative expands it after source review. Raw record is preserved, not rewritten."
+  }
+]

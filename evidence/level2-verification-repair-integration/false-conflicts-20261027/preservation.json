@@ -1,0 +1,41 @@
+{
+  "original_backup": "audit_runs/20261021-workspace-audit/r-update-004/false-conflicts-20261027/before.zip",
+  "backup_sha256": "a3ac1b8a985b11de5765f21cc13eadf043452318e5c3efbceb5377deb7b45b91",
+  "backup_entries_validated": 11,
+  "unchanged_original_files": [
+    {
+      "path": "list/project-22/.agent_experiment.jsonl",
+      "original_source_sha256": "33e299672e172d19381ff07f4c5d17b3854704d78db96557db36bfa3fdbf5c44"
+    },
+    {
+      "path": "list/project-22/.agent_host_preflight.json",
+      "original_source_sha256": "ac00cfb6d878ec846f01060f7efc52767ae054d842da03ea3bb5471922a7a4ae"
+    },
+    {
+      "path": "list/project-22/.agent_runs/20261027T151126-fabceeb5.jsonl",
+      "original_source_sha256": "994ed245aff942a59260c2f331f411dce887fac6e748454650842df55de29f20"
+    },
+    {
+      "path": "list/project-22/.agent_runs/20261027T151514-6fea1b5f.jsonl",
+      "original_source_sha256": "eb86217a6fc8b077b64a3b50a5608e7e5be443131ffa50f93e0320def792869e"
+    },
+    {
+      "path": "list/project-22/.hivo/memory.sqlite3",
+      "original_source_sha256": "cde222b7ca73c11d6cd077227bf3db7fd15e031918589d2e349e9e6e656eec3e"
+    },
+    {
+      "path": "hivo/literal_clarification.py",
+      "original_source_sha256": "5a63638fff54e3afc45e816b2b3403597efd9516710a2a4167259205e5274c18"
+    },
+    {
+      "path": "updates/R_UPDATE_003.md",
+      "original_source_sha256": "c41654563541607d9ae8b39a40198ebc0459a69c7fa738fe42fd2cde75801fa5"
+    }
+  ],
+  "intentional_working_tree_changes_preserved_before_edit": [
+    "mini.py",
+    "hivo/requirements.py",
+    "hivo/literal_source.py",
+    "updates/R_UPDATE_004.md"
+  ]
+}

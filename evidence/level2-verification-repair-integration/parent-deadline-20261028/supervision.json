@@ -1,0 +1,26 @@
+[
+  {
+    "time": "2026-10-27T22:38:19.080235+00:00",
+    "kind": "supervisor_started",
+    "elapsed_seconds": 2.900000026784255e-06,
+    "limit_seconds": 2999.9987451
+  },
+  {
+    "time": "2026-10-27T22:38:19.093348+00:00",
+    "kind": "process_started",
+    "elapsed_seconds": 0.013123199999881763
+  },
+  {
+    "time": "2026-10-27T22:38:34.122195+00:00",
+    "kind": "process_waiting",
+    "elapsed_seconds": 15.04186649999997
+  },
+  {
+    "time": "2026-10-27T22:38:41.834966+00:00",
+    "kind": "supervisor_finished",
+    "elapsed_seconds": 22.754620599999953,
+    "reason": "completed",
+    "returncode": 2,
+    "reaped": true
+  }
+]

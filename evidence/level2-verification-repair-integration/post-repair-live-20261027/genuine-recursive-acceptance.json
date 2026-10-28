@@ -1,0 +1,457 @@
+{
+  "verification_class": "GENUINE_LOCAL_OLLAMA_WITH_INDEPENDENT_ORACLE",
+  "run_id": "20261027T210935-14cea8e4",
+  "original_result_sha256": "39fd14fa0a1c4d355eb920184f79cb8a526a9a075b1434c208db068dce7cf2cc",
+  "original_trace_sha256": "43c0e028082151b1169412f55de3d0e7a365f5c08e9ed61748a4b50c58da72c9",
+  "source_sha256": {
+    "mini.py": "4ff3c7eb18cbc5c0a565e3c2fb16665428f1e722a99d809b6c4096551970d5e8",
+    "hivo/inference_transport.py": "4bfa8f2f32e1409dd5a892666b20143f7a625ec9a3c2e7a26f385aa086de3df2",
+    "hivo/http_client.py": "71f48b5342e9a93a14c591bf28c57118142d8954e2245048b70e5fb33be5ac75",
+    "hivo/host_preflight.py": "f43e2b156d4193e95b9d7f693daab8fef6f33436a46f8613dd8f39692574033e",
+    "hivo/project_understanding.py": "c1711d5886f4d120b9ffbde54587406df8d680d6b419d1e24bb03300ab6b3f46",
+    "hivo/verification.py": "488f845f693120ee02d77a8aa920778b035b265e282b921b7205de8202cc4229",
+    "hivo/verification_routing.py": "750f196806baa198b772972fc708420feb74945533fafd0320b2e199c4983e82",
+    "hivo/pre_mutation_impact.py": "99d041fd17ab4c7497a6f8055c52aa2757498b980ef84f093e4ac5093a210217",
+    "hivo/requirements.py": "53e27084410bc4253c2bd09a07430e7c01708d671345dd9371caae0bd9a94b2b",
+    "hivo/requirement_consistency.py": "7566e19c14f433d6b9b3c1da0efaf9989315831b47eb881087c228a1b68134eb",
+    "hivo/requirement_decisions.py": "b4002b4dc244d7d9f46d8f03dc0d17155299dbd7bb182ecafcb333ba53f8c5e2",
+    "hivo/literal_source.py": "9e0f202ba0c24a60cf89e87f266ca85c1e8fe480ecf37bb5913cbc8bd8d11303",
+    "tests/fixtures/post_repair_requests.json": "02a858affd1fa3aaf494fe56af25947b27e39bad8ea56ff0bb4dcff3d44ed5cb",
+    "scripts/replay_post_repair.py": "ac310790ff5b50cde7edeee0b00860626169b09712563ed01e5c3aec3b363108"
+  },
+  "metrics": {
+    "run_id": null,
+    "status": null,
+    "root_verified": null,
+    "model_calls": null,
+    "tool_calls": null,
+    "builder_calls": null,
+    "falsifier_calls": null,
+    "repairer_calls": null,
+    "elapsed_seconds": null,
+    "ollama_timeout_failures": null,
+    "ollama_retry_count": null,
+    "project_mode": null,
+    "control_flow": null,
+    "verification_classification_policy": null,
+    "browser_checks": null,
+    "impact_missing_targets": null,
+    "literal_child_receipts_committed": null,
+    "literal_parent_integrations_verified": null
+  },
+  "checks": {
+    "no_outer_timeout": false,
+    "final_status_done": false,
+    "root_verified": false,
+    "source_matches_current": true,
+    "all_exact_source_bytes": false,
+    "only_requested_task_files": false,
+    "no_unexpected_task_files": true,
+    "three_child_receipts": false,
+    "read_only_parent_integrated": false,
+    "native_pass_for_every_artifact": false,
+    "independent_falsifier_for_children_and_root": false,
+    "four_impact_comparisons_pass": false,
+    "transactions_committed": false
+  },
+  "check_semantics": "False means the required acceptance evidence was not established; it does not synthesize a terminal ROOT status. Original null metrics are retained.",
+  "observed_counts": {
+    "model_request": 28,
+    "provider_request_completed": 19,
+    "provider_request_failed": 8,
+    "literal_child_receipt_committed": 2,
+    "transaction_commit": 2,
+    "parent_integration_finished": 0
+  },
+  "observed_tool_calls": 9,
+  "committed_child_ids": [
+    "1",
+    "2"
+  ],
+  "last_observed_event": {
+    "time": "2026-10-27T21:43:48.757",
+    "kind": "model_request",
+    "role": "Builder",
+    "attempt": 2,
+    "context_tokens": 3363
+  },
+  "accepted": false,
+  "artifacts": {
+    "products.txt": {
+      "expected_bytes": 41,
+      "expected_sha256": "66d0f5c32b72d2edc9af209125f18346c828767b84af10304009cb8e6177516b",
+      "actual_bytes": 41,
+      "actual_sha256": "66d0f5c32b72d2edc9af209125f18346c828767b84af10304009cb8e6177516b",
+      "exact_source_bytes": true
+    },
+    "supplier.txt": {
+      "expected_bytes": 46,
+      "expected_sha256": "290e00c2af96732a9b48573cf9de857c75f11327855b62ee8223916abc3b27e4",
+      "actual_bytes": 46,
+      "actual_sha256": "290e00c2af96732a9b48573cf9de857c75f11327855b62ee8223916abc3b27e4",
+      "exact_source_bytes": true
+    },
+    "shipment.txt": {
+      "expected_bytes": 43,
+      "expected_sha256": "80e258c1a18bda44c6bdb66b1aef8ef3c2c006a9aa1f2c7911527111fa74c48e",
+      "actual_bytes": null,
+      "actual_sha256": null,
+      "exact_source_bytes": false
+    }
+  },
+  "gates": [
+    {
+      "time": "2026-10-27T21:17:21.475",
+      "kind": "source_literal_child_scope_resolved",
+      "task_id": "1",
+      "paths": [
+        "products.txt"
+      ],
+      "basis": "source_value_and_local_goal_or_explicit_path"
+    },
+    {
+      "time": "2026-10-27T21:17:21.481",
+      "kind": "impact_contract_created",
+      "task_id": "1",
+      "target_count": 1
+    },
+    {
+      "time": "2026-10-27T21:17:21.481",
+      "kind": "literal_worker_mission_scope_projected",
+      "task_id": "1",
+      "paths": [
+        "products.txt"
+      ]
+    },
+    {
+      "time": "2026-10-27T21:20:03.194",
+      "kind": "impact_contract_authorized",
+      "task_id": "1",
+      "mutation_authorized": true
+    },
+    {
+      "time": "2026-10-27T21:22:42.015",
+      "kind": "agent_finished",
+      "task_id": "1",
+      "role": "Builder",
+      "status": "done",
+      "context_status": "sufficient",
+      "mutation_authorized": true,
+      "impact_authorized": true
+    },
+    {
+      "time": "2026-10-27T21:25:11.917",
+      "kind": "agent_finished",
+      "task_id": "1",
+      "role": "Falsifier",
+      "status": "done",
+      "context_status": null,
+      "mutation_authorized": false,
+      "impact_authorized": false
+    },
+    {
+      "time": "2026-10-27T21:25:11.947",
+      "kind": "verification_route_result"
+    },
+    {
+      "time": "2026-10-27T21:25:11.964",
+      "kind": "impact_contract_compared",
+      "task_id": "1",
+      "status": "IMPACT_CONTRACT_PASSED",
+      "mutation_authorized": true,
+      "changed_paths": [
+        "products.txt"
+      ],
+      "missing": 0,
+      "unexpected_related": 0,
+      "out_of_scope": 0,
+      "preservation_violations": 0
+    },
+    {
+      "time": "2026-10-27T21:25:11.967",
+      "kind": "transaction_commit",
+      "task_id": "1",
+      "changed": [
+        "products.txt"
+      ]
+    },
+    {
+      "time": "2026-10-27T21:25:11.996",
+      "kind": "literal_child_receipt_committed",
+      "task_id": "1",
+      "receipt_hash": "6732c7cc3287b17128c983961e3c83dacd0d113a3a68954593f7ecbf4d20ceb8"
+    },
+    {
+      "time": "2026-10-27T21:28:29.968",
+      "kind": "source_literal_child_scope_resolved",
+      "task_id": "2",
+      "paths": [
+        "supplier.txt"
+      ],
+      "basis": "source_value_and_local_goal_or_explicit_path"
+    },
+    {
+      "time": "2026-10-27T21:28:29.980",
+      "kind": "impact_contract_created",
+      "task_id": "2",
+      "target_count": 1
+    },
+    {
+      "time": "2026-10-27T21:28:29.981",
+      "kind": "literal_worker_mission_scope_projected",
+      "task_id": "2",
+      "paths": [
+        "supplier.txt"
+      ]
+    },
+    {
+      "time": "2026-10-27T21:31:31.691",
+      "kind": "impact_contract_authorized",
+      "task_id": "2",
+      "mutation_authorized": true
+    },
+    {
+      "time": "2026-10-27T21:34:09.643",
+      "kind": "agent_finished",
+      "task_id": "2",
+      "role": "Builder",
+      "status": "done",
+      "context_status": "sufficient",
+      "mutation_authorized": true,
+      "impact_authorized": true
+    },
+    {
+      "time": "2026-10-27T21:36:24.324",
+      "kind": "agent_finished",
+      "task_id": "2",
+      "role": "Falsifier",
+      "status": "done",
+      "context_status": null,
+      "mutation_authorized": false,
+      "impact_authorized": false
+    },
+    {
+      "time": "2026-10-27T21:36:24.350",
+      "kind": "verification_route_result"
+    },
+    {
+      "time": "2026-10-27T21:36:24.370",
+      "kind": "impact_contract_compared",
+      "task_id": "2",
+      "status": "IMPACT_CONTRACT_PASSED",
+      "mutation_authorized": true,
+      "changed_paths": [
+        "supplier.txt"
+      ],
+      "missing": 0,
+      "unexpected_related": 0,
+      "out_of_scope": 0,
+      "preservation_violations": 0
+    },
+    {
+      "time": "2026-10-27T21:36:24.374",
+      "kind": "transaction_commit",
+      "task_id": "2",
+      "changed": [
+        "supplier.txt"
+      ]
+    },
+    {
+      "time": "2026-10-27T21:36:24.401",
+      "kind": "literal_child_receipt_committed",
+      "task_id": "2",
+      "receipt_hash": "644fdaf3b81309dcb78e2739e78c80ed84adea1df33726c86847c8603379fe3a"
+    },
+    {
+      "time": "2026-10-27T21:39:08.819",
+      "kind": "source_literal_child_scope_resolved",
+      "task_id": "3",
+      "paths": [
+        "shipment.txt"
+      ],
+      "basis": "source_value_and_local_goal_or_explicit_path"
+    },
+    {
+      "time": "2026-10-27T21:39:08.851",
+      "kind": "impact_contract_created",
+      "task_id": "3",
+      "target_count": 1
+    },
+    {
+      "time": "2026-10-27T21:39:08.852",
+      "kind": "literal_worker_mission_scope_projected",
+      "task_id": "3",
+      "paths": [
+        "shipment.txt"
+      ]
+    },
+    {
+      "time": "2026-10-27T21:41:48.509",
+      "kind": "impact_contract_authorized",
+      "task_id": "3",
+      "mutation_authorized": true
+    }
+  ],
+  "native_results": [
+    {
+      "task_id": "1",
+      "role": "Builder",
+      "target": "products.txt",
+      "status": "succeeded",
+      "passed": true,
+      "native_result": {
+        "passed": true
+      }
+    },
+    {
+      "task_id": "2",
+      "role": "Builder",
+      "target": "supplier.txt",
+      "status": "succeeded",
+      "passed": true,
+      "native_result": {
+        "passed": true
+      }
+    }
+  ],
+  "tools": [
+    {
+      "task_id": "1",
+      "role": "Builder",
+      "tool": "context_sufficiency_check",
+      "target": "",
+      "status": "succeeded"
+    },
+    {
+      "task_id": "1",
+      "role": "Builder",
+      "tool": "write_file",
+      "target": "products.txt",
+      "status": "succeeded"
+    },
+    {
+      "task_id": "1",
+      "role": "Builder",
+      "tool": "run_file",
+      "target": "products.txt",
+      "status": "succeeded"
+    },
+    {
+      "task_id": "1",
+      "role": "Falsifier",
+      "tool": "read_file",
+      "target": "products.txt",
+      "status": "succeeded"
+    },
+    {
+      "task_id": "2",
+      "role": "Builder",
+      "tool": "context_sufficiency_check",
+      "target": "",
+      "status": "succeeded"
+    },
+    {
+      "task_id": "2",
+      "role": "Builder",
+      "tool": "write_file",
+      "target": "supplier.txt",
+      "status": "succeeded"
+    },
+    {
+      "task_id": "2",
+      "role": "Builder",
+      "tool": "run_file",
+      "target": "supplier.txt",
+      "status": "succeeded"
+    },
+    {
+      "task_id": "2",
+      "role": "Falsifier",
+      "tool": "read_file",
+      "target": "supplier.txt",
+      "status": "succeeded"
+    },
+    {
+      "task_id": "3",
+      "role": "Builder",
+      "tool": "context_sufficiency_check",
+      "target": "",
+      "status": "succeeded"
+    }
+  ],
+  "provider_failures": [
+    {
+      "time": "2026-10-27T21:19:21.525",
+      "run_id": "20261027T210935-14cea8e4",
+      "kind": "provider_request_failed",
+      "role": "Builder",
+      "attempt": 1,
+      "category": "INFERENCE_TIMEOUT",
+      "elapsed_seconds": 120.01387400000021
+    },
+    {
+      "time": "2026-10-27T21:22:03.228",
+      "run_id": "20261027T210935-14cea8e4",
+      "kind": "provider_request_failed",
+      "role": "Builder",
+      "attempt": 1,
+      "category": "INFERENCE_TIMEOUT",
+      "elapsed_seconds": 120.01013689999945
+    },
+    {
+      "time": "2026-10-27T21:24:42.043",
+      "run_id": "20261027T210935-14cea8e4",
+      "kind": "provider_request_failed",
+      "role": "Falsifier",
+      "attempt": 1,
+      "category": "INFERENCE_TIMEOUT",
+      "elapsed_seconds": 120.0049457999994
+    },
+    {
+      "time": "2026-10-27T21:30:30.028",
+      "run_id": "20261027T210935-14cea8e4",
+      "kind": "provider_request_failed",
+      "role": "Builder",
+      "attempt": 1,
+      "category": "INFERENCE_TIMEOUT",
+      "elapsed_seconds": 120.01163319999978
+    },
+    {
+      "time": "2026-10-27T21:33:31.717",
+      "run_id": "20261027T210935-14cea8e4",
+      "kind": "provider_request_failed",
+      "role": "Builder",
+      "attempt": 1,
+      "category": "INFERENCE_TIMEOUT",
+      "elapsed_seconds": 120.00583949999964
+    },
+    {
+      "time": "2026-10-27T21:36:09.673",
+      "run_id": "20261027T210935-14cea8e4",
+      "kind": "provider_request_failed",
+      "role": "Falsifier",
+      "attempt": 1,
+      "category": "INFERENCE_TIMEOUT",
+      "elapsed_seconds": 120.0112766000002
+    },
+    {
+      "time": "2026-10-27T21:41:08.902",
+      "run_id": "20261027T210935-14cea8e4",
+      "kind": "provider_request_failed",
+      "role": "Builder",
+      "attempt": 1,
+      "category": "INFERENCE_TIMEOUT",
+      "elapsed_seconds": 120.0147205000003
+    },
+    {
+      "time": "2026-10-27T21:43:48.555",
+      "run_id": "20261027T210935-14cea8e4",
+      "kind": "provider_request_failed",
+      "role": "Builder",
+      "attempt": 1,
+      "category": "INFERENCE_TIMEOUT",
+      "elapsed_seconds": 120.02719040000011
+    }
+  ],
+  "limits": "Independent exact request oracle for this run. Controlled and historical source results are separate; not generalized live reliability."
+}

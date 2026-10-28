@@ -1,0 +1,33 @@
+{
+  "scope": "Incremental Child-3 phase; all earlier R4 changes remain included separately. Raw working-tree hashes, not staged Git blobs.",
+  "files": {
+    "mini.py": {
+      "before_sha256": "4ff3c7eb18cbc5c0a565e3c2fb16665428f1e722a99d809b6c4096551970d5e8",
+      "current_sha256": "128d021f8687497dfff16ac9c284093d69f69aa59232b4f447975c86751b1e7a"
+    },
+    "hivo/inference_transport.py": {
+      "before_sha256": "4bfa8f2f32e1409dd5a892666b20143f7a625ec9a3c2e7a26f385aa086de3df2",
+      "current_sha256": "83cc18cae05827d7f62f2a0f4b515ee8195cc4c1323a24293ff6409b069667e2"
+    },
+    "scripts/replay_post_repair.py": {
+      "before_sha256": "ac310790ff5b50cde7edeee0b00860626169b09712563ed01e5c3aec3b363108",
+      "current_sha256": "ab6806ca165a566b966c080beefb034b5c2cb276ea085c47d386c31475364b8f"
+    },
+    "scripts/replay_provider_recovery.py": {
+      "before_sha256": "1e1023c2947e5607dc61cb142bb6739a16d330965a70cf55a4f2824a3958a073",
+      "current_sha256": "3e5c682cd6a4c0756906d8a3e22bb2b83556f3af4ba582dcc1de3c2fc76a0f47"
+    },
+    "scripts/verify_level2_offline.py": {
+      "before_sha256": "b506bbb48378c331e00ad0780f876a0f129beb01e255270b007be714fb6c9f4d",
+      "current_sha256": "80ccad31125da08a7ce42aa850d7fe68831eaf0d5563038a49bb390c9fe83f26"
+    },
+    "tests/test_post_repair_hardening.py": {
+      "before_sha256": "014f7bb8a78f58cfa2b89469da27f6df6d5133e32f8cf617e6b3ede55e678aa8",
+      "current_sha256": "ad1d0cb6446f72b79516b8a724b9c960046c0c2bf894d077d0c6a2fdac499653"
+    },
+    "tests/test_child_inference_recovery.py": {
+      "before_sha256": null,
+      "current_sha256": "be76ab5059eb43ec9d40039430e32b8a97aa452658164231ebe3ce3adbe52e13"
+    }
+  }
+}
